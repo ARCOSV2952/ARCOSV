@@ -11,6 +11,8 @@
       font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
       background-color: #f5f5f5;
       color: #1a1a1a;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     .container {
@@ -24,7 +26,7 @@
       color: #444;
     }
 
-    /* HERO */
+    /* HERO TITLE */
     .hero-title {
       font-weight: 200;
       font-size: 44px;
@@ -44,13 +46,7 @@
       }
     }
 
-    .hero img {
-      width: 100%;
-      border-radius: 12px;
-      margin-top: 20px;
-    }
-
-    /* CARRUSEL */
+    /* CARRUSEL (FADE PREMIUM) */
     .carousel {
       position: relative;
       width: 100%;
@@ -61,22 +57,28 @@
 
     .slide {
       width: 100%;
-      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.8s ease;
       aspect-ratio: 16 / 9;
       object-fit: cover;
     }
 
     .slide.active {
-      display: block;
+      opacity: 1;
+      position: relative;
     }
 
     /* BOX */
     .box {
-      background: white;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(6px);
       padding: 25px;
       border-radius: 14px;
       margin-top: 25px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
     }
 
     /* GRID */
@@ -95,11 +97,12 @@
       border-radius: 14px;
       overflow: hidden;
       transition: 0.3s;
+      border: 1px solid rgba(0,0,0,0.05);
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.12);
     }
 
     .card img {
@@ -206,7 +209,7 @@
           <div class="meta">Jueves 7 de mayo · 16:30 hs</div>
           <div class="price">Sin cargo</div>
           <div class="urgency">Quedan 6 lugares</div>
-          <div class="cta">Ver experiencia →</div>
+          <div class="cta">Reservar lugar →</div>
         </div>
       </a>
 
@@ -217,7 +220,7 @@
           <div class="meta">Sábado 26 de mayo · 20:30 hs</div>
           <div class="price">$60.000</div>
           <div class="urgency">Últimos cupos</div>
-          <div class="cta">Ver experiencia →</div>
+          <div class="cta">Reservar lugar →</div>
         </div>
       </a>
 
@@ -228,7 +231,7 @@
           <div class="meta">Domingo 24 de mayo · 11 hs</div>
           <div class="price">$6.000</div>
           <div class="urgency">Quedan pocos lugares</div>
-          <div class="cta">Ver experiencia →</div>
+          <div class="cta">Reservar lugar →</div>
         </div>
       </a>
 
@@ -260,7 +263,7 @@
     slides[index].classList.remove("active");
     index = (index + 1) % slides.length;
     slides[index].classList.add("active");
-  }, 3000);
+  }, 3500);
 </script>
 
 </body>
