@@ -6,64 +6,16 @@
   <title>Experiencia sensorial - Arcos V</title>
 
   <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-      background: #f5f5f5;
-    }
-
-    .container {
-      max-width: 700px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    h1 {
-      font-size: 28px;
-      margin-top: 15px;
-    }
-
-    .meta { color: #666; margin-top: 5px; }
+    body { margin: 0; font-family: Arial; background: #f5f5f5; }
+    .container { max-width: 700px; margin: auto; padding: 20px; }
+    img { width: 100%; border-radius: 12px; }
+    h1 { font-size: 28px; margin-top: 15px; }
+    .meta { color: #666; }
     .price { font-size: 20px; font-weight: bold; margin-top: 10px; }
-    .urgency { color: #b00020; margin-top: 5px; }
-
-    .desc {
-      margin-top: 15px;
-      line-height: 1.6;
-      color: #444;
-    }
-
-    .btn {
-      display: block;
-      margin-top: 25px;
-      padding: 16px;
-      background: black;
-      color: white;
-      text-align: center;
-      text-decoration: none;
-      border-radius: 10px;
-      font-size: 16px;
-    }
-
-    .back {
-      display: block;
-      margin-bottom: 15px;
-      color: #666;
-      text-decoration: none;
-    }
-
-    /* CARRUSEL SIMPLE Y ROBUSTO */
-
-    .carousel img {
-      width: 100%;
-      border-radius: 12px;
-      display: none;
-    }
-
-    .carousel img.active {
-      display: block;
-    }
-
+    .urgency { color: #b00020; }
+    .desc { margin-top: 15px; line-height: 1.6; }
+    .btn { display: block; margin-top: 25px; padding: 16px; background: black; color: white; text-align: center; text-decoration: none; border-radius: 10px; }
+    .back { display: block; margin-bottom: 15px; color: #666; text-decoration: none; }
   </style>
 </head>
 
@@ -73,12 +25,7 @@
 
   <a class="back" href="index.html">← Volver</a>
 
-  <!-- CARRUSEL -->
-  <div class="carousel">
-    <img src="Prueba3.jpg" class="active">
-    <img src="Prueba3b.jpg">
-    <img src="Prueba3c.jpg">
-  </div>
+  <img src="Prueba3.jpg">
 
   <h1>Experiencia sensorial</h1>
 
@@ -96,21 +43,6 @@
   </a>
 
 </div>
-
-<script>
-let current = 0;
-const slides = document.querySelectorAll('.carousel img');
-
-function showSlide(i) {
-  slides.forEach(img => img.classList.remove('active'));
-  slides[i].classList.add('active');
-}
-
-setInterval(() => {
-  current = (current + 1) % slides.length;
-  showSlide(current);
-}, 3000);
-</script>
 
 </body>
 </html>
