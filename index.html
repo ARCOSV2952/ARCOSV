@@ -5,6 +5,22 @@
   <title>Arcos V</title>
 
   <style>
+    .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card p {
+  margin-top: 8px;
+  font-size: 14px;
+}
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
@@ -96,6 +112,22 @@
     <!-- EXPERIENCIAS -->
     <section class="box">
       <h2>Próximas experiencias</h2>
+      <div class="grid">
+  <div class="card">
+    <img src="evento1.jpg">
+    <p>Cata de vinos</p>
+  </div>
+
+  <div class="card">
+    <img src="evento2.jpg">
+    <p>Taller de cocina</p>
+  </div>
+
+  <div class="card">
+    <img src="evento3.jpg">
+    <p>Experiencia sensorial</p>
+  </div>
+</div>
       <p>Cata de vinos — Próximamente</p>
       <p>Taller de cocina — Próximamente</p>
     </section>
