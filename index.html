@@ -35,12 +35,34 @@
       color: #444;
     }
 
+    /* HERO */
     .hero img {
       width: 100%;
       border-radius: 12px;
       margin-top: 20px;
     }
 
+    .hero-title {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      font-weight: 200;
+      font-size: 44px;
+      line-height: 1.15;
+      letter-spacing: -0.8px;
+      color: #111;
+
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeIn 1.2s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* BOXES */
     .box {
       background: white;
       padding: 25px;
@@ -49,6 +71,7 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     }
 
+    /* GRID */
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -141,15 +164,12 @@
       .container {
         padding: 20px 15px;
       }
+
+      .hero-title {
+        font-size: 34px;
+      }
     }
-    .hero-title {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-  font-weight: 200;
-  font-size: 44px;
-  line-height: 1.15;
-  letter-spacing: -0.8px;
-  color: #111;
-}
+
   </style>
 </head>
 
@@ -175,7 +195,7 @@
         <div class="card-content">
           <h3>Encuentro de Cocina</h3>
           <div class="meta">Jueves 7 de mayo · 16:30 hs</div>
-          <div class="price">sin cargo</div>
+          <div class="price">Sin cargo</div>
           <div class="urgency">Quedan 6 lugares</div>
           <div class="cta">Ver experiencia →</div>
         </div>
@@ -184,7 +204,7 @@
       <a class="card" href="evento-cocina.html">
         <img src="Prueba22.jpg" alt="">
         <div class="card-content">
-          <h3>Cata de Vinos guiada </h3>
+          <h3>Cata de Vinos guiada</h3>
           <div class="meta">Sábado 26 de mayo · 20:30 hs</div>
           <div class="price">$60.000</div>
           <div class="urgency">Últimos cupos</div>
