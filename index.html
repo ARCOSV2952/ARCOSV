@@ -5,55 +5,6 @@
   <title>Arcos V</title>
 
   <style>
-    .grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 15px;
-  margin-top: 20px;
-}
-<style>
-  body {
-    font-family: Arial, sans-serif;
-  }
-
-  .box {
-    background: white;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 15px;
-    margin-top: 20px;
-  }
-
-  .card img {
-    width: 100%;
-    border-radius: 10px;
-  }
-
-  .card p {
-    margin-top: 8px;
-    font-size: 14px;
-  }
-
-  /* 👇 PEGALO ACÁ */
-  @media (max-width: 700px) {
-    .grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-</style>
-.card img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.card p {
-  margin-top: 8px;
-  font-size: 14px;
-}
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
@@ -101,6 +52,23 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     }
 
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .card p {
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
     .btn {
       display: inline-block;
       padding: 14px 22px;
@@ -127,6 +95,12 @@
       color: #888;
       margin-top: 60px;
     }
+
+    @media (max-width: 700px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -145,24 +119,24 @@
     <!-- EXPERIENCIAS -->
     <section class="box">
       <h2>Próximas experiencias</h2>
+
       <div class="grid">
-  <div class="card">
-    <img src="Prueba1.jpg">
-    <p>Cata de vinos</p>
-  </div>
+        <div class="card">
+          <img src="Prueba1.jpg" alt="">
+          <p>Cata de vinos</p>
+        </div>
 
-  <div class="card">
-    <img src="Prueba2.jpg">
-    <p>Taller de cocina</p>
-  </div>
+        <div class="card">
+          <img src="Prueba2.jpg" alt="">
+          <p>Taller de cocina</p>
+        </div>
 
-  <div class="card">
-    <img src="Prueba3.jpg">
-    <p>Experiencia sensorial</p>
-  </div>
-</div>
-      <p>Cata de vinos — Próximamente</p>
-      <p>Taller de cocina — Próximamente</p>
+        <div class="card">
+          <img src="Prueba3.jpg" alt="">
+          <p>Experiencia sensorial</p>
+        </div>
+      </div>
+
     </section>
 
     <!-- PROPUESTA -->
