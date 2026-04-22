@@ -6,16 +6,88 @@
   <title>Experiencia sensorial - Arcos V</title>
 
   <style>
-    body { margin: 0; font-family: Arial; background: #f5f5f5; }
-    .container { max-width: 700px; margin: auto; padding: 20px; }
-    img { width: 100%; border-radius: 12px; }
-    h1 { font-size: 28px; margin-top: 15px; }
-    .meta { color: #666; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      background: #f5f5f5;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-top: 15px;
+    }
+
+    .meta { color: #666; margin-top: 5px; }
     .price { font-size: 20px; font-weight: bold; margin-top: 10px; }
-    .urgency { color: #b00020; }
-    .desc { margin-top: 15px; line-height: 1.6; }
-    .btn { display: block; margin-top: 25px; padding: 16px; background: black; color: white; text-align: center; text-decoration: none; border-radius: 10px; }
-    .back { display: block; margin-bottom: 15px; color: #666; text-decoration: none; }
+    .urgency { color: #b00020; margin-top: 5px; }
+
+    .desc {
+      margin-top: 15px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .btn {
+      display: block;
+      margin-top: 25px;
+      padding: 16px;
+      background: black;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    .back {
+      display: block;
+      margin-bottom: 15px;
+      color: #666;
+      text-decoration: none;
+    }
+
+    /* 🔥 CARRUSEL PREMIUM */
+
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.4s ease;
+    }
+
+    .carousel img {
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .dots {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #ccc;
+      border-radius: 50%;
+      margin: 0 4px;
+    }
+
+    .dot.active {
+      background: #111;
+    }
+
   </style>
 </head>
 
@@ -25,7 +97,16 @@
 
   <a class="back" href="index.html">← Volver</a>
 
-  <img src="Prueba3.jpg">
+  <!-- CARRUSEL -->
+  <div class="carousel" id="carousel">
+    <div class="carousel-track" id="track">
+      <img src="Prueba3.jpg">
+      <img src="Prueba3b.jpg">
+      <img src="Prueba3c.jpg">
+    </div>
+  </div>
+
+  <div class="dots" id="dots"></div>
 
   <h1>Experiencia sensorial</h1>
 
@@ -43,6 +124,54 @@
   </a>
 
 </div>
+
+<script>
+let index = 0;
+const track = document.getElementById("track");
+const slides = track.children;
+const dotsContainer = document.getElementById("dots");
+
+// dots
+for (let i = 0; i < slides.length; i++) {
+  const dot = document.createElement("span");
+  dot.classList.add("dot");
+  if (i === 0) dot.classList.add("active");
+  dotsContainer.appendChild(dot);
+}
+
+const dots = document.querySelectorAll(".dot");
+
+function updateCarousel() {
+  track.style.transform = `translateX(-${index * 100}%)`;
+  dots.forEach(d => d.classList.remove("active"));
+  dots[index].classList.add("active");
+}
+
+// autoplay
+setInterval(() => {
+  index = (index + 1) % slides.length;
+  updateCarousel();
+}, 3500);
+
+// swipe
+let startX = 0;
+
+track.addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+});
+
+track.addEventListener("touchend", e => {
+  let endX = e.changedTouches[0].clientX;
+
+  if (startX - endX > 50) {
+    index = (index + 1) % slides.length;
+  } else if (endX - startX > 50) {
+    index = (index - 1 + slides.length) % slides.length;
+  }
+
+  updateCarousel();
+});
+</script>
 
 </body>
 </html>
