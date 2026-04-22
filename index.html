@@ -11,7 +11,40 @@
   gap: 15px;
   margin-top: 20px;
 }
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
 
+  .box {
+    background: white;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .card p {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+
+  /* 👇 PEGALO ACÁ */
+  @media (max-width: 700px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+</style>
 .card img {
   width: 100%;
   border-radius: 10px;
