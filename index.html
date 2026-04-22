@@ -19,31 +19,13 @@
       padding: 30px 20px;
     }
 
-    h1 {
-      font-size: 32px;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-
     p {
       line-height: 1.6;
       color: #444;
     }
 
     /* HERO */
-    .hero img {
-      width: 100%;
-      border-radius: 12px;
-      margin-top: 20px;
-    }
-
     .hero-title {
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
       font-weight: 200;
       font-size: 44px;
       line-height: 1.15;
@@ -62,7 +44,33 @@
       }
     }
 
-    /* BOXES */
+    .hero img {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    /* CARRUSEL */
+    .carousel {
+      position: relative;
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .slide {
+      width: 100%;
+      display: none;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    /* BOX */
     .box {
       background: white;
       padding: 25px;
@@ -157,16 +165,12 @@
         grid-template-columns: 1fr;
       }
 
-      h1 {
-        font-size: 26px;
+      .hero-title {
+        font-size: 34px;
       }
 
       .container {
         padding: 20px 15px;
-      }
-
-      .hero-title {
-        font-size: 34px;
       }
     }
 
@@ -181,11 +185,12 @@
   <section class="hero">
     <h1 class="hero-title">No es un evento. Es una experiencia curada.</h1>
     <p>Catas, workshops y encuentros en un espacio diseñado para marcas y personas que buscan algo distinto.</p>
+
     <div class="carousel">
-  <img class="slide active" src="Eventflare.jpg" alt="">
-  <img class="slide" src="Eventflare2.jpg" alt="">
-  <img class="slide" src="Eventflare3.jpg" alt="">
-</div>
+      <img class="slide active" src="Eventflare.jpg">
+      <img class="slide" src="Eventflare2.jpg">
+      <img class="slide" src="Eventflare3.jpg">
+    </div>
   </section>
 
   <!-- EXPERIENCIAS -->
@@ -195,7 +200,7 @@
     <div class="grid">
 
       <a class="card" href="evento-vinos.html">
-        <img src="Prueba11.jpg" alt="">
+        <img src="Prueba11.jpg">
         <div class="card-content">
           <h3>Encuentro de Cocina</h3>
           <div class="meta">Jueves 7 de mayo · 16:30 hs</div>
@@ -206,7 +211,7 @@
       </a>
 
       <a class="card" href="evento-cocina.html">
-        <img src="Prueba22.jpg" alt="">
+        <img src="Prueba22.jpg">
         <div class="card-content">
           <h3>Cata de Vinos guiada</h3>
           <div class="meta">Sábado 26 de mayo · 20:30 hs</div>
@@ -217,7 +222,7 @@
       </a>
 
       <a class="card" href="evento-sensorial.html">
-        <img src="Prueba333.jpg" alt="">
+        <img src="Prueba333.jpg">
         <div class="card-content">
           <h3>Taller de Jardinería</h3>
           <div class="meta">Domingo 24 de mayo · 11 hs</div>
@@ -245,6 +250,18 @@
   </footer>
 
 </div>
+
+<!-- CARRUSEL JS -->
+<script>
+  let index = 0;
+  const slides = document.querySelectorAll(".slide");
+
+  setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 3000);
+</script>
 
 </body>
 </html>
