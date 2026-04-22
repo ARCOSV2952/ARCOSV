@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arcos V</title>
 
   <style>
@@ -64,7 +65,7 @@
       text-decoration: none;
       color: inherit;
       background: #fff;
-      border-radius: 12px;
+      border-radius: 14px;
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -134,11 +135,63 @@
       margin-top: 60px;
     }
 
+    /* 📱 MOBILE APP STYLE */
     @media (max-width: 700px) {
+
+      .container {
+        padding: 20px 15px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
       .grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .box {
+        padding: 20px;
+        border-radius: 16px;
+      }
+
+      .card {
+        border-radius: 16px;
+      }
+
+      .card h3 {
+        font-size: 18px;
+      }
+
+      .tag {
+        font-size: 14px;
+      }
+
+      .cta {
+        font-size: 15px;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        padding: 16px;
+      }
+
+      footer {
+        font-size: 14px;
       }
     }
+
   </style>
 </head>
 
@@ -198,12 +251,6 @@
       <a class="btn" href="https://wa.me/5491112345678?text=Hola%20quiero%20info%20para%20proponer%20una%20experiencia%20en%20Arcos%20V">
         Proponer una experiencia
       </a>
-    </section>
-
-    <!-- ESPACIO -->
-    <section class="box">
-      <h2>El espacio</h2>
-      <p>100 m² cubiertos + jardín amplio en Núñez. Un entorno versátil, cálido y pensado para experiencias donde el detalle importa.</p>
     </section>
 
     <footer>
