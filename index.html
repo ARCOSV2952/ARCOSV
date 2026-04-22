@@ -3,59 +3,124 @@
 <head>
   <meta charset="UTF-8">
   <title>Arcos V</title>
+
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f7f7f7;
-      color: #222;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #1a1a1a;
     }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
     h1 {
-      font-size: 36px;
+      font-size: 40px;
+      font-weight: 600;
+      margin-bottom: 10px;
     }
+
     h2 {
-      margin-top: 40px;
+      font-size: 22px;
+      margin-bottom: 10px;
     }
-    .box {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
+
+    p {
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .hero {
+      margin-bottom: 40px;
+    }
+
+    .hero img {
+      width: 100%;
+      border-radius: 12px;
       margin-top: 20px;
     }
+
+    .box {
+      background: white;
+      padding: 28px;
+      border-radius: 14px;
+      margin-top: 25px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
     .btn {
       display: inline-block;
-      padding: 12px 20px;
-      background: black;
+      padding: 14px 22px;
+      background: #111;
       color: white;
       text-decoration: none;
-      border-radius: 6px;
-      margin-top: 10px;
+      border-radius: 8px;
+      margin-top: 15px;
+      font-weight: 500;
+    }
+
+    .btn:hover {
+      opacity: 0.85;
+    }
+
+    .highlight {
+      font-weight: 500;
+      color: #000;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #888;
+      margin-top: 60px;
     }
   </style>
 </head>
+
 <body>
 
-<h1>ARCOS V Espacio</h1>
+  <div class="container">
 
-<p>Un espacio en Núñez para catas, workshops y encuentros de marcas que buscan algo distinto.</p>
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Experiencias que se sienten, no se olvidan</h1>
+      <p>Un espacio en Núñez para catas, workshops y encuentros de marcas que buscan algo distinto.</p>
 
-<div class="box">
-  <h2>Próximas experiencias</h2>
-  <p>Cata de vinos — Próximamente</p>
-  <p>Taller de cocina — Próximamente</p>
-</div>
+      <img src="Eventflare.jpg" alt="Arcos V">
+    </section>
 
-<div class="box">
-  <h2>¿Querés hacer un evento en Arcos V?</h2>
-  <p>No alquilamos el espacio sin criterio. Curamos cada experiencia.</p>
-  <a class="btn" href="https://wa.me/5491112345678?text=Hola%20quiero%20info%20sobre%20Arcos%20V">Escribinos por WhatsApp</a>
-</div>
+    <!-- EXPERIENCIAS -->
+    <section class="box">
+      <h2>Próximas experiencias</h2>
+      <p>Cata de vinos — Próximamente</p>
+      <p>Taller de cocina — Próximamente</p>
+    </section>
 
-<div class="box">
-  <h2>El espacio</h2>
-  <img src="Eventflare.jpg" alt="Arcos V" style="width:100%; border-radius:10px; margin-top:20px;">
-  <p>100 m² cubiertos + jardín amplio en Núñez. Pensado para experiencias donde el detalle importa.</p>
-</div>
+    <!-- PROPUESTA -->
+    <section class="box">
+      <h2>¿Querés hacer un evento en Arcos V?</h2>
+      <p><span class="highlight">No alquilamos el espacio sin criterio.</span> Curamos cada experiencia para que tenga identidad y calidad.</p>
+
+      <a class="btn" href="https://wa.me/5491112345678?text=Hola%20quiero%20info%20sobre%20Arcos%20V">
+        Proponer una experiencia
+      </a>
+    </section>
+
+    <!-- ESPACIO -->
+    <section class="box">
+      <h2>El espacio</h2>
+      <p>100 m² cubiertos + jardín amplio en Núñez. Un entorno versátil, cálido y pensado para experiencias donde el detalle importa.</p>
+    </section>
+
+    <footer>
+      Arcos V · Núñez, CABA
+    </footer>
+
+  </div>
 
 </body>
 </html>
