@@ -62,7 +62,7 @@ body {
   box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
 
-/* ===== FILTROS (tipo Airbnb) ===== */
+/* ===== FILTROS ===== */
 .filters {
   display: flex;
   gap: 10px;
@@ -146,6 +146,18 @@ body {
   text-align: center;
 }
 
+/* ===== BOTONES GRANDES ===== */
+.btn {
+  display: block;
+  padding: 16px;
+  background: #111;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width:700px){
   .grid {
@@ -187,7 +199,6 @@ footer {
 <section class="box">
 <h2>Eventos</h2>
 
-<!-- FILTROS -->
 <div class="filters">
   <div class="filter-btn active" onclick="filter('all')">Todos</div>
   <div class="filter-btn" onclick="filter('cata')">Catas</div>
@@ -230,6 +241,30 @@ footer {
 </div>
 </section>
 
+<!-- EXPERIENCIAS (DEMANDA) -->
+<section class="box">
+  <h2>Proponer una experiencia</h2>
+  <p>¿Te gustaría que pase algo en Arcos V o querés organizarlo vos?</p>
+
+  <a class="btn" href="LINK_FORM_EXPERIENCIAS" target="_blank">
+    💡 Proponer o pedir una experiencia
+  </a>
+</section>
+
+<!-- ALQUILER CURADO -->
+<section class="box">
+  <h2>Aplicar para usar Arcos V</h2>
+  <p>
+    Espacio pensado para eventos corporativos, experiencias de marca y propuestas curadas.
+    <br>
+    Seleccionamos proyectos que buscan crear encuentros con identidad.
+  </p>
+
+  <a class="btn" href="LINK_FORM_ALQUILER" target="_blank">
+    🏡 Presentar proyecto
+  </a>
+</section>
+
 <!-- FOOTER -->
 <footer>
 Arcos V · Núñez, CABA  
@@ -239,7 +274,6 @@ Eventos curados · Comunidad · Experiencias
 
 </div>
 
-<!-- JS -->
 <script>
 let index = 0;
 const slides = document.querySelectorAll(".slide");
@@ -250,7 +284,6 @@ setInterval(() => {
   slides[index].classList.add("active");
 }, 3500);
 
-/* FILTRO */
 function filter(cat){
   const cards = document.querySelectorAll(".card");
   document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
