@@ -101,15 +101,18 @@
 
     /* Tarjeta de evento */
     .card {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      background: #fff;
-      border-radius: 14px;
-      overflow: hidden;
-      transition: 0.3s;
-      border: 1px solid rgba(0,0,0,0.05);
-    }
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* 🔥 clave */
+
+  text-decoration: none;
+  color: inherit;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: 0.3s;
+  border: 1px solid rgba(0,0,0,0.05);
+}
 
     /* Hover en desktop */
     .card:hover {
