@@ -6,12 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arcos V</title>
 
-<!-- GOOGLE FONTS (toque premium) -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
-/* ===== BASE ===== */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -30,7 +28,7 @@ p {
   color: #444;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero {
   margin-bottom: 40px;
 }
@@ -42,7 +40,7 @@ p {
   margin: 0;
 }
 
-/* ===== CARRUSEL ===== */
+/* CARRUSEL */
 .carousel {
   position: relative;
   border-radius: 14px;
@@ -87,7 +85,7 @@ p {
   opacity: 1;
 }
 
-/* ===== BOX ===== */
+/* BOX */
 .box {
   background: #fff;
   padding: 30px;
@@ -96,7 +94,7 @@ p {
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* ===== FILTROS STICKY ===== */
+/* FILTROS */
 .filters {
   display: flex;
   gap: 10px;
@@ -116,6 +114,11 @@ p {
   background: white;
   cursor: pointer;
   font-size: 13px;
+  transition: 0.2s;
+}
+
+.filter-btn:hover {
+  background: #f0f0f0;
 }
 
 .filter-btn.active {
@@ -123,14 +126,14 @@ p {
   color: white;
 }
 
-/* ===== GRID ===== */
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
 }
 
-/* ===== CARD ===== */
+/* CARD */
 .card {
   display: flex;
   flex-direction: column;
@@ -174,7 +177,6 @@ p {
   margin-top: 5px;
 }
 
-/* CTA */
 .cta {
   margin-top: auto;
   padding: 10px;
@@ -200,14 +202,12 @@ p {
   border-radius: 10px;
   margin-top: 15px;
   text-decoration: none;
-  transition: 0.2s;
 }
 
 .btn:hover {
   background: #333;
 }
 
-/* BOTÓN SECUNDARIO */
 .btn-outline {
   background: transparent;
   border: 1px solid #111;
@@ -219,7 +219,7 @@ p {
   color: white;
 }
 
-/* ===== RESPONSIVE ===== */
+/* RESPONSIVE */
 @media (max-width:700px){
   .grid {
     grid-template-columns: 1fr 1fr;
@@ -229,7 +229,7 @@ p {
   }
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer {
   text-align: center;
   margin-top: 60px;
@@ -259,17 +259,7 @@ footer {
   <div class="dot" onclick="goTo(1)"></div>
   <div class="dot" onclick="goTo(2)"></div>
 </div>
-
 </div>
-</section>
-
-<!-- QUIÉNES SOMOS -->
-<section class="box">
-<h2>Sobre Arcos V</h2>
-<p>Un espacio en Núñez pensado para encuentros con intención: experiencias de marca, talleres y eventos corporativos en un entorno cuidado y flexible.</p>
-<p>
-<a href="https://maps.google.com/?q=Núñez+CABA" target="_blank">Ver ubicación</a>
-</p>
 </section>
 
 <!-- EVENTOS -->
@@ -277,10 +267,10 @@ footer {
 <h2>Eventos</h2>
 
 <div class="filters">
-  <div class="filter-btn active" onclick="filter('all')">Todos</div>
-  <div class="filter-btn" onclick="filter('cata')">Catas</div>
-  <div class="filter-btn" onclick="filter('taller')">Talleres</div>
-  <div class="filter-btn" onclick="filter('gratis')">Gratis</div>
+  <div class="filter-btn active" onclick="filter('all', this)">Todos</div>
+  <div class="filter-btn" onclick="filter('cata', this)">Catas</div>
+  <div class="filter-btn" onclick="filter('taller', this)">Talleres</div>
+  <div class="filter-btn" onclick="filter('gratis', this)">Gratis</div>
 </div>
 
 <div class="grid">
@@ -318,34 +308,9 @@ footer {
 </div>
 </section>
 
-<!-- EXPERIENCIAS -->
-<section class="box">
-<h2>Proponer una experiencia</h2>
-<p>¿Te gustaría que pase algo en Arcos V o querés organizarlo vos?</p>
-
-<a class="btn" href="LINK_FORM_EXPERIENCIAS" target="_blank">
-💡 Proponer o pedir una experiencia
-</a>
-</section>
-
-<!-- ALQUILER -->
-<section class="box">
-<h2>Aplicar para usar Arcos V</h2>
-<p>Espacio pensado para eventos corporativos, experiencias de marca y propuestas curadas.</p>
-
-<a class="btn btn-outline" href="LINK_FORM_ALQUILER" target="_blank">
-🏡 Presentar proyecto
-</a>
-</section>
-
-<!-- FOOTER -->
 <footer>
 <p><strong>Arcos V</strong> · Núñez, CABA</p>
 <p>Experiencias curadas para marcas y personas</p>
-<p>
-<a href="https://instagram.com/arcosv.ba">Instagram</a> ·
-<a href="https://wa.me/5491162834000">WhatsApp</a>
-</p>
 </footer>
 
 </div>
@@ -373,16 +338,19 @@ setInterval(()=>{
   showSlide(index);
 },3500);
 
-function filter(cat){
+/* FILTRO CORRECTO */
+function filter(cat, element){
   const cards = document.querySelectorAll(".card");
-  document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
-  event.target.classList.add("active");
+  const buttons = document.querySelectorAll(".filter-btn");
+
+  buttons.forEach(btn => btn.classList.remove("active"));
+  element.classList.add("active");
 
   cards.forEach(card=>{
-    if(cat==="all" || card.dataset.cat.includes(cat)){
-      card.style.display="flex";
+    if(cat === "all" || card.dataset.cat.includes(cat)){
+      card.style.display = "flex";
     } else {
-      card.style.display="none";
+      card.style.display = "none";
     }
   });
 }
