@@ -29,15 +29,9 @@ p {
 }
 
 /* HERO */
-.hero {
-  margin-bottom: 40px;
-}
-
 .hero-title {
   font-family: 'Playfair Display', serif;
   font-size: 46px;
-  line-height: 1.2;
-  margin: 0;
 }
 
 /* CARRUSEL */
@@ -58,9 +52,7 @@ p {
   transition: opacity 0.8s ease;
 }
 
-.slide.active {
-  opacity: 1;
-}
+.slide.active { opacity: 1; }
 
 /* DOTS */
 .dots {
@@ -81,9 +73,7 @@ p {
   cursor: pointer;
 }
 
-.dot.active {
-  opacity: 1;
-}
+.dot.active { opacity: 1; }
 
 /* BOX */
 .box {
@@ -104,21 +94,13 @@ p {
   top: 0;
   background: white;
   padding: 10px 0;
-  z-index: 10;
 }
 
 .filter-btn {
   padding: 8px 14px;
   border-radius: 20px;
   border: 1px solid #ddd;
-  background: white;
   cursor: pointer;
-  font-size: 13px;
-  transition: 0.2s;
-}
-
-.filter-btn:hover {
-  background: #f0f0f0;
 }
 
 .filter-btn.active {
@@ -141,7 +123,7 @@ p {
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
 .card:hover {
@@ -162,21 +144,6 @@ p {
   flex: 1;
 }
 
-.card h3 {
-  margin: 0;
-  font-size: 18px;
-}
-
-.meta {
-  font-size: 14px;
-  color: #666;
-}
-
-.price {
-  font-weight: 600;
-  margin-top: 5px;
-}
-
 .cta {
   margin-top: auto;
   padding: 10px;
@@ -185,11 +152,6 @@ p {
   border-radius: 8px;
   text-decoration: none;
   text-align: center;
-  transition: 0.2s;
-}
-
-.cta:hover {
-  background: #333;
 }
 
 /* BOTONES */
@@ -204,29 +166,15 @@ p {
   text-decoration: none;
 }
 
-.btn:hover {
-  background: #333;
-}
-
 .btn-outline {
   background: transparent;
   border: 1px solid #111;
   color: #111;
 }
 
-.btn-outline:hover {
-  background: #111;
-  color: white;
-}
-
 /* RESPONSIVE */
 @media (max-width:700px){
-  .grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .hero-title {
-    font-size: 34px;
-  }
+  .grid { grid-template-columns: 1fr 1fr; }
 }
 
 /* FOOTER */
@@ -245,7 +193,7 @@ footer {
 <div class="container">
 
 <!-- HERO -->
-<section class="hero">
+<section>
 <h1 class="hero-title">No es un evento. Es una experiencia curada.</h1>
 <p>Catas, workshops y encuentros en un espacio diseñado para marcas y personas que buscan algo distinto.</p>
 
@@ -262,6 +210,18 @@ footer {
 </div>
 </section>
 
+<!-- SOBRE -->
+<section class="box">
+<h2>Sobre Arcos V</h2>
+<p>Un espacio en Núñez pensado para encuentros con intención: experiencias de marca, talleres y eventos corporativos en un entorno cuidado y flexible.</p>
+
+<p>
+<a href="https://maps.google.com/?q=Núñez+CABA" target="_blank">
+📍 Ver ubicación
+</a>
+</p>
+</section>
+
 <!-- EVENTOS -->
 <section class="box">
 <h2>Eventos</h2>
@@ -270,17 +230,14 @@ footer {
   <div class="filter-btn active" onclick="filter('all', this)">Todos</div>
   <div class="filter-btn" onclick="filter('cata', this)">Catas</div>
   <div class="filter-btn" onclick="filter('taller', this)">Talleres</div>
-  <div class="filter-btn" onclick="filter('gratis', this)">Gratis</div>
 </div>
 
 <div class="grid">
 
-<div class="card" data-cat="taller gratis">
+<div class="card" data-cat="taller">
 <img src="Prueba11.jpg">
 <div class="card-content">
 <h3>Encuentro de Cocina</h3>
-<div class="meta">7 mayo · 16:30</div>
-<div class="price">Sin cargo</div>
 <a class="cta" href="#">Consultar</a>
 </div>
 </div>
@@ -289,8 +246,6 @@ footer {
 <img src="Prueba22.jpg">
 <div class="card-content">
 <h3>Cata de vinos</h3>
-<div class="meta">26 mayo · 20:30</div>
-<div class="price">$60.000</div>
 <a class="cta" href="#">Consultar</a>
 </div>
 </div>
@@ -299,8 +254,6 @@ footer {
 <img src="Prueba333.jpg">
 <div class="card-content">
 <h3>Taller de Jardinería</h3>
-<div class="meta">24 mayo · 11:00</div>
-<div class="price">$6.000</div>
 <a class="cta" href="#">Reservar</a>
 </div>
 </div>
@@ -308,9 +261,34 @@ footer {
 </div>
 </section>
 
+<!-- FORM EXPERIENCIAS -->
+<section class="box">
+<h2>Proponer una experiencia</h2>
+<p>¿Te gustaría que pase algo en Arcos V o querés organizarlo vos?</p>
+
+<a class="btn" href="LINK_FORM_EXPERIENCIAS" target="_blank">
+💡 Proponer o pedir una experiencia
+</a>
+</section>
+
+<!-- FORM ALQUILER -->
+<section class="box">
+<h2>Aplicar para usar Arcos V</h2>
+<p>Eventos corporativos, experiencias de marca y propuestas curadas.</p>
+
+<a class="btn btn-outline" href="LINK_FORM_ALQUILER" target="_blank">
+🏡 Presentar proyecto
+</a>
+</section>
+
+<!-- FOOTER -->
 <footer>
 <p><strong>Arcos V</strong> · Núñez, CABA</p>
 <p>Experiencias curadas para marcas y personas</p>
+<p>
+<a href="https://instagram.com/arcosv.ba">Instagram</a> ·
+<a href="https://wa.me/5491162834000">WhatsApp</a>
+</p>
 </footer>
 
 </div>
@@ -338,19 +316,16 @@ setInterval(()=>{
   showSlide(index);
 },3500);
 
-/* FILTRO CORRECTO */
 function filter(cat, element){
   const cards = document.querySelectorAll(".card");
-  const buttons = document.querySelectorAll(".filter-btn");
-
-  buttons.forEach(btn => btn.classList.remove("active"));
+  document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
   element.classList.add("active");
 
   cards.forEach(card=>{
-    if(cat === "all" || card.dataset.cat.includes(cat)){
-      card.style.display = "flex";
+    if(cat==="all" || card.dataset.cat.includes(cat)){
+      card.style.display="flex";
     } else {
-      card.style.display = "none";
+      card.style.display="none";
     }
   });
 }
