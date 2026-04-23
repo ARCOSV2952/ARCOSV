@@ -26,7 +26,7 @@
       color: #444;
     }
 
-    /* HERO TITLE */
+    /* HERO */
     .hero-title {
       font-weight: 200;
       font-size: 44px;
@@ -47,31 +47,28 @@
     }
 
     .carousel {
-  position: relative;
-  width: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-top: 20px;
+      position: relative;
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 20px;
+      aspect-ratio: 16 / 9;
+    }
 
-  aspect-ratio: 16 / 9; /* 🔥 clave para desktop */
-}
+    .slide {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
 
-.slide {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  object-fit: cover;
-
-  opacity: 0;
-  transition: opacity 0.8s ease;
-}
-
-.slide.active {
-  opacity: 1;
-}
+    .slide.active {
+      opacity: 1;
+    }
 
     /* BOX */
     .box {
@@ -88,7 +85,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 20px;
-      margin-top: 20px;
+      margin-top: 15px;
     }
 
     .card {
@@ -167,7 +164,16 @@
 
     @media (max-width: 700px) {
       .grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .card h3 {
+        font-size: 14px;
+      }
+
+      .meta, .price, .urgency {
+        font-size: 12px;
       }
 
       .hero-title {
@@ -198,22 +204,10 @@
     </div>
   </section>
 
-  <!-- EXPERIENCIAS -->
+  <!-- EVENTOS -->
   <section class="box">
-    <h2>Explorá las experiencias</h2>
-<section class="box">
-  <h2>Comunidad Arcos V</h2>
-  <p>Conectá con otras personas o ayudanos a diseñar nuevas experiencias.</p>
+    <h2>Eventos</h2>
 
-  <a class="btn" href="https://forms.gle/XXXXX" target="_blank">
-    🔍 Buscar compañero / socio
-  </a>
-
-  <a class="btn" href="https://forms.gle/YYYYY" target="_blank" style="margin-top:10px;">
-   https://docs.google.com/forms/d/e/1FAIpQLSdBy8Rv4UDLXrcXPwvrxai6eKCy3fMwW9ISSa0YDhhhGcAedQ/viewform?usp=publish-editor
-    💡 Proponer una nueva experiencia
-  </a>
-</section>
     <div class="grid">
 
       <a class="card" href="evento-vinos.html">
@@ -252,6 +246,26 @@
     </div>
   </section>
 
+  <!-- EXPLORAR EXPERIENCIAS (CONVERTIDO EN SECCIÓN REAL) -->
+  <section class="box">
+    <h2>Explorá las experiencias</h2>
+    <p>Descubrí nuevas formas de vivir Arcos V. Cada experiencia está curada con identidad propia.</p>
+  </section>
+
+  <!-- COMUNIDAD -->
+  <section class="box">
+    <h2>Comunidad Arcos V</h2>
+    <p>Conectá con otras personas o proponé nuevas experiencias.</p>
+
+    <a class="btn" href="https://forms.gle/XXXXX" target="_blank">
+      🔍 Buscar compañero / socio
+    </a>
+
+    <a class="btn" href="https://forms.gle/YYYYY" target="_blank" style="margin-top:10px;">
+      💡 Proponer experiencia
+    </a>
+  </section>
+
   <!-- PROPUESTA -->
   <section class="box">
     <h2>¿Querés crear algo en Arcos V?</h2>
@@ -268,7 +282,7 @@
 
 </div>
 
-<!-- CARRUSEL JS -->
+<!-- CARRUSEL -->
 <script>
   let index = 0;
   const slides = document.querySelectorAll(".slide");
