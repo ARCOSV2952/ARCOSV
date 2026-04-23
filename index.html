@@ -6,35 +6,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arcos V</title>
 
+<!-- GOOGLE FONTS (toque premium) -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 
 /* ===== BASE ===== */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: #f5f5f5;
   color: #1a1a1a;
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
-  padding: 30px 20px;
+  padding: 40px 20px;
+}
+
+p {
+  line-height: 1.6;
+  color: #444;
 }
 
 /* ===== HERO ===== */
+.hero {
+  margin-bottom: 40px;
+}
+
 .hero-title {
-  font-weight: 200;
-  font-size: 44px;
-  line-height: 1.15;
-  letter-spacing: -0.8px;
+  font-family: 'Playfair Display', serif;
+  font-size: 46px;
+  line-height: 1.2;
+  margin: 0;
 }
 
 /* ===== CARRUSEL ===== */
 .carousel {
   position: relative;
-  width: 100%;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
   margin-top: 20px;
   aspect-ratio: 16/9;
@@ -53,21 +64,49 @@ body {
   opacity: 1;
 }
 
+/* DOTS */
+.dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: white;
+  opacity: 0.5;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  opacity: 1;
+}
+
 /* ===== BOX ===== */
 .box {
   background: #fff;
-  padding: 25px;
+  padding: 30px;
   border-radius: 14px;
-  margin-top: 25px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  margin-top: 35px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* ===== FILTROS ===== */
+/* ===== FILTROS STICKY ===== */
 .filters {
   display: flex;
   gap: 10px;
   overflow-x: auto;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 10px 0;
+  z-index: 10;
 }
 
 .filter-btn {
@@ -95,17 +134,16 @@ body {
 .card {
   display: flex;
   flex-direction: column;
-  height: 100%;
   background: #fff;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid rgba(0,0,0,0.05);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: all 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
 }
 
 .card img {
@@ -136,6 +174,7 @@ body {
   margin-top: 5px;
 }
 
+/* CTA */
 .cta {
   margin-top: auto;
   padding: 10px;
@@ -144,18 +183,40 @@ body {
   border-radius: 8px;
   text-decoration: none;
   text-align: center;
+  transition: 0.2s;
 }
 
-/* ===== BOTONES GRANDES ===== */
+.cta:hover {
+  background: #333;
+}
+
+/* BOTONES */
 .btn {
   display: block;
   padding: 16px;
   background: #111;
   color: white;
   text-align: center;
-  text-decoration: none;
   border-radius: 10px;
   margin-top: 15px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #333;
+}
+
+/* BOTÓN SECUNDARIO */
+.btn-outline {
+  background: transparent;
+  border: 1px solid #111;
+  color: #111;
+}
+
+.btn-outline:hover {
+  background: #111;
+  color: white;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -164,7 +225,7 @@ body {
     grid-template-columns: 1fr 1fr;
   }
   .hero-title {
-    font-size: 32px;
+    font-size: 34px;
   }
 }
 
@@ -184,7 +245,7 @@ footer {
 <div class="container">
 
 <!-- HERO -->
-<section>
+<section class="hero">
 <h1 class="hero-title">No es un evento. Es una experiencia curada.</h1>
 <p>Catas, workshops y encuentros en un espacio diseñado para marcas y personas que buscan algo distinto.</p>
 
@@ -192,7 +253,23 @@ footer {
 <img class="slide active" src="Eventflare.jpg">
 <img class="slide" src="Eventflare2.jpg">
 <img class="slide" src="Eventflare3.jpg">
+
+<div class="dots">
+  <div class="dot active" onclick="goTo(0)"></div>
+  <div class="dot" onclick="goTo(1)"></div>
+  <div class="dot" onclick="goTo(2)"></div>
 </div>
+
+</div>
+</section>
+
+<!-- QUIÉNES SOMOS -->
+<section class="box">
+<h2>Sobre Arcos V</h2>
+<p>Un espacio en Núñez pensado para encuentros con intención: experiencias de marca, talleres y eventos corporativos en un entorno cuidado y flexible.</p>
+<p>
+<a href="https://maps.google.com/?q=Núñez+CABA" target="_blank">Ver ubicación</a>
+</p>
 </section>
 
 <!-- EVENTOS -->
@@ -206,7 +283,7 @@ footer {
   <div class="filter-btn" onclick="filter('gratis')">Gratis</div>
 </div>
 
-<div class="grid" id="grid">
+<div class="grid">
 
 <div class="card" data-cat="taller gratis">
 <img src="Prueba11.jpg">
@@ -241,55 +318,60 @@ footer {
 </div>
 </section>
 
-<!-- EXPERIENCIAS (DEMANDA) -->
+<!-- EXPERIENCIAS -->
 <section class="box">
-  <h2>Proponer una experiencia</h2>
-  <p>¿Te gustaría que pase algo en Arcos V o querés organizarlo vos?</p>
+<h2>Proponer una experiencia</h2>
+<p>¿Te gustaría que pase algo en Arcos V o querés organizarlo vos?</p>
 
-  <a class="btn" href="LINK_FORM_EXPERIENCIAS" target="_blank">
-    💡 Proponer o pedir una experiencia
-  </a>
+<a class="btn" href="LINK_FORM_EXPERIENCIAS" target="_blank">
+💡 Proponer o pedir una experiencia
+</a>
 </section>
 
-<!-- ALQUILER CURADO -->
+<!-- ALQUILER -->
 <section class="box">
-  <h2>Aplicar para usar Arcos V</h2>
-  <p>
-    Espacio pensado para eventos corporativos, experiencias de marca y propuestas curadas.
-    <br>
-    Seleccionamos proyectos que buscan crear encuentros con identidad.
-  </p>
+<h2>Aplicar para usar Arcos V</h2>
+<p>Espacio pensado para eventos corporativos, experiencias de marca y propuestas curadas.</p>
 
-  <a class="btn" href="LINK_FORM_ALQUILER" target="_blank">
-    🏡 Presentar proyecto
-  </a>
+<a class="btn btn-outline" href="LINK_FORM_ALQUILER" target="_blank">
+🏡 Presentar proyecto
+</a>
 </section>
 
 <!-- FOOTER -->
 <footer>
-
-  <p><strong>Arcos V</strong> · Núñez, CABA</p>
-
-  <p>Experiencias curadas para marcas y personas</p>
-
-  <p>
-    <a href="https://instagram.com/arcosv.ba">Instagram</a> ·
-    <a href="https://wa.me/5491162834000">WhatsApp</a>
-  </p>
-
+<p><strong>Arcos V</strong> · Núñez, CABA</p>
+<p>Experiencias curadas para marcas y personas</p>
+<p>
+<a href="https://instagram.com/arcosv.ba">Instagram</a> ·
+<a href="https://wa.me/5491162834000">WhatsApp</a>
+</p>
 </footer>
 
 </div>
 
 <script>
+
 let index = 0;
 const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
 
-setInterval(() => {
-  slides[index].classList.remove("active");
-  index = (index + 1) % slides.length;
-  slides[index].classList.add("active");
-}, 3500);
+function showSlide(i){
+  slides.forEach(s=>s.classList.remove("active"));
+  dots.forEach(d=>d.classList.remove("active"));
+  slides[i].classList.add("active");
+  dots[i].classList.add("active");
+  index = i;
+}
+
+function goTo(i){
+  showSlide(i);
+}
+
+setInterval(()=>{
+  index = (index+1)%slides.length;
+  showSlide(index);
+},3500);
 
 function filter(cat){
   const cards = document.querySelectorAll(".card");
@@ -304,6 +386,7 @@ function filter(cat){
     }
   });
 }
+
 </script>
 
 </body>
