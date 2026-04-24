@@ -115,7 +115,7 @@ p {
   gap: 20px;
 }
 
-/* CARD (clickeable completa) */
+/* CARD (link completo) */
 .card {
   display: block;
   text-decoration: none;
@@ -152,7 +152,7 @@ p {
   font-size: 13px;
 }
 
-/* GALERÍA (secundaria, más chica) */
+/* GALERÍA */
 .gallery {
   display: flex;
   gap: 10px;
@@ -185,6 +185,24 @@ p {
 #lightbox img {
   max-width: 90%;
   max-height: 90%;
+}
+
+/* BOTONES */
+.btn {
+  display: block;
+  padding: 16px;
+  background: #111;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 15px;
+  text-decoration: none;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #111;
+  color: #111;
 }
 
 /* RESPONSIVE */
@@ -226,19 +244,25 @@ footer {
 </div>
 </section>
 
-<!-- EL ESPACIO (ARREGLADO) -->
+<!-- EL ESPACIO -->
 <section class="box">
 <h2>El espacio</h2>
-<p>
-Un jardín amplio combinado con interiores cálidos y versátiles. Ideal para experiencias de marca,
-encuentros corporativos y eventos curados.
-</p>
+<p>Un jardín amplio combinado con interiores cálidos y versátiles. Ideal para experiencias de marca y eventos corporativos.</p>
 
 <div class="gallery">
   <img src="Eventflare.jpg" onclick="openLightbox(this.src)">
   <img src="Eventflare2.jpg" onclick="openLightbox(this.src)">
   <img src="Eventflare3.jpg" onclick="openLightbox(this.src)">
 </div>
+</section>
+
+<!-- UBICACIÓN -->
+<section class="box">
+<h2>Ubicación</h2>
+<p>📍 Núñez, CABA</p>
+<a href="https://maps.app.goo.gl/5RnXTrncQUvGaQo28" target="_blank">
+Ver en Google Maps →
+</a>
 </section>
 
 <!-- EVENTOS -->
@@ -280,10 +304,30 @@ encuentros corporativos y eventos curados.
 </div>
 </section>
 
+<!-- FORM EXPERIENCIAS -->
+<section class="box">
+<h2>Proponer una experiencia</h2>
+<a class="btn" href="LINK_FORM_EXPERIENCIAS" target="_blank">
+💡 Proponer o pedir experiencia
+</a>
+</section>
+
+<!-- FORM ALQUILER -->
+<section class="box">
+<h2>Aplicar para usar Arcos V</h2>
+<a class="btn btn-outline" href="LINK_FORM_ALQUILER" target="_blank">
+🏡 Presentar proyecto
+</a>
+</section>
+
 <!-- FOOTER -->
 <footer>
 <p><strong>Arcos V</strong> · Núñez, CABA</p>
 <p>Experiencias curadas para marcas y personas</p>
+<p>
+<a href="https://instagram.com/arcosv.ba" target="_blank">Instagram</a> ·
+<a href="https://wa.me/5491162834000" target="_blank">WhatsApp</a>
+</p>
 </footer>
 
 </div>
