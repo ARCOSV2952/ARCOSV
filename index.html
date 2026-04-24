@@ -115,15 +115,16 @@ p {
   gap: 20px;
 }
 
-/* CARD */
+/* CARD (clickeable completa) */
 .card {
-  display: flex;
-  flex-direction: column;
-  background: #fff;
+  display: block;
+  text-decoration: none;
+  color: inherit;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid rgba(0,0,0,0.05);
   transition: 0.3s;
+  background: white;
 }
 
 .card:hover {
@@ -139,59 +140,32 @@ p {
 
 .card-content {
   padding: 15px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
 }
 
 .cta {
-  margin-top: auto;
-  padding: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  padding: 8px 12px;
   background: #111;
   color: white;
   border-radius: 8px;
-  text-decoration: none;
-  text-align: center;
+  font-size: 13px;
 }
 
-/* BOTONES */
-.btn {
-  display: block;
-  padding: 16px;
-  background: #111;
-  color: white;
-  text-align: center;
-  border-radius: 10px;
-  margin-top: 15px;
-  text-decoration: none;
-}
-
-.btn-outline {
-  background: transparent;
-  border: 1px solid #111;
-  color: #111;
-}
-
-/* ===== GALERÍA ===== */
+/* GALERÍA (secundaria, más chica) */
 .gallery {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  display: flex;
   gap: 10px;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .gallery img {
   width: 100%;
-  height: 100%;
+  max-width: 180px;
+  height: 120px;
   object-fit: cover;
   border-radius: 10px;
   cursor: pointer;
-}
-
-.side-imgs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
 }
 
 /* LIGHTBOX */
@@ -211,13 +185,12 @@ p {
 #lightbox img {
   max-width: 90%;
   max-height: 90%;
-  border-radius: 10px;
 }
 
 /* RESPONSIVE */
 @media (max-width:700px){
   .grid { grid-template-columns: 1fr 1fr; }
-  .gallery { grid-template-columns: 1fr; }
+  .gallery { flex-wrap: wrap; }
 }
 
 /* FOOTER */
@@ -238,7 +211,7 @@ footer {
 <!-- HERO -->
 <section>
 <h1 class="hero-title">ARCOS V Espacio boutique para eventos</h1>
-<p>Bienvenidos a nuestra cartelera. Catas, talleres y encuentros en un espacio diseñado para marcas y personas.</p>
+<p>Catas, talleres y encuentros en un espacio diseñado para marcas y personas.</p>
 
 <div class="carousel">
 <img class="slide active" src="Eventflare.jpg">
@@ -253,34 +226,19 @@ footer {
 </div>
 </section>
 
-<!-- GALERÍA VISUAL -->
+<!-- EL ESPACIO (ARREGLADO) -->
 <section class="box">
 <h2>El espacio</h2>
+<p>
+Un jardín amplio combinado con interiores cálidos y versátiles. Ideal para experiencias de marca,
+encuentros corporativos y eventos curados.
+</p>
 
 <div class="gallery">
   <img src="Eventflare.jpg" onclick="openLightbox(this.src)">
-  
-  <div class="side-imgs">
-    <img src="Eventflare2.jpg" onclick="openLightbox(this.src)">
-    <img src="Eventflare3.jpg" onclick="openLightbox(this.src)">
-    <img src="Prueba11.jpg" onclick="openLightbox(this.src)">
-    <img src="Prueba22.jpg" onclick="openLightbox(this.src)">
-  </div>
+  <img src="Eventflare2.jpg" onclick="openLightbox(this.src)">
+  <img src="Eventflare3.jpg" onclick="openLightbox(this.src)">
 </div>
-</section>
-
-<!-- SOBRE -->
-<section class="box">
-<h2>Sobre Arcos V</h2>
-<p>Un espacio en Núñez pensado para encuentros con intención: experiencias de marca, talleres y eventos corporativos.</p>
-
-<p>
-📍 Núñez, CABA  
-<br>
-<a href="https://maps.app.goo.gl/5RnXTrncQUvGaQo28" target="_blank">
-Ver en Google Maps →
-</a>
-</p>
 </section>
 
 <!-- EVENTOS -->
@@ -295,43 +253,31 @@ Ver en Google Maps →
 
 <div class="grid">
 
-<div class="card" data-cat="taller">
+<a href="evento-cocina.html" class="card" data-cat="taller">
 <img src="Prueba11.jpg">
 <div class="card-content">
 <h3>Encuentro de Cocina</h3>
-<a class="cta" href="#">Consultar</a>
+<div class="cta">Ver más</div>
 </div>
-</div>
+</a>
 
-<div class="card" data-cat="cata">
+<a href="evento-vinos.html" class="card" data-cat="cata">
 <img src="Prueba22.jpg">
 <div class="card-content">
 <h3>Cata de vinos</h3>
-<a class="cta" href="#">Consultar</a>
+<div class="cta">Ver más</div>
 </div>
-</div>
+</a>
 
-<div class="card" data-cat="taller">
+<a href="evento-jardineria.html" class="card" data-cat="taller">
 <img src="Prueba333.jpg">
 <div class="card-content">
 <h3>Taller de Jardinería</h3>
-<a class="cta" href="#">Reservar</a>
+<div class="cta">Ver más</div>
 </div>
-</div>
+</a>
 
 </div>
-</section>
-
-<!-- FORM EXPERIENCIAS -->
-<section class="box">
-<h2>Proponer una experiencia</h2>
-<a class="btn" href="#">💡 Proponer</a>
-</section>
-
-<!-- FORM ALQUILER -->
-<section class="box">
-<h2>Aplicar para usar Arcos V</h2>
-<a class="btn btn-outline" href="#">🏡 Presentar proyecto</a>
 </section>
 
 <!-- FOOTER -->
@@ -376,7 +322,7 @@ function filter(cat, element){
   element.classList.add("active");
 
   cards.forEach(card=>{
-    card.style.display = (cat==="all" || card.dataset.cat.includes(cat)) ? "flex" : "none";
+    card.style.display = (cat==="all" || card.dataset.cat.includes(cat)) ? "block" : "none";
   });
 }
 
