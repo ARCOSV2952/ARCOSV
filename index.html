@@ -172,9 +172,52 @@ p {
   color: #111;
 }
 
+/* ===== GALERÍA ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.side-imgs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* LIGHTBOX */
+#lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
 /* RESPONSIVE */
 @media (max-width:700px){
   .grid { grid-template-columns: 1fr 1fr; }
+  .gallery { grid-template-columns: 1fr; }
 }
 
 /* FOOTER */
@@ -195,7 +238,7 @@ footer {
 <!-- HERO -->
 <section>
 <h1 class="hero-title">ARCOS V Espacio boutique para eventos</h1>
-<p>Bienvenidos a nuestra cartelera! Acá vas a encontrar todo lo que venís a buscar: Catas, talleres y encuentros en un espacio diseñado para marcas y personas</p>
+<p>Bienvenidos a nuestra cartelera. Catas, talleres y encuentros en un espacio diseñado para marcas y personas.</p>
 
 <div class="carousel">
 <img class="slide active" src="Eventflare.jpg">
@@ -210,16 +253,32 @@ footer {
 </div>
 </section>
 
+<!-- GALERÍA VISUAL -->
+<section class="box">
+<h2>El espacio</h2>
+
+<div class="gallery">
+  <img src="Eventflare.jpg" onclick="openLightbox(this.src)">
+  
+  <div class="side-imgs">
+    <img src="Eventflare2.jpg" onclick="openLightbox(this.src)">
+    <img src="Eventflare3.jpg" onclick="openLightbox(this.src)">
+    <img src="Prueba11.jpg" onclick="openLightbox(this.src)">
+    <img src="Prueba22.jpg" onclick="openLightbox(this.src)">
+  </div>
+</div>
+</section>
+
 <!-- SOBRE -->
 <section class="box">
 <h2>Sobre Arcos V</h2>
-<p>Un espacio en Núñez pensado para encuentros con intención: experiencias de marca, talleres y eventos corporativos en un entorno cuidado y flexible.</p>
+<p>Un espacio en Núñez pensado para encuentros con intención: experiencias de marca, talleres y eventos corporativos.</p>
 
 <p>
 📍 Núñez, CABA  
 <br>
-<a href="https://maps.app.goo.gl/5RnXTrncQUvGaQo28" target="_blank" rel="noopener noreferrer">
-  📍 Ver en Google Maps →
+<a href="https://maps.app.goo.gl/5RnXTrncQUvGaQo28" target="_blank">
+Ver en Google Maps →
 </a>
 </p>
 </section>
@@ -266,33 +325,26 @@ footer {
 <!-- FORM EXPERIENCIAS -->
 <section class="box">
 <h2>Proponer una experiencia</h2>
-<p>¿Te gustaría que pase algo en Arcos V o querés organizarlo vos?</p>
-
-<a class="btn" href="LINK_FORM_EXPERIENCIAS" target="_blank">
-💡 Proponer o pedir una experiencia
-</a>
+<a class="btn" href="#">💡 Proponer</a>
 </section>
 
 <!-- FORM ALQUILER -->
 <section class="box">
 <h2>Aplicar para usar Arcos V</h2>
-<p>Eventos corporativos, experiencias de marca y propuestas curadas.</p>
-
-<a class="btn btn-outline" href="LINK_FORM_ALQUILER" target="_blank">
-🏡 Presentar proyecto
-</a>
+<a class="btn btn-outline" href="#">🏡 Presentar proyecto</a>
 </section>
 
 <!-- FOOTER -->
 <footer>
 <p><strong>Arcos V</strong> · Núñez, CABA</p>
 <p>Experiencias curadas para marcas y personas</p>
-<p>
-<a href="https://instagram.com/arcosv.ba">Instagram</a> ·
-<a href="https://wa.me/5491162834000">WhatsApp</a>
-</p>
 </footer>
 
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
 </div>
 
 <script>
@@ -324,12 +376,17 @@ function filter(cat, element){
   element.classList.add("active");
 
   cards.forEach(card=>{
-    if(cat==="all" || card.dataset.cat.includes(cat)){
-      card.style.display="flex";
-    } else {
-      card.style.display="none";
-    }
+    card.style.display = (cat==="all" || card.dataset.cat.includes(cat)) ? "flex" : "none";
   });
+}
+
+function openLightbox(src){
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = src;
+}
+
+function closeLightbox(){
+  document.getElementById("lightbox").style.display = "none";
 }
 
 </script>
