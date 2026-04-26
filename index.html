@@ -11,7 +11,7 @@
 <style>
 :root {
   --primary: #111111;
-  --bg: #faf9f6; /* Blanco roto más cálido/zen */
+  --bg: #faf9f6; 
   --text: #1a1a1a;
   --text-light: #555;
   --radius: 16px;
@@ -126,8 +126,22 @@ nav {
 .hero-subtitle {
   font-size: 18px;
   max-width: 600px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
+
+.btn-novedades {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 1.5px solid var(--primary);
+  padding-bottom: 2px;
+  transition: 0.3s;
+  margin-bottom: 20px;
+}
+
+.btn-novedades:hover { opacity: 0.6; }
 
 /* CARRUSEL */
 .carousel {
@@ -197,7 +211,7 @@ nav {
   gap: 12px;
   margin-bottom: 30px;
   position: sticky;
-  top: 80px; /* Ajustado para que no tape el nav */
+  top: 80px;
   z-index: 10;
   background: rgba(250, 249, 246, 0.9);
   padding: 10px 0;
@@ -251,6 +265,15 @@ nav {
 .card-content { padding: 20px; }
 
 .card-content h3 { font-size: 20px; margin-bottom: 10px; }
+
+.card-btn {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: underline;
+  color: var(--primary);
+}
 
 .tag {
   font-size: 11px;
@@ -328,29 +351,29 @@ footer {
   <nav>
     <div class="logo">Arcos V</div>
     
-    <!-- Menú para Escritorio -->
     <div class="nav-links">
-      <a href="#entorno">El Entorno</a>
-      <a href="#eventos">Eventos</a>
-      <a href="#contacto">Contacto</a>
+      <a href="#entorno">El Espacio</a>
+      <a href="#eventos">Agenda</a>
+      <a href="#contacto">Organizá tu evento</a>
     </div>
 
-    <!-- Botón Hamburguesa para Móvil -->
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
   </nav>
 
-  <!-- Menú Móvil Desplegable -->
   <div id="mobile-menu" class="mobile-nav">
     <span class="close-menu" onclick="toggleMenu()">✕</span>
-    <a href="#entorno" onclick="toggleMenu()">El Entorno</a>
-    <a href="#eventos" onclick="toggleMenu()">Eventos</a>
-    <a href="#contacto" onclick="toggleMenu()">Contacto</a>
+    <a href="#entorno" onclick="toggleMenu()">El Espacio</a>
+    <a href="#eventos" onclick="toggleMenu()">Agenda</a>
+    <a href="#contacto" onclick="toggleMenu()">Organizá tu evento</a>
   </div>
 
-  <!-- HERO -->
   <section>
     <h1 class="hero-title">Por acá pasa lo que te gusta hacer.</h1>
-    <p class="hero-subtitle">Arcos V: El marco ideal en Nuñez para tus talleres, cata y encuentros de formación.</p>
+    <p class="hero-subtitle">El marco ideal en Núñez para tus encuentros, talleres y experiencias.</p>
+    
+    <a href="https://wa.me/5491162834000?text=Hola!%20Me%20gustaría%20recibir%20la%20agenda%20de%20encuentros%20de%20Arcos%20V" target="_blank" class="btn-novedades">
+      ✨ Quiero recibir novedades
+    </a>
 
     <div class="carousel">
       <img class="slide active" src="Eventflare.jpg" alt="Interior Arcos V">
@@ -365,10 +388,9 @@ footer {
     </div>
   </section>
 
-  <!-- EL ESPACIO -->
   <section id="entorno" class="box">
     <h2>El entorno</h2>
-    <p>Combinamos 100 m² de interior versátil con un jardín de 250 m². Un refugio de silencio y luz ideal para marcas que buscan exclusividad y enfoque.</p>
+    <p>Combinamos 100 m² de interior versátil con un jardín de 250 m². Un refugio de silencio y luz ideal para marcas y realizadores que buscan exclusividad y enfoque.</p>
     
     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 20px;">
       <img src="Eventflare.jpg" style="width:100%; height:150px; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
@@ -381,10 +403,9 @@ footer {
     "Donde el grupo se encuentra, la experiencia comienza."
   </div>
 
-  <!-- EVENTOS -->
   <section id="eventos">
-    <h2>Cartelera de experiencias</h2>
-    <p>Próximos encuentros y talleres abiertos en nuestro espacio.</p>
+    <h2>Próximos encuentros</h2>
+    <p>Vení a participar de las experiencias abiertas en nuestro espacio.</p>
 
     <div class="filters">
       <div class="filter-btn active" onclick="filter('all', this)">Todos</div>
@@ -394,39 +415,38 @@ footer {
     </div>
 
     <div class="grid">
-      <!-- CARD 1 -->
-      <a href="#" class="card" data-cat="taller">
+      <a href="LINK_WHATSAPP_ORGANIZADORAS" target="_blank" class="card" data-cat="taller">
         <img src="Prueba11.jpg">
         <div class="card-content">
-          <span class="tag">Workshop</span>
-          <h3>Encuentro de Cocina</h3>
-          <p style="font-size: 13px;">Técnicas y degustación en un entorno relajado.</p>
+          <span class="tag">Ciclo: Sábados 10hs</span>
+          <h3>Encuentro para Madres</h3>
+          <p style="font-size: 13px;">Un espacio de crianza y comunidad.</p>
+          <span class="card-btn">Consultar cupos →</span>
         </div>
       </a>
 
-      <!-- CARD 2 -->
       <a href="#" class="card" data-cat="cata">
         <img src="Prueba22.jpg">
         <div class="card-content">
           <span class="tag">Experiencia sensorial</span>
           <h3>Cata de Vinos Boutique</h3>
           <p style="font-size: 13px;">Concentración y matices en nuestra sala zen.</p>
+          <span class="card-btn">Más información →</span>
         </div>
       </a>
 
-      <!-- CARD 3 -->
       <a href="#" class="card" data-cat="taller">
         <img src="Prueba333.jpg">
         <div class="card-content">
           <span class="tag">Naturaleza</span>
           <h3>Taller de Jardinería</h3>
           <p style="font-size: 13px;">Conexión directa en nuestro jardín de 250 m².</p>
+          <span class="card-btn">Más información →</span>
         </div>
       </a>
     </div>
   </section>
 
-  <!-- ACCIONES -->
   <section id="contacto" style="margin-top: 60px;">
     <div class="box" style="background: var(--primary); color: white;">
       <h2 style="color: white; margin-bottom: 10px;">Tu evento en Arcos V</h2>
@@ -445,7 +465,6 @@ footer {
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <p style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--primary);">Arcos V</p>
     <p>Arcos 2952, Núñez · CABA</p>
@@ -457,7 +476,6 @@ footer {
 
 </div>
 
-<!-- LIGHTBOX -->
 <div id="lightbox" onclick="closeLightbox()">
   <img id="lightbox-img">
 </div>
