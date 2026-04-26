@@ -24,12 +24,13 @@ body {
   background-color: var(--bg);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
 }
 
 .container {
-  max-width: 1000px; /* Un poco más angosto para mejorar la lectura */
+  max-width: 1000px;
   margin: auto;
-  padding: 60px 20px;
+  padding: 20px 20px 60px 20px;
 }
 
 h1, h2, h3 {
@@ -43,21 +44,82 @@ p {
   color: var(--text-light);
 }
 
-/* NAVBAR SIMPLE */
+/* NAVBAR */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
+  padding: 30px 0;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
 }
 
 .logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; }
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: 0.3s;
+}
+
+.nav-links a:hover { opacity: 0.6; }
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* MENÚ MÓVIL */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(250, 249, 246, 0.98);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-nav.active { right: 0; }
+
+.mobile-nav a {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.close-menu {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-size: 30px;
+  cursor: pointer;
+}
 
 /* HERO */
 .hero-title {
   font-size: 48px;
   line-height: 1.1;
   letter-spacing: -0.01em;
+  margin-top: 20px;
   margin-bottom: 15px;
 }
 
@@ -135,7 +197,7 @@ nav {
   gap: 12px;
   margin-bottom: 30px;
   position: sticky;
-  top: 10px;
+  top: 80px; /* Ajustado para que no tape el nav */
   z-index: 10;
   background: rgba(250, 249, 246, 0.9);
   padding: 10px 0;
@@ -236,6 +298,8 @@ footer {
   .hero-title { font-size: 36px; }
   .grid { grid-template-columns: 1fr; }
   .box { padding: 25px; }
+  .nav-links { display: none; }
+  .menu-toggle { display: block; }
 }
 
 /* LIGHTBOX */
@@ -263,9 +327,27 @@ footer {
   
   <nav>
     <div class="logo">Arcos V</div>
-    <div style="font-size: 14px; color: #888;">Núñez, CABA</div>
+    
+    <!-- Menú para Escritorio -->
+    <div class="nav-links">
+      <a href="#entorno">El Entorno</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+
+    <!-- Botón Hamburguesa para Móvil -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
   </nav>
 
+  <!-- Menú Móvil Desplegable -->
+  <div id="mobile-menu" class="mobile-nav">
+    <span class="close-menu" onclick="toggleMenu()">✕</span>
+    <a href="#entorno" onclick="toggleMenu()">El Entorno</a>
+    <a href="#eventos" onclick="toggleMenu()">Eventos</a>
+    <a href="#contacto" onclick="toggleMenu()">Contacto</a>
+  </div>
+
+  <!-- HERO -->
   <section>
     <h1 class="hero-title">Espacio boutique para experiencias curadas.</h1>
     <p class="hero-subtitle">Un entorno zen con luz natural y jardín privado en el corazón de Núñez, diseñado para eventos corporativos, catas y formación.</p>
@@ -283,7 +365,8 @@ footer {
     </div>
   </section>
 
-  <section class="box">
+  <!-- EL ESPACIO -->
+  <section id="entorno" class="box">
     <h2>El entorno</h2>
     <p>Combinamos 100 m² de interior versátil con un jardín de 250 m². Un refugio de silencio y luz ideal para marcas que buscan exclusividad y enfoque.</p>
     
@@ -298,6 +381,7 @@ footer {
     "Donde el grupo se encuentra, la experiencia comienza."
   </div>
 
+  <!-- EVENTOS -->
   <section id="eventos">
     <h2>Cartelera de experiencias</h2>
     <p>Próximos encuentros y talleres abiertos en nuestro espacio.</p>
@@ -310,6 +394,7 @@ footer {
     </div>
 
     <div class="grid">
+      <!-- CARD 1 -->
       <a href="#" class="card" data-cat="taller">
         <img src="Prueba11.jpg">
         <div class="card-content">
@@ -319,6 +404,7 @@ footer {
         </div>
       </a>
 
+      <!-- CARD 2 -->
       <a href="#" class="card" data-cat="cata">
         <img src="Prueba22.jpg">
         <div class="card-content">
@@ -328,6 +414,7 @@ footer {
         </div>
       </a>
 
+      <!-- CARD 3 -->
       <a href="#" class="card" data-cat="taller">
         <img src="Prueba333.jpg">
         <div class="card-content">
@@ -339,7 +426,8 @@ footer {
     </div>
   </section>
 
-  <section style="margin-top: 60px;">
+  <!-- ACCIONES -->
+  <section id="contacto" style="margin-top: 60px;">
     <div class="box" style="background: var(--primary); color: white;">
       <h2 style="color: white; margin-bottom: 10px;">Tu evento en Arcos V</h2>
       <p style="color: #ccc; margin-bottom: 25px;">Alquilá el espacio para tus cursos, reuniones de equipo o presentaciones de marca.</p>
@@ -357,6 +445,7 @@ footer {
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--primary);">Arcos V</p>
     <p>Arcos 2952, Núñez · CABA</p>
@@ -368,6 +457,7 @@ footer {
 
 </div>
 
+<!-- LIGHTBOX -->
 <div id="lightbox" onclick="closeLightbox()">
   <img id="lightbox-img">
 </div>
@@ -408,6 +498,11 @@ function openLightbox(src){
 
 function closeLightbox(){
   document.getElementById("lightbox").style.display = "none";
+}
+
+function toggleMenu() {
+  const menu = document.getElementById("mobile-menu");
+  menu.classList.toggle("active");
 }
 </script>
 
