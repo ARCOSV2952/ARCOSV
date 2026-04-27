@@ -9,7 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-/* RESET Y FIJACIÓN DE ANCHO */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -19,7 +18,7 @@
 html, body {
   width: 100%;
   overflow-x: hidden;
-  position: relative;
+  background-color: #faf9f6;
 }
 
 :root {
@@ -33,25 +32,25 @@ html, body {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--bg);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
 }
 
-/* NAVBAR FIJA (STICKY) */
+/* NAVBAR FIJA */
 header {
   position: sticky;
   top: 0;
   background: var(--bg);
   z-index: 1000;
-  border-bottom: 1px solid rgba(0,0,0,0.03); /* Una línea muy sutil para que se note al scrolear */
+  width: 100%;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .nav-container {
   max-width: 1000px;
-  margin: auto;
-  padding: 15px 20px;
+  margin: 0 auto;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,7 +60,7 @@ header {
   font-family: 'Playfair Display', serif; 
   font-size: 24px; 
   font-weight: 600;
-  text-decoration: none; /* Quita el subrayado del link */
+  text-decoration: none;
   color: var(--text);
 }
 
@@ -75,11 +74,7 @@ header {
   color: var(--text);
   font-size: 14px;
   font-weight: 500;
-  letter-spacing: 0.05em;
-  transition: 0.3s;
 }
-
-.nav-links a:hover { opacity: 0.6; }
 
 .menu-toggle {
   display: none;
@@ -87,11 +82,11 @@ header {
   cursor: pointer;
 }
 
-/* EL RESTO DEL CONTENIDO */
+/* CONTENEDOR PRINCIPAL */
 .container {
   max-width: 1000px;
-  margin: auto;
-  padding: 30px 20px 60px 20px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
 /* MENÚ MÓVIL */
@@ -108,7 +103,7 @@ header {
   justify-content: center;
   align-items: center;
   gap: 30px;
-  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 0.4s;
 }
 
 .mobile-nav.active { right: 0; }
@@ -120,40 +115,9 @@ header {
   color: var(--text);
 }
 
-.close-menu {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  font-size: 30px;
-  cursor: pointer;
-}
-
 /* HERO */
-.hero-title {
-  font-size: 48px;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  margin-top: 20px;
-  margin-bottom: 15px;
-}
-
-.hero-subtitle {
-  font-size: 18px;
-  max-width: 600px;
-  margin-bottom: 25px;
-}
-
-.btn-novedades {
-  display: inline-block;
-  text-decoration: none;
-  color: var(--primary);
-  font-size: 14px;
-  font-weight: 600;
-  border-bottom: 1.5px solid var(--primary);
-  padding-bottom: 2px;
-  transition: 0.3s;
-  margin-bottom: 20px;
-}
+.hero-title { font-size: 48px; line-height: 1.1; margin-bottom: 15px; }
+.hero-subtitle { font-size: 18px; color: var(--text-light); margin-bottom: 25px; }
 
 /* CARRUSEL */
 .carousel {
@@ -171,19 +135,17 @@ header {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 1s;
 }
 
 .slide.active { opacity: 1; }
 
-/* SECCIONES */
+/* CAJAS */
 .box {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  padding: 40px;
+  background: white;
+  padding: 40px; /* Espacio interno para que no se pegue el texto a los bordes */
   border-radius: var(--radius);
   margin-top: 30px;
-  border: 1px solid rgba(0,0,0,0.03);
   box-shadow: var(--shadow);
 }
 
@@ -194,19 +156,29 @@ header {
   margin-top: 20px;
 }
 
+/* FILTROS */
 .filters {
   display: flex;
   gap: 12px;
-  margin-bottom: 30px;
+  margin: 30px 0;
   position: sticky;
-  top: 70px;
+  top: 80px; /* Se pega justo debajo del header */
   z-index: 10;
   background: var(--bg);
   padding: 10px 0;
-  overflow-x: auto;
-  white-space: nowrap;
 }
 
+.filter-btn {
+  padding: 8px 20px;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+}
+
+.filter-btn.active { background: var(--primary); color: white; }
+
+/* GRID CARDS */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -216,19 +188,16 @@ header {
 .card {
   text-decoration: none;
   color: inherit;
+  background: white;
   border-radius: var(--radius);
   overflow: hidden;
-  background: white;
-  transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   box-shadow: 0 4px 15px rgba(0,0,0,0.03);
 }
 
-.card img {
-  width: 100%;
-  aspect-ratio: 4/5;
-  object-fit: cover;
-}
+.card img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+.card-content { padding: 25px; } /* Más aire adentro de la card */
 
+/* BOTONES */
 .btn {
   display: block;
   padding: 20px;
@@ -238,31 +207,35 @@ header {
   border-radius: 12px;
   text-decoration: none;
   font-weight: 600;
+  margin-top: 20px;
 }
+
+/* FOOTER CENTRADO */
+footer {
+  text-align: center;
+  margin-top: 100px;
+  padding: 60px 20px;
+  border-top: 1px solid #eee;
+}
+
+.footer-logo { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 10px; }
 
 @media (max-width:700px){
   .hero-title { font-size: 34px; }
-  .grid { grid-template-columns: 1fr; }
-  .box { padding: 25px; }
+  .grid-entorno { grid-template-columns: 1fr; }
+  .grid-entorno img { height: 220px !important; }
   .nav-links { display: none; }
   .menu-toggle { display: block; }
-  .grid-entorno { grid-template-columns: 1fr; }
-  .grid-entorno img { height: 200px !important; }
 }
 
 #lightbox {
   display: none;
   position: fixed;
   z-index: 3000;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.95);
-  justify-content: center;
-  align-items: center;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center; align-items: center;
 }
-
 #lightbox img { max-width: 90%; max-height: 80%; border-radius: 8px; }
 </style>
 </head>
@@ -282,7 +255,7 @@ header {
 </header>
 
 <div id="mobile-menu" class="mobile-nav">
-  <span class="close-menu" onclick="toggleMenu()">✕</span>
+  <span style="position:absolute; top:20px; right:20px; font-size:30px;" onclick="toggleMenu()">✕</span>
   <a href="#" onclick="toggleMenu()">Inicio</a>
   <a href="#entorno" onclick="toggleMenu()">El Espacio</a>
   <a href="#eventos" onclick="toggleMenu()">Agenda</a>
@@ -294,53 +267,44 @@ header {
   <section id="inicio">
     <h1 class="hero-title">Por acá pasa lo que te gusta hacer.</h1>
     <p class="hero-subtitle">El marco ideal en Núñez para tus encuentros, talleres y experiencias.</p>
-    <a href="https://wa.me/5491162834000?text=Hola!%20Me%20gustaría%20recibir%20la%20agenda%20de%20encuentros%20de%20Arcos%20V" target="_blank" class="btn-novedades">
-      ✨ Quiero recibir novedades
-    </a>
-
+    
     <div class="carousel">
-      <img class="slide active" src="Carruprin1.jpg" alt="Interior Arcos V">
-      <img class="slide" src="Carruprin2.jpg" alt="Jardín Arcos V">
-      <img class="slide" src="Carruprin3.jpg" alt="Detalle Espacio Arcos V">
+      <img class="slide active" src="Carruprin1.jpg" alt="Interior">
+      <img class="slide" src="Carruprin2.jpg" alt="Jardín">
+      <img class="slide" src="Carruprin3.jpg" alt="Espacio">
     </div>
   </section>
 
   <section id="entorno" class="box">
     <h2>El entorno</h2>
-    <p>Combinamos 100 m² de interior versátil con un jardín de 250 m². Un refugio de silencio y luz ideal para marcas y realizadores.</p>
-    
+    <p>Combinamos 100 m² de interior versátil con un jardín de 250 m².</p>
     <div class="grid-entorno">
-      <img src="Entorno1.jpg" style="width:100%; height:150px; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
-      <img src="Entorno2.jpg" style="width:100%; height:150px; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
-      <img src="Entorno3.jpg" style="width:100%; height:150px; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
+      <img src="Entorno1.jpg" style="height:150px; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
+      <img src="Entorno2.jpg" style="height:150px; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
+      <img src="Entorno3.jpg" style="height:150px; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
     </div>
   </section>
 
-  <section id="eventos" style="margin-top: 60px;">
-    <h2>Próximos encuentros</h2>
+  <section id="eventos">
     <div class="filters">
       <div class="filter-btn active" onclick="filter('all', this)">Todos</div>
-      <div class="filter-btn" onclick="filter('cata', this)">Catas</div>
       <div class="filter-btn" onclick="filter('taller', this)">Talleres</div>
-      <div class="filter-btn" onclick="filter('corp', this)">Corporativo</div>
+      <div class="filter-btn" onclick="filter('cata', this)">Catas</div>
     </div>
 
     <div class="grid">
       <a href="#" class="card" data-cat="taller">
         <img src="Prox1.jpg">
         <div class="card-content">
-          <span class="tag">Sin cargo</span>
           <h3>Encuentro de cocina</h3>
-          <p style="font-size: 13px;">Jueves 7 de mayo 16:30 hs.</p>
+          <p>Jueves 7 de mayo 16:30 hs.</p>
         </div>
       </a>
-
       <a href="#" class="card" data-cat="cata">
         <img src="Prox2.jpg">
         <div class="card-content">
-          <span class="tag">Experiencia sensorial</span>
           <h3>Cata de Vinos Boutique</h3>
-          <p style="font-size: 13px;">Por Vino en Jawa.</p>
+          <p>Por Vino en Jawa.</p>
         </div>
       </a>
     </div>
@@ -349,14 +313,18 @@ header {
   <section id="contacto" style="margin-top: 60px;">
     <div class="box" style="background: var(--primary); color: white;">
       <h2 style="color: white;">Tu evento en Arcos V</h2>
-      <p style="color: #ccc; margin-bottom: 25px;">Alquilá el espacio para tus cursos o reuniones.</p>
-      <a class="btn" style="background: white; color: var(--primary);" href="#">🏡 Consultar alquiler</a>
+      <p style="color: #ccc;">Alquilá el espacio para tus cursos o reuniones.</p>
+      <a class="btn" style="background: white; color: var(--primary);" href="https://wa.me/5491162834000">🏡 Consultar alquiler</a>
     </div>
   </section>
 
   <footer>
-    <p style="font-family: 'Playfair Display', serif; font-size: 20px;">Arcos V</p>
+    <div class="footer-logo">Arcos V</div>
     <p>Arcos 2952, Núñez · CABA</p>
+    <p style="margin-top: 20px;">
+      <a href="https://instagram.com/arcosv.ba" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">Instagram</a> · 
+      <a href="https://wa.me/5491162834000" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">WhatsApp</a>
+    </p>
   </footer>
 
 </div>
