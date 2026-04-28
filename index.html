@@ -35,7 +35,7 @@ body {
   font-family: 'Inter', sans-serif;
   color: var(--text);
   -webkit-font-smoothing: antialiased;
-  padding-top: 70px; 
+  padding-top: 80px; 
 }
 
 /* NAVBAR FIJA */
@@ -52,18 +52,17 @@ header {
 .nav-container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 15px 20px;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo { 
-  font-family: 'Playfair Display', serif; 
-  font-size: 24px; 
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--text);
+/* ESTILO PARA EL LOGO IMAGEN */
+.logo img {
+  height: 50px; /* Ajuste de altura para que luzca la palmera */
+  width: auto;
+  display: block;
 }
 
 .nav-links {
@@ -120,7 +119,7 @@ header {
   color: var(--text);
 }
 
-/* AJUSTE DE SCROLL PARA MÓVIL (Anclajes con offset) */
+/* AJUSTE DE SCROLL PARA MÓVIL */
 section {
   scroll-margin-top: 100px;
 }
@@ -219,7 +218,7 @@ section {
   gap: 12px;
   margin: 30px 0;
   position: sticky;
-  top: 65px; 
+  top: 75px; 
   z-index: 10;
   background: var(--bg);
   padding: 10px 0;
@@ -271,7 +270,7 @@ section {
   transition: 0.3s;
 }
 
-/* FOOTER CENTRADO */
+/* FOOTER */
 footer {
   text-align: center;
   margin-top: 100px;
@@ -279,7 +278,10 @@ footer {
   border-top: 1px solid #eee;
 }
 
-.footer-logo { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 10px; }
+.footer-logo img {
+  height: 40px;
+  margin-bottom: 10px;
+}
 
 @media (max-width:700px){
   .hero-title { font-size: 34px; }
@@ -288,7 +290,7 @@ footer {
   .nav-links { display: none; }
   .menu-toggle { display: block; }
   .box { padding: 30px 20px; }
-  section { scroll-margin-top: 90px; } /* Ajuste fino para móviles */
+  section { scroll-margin-top: 90px; }
 }
 
 #lightbox {
@@ -307,7 +309,9 @@ footer {
 
 <header>
   <div class="nav-container">
-    <a href="#" class="logo">Arcos V</a>
+    <a href="#" class="logo">
+      <img src="logo.png" alt="Arcos V Logo">
+    </a>
     <div class="nav-links">
       <a href="#encuentros">Próximos Encuentros</a>
       <a href="#espacio">El Espacio</a>
@@ -401,12 +405,14 @@ footer {
     <div class="box">
       <h3>¿Dónde estamos?</h3>
       <p style="margin-bottom:20px;">Arcos 2952, Núñez, CABA. Un espacio de fácil acceso pero con la tranquilidad de un barrio residencial.</p>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.132104593457!2d-58.465135!3d-34.55018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb42721869e5d%3A0x6a132c3960309995!2sArcos%202952%2C%20C1429%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1714320000000!5m2!1ses!2sar" width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.3216812836267!2d-58.468759524262114!3d-34.54541577297576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb42635955555%3A0xc3f58e174092b32d!2sArcos%202952%2C%20C1429%20CABA!5e0!3m2!1ses-419!2sar!4v1712860000000!5m2!1ses-419!2sar" width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </section>
 
   <footer>
-    <div class="footer-logo">Arcos V</div>
+    <div class="footer-logo">
+      <img src="logo.png" alt="Arcos V Logo">
+    </div>
     <p>Arcos 2952, Núñez · CABA</p>
     <p style="margin-top: 20px;">
       <a href="https://instagram.com/arcosv.ba" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">Instagram</a> · 
@@ -435,7 +441,6 @@ function updateCarousel() {
   dots[idx].classList.add("active");
 }
 
-// Función para salto manual al cliquear puntitos
 function jumpToSlide(n) {
   idx = n;
   updateCarousel();
