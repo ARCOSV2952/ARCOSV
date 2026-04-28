@@ -58,9 +58,8 @@ header {
   align-items: center;
 }
 
-/* ESTILO PARA EL LOGO IMAGEN */
 .logo img {
-  height: 50px; /* Ajuste de altura para que luzca la palmera */
+  height: 50px;
   width: auto;
   display: block;
 }
@@ -86,27 +85,21 @@ header {
   cursor: pointer;
 }
 
-/* CONTENEDOR PRINCIPAL */
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px 20px 60px 20px;
-}
-
-/* MENÚ MÓVIL */
+/* MENÚ MÓVIL (ESTILO BOUTIQUE) */
 .mobile-nav {
   position: fixed;
   top: 0;
   right: -100%;
   width: 100%;
   height: 100%;
-  background: rgba(250, 249, 246, 0.98);
+  background: var(--bg);
   z-index: 2000;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 30px;
+  align-items: flex-end; /* Alineado a la derecha */
+  padding-right: 40px;
+  gap: 25px;
   transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -114,12 +107,27 @@ header {
 
 .mobile-nav a {
   font-family: 'Playfair Display', serif;
-  font-size: 32px;
+  font-size: 28px;
   text-decoration: none;
   color: var(--text);
+  text-align: right;
 }
 
-/* AJUSTE DE SCROLL PARA MÓVIL */
+.btn-nav-wa {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600;
+    border-bottom: 1.5px solid var(--primary);
+    padding-bottom: 5px;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 20px 60px 20px;
+}
+
 section {
   scroll-margin-top: 100px;
 }
@@ -128,27 +136,13 @@ section {
 .hero-title { font-size: 48px; line-height: 1.1; margin-top: 20px; margin-bottom: 15px; }
 .hero-subtitle { font-size: 18px; color: var(--text-light); margin-bottom: 25px; max-width: 600px; }
 
-.btn-novedades {
-  display: inline-block;
-  text-decoration: none;
-  color: var(--primary);
-  font-size: 14px;
-  font-weight: 600;
-  border-bottom: 1.5px solid var(--primary);
-  padding-bottom: 2px;
-  margin-bottom: 20px;
-  transition: 0.3s;
-}
-
-.btn-novedades:hover { opacity: 0.6; }
-
-/* CARRUSEL CON PUNTITOS */
+/* CARRUSEL AJUSTADO */
 .carousel {
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
-  margin: 40px 0;
-  aspect-ratio: 16/9;
+  margin: 40px 0 20px 0;
+  aspect-ratio: 4/3; /* Proporción más equilibrada */
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
@@ -156,7 +150,7 @@ section {
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Evita que se estiren las imágenes */
   opacity: 0;
   transition: opacity 1s;
 }
@@ -179,15 +173,27 @@ section {
   border-radius: 50%;
   background: rgba(255,255,255,0.5);
   cursor: pointer;
+}
+
+.dot.active { background: white; transform: scale(1.2); }
+
+.btn-novedades-container {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.btn-novedades {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 1.5px solid var(--primary);
+  padding-bottom: 2px;
   transition: 0.3s;
 }
 
-.dot.active {
-  background: white;
-  transform: scale(1.2);
-}
-
-/* CAJAS */
+/* CAJAS Y GRIDS */
 .box {
   background: white;
   padding: 40px; 
@@ -212,7 +218,7 @@ section {
   color: #888;
 }
 
-/* FILTROS */
+/* FILTROS Y CARDS */
 .filters {
   display: flex;
   gap: 12px;
@@ -235,7 +241,6 @@ section {
 
 .filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
 
-/* GRID CARDS */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -249,10 +254,8 @@ section {
   border-radius: var(--radius);
   overflow: hidden;
   transition: 0.3s;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
 }
 
-.card:hover { transform: translateY(-5px); }
 .card img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
 .card-content { padding: 25px; } 
 
@@ -267,10 +270,8 @@ section {
   text-decoration: none;
   font-weight: 600;
   margin-top: 20px;
-  transition: 0.3s;
 }
 
-/* FOOTER */
 footer {
   text-align: center;
   margin-top: 100px;
@@ -278,19 +279,14 @@ footer {
   border-top: 1px solid #eee;
 }
 
-.footer-logo img {
-  height: 40px;
-  margin-bottom: 10px;
-}
+.footer-logo img { height: 40px; margin-bottom: 10px; }
 
 @media (max-width:700px){
   .hero-title { font-size: 34px; }
+  .carousel { aspect-ratio: 4/5; } /* Carrusel más vertical en móvil */
   .grid-entorno { grid-template-columns: 1fr; }
-  .grid-entorno img { height: 220px !important; }
   .nav-links { display: none; }
   .menu-toggle { display: block; }
-  .box { padding: 30px 20px; }
-  section { scroll-margin-top: 90px; }
 }
 
 #lightbox {
@@ -327,6 +323,7 @@ footer {
   <a href="#encuentros" onclick="toggleMenu()">Próximos Encuentros</a>
   <a href="#espacio" onclick="toggleMenu()">El Espacio</a>
   <a href="#contacto" onclick="toggleMenu()">Organizá tu evento</a>
+  <a href="https://wa.me/5491162834000?text=Hola!%20Quiero%20recibir%20novedades" class="btn-nav-wa" onclick="toggleMenu()">✨ Recibir novedades</a>
 </div>
 
 <div class="container">
@@ -334,10 +331,6 @@ footer {
   <section id="inicio">
     <h1 class="hero-title">Por acá pasa lo que te gusta hacer.</h1>
     <p class="hero-subtitle">El marco ideal en Núñez para tus encuentros, talleres y experiencias.</p>
-    
-    <a href="https://wa.me/5491162834000?text=Hola!%20Me%20gustaría%20recibir%20la%20agenda%20de%20encuentros%20de%20Arcos%20V" target="_blank" class="btn-novedades">
-      ✨ Quiero recibir novedades
-    </a>
 
     <div class="carousel">
       <img class="slide active" src="Carruprin1.jpg" alt="Interior">
@@ -348,6 +341,12 @@ footer {
         <div class="dot" onclick="jumpToSlide(1)"></div>
         <div class="dot" onclick="jumpToSlide(2)"></div>
       </div>
+    </div>
+
+    <div class="btn-novedades-container">
+        <a href="https://wa.me/5491162834000?text=Hola!%20Me%20gustaría%20recibir%20la%20agenda%20de%20encuentros%20de%20Arcos%20V" target="_blank" class="btn-novedades">
+          ✨ Quiero recibir novedades
+        </a>
     </div>
   </section>
 
@@ -405,7 +404,7 @@ footer {
     <div class="box">
       <h3>¿Dónde estamos?</h3>
       <p style="margin-bottom:20px;">Arcos 2952, Núñez, CABA. Un espacio de fácil acceso pero con la tranquilidad de un barrio residencial.</p>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.3216812836267!2d-58.468759524262114!3d-34.54541577297576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb42635955555%3A0xc3f58e174092b32d!2sArcos%202952%2C%20C1429%20CABA!5e0!3m2!1ses-419!2sar!4v1712860000000!5m2!1ses-419!2sar" width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.0827183740924!2d-58.465134723469145!3d-34.55146035474328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb42795f70a59%3A0xc6c764e432a51f82!2sArcos%202952%2C%20C1429%20CABA!5e0!3m2!1ses-419!2sar!4v1714330000000!5m2!1ses-419!2sar" width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </section>
 
@@ -436,7 +435,6 @@ const dots = document.querySelectorAll(".dot");
 function updateCarousel() {
   slides.forEach(s => s.classList.remove("active"));
   dots.forEach(d => d.classList.remove("active"));
-  
   slides[idx].classList.add("active");
   dots[idx].classList.add("active");
 }
