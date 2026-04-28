@@ -119,7 +119,7 @@ header {
 .btn-novedades {
   text-decoration: none; 
   color: var(--primary); 
-  font-size: 18px; /* Aumentado */
+  font-size: 20px; /* Tamaño reforzado */
   font-weight: 600;
   border-bottom: 2px solid var(--primary); 
   padding-bottom: 4px;
@@ -151,7 +151,16 @@ header {
 
 /* GRIDS Y CARDS */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
-.card { text-decoration: none; color: inherit; background: white; border-radius: var(--radius); overflow: hidden; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+.card { 
+  text-decoration: none; 
+  color: inherit; 
+  background: white; 
+  border-radius: var(--radius); 
+  overflow: hidden; 
+  transition: 0.3s; 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03); 
+  display: block; /* Asegura que sea clickeable todo el bloque */
+}
 .card:hover { transform: translateY(-5px); }
 .card img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
 .card-content { padding: 25px; }
@@ -265,7 +274,7 @@ footer {
     </div>
 
     <div class="grid">
-      <a href="#" class="card" data-cat="taller">
+      <a href="evento-cocina.html" class="card" data-cat="taller">
         <img src="Prox1.jpg">
         <div class="card-content">
           <span style="font-size:11px; text-transform:uppercase; color:#888;">Sin cargo</span>
@@ -274,7 +283,7 @@ footer {
         </div>
       </a>
 
-      <a href="#" class="card" data-cat="cata">
+      <a href="evento-vinos.html" class="card" data-cat="cata">
         <img src="Prox2.jpg">
         <div class="card-content">
           <span style="font-size:11px; text-transform:uppercase; color:#888;">Experiencia sensorial</span>
@@ -309,7 +318,7 @@ footer {
     <div class="box">
       <h3>¿Dónde estamos?</h3>
       <p style="margin-bottom:20px;">Arcos 2952, Núñez, CABA.</p>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.3263!2d-58.4651!3d-34.5458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDMyJzQ0LjkiUyA1OMKwMjcnNTQuNCJX!5e0!3m2!1ses!2sar!4v1650000000000" width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.0624456573033!2d-58.4651379!3d-34.5519639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb427909067f9%3A0xc3c544d62323e0!2sArcos%202952%2C%20C1429%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1714300000000!5m2!1ses-419!2sar" width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </section>
 
