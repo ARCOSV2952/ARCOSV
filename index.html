@@ -120,6 +120,11 @@ header {
   color: var(--text);
 }
 
+/* AJUSTE DE SCROLL PARA MÓVIL (Anclajes con offset) */
+section {
+  scroll-margin-top: 100px;
+}
+
 /* HERO */
 .hero-title { font-size: 48px; line-height: 1.1; margin-top: 20px; margin-bottom: 15px; }
 .hero-subtitle { font-size: 18px; color: var(--text-light); margin-bottom: 25px; max-width: 600px; }
@@ -138,7 +143,7 @@ header {
 
 .btn-novedades:hover { opacity: 0.6; }
 
-/* CARRUSEL */
+/* CARRUSEL CON PUNTITOS */
 .carousel {
   position: relative;
   border-radius: var(--radius);
@@ -158,6 +163,30 @@ header {
 }
 
 .slide.active { opacity: 1; }
+
+.carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background: white;
+  transform: scale(1.2);
+}
 
 /* CAJAS */
 .box {
@@ -259,6 +288,7 @@ footer {
   .nav-links { display: none; }
   .menu-toggle { display: block; }
   .box { padding: 30px 20px; }
+  section { scroll-margin-top: 90px; } /* Ajuste fino para móviles */
 }
 
 #lightbox {
@@ -279,8 +309,8 @@ footer {
   <div class="nav-container">
     <a href="#" class="logo">Arcos V</a>
     <div class="nav-links">
-      <a href="#espacio">El Espacio</a>
       <a href="#encuentros">Próximos Encuentros</a>
+      <a href="#espacio">El Espacio</a>
       <a href="#contacto">Organizá tu evento</a>
     </div>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -290,8 +320,8 @@ footer {
 <div id="mobile-menu" class="mobile-nav">
   <span style="position:absolute; top:20px; right:20px; font-size:30px; cursor:pointer;" onclick="toggleMenu()">✕</span>
   <a href="#" onclick="toggleMenu()">Inicio</a>
-  <a href="#espacio" onclick="toggleMenu()">El Espacio</a>
   <a href="#encuentros" onclick="toggleMenu()">Próximos Encuentros</a>
+  <a href="#espacio" onclick="toggleMenu()">El Espacio</a>
   <a href="#contacto" onclick="toggleMenu()">Organizá tu evento</a>
 </div>
 
@@ -309,23 +339,13 @@ footer {
       <img class="slide active" src="Carruprin1.jpg" alt="Interior">
       <img class="slide" src="Carruprin2.jpg" alt="Jardín">
       <img class="slide" src="Carruprin3.jpg" alt="Espacio">
+      <div class="carousel-dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
     </div>
   </section>
-
-  <section id="espacio" class="box">
-    <h2>El Espacio</h2>
-    <p>Combinamos 100 m² de interior versátil con un jardín de 250 m². Un refugio de silencio y luz ideal para marcas y realizadores que buscan exclusividad y enfoque.</p>
-    
-    <div class="grid-entorno">
-      <img src="Entorno1.jpg" style="height:150px; width:100%; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
-      <img src="Entorno2.jpg" style="height:150px; width:100%; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
-      <img src="Entorno3.jpg" style="height:150px; width:100%; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
-    </div>
-  </section>
-
-  <div class="quote-separator">
-    "Donde el grupo se encuentra, la experiencia comienza."
-  </div>
 
   <section id="encuentros">
     <h2>Próximos Encuentros</h2>
@@ -353,6 +373,21 @@ footer {
           <p style="font-size:13px;">Por Vino en Jawa.</p>
         </div>
       </a>
+    </div>
+  </section>
+
+  <div class="quote-separator">
+    "Donde el grupo se encuentra, la experiencia comienza."
+  </div>
+
+  <section id="espacio" class="box">
+    <h2>El Espacio</h2>
+    <p>Combinamos 100 m² de interior versátil con un jardín de 250 m². Un refugio de silencio y luz ideal para marcas y realizadores que buscan exclusividad y enfoque.</p>
+    
+    <div class="grid-entorno">
+      <img src="Entorno1.jpg" style="height:150px; width:100%; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
+      <img src="Entorno2.jpg" style="height:150px; width:100%; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
+      <img src="Entorno3.jpg" style="height:150px; width:100%; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
     </div>
   </section>
 
@@ -390,11 +425,28 @@ function toggleMenu() { document.getElementById("mobile-menu").classList.toggle(
 
 let idx = 0;
 const slides = document.querySelectorAll(".slide");
-setInterval(() => {
-  slides[idx].classList.remove("active");
-  idx = (idx + 1) % slides.length;
+const dots = document.querySelectorAll(".dot");
+
+function updateCarousel() {
+  slides.forEach(s => s.classList.remove("active"));
+  dots.forEach(d => d.classList.remove("active"));
+  
   slides[idx].classList.add("active");
+  dots[idx].classList.add("active");
+}
+
+setInterval(() => {
+  idx = (idx + 1) % slides.length;
+  updateCarousel();
 }, 4000);
+
+// Permitir click en los puntitos
+dots.forEach((dot, i) => {
+  dot.addEventListener("click", () => {
+    idx = i;
+    updateCarousel();
+  });
+});
 
 function filter(cat, btn) {
   document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
