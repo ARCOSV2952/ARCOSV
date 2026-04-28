@@ -56,7 +56,8 @@ header {
 .logo img { height: 50px; width: auto; display: block; }
 
 .nav-links { display: flex; gap: 25px; }
-.nav-links a { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 500; }
+.nav-links a { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 500; transition: 0.3s; }
+.nav-links a:hover { opacity: 0.6; }
 
 .menu-toggle { display: none; font-size: 24px; cursor: pointer; }
 
@@ -73,7 +74,12 @@ header {
   transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .mobile-nav.active { right: 0; }
-.mobile-nav a { font-family: 'Playfair Display', serif; font-size: 28px; text-decoration: none; color: var(--text); }
+.mobile-nav a { 
+  font-family: 'Playfair Display', serif; 
+  font-size: 28px; 
+  text-decoration: none; 
+  color: var(--text); 
+}
 
 /* CONTENEDOR */
 .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
@@ -82,13 +88,13 @@ header {
 .hero-title { font-size: 48px; line-height: 1.1; margin-top: 20px; margin-bottom: 15px; }
 .hero-subtitle { font-size: 18px; color: var(--text-light); margin-bottom: 25px; }
 
-/* NUEVO CARRUSEL DIVIDIDO (SPLIT) */
+/* CARRUSEL DIVIDIDO */
 .split-carousel {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin: 40px 0;
-  height: 500px; /* Misma altura total que antes */
+  margin: 40px 0 20px 0;
+  height: 500px;
 }
 
 .carousel-half {
@@ -109,25 +115,97 @@ header {
 
 .split-slide.active { opacity: 1; }
 
-.btn-novedades-container { text-align: center; margin: 40px 0; }
+.btn-novedades-container { text-align: center; margin: 40px 0 60px 0; }
 .btn-novedades {
-  text-decoration: none; color: var(--primary); font-size: 14px; font-weight: 600;
-  border-bottom: 1.5px solid var(--primary); padding-bottom: 2px;
+  text-decoration: none; 
+  color: var(--primary); 
+  font-size: 18px; /* Aumentado */
+  font-weight: 600;
+  border-bottom: 2px solid var(--primary); 
+  padding-bottom: 4px;
+  transition: 0.3s;
+}
+.btn-novedades:hover { opacity: 0.6; }
+
+/* FILTROS */
+.filters {
+  display: flex;
+  gap: 12px;
+  margin: 30px 0;
+  position: sticky;
+  top: 75px; 
+  z-index: 10;
+  background: var(--bg);
+  padding: 10px 0;
 }
 
-/* SECCIONES Y GRIDS */
-.box { background: white; padding: 40px; border-radius: var(--radius); margin-top: 30px; box-shadow: var(--shadow); }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; margin-top: 20px;}
-.card { text-decoration: none; color: inherit; background: white; border-radius: var(--radius); overflow: hidden; }
+.filter-btn {
+  padding: 8px 20px;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+.filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+/* GRIDS Y CARDS */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
+.card { text-decoration: none; color: inherit; background: white; border-radius: var(--radius); overflow: hidden; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+.card:hover { transform: translateY(-5px); }
 .card img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
-.card-content { padding: 20px; }
+.card-content { padding: 25px; }
+
+.box { background: white; padding: 40px; border-radius: var(--radius); margin-top: 30px; box-shadow: var(--shadow); }
+.grid-entorno { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 25px; }
+
+.quote-separator {
+  text-align: center;
+  padding: 80px 20px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 24px;
+  color: #888;
+}
+
+/* BOTONES */
+.btn {
+  display: block;
+  padding: 20px;
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 100px;
+  padding: 60px 20px;
+  border-top: 1px solid #eee;
+}
+.footer-logo img { height: 40px; margin-bottom: 10px; }
 
 @media (max-width:700px){
   .hero-title { font-size: 34px; }
   .split-carousel { height: 400px; }
+  .grid-entorno { grid-template-columns: 1fr; }
   .nav-links { display: none; }
   .menu-toggle { display: block; }
 }
+
+#lightbox {
+  display: none;
+  position: fixed;
+  z-index: 3000;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center; align-items: center;
+}
+#lightbox img { max-width: 90%; max-height: 80%; border-radius: 8px; }
 </style>
 </head>
 
@@ -139,7 +217,7 @@ header {
     <div class="nav-links">
       <a href="#encuentros">Próximos Encuentros</a>
       <a href="#espacio">El Espacio</a>
-      <a href="#contacto">Contacto</a>
+      <a href="#contacto">Organizá tu evento</a>
     </div>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
   </div>
@@ -148,9 +226,10 @@ header {
 <div id="mobile-menu" class="mobile-nav">
   <span style="position:absolute; top:20px; right:20px; font-size:30px; cursor:pointer;" onclick="toggleMenu()">✕</span>
   <a href="#" onclick="toggleMenu()">Inicio</a>
-  <a href="#encuentros" onclick="toggleMenu()">Encuentros</a>
+  <a href="#encuentros" onclick="toggleMenu()">Próximos Encuentros</a>
   <a href="#espacio" onclick="toggleMenu()">El Espacio</a>
-  <a href="https://wa.me/5491162834000" onclick="toggleMenu()" style="font-size:16px; font-weight:600;">✨ Recibir Novedades</a>
+  <a href="#contacto" onclick="toggleMenu()">Organizá tu evento</a>
+  <a href="https://wa.me/5491162834000" onclick="toggleMenu()">Recibir Novedades</a>
 </div>
 
 <div class="container">
@@ -179,19 +258,75 @@ header {
 
   <section id="encuentros">
     <h2>Próximos Encuentros</h2>
+    <div class="filters">
+      <div class="filter-btn active" onclick="filter('all', this)">Todos</div>
+      <div class="filter-btn" onclick="filter('taller', this)">Talleres</div>
+      <div class="filter-btn" onclick="filter('cata', this)">Catas</div>
+    </div>
+
     <div class="grid">
-      <a href="#" class="card">
+      <a href="#" class="card" data-cat="taller">
         <img src="Prox1.jpg">
-        <div class="card-content"><h3>Encuentro de cocina</h3><p>7 de mayo</p></div>
+        <div class="card-content">
+          <span style="font-size:11px; text-transform:uppercase; color:#888;">Sin cargo</span>
+          <h3 style="margin:5px 0;">Encuentro de cocina</h3>
+          <p style="font-size:13px;">Jueves 7 de mayo 16:30 hs.</p>
+        </div>
       </a>
-      <a href="#" class="card">
+
+      <a href="#" class="card" data-cat="cata">
         <img src="Prox2.jpg">
-        <div class="card-content"><h3>Cata de Vinos</h3><p>Vino en Jawa</p></div>
+        <div class="card-content">
+          <span style="font-size:11px; text-transform:uppercase; color:#888;">Experiencia sensorial</span>
+          <h3 style="margin:5px 0;">Cata de Vinos Boutique</h3>
+          <p style="font-size:13px;">Por Vino en Jawa.</p>
+        </div>
       </a>
     </div>
   </section>
 
+  <div class="quote-separator">
+    "Donde el grupo se encuentra, la experiencia comienza."
   </div>
+
+  <section id="espacio" class="box">
+    <h2>El Espacio</h2>
+    <p>Combinamos 100 m² de interior versátil con un jardín de 250 m². Un refugio de silencio y luz ideal para marcas y realizadores que buscan exclusividad y enfoque.</p>
+    <div class="grid-entorno">
+      <img src="Entorno1.jpg" style="height:150px; width:100%; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
+      <img src="Entorno2.jpg" style="height:150px; width:100%; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
+      <img src="Entorno3.jpg" style="height:150px; width:100%; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
+    </div>
+  </section>
+
+  <section id="contacto" style="margin-top: 60px;">
+    <div class="box" style="background: var(--primary); color: white;">
+      <h2 style="color: white; margin-bottom:10px;">Organizá tu evento en Arcos V</h2>
+      <p style="color: #ccc; margin-bottom:20px;">Utilizá el espacio para tus cursos, reuniones de equipo o presentaciones de marca.</p>
+      <a class="btn" style="background: white; color: var(--primary);" href="https://wa.me/5491162834000">🏡 Consultar</a>
+    </div>
+
+    <div class="box">
+      <h3>¿Dónde estamos?</h3>
+      <p style="margin-bottom:20px;">Arcos 2952, Núñez, CABA.</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.3263!2d-58.4651!3d-34.5458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDMyJzQ0LjkiUyA1OMKwMjcnNTQuNCJX!5e0!3m2!1ses!2sar!4v1650000000000" width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo"><img src="logo.png" alt="Arcos V"></div>
+    <p>Arcos 2952, Núñez · CABA</p>
+    <p style="margin-top: 20px;">
+      <a href="https://instagram.com/arcosv.ba" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">Instagram</a> · 
+      <a href="https://wa.me/5491162834000" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">WhatsApp</a>
+    </p>
+  </footer>
+
+</div>
+
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
 
 <script>
 function toggleMenu() { document.getElementById("mobile-menu").classList.toggle("active"); }
@@ -200,17 +335,28 @@ function startSplitCarousel(containerId, interval) {
   const container = document.getElementById(containerId);
   const slides = container.getElementsByClassName('split-slide');
   let current = 0;
-
   setInterval(() => {
     slides[current].classList.remove('active');
     current = (current + 1) % slides.length;
     slides[current].classList.add('active');
   }, interval);
 }
+startSplitCarousel('upper-carousel', 5000);
+startSplitCarousel('lower-carousel', 7200);
 
-// Iniciamos cada mitad con tiempos diferentes para que sea "random" y suave
-startSplitCarousel('upper-carousel', 5000); // Cambia cada 5 segundos
-startSplitCarousel('lower-carousel', 7000); // Cambia cada 7 segundos
+function filter(cat, btn) {
+  document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  document.querySelectorAll(".card").forEach(c => {
+    c.style.display = (cat === "all" || c.dataset.cat === cat) ? "block" : "none";
+  });
+}
+
+function openLightbox(src) { 
+  document.getElementById("lightbox").style.display = "flex"; 
+  document.getElementById("lightbox-img").src = src; 
+}
+function closeLightbox() { document.getElementById("lightbox").style.display = "none"; }
 </script>
 
 </body>
