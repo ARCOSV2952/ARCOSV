@@ -84,11 +84,11 @@ header {
 /* CONTENEDOR */
 .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
 
-/* --- SECCIÓN HERO (IGUAL EN PC Y MÓVIL) --- */
+/* --- HERO GRID (ESTRUCTURA PC) --- */
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto auto; /* Superior, Título, Inferior */
+  grid-template-rows: auto auto auto;
   gap: 15px;
   margin-top: 20px;
   align-items: center;
@@ -96,7 +96,7 @@ header {
 
 .hero-text-center {
   grid-column: 1 / -1; 
-  grid-row: 2; /* Siempre al medio */
+  grid-row: 2;
   text-align: center;
   padding: 40px 0;
 }
@@ -112,15 +112,6 @@ header {
   height: 250px;
 }
 
-/* Ajuste sutil de altura para móviles */
-@media (max-width: 700px) {
-  .carousel-box { height: 180px; }
-  .hero-title { font-size: 32px; }
-  .hero-subtitle { font-size: 16px; }
-  .nav-links { display: none; }
-  .menu-toggle { display: block; }
-}
-
 .split-slide {
   position: absolute;
   width: 100%; height: 100%;
@@ -130,15 +121,48 @@ header {
 }
 .split-slide.active { opacity: 1; }
 
-/* BOTÓN NOVEDADES */
-.btn-novedades-container { text-align: center; margin: 10px 0 20px 0; }
+/* --- MODIFICACIONES CELULAR --- */
+@media (max-width: 700px) {
+  .hero-grid {
+    grid-template-columns: 1fr; /* Una sola columna en celu */
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+  }
+
+  /* Ocultamos una foto de cada par para que quede una sola rectangular */
+  #top-right, #bottom-left { display: none; }
+  
+  /* Hacemos que los bloques que quedan ocupen todo el ancho y sean rectangulares */
+  #top-left, #bottom-right { 
+    grid-column: 1 / -1; 
+    height: 200px; 
+  }
+
+  .hero-text-center { padding: 30px 0; }
+  .hero-title { font-size: 32px; }
+  .hero-subtitle { font-size: 16px; }
+
+  /* Desplazamos el botón de novedades */
+  .btn-novedades-container.in-hero { display: none; } /* Oculto en el hero del celu */
+  .btn-novedades-container.pre-agenda { display: block; margin: 40px 0 20px 0; }
+
+  .nav-links { display: none; }
+  .menu-toggle { display: block; }
+  .grid-entorno { grid-template-columns: 1fr; }
+}
+
+/* Estado por defecto del botón pre-agenda (oculto en PC) */
+.btn-novedades-container.pre-agenda { display: none; }
+
+/* BOTÓN NOVEDADES ESTILO */
+.btn-novedades-container { text-align: center; }
 .btn-novedades {
   text-decoration: none; color: var(--primary); font-size: 18px; font-weight: 600;
   border-bottom: 2px solid var(--primary); padding-bottom: 4px; transition: 0.3s;
 }
 
 /* FILTROS Y GRIDS */
-.filters { display: flex; gap: 12px; margin: 30px 0; position: sticky; top: 75px; z-index: 10; background: var(--bg); padding: 10px 0; }
+.filters { display: flex; gap: 12px; margin: 20px 0 30px 0; position: sticky; top: 75px; z-index: 10; background: var(--bg); padding: 10px 0; }
 .filter-btn { padding: 8px 20px; border-radius: 30px; border: 1px solid #ddd; background: white; cursor: pointer; font-size: 14px; }
 .filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
 
@@ -149,10 +173,6 @@ header {
 
 .box { background: white; padding: 40px; border-radius: var(--radius); margin-top: 30px; box-shadow: var(--shadow); }
 .grid-entorno { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 25px; }
-
-@media (max-width: 700px) {
-  .grid-entorno { grid-template-columns: 1fr; }
-}
 
 .quote-separator { text-align: center; padding: 80px 20px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 24px; color: #888; }
 
@@ -206,7 +226,7 @@ footer { text-align: center; margin-top: 100px; padding: 60px 20px; border-top: 
       <div class="hero-text-center">
         <h1 class="hero-title">Por acá pasa lo que te gusta hacer.</h1>
         <p class="hero-subtitle">El marco ideal en Núñez para tus encuentros, talleres y experiencias.</p>
-        <div class="btn-novedades-container">
+        <div class="btn-novedades-container in-hero">
             <a href="https://wa.me/5491162834000" target="_blank" class="btn-novedades">✨ Quiero recibir novedades</a>
         </div>
       </div>
@@ -222,7 +242,11 @@ footer { text-align: center; margin-top: 100px; padding: 60px 20px; border-top: 
     </div>
   </section>
 
-  <section id="encuentros" style="margin-top: 60px;">
+  <div class="btn-novedades-container pre-agenda">
+      <a href="https://wa.me/5491162834000" target="_blank" class="btn-novedades">✨ Quiero recibir novedades</a>
+  </div>
+
+  <section id="encuentros">
     <h2>Próximos Encuentros</h2>
     <div class="filters">
       <div class="filter-btn active" onclick="filter('all', this)">Todos</div>
@@ -271,7 +295,7 @@ footer { text-align: center; margin-top: 100px; padding: 60px 20px; border-top: 
     <div class="box">
       <h3>¿Dónde estamos?</h3>
       <p style="margin-bottom:20px;">Arcos 2952, Núñez, CABA.</p>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.205256249219!2d-58.46369062343828!3d-34.54836645457813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb4265492237f%3A0xc346d03d09205166!2sArcos%202952%2C%20C1429%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1714400000000!5m2!1ses-419!2sar" width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.2045564858063!2d-58.465134723466185!3d-34.548375172973714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6a0ec6e090f%3A0xc48c6661132e088!2sArcos%202952%2C%20C1429%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1714412345678!5m2!1ses!2sar" width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </section>
 
