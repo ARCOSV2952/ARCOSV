@@ -34,7 +34,7 @@ body {
   padding-top: 80px; 
 }
 
-/* NAVBAR - CORRECCIÓN LOGO MÓVIL */
+/* NAVBAR */
 header {
   position: fixed;
   top: 0; left: 0;
@@ -42,7 +42,7 @@ header {
   z-index: 1000;
   width: 100%;
   border-bottom: 1px solid rgba(0,0,0,0.05);
-  height: 70px; /* Altura fija para control */
+  height: 70px;
   display: flex;
   align-items: center;
 }
@@ -57,32 +57,14 @@ header {
   align-items: center;
 }
 
-/* Logo con visibilidad forzada */
-.logo { 
-  display: flex !important; 
-  align-items: center; 
-  text-decoration: none;
-  min-width: 100px; 
-}
-
-.logo img { 
-  height: 40px; /* Tamaño ideal para móvil y PC */
-  width: auto; 
-  display: block !important; 
-  object-fit: contain;
-}
+.logo { display: flex !important; align-items: center; text-decoration: none; min-width: 100px; }
+.logo img { height: 40px; width: auto; display: block !important; object-fit: contain; }
 
 .nav-links { display: flex; gap: 25px; }
 .nav-links a { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 500; transition: 0.3s; }
 .nav-links a:hover { opacity: 0.6; }
 
-.menu-toggle { 
-  display: none; 
-  font-size: 28px; 
-  cursor: pointer; 
-  color: var(--text);
-  padding: 5px;
-}
+.menu-toggle { display: none; font-size: 28px; cursor: pointer; color: var(--text); padding: 5px; }
 
 /* MENÚ MÓVIL */
 .mobile-nav {
@@ -97,34 +79,46 @@ header {
   transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .mobile-nav.active { right: 0; }
-.mobile-nav a { 
-  font-family: 'Playfair Display', serif; 
-  font-size: 28px; 
-  text-decoration: none; 
-  color: var(--text); 
-}
+.mobile-nav a { font-family: 'Playfair Display', serif; font-size: 28px; text-decoration: none; color: var(--text); }
 
 /* CONTENEDOR */
 .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
 
-/* HERO */
-.hero-title { font-size: 48px; line-height: 1.1; margin-top: 20px; margin-bottom: 15px; }
-.hero-subtitle { font-size: 18px; color: var(--text-light); margin-bottom: 25px; }
-
-/* CARRUSEL CUÁDRUPLE */
-.split-carousel {
+/* --- SECCIÓN HERO (IGUAL EN PC Y MÓVIL) --- */
+.hero-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 250px);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto; /* Superior, Título, Inferior */
   gap: 15px;
-  margin: 40px 0 20px 0;
+  margin-top: 20px;
+  align-items: center;
 }
+
+.hero-text-center {
+  grid-column: 1 / -1; 
+  grid-row: 2; /* Siempre al medio */
+  text-align: center;
+  padding: 40px 0;
+}
+
+.hero-title { font-size: 48px; line-height: 1.1; margin-bottom: 15px; }
+.hero-subtitle { font-size: 18px; color: var(--text-light); margin-bottom: 25px; }
 
 .carousel-box {
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
+  height: 250px;
+}
+
+/* Ajuste sutil de altura para móviles */
+@media (max-width: 700px) {
+  .carousel-box { height: 180px; }
+  .hero-title { font-size: 32px; }
+  .hero-subtitle { font-size: 16px; }
+  .nav-links { display: none; }
+  .menu-toggle { display: block; }
 }
 
 .split-slide {
@@ -134,116 +128,41 @@ header {
   opacity: 0;
   transition: opacity 1.5s ease-in-out;
 }
-
 .split-slide.active { opacity: 1; }
 
 /* BOTÓN NOVEDADES */
-.btn-novedades-container { text-align: center; margin: 40px 0 60px 0; }
+.btn-novedades-container { text-align: center; margin: 10px 0 20px 0; }
 .btn-novedades {
-  text-decoration: none; 
-  color: var(--primary); 
-  font-size: 20px; 
-  font-weight: 600;
-  border-bottom: 2px solid var(--primary); 
-  padding-bottom: 4px;
-  transition: 0.3s;
+  text-decoration: none; color: var(--primary); font-size: 18px; font-weight: 600;
+  border-bottom: 2px solid var(--primary); padding-bottom: 4px; transition: 0.3s;
 }
 
-/* FILTROS */
-.filters {
-  display: flex;
-  gap: 12px;
-  margin: 30px 0;
-  position: sticky;
-  top: 75px; 
-  z-index: 10;
-  background: var(--bg);
-  padding: 10px 0;
-}
-
-.filter-btn {
-  padding: 8px 20px;
-  border-radius: 30px;
-  border: 1px solid #ddd;
-  background: white;
-  cursor: pointer;
-  font-size: 14px;
-}
+/* FILTROS Y GRIDS */
+.filters { display: flex; gap: 12px; margin: 30px 0; position: sticky; top: 75px; z-index: 10; background: var(--bg); padding: 10px 0; }
+.filter-btn { padding: 8px 20px; border-radius: 30px; border: 1px solid #ddd; background: white; cursor: pointer; font-size: 14px; }
 .filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
 
-/* CARDS */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
-.card { 
-  text-decoration: none; 
-  color: inherit; 
-  background: white; 
-  border-radius: var(--radius); 
-  overflow: hidden; 
-  transition: 0.3s; 
-  box-shadow: 0 4px 15px rgba(0,0,0,0.03); 
-  display: block;
-}
+.card { text-decoration: none; color: inherit; background: white; border-radius: var(--radius); overflow: hidden; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: block; }
 .card img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
 .card-content { padding: 25px; }
 
-/* BOXES */
 .box { background: white; padding: 40px; border-radius: var(--radius); margin-top: 30px; box-shadow: var(--shadow); }
 .grid-entorno { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 25px; }
 
-.quote-separator {
-  text-align: center;
-  padding: 80px 20px;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 24px;
-  color: #888;
-}
-
-.btn {
-  display: block;
-  padding: 20px;
-  background: var(--primary);
-  color: white;
-  text-align: center;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 600;
-  margin-top: 20px;
-}
-
-/* FOOTER LOGO CORRECCIÓN */
-footer {
-  text-align: center;
-  margin-top: 100px;
-  padding: 60px 20px;
-  border-top: 1px solid #eee;
-}
-.footer-logo { display: block; margin-bottom: 15px; }
-.footer-logo img { height: 40px; width: auto; }
-
-/* MEDIA QUERIES */
-@media (max-width:700px){
-  .hero-title { font-size: 34px; }
-  .split-carousel {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 220px);
-  }
-  #top-right, #bottom-left { display: none; } /* Mantiene la estética de 2 fotos en móvil */
-  
-  .nav-links { display: none; }
-  .menu-toggle { display: block; }
-  
+@media (max-width: 700px) {
   .grid-entorno { grid-template-columns: 1fr; }
 }
 
-#lightbox {
-  display: none;
-  position: fixed;
-  z-index: 3000;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0,0,0,0.9);
-  justify-content: center; align-items: center;
-}
+.quote-separator { text-align: center; padding: 80px 20px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 24px; color: #888; }
+
+.btn { display: block; padding: 20px; background: var(--primary); color: white; text-align: center; border-radius: 12px; text-decoration: none; font-weight: 600; margin-top: 20px; }
+
+footer { text-align: center; margin-top: 100px; padding: 60px 20px; border-top: 1px solid #eee; }
+.footer-logo { display: block; margin-bottom: 15px; }
+.footer-logo img { height: 40px; width: auto; }
+
+#lightbox { display: none; position: fixed; z-index: 3000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
 #lightbox img { max-width: 90%; max-height: 80%; border-radius: 8px; }
 </style>
 </head>
@@ -252,9 +171,7 @@ footer {
 
 <header>
   <div class="nav-container">
-    <a href="#" class="logo">
-      <img src="logo.png" alt="Arcos V">
-    </a>
+    <a href="#" class="logo"><img src="logo.png" alt="Arcos V"></a>
     <div class="nav-links">
       <a href="#encuentros">Próximos Encuentros</a>
       <a href="#espacio">El Espacio</a>
@@ -276,10 +193,7 @@ footer {
 <div class="container">
   
   <section id="inicio">
-    <h1 class="hero-title">Por acá pasa lo que te gusta hacer.</h1>
-    <p class="hero-subtitle">El marco ideal en Núñez para tus encuentros, talleres y experiencias.</p>
-
-    <div class="split-carousel">
+    <div class="hero-grid">
       <div class="carousel-box" id="top-left">
         <img class="split-slide active" src="Carru1.jpg">
         <img class="split-slide" src="Carru2.jpg">
@@ -288,6 +202,15 @@ footer {
         <img class="split-slide active" src="Carru3.jpg">
         <img class="split-slide" src="Carru4.jpg">
       </div>
+
+      <div class="hero-text-center">
+        <h1 class="hero-title">Por acá pasa lo que te gusta hacer.</h1>
+        <p class="hero-subtitle">El marco ideal en Núñez para tus encuentros, talleres y experiencias.</p>
+        <div class="btn-novedades-container">
+            <a href="https://wa.me/5491162834000" target="_blank" class="btn-novedades">✨ Quiero recibir novedades</a>
+        </div>
+      </div>
+
       <div class="carousel-box" id="bottom-left">
         <img class="split-slide active" src="Carru5.jpg">
         <img class="split-slide" src="Carru6.jpg">
@@ -297,13 +220,9 @@ footer {
         <img class="split-slide" src="Carru8.jpg">
       </div>
     </div>
-
-    <div class="btn-novedades-container">
-        <a href="https://wa.me/5491162834000" target="_blank" class="btn-novedades">✨ Quiero recibir novedades</a>
-    </div>
   </section>
 
-  <section id="encuentros">
+  <section id="encuentros" style="margin-top: 60px;">
     <h2>Próximos Encuentros</h2>
     <div class="filters">
       <div class="filter-btn active" onclick="filter('all', this)">Todos</div>
@@ -320,7 +239,6 @@ footer {
           <p style="font-size:13px;">Jueves 7 de mayo 16:30 hs.</p>
         </div>
       </a>
-
       <a href="evento-vinos.html" class="card" data-cat="cata">
         <img src="Prox2.jpg">
         <div class="card-content">
@@ -332,9 +250,7 @@ footer {
     </div>
   </section>
 
-  <div class="quote-separator">
-    "Donde el grupo se encuentra, la experiencia comienza."
-  </div>
+  <div class="quote-separator">"Donde el grupo se encuentra, la experiencia comienza."</div>
 
   <section id="espacio" class="box">
     <h2>El Espacio</h2>
@@ -352,11 +268,10 @@ footer {
       <p style="color: #ccc; margin-bottom:20px;">Utilizá el espacio para tus cursos, reuniones de equipo o presentaciones de marca.</p>
       <a class="btn" style="background: white; color: var(--primary);" href="https://wa.me/5491162834000">🏡 Consultar</a>
     </div>
-
     <div class="box">
       <h3>¿Dónde estamos?</h3>
       <p style="margin-bottom:20px;">Arcos 2952, Núñez, CABA.</p>
-      <iframe src="http://googleusercontent.com/maps.google.com/7" width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.205256249219!2d-58.46369062343828!3d-34.54836645457813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb4265492237f%3A0xc346d03d09205166!2sArcos%202952%2C%20C1429%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1714400000000!5m2!1ses-419!2sar" width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </section>
 
@@ -371,9 +286,7 @@ footer {
 
 </div>
 
-<div id="lightbox" onclick="closeLightbox()">
-  <img id="lightbox-img">
-</div>
+<div id="lightbox" onclick="closeLightbox()"><img id="lightbox-img"></div>
 
 <script>
 function toggleMenu() { document.getElementById("mobile-menu").classList.toggle("active"); }
@@ -403,10 +316,7 @@ function filter(cat, btn) {
   });
 }
 
-function openLightbox(src) { 
-  document.getElementById("lightbox").style.display = "flex"; 
-  document.getElementById("lightbox-img").src = src; 
-}
+function openLightbox(src) { document.getElementById("lightbox").style.display = "flex"; document.getElementById("lightbox-img").src = src; }
 function closeLightbox() { document.getElementById("lightbox").style.display = "none"; }
 </script>
 
