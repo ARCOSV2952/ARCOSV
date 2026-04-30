@@ -260,6 +260,7 @@ footer { text-align: center; margin-top: 100px; padding: 60px 20px; border-top: 
     </div>
 
     <div class="grid">
+      <!-- Encuentro de Cocina -->
       <a href="evento-cocina.html" class="card" data-cat="taller">
         <img src="Prox1.jpg">
         <div class="card-content">
@@ -268,6 +269,18 @@ footer { text-align: center; margin-top: 100px; padding: 60px 20px; border-top: 
           <p style="font-size:13px;">Jueves 7 de mayo 16:30 hs.</p>
         </div>
       </a>
+
+      <!-- Nuevo: Encuentro de Madres -->
+      <a href="evento-madres.html" class="card" data-cat="taller">
+        <img src="Casacalma1.jpg">
+        <div class="card-content">
+          <span style="font-size:11px; text-transform:uppercase; color:#888;">Comunidad</span>
+          <h3 style="margin:5px 0;">Encuentro de Madres Jóvenes</h3>
+          <p style="font-size:13px;">Domingos de 15:00 a 17:00 hs.</p>
+        </div>
+      </a>
+
+      <!-- Cata de Vinos -->
       <a href="evento-vinos.html" class="card" data-cat="cata">
         <img src="Prox2.jpg">
         <div class="card-content">
@@ -346,7 +359,7 @@ function filter(cat, btn) {
 }
 
 function openLightbox(src) { document.getElementById("lightbox").style.display = "flex"; document.getElementById("lightbox-img").src = src; }
-function closeLightbox() { document.getElementById("lightbox").style.display = "none"; }
+function closeLightbox() { document.getElementById("lightbox").style.none = "none"; }
 </script>
 
 </body>
