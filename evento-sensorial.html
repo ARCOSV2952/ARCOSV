@@ -1,47 +1,179 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Experiencia sensorial - Arcos V</title>
 
-  <style>
-    body { margin: 0; font-family: Arial; background: #f5f5f5; }
-    .container { max-width: 700px; margin: auto; padding: 20px; }
-    img { width: 100%; border-radius: 12px; }
-    h1 { font-size: 28px; margin-top: 15px; }
-    .meta { color: #666; }
-    .price { font-size: 20px; font-weight: bold; margin-top: 10px; }
-    .urgency { color: #b00020; }
-    .desc { margin-top: 15px; line-height: 1.6; }
-    .btn { display: block; margin-top: 25px; padding: 16px; background: black; color: white; text-align: center; text-decoration: none; border-radius: 10px; }
-    .back { display: block; margin-bottom: 15px; color: #666; text-decoration: none; }
-  </style>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Cata de Vinos en Núñez | Arcos V</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* --- BASE SAGRADA DE ARCOS V --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #faf9f6;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary: #111111;
+  --bg: #faf9f6; 
+  --text: #1a1a1a;
+  --text-light: #555;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  padding-top: 80px; 
+}
+
+header {
+  position: fixed;
+  top: 0; left: 0;
+  background: var(--bg);
+  z-index: 1000;
+  width: 100%;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img { height: 40px; width: auto; }
+
+/* --- ESTILOS DE CONTENEDOR CENTRAL --- */
+.container-detalle {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.hero-imagen {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+}
+
+.box-info {
+  background: white;
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+h1 { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 10px; }
+.tag { font-size: 12px; text-transform: uppercase; color: #888; letter-spacing: 1px; }
+
+.meta-info {
+  margin: 20px 0;
+  padding: 20px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.description { line-height: 1.7; color: var(--text-light); margin-bottom: 30px; }
+
+.btn {
+  display: block;
+  padding: 20px;
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.urgency-label {
+    color: #b00020;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    display: block;
+}
+
+footer { text-align: center; margin-top: 60px; padding: 60px 20px; border-top: 1px solid #eee; }
+footer img { height: 30px; margin-bottom: 10px; }
+
+@media (max-width: 700px) {
+  .hero-imagen { height: 250px; }
+  .box-info { padding: 25px; }
+  h1 { font-size: 28px; }
+}
+</style>
 </head>
 
 <body>
 
-<div class="container">
-
-  <a class="back" href="index.html">← Volver</a>
-
-  <img src="Prueba333.jpg">
-
-  <h1>Taller de jardinería</h1>
-
-  <div class="meta">Domingo 24 de mayo · 11 hs</div>
-  <div class="price">$7.000</div>
-  <div class="urgency">Quedan pocos lugares</div>
-
-  <div class="desc">
-    Si te gustan las plantas pero no sabés cómo cuidarlas
-    aprendé con nosotras los secretos básicos
+<header>
+  <div class="nav-container">
+    <a href="index.html" class="logo"><img src="logo.png" alt="Arcos V"></a>
+    <div style="font-size: 14px; font-weight: 500;">
+        <a href="index.html#encuentros" style="text-decoration: none; color: var(--text);">← Volver</a>
+    </div>
   </div>
+</header>
 
-  <a class="btn" href="https://wa.me/5491112345678?text=Hola%20quiero%20reservar%20la%20experiencia%20sensorial">
-    Reservar por WhatsApp
-  </a>
+<div class="container-detalle">
+    <!-- Usamos la imagen de la cata -->
+    <img src="Prueba333.jpg" alt="Cata de vinos boutique por Vino en Jawa en Arcos V Núñez" class="hero-imagen">
 
+    <div class="box-info">
+        <span class="tag">Experiencia Sensorial · Por Vino en Jawa</span>
+        <h1>Cata de Vinos</h1>
+        
+        <div class="meta-info">
+            <span>📅 Domingo 24 de mayo</span>
+            <span>🕒 11:00 hs</span>
+            <span>📍 Arcos 2952, Núñez</span>
+        </div>
+
+        <span class="urgency-label">⚠️ Quedan pocos lugares</span>
+
+        <div class="description">
+            <p style="margin-bottom: 15px;">Vino en Jawa presenta un recorrido sensorial por etiquetas seleccionadas de bodegas boutique. En esta edición, la experiencia se traslada a nuestro refugio de Núñez para disfrutar de una mañana dedicada al descubrimiento de cepas y terruños.</p>
+            
+            <p>Una charla distendida para aprender los secretos del vino en un entorno exclusivo, privado y luminoso. Incluye maridaje artesanal diseñado para resaltar cada nota de cata.</p>
+            
+            <ul style="margin: 20px 0; padding-left: 20px;">
+                <li>Degustación dirigida de etiquetas exclusivas.</li>
+                <li>Maridaje artesanal incluido.</li>
+                <li>Charla técnica sobre regiones y productores locales.</li>
+                <li>Inversión: $7.000</li>
+            </ul>
+        </div>
+
+        <a href="https://wa.me/5491112345678?text=Hola%20quiero%20reservar%20la%20experiencia%20sensorial" class="btn">🍷 Reservar mi lugar</a>
+    </div>
+
+    <footer>
+        <img src="logo.png" alt="Arcos V">
+        <p>Arcos 2952, Núñez · CABA</p>
+    </footer>
 </div>
 
 </body>
