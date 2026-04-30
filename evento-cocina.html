@@ -4,13 +4,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Detalle del Evento | Arcos V</title>
+<title>Taller de Cocina Essen en Núñez | Arcos V</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+/* --- BASE SAGRADA DE ARCOS V (IDÉNTICA A MADRES) --- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { width: 100%; overflow-x: hidden; background-color: #faf9f6; }
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #faf9f6;
+  scroll-behavior: smooth;
+}
 
 :root {
   --primary: #111111;
@@ -18,154 +25,95 @@ html, body { width: 100%; overflow-x: hidden; background-color: #faf9f6; }
   --text: #1a1a1a;
   --text-light: #555;
   --radius: 16px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.04);
 }
 
 body {
   font-family: 'Inter', sans-serif;
   color: var(--text);
   -webkit-font-smoothing: antialiased;
-  padding-top: 80px;
+  padding-top: 80px; 
 }
 
-/* NAVBAR FIJA (Igual al Index) */
 header {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   background: var(--bg);
   z-index: 1000;
   width: 100%;
   border-bottom: 1px solid rgba(0,0,0,0.05);
+  height: 70px;
+  display: flex;
+  align-items: center;
 }
 
 .nav-container {
+  width: 100%;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 15px 20px;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo { 
-  font-family: 'Playfair Display', serif; 
-  font-size: 24px; 
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--text);
+.logo img { height: 40px; width: auto; }
+
+/* --- ESTILOS DE CONTENEDOR CENTRAL --- */
+.container-detalle {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-.btn-volver {
-    text-decoration: none;
-    color: var(--text-light);
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-/* LAYOUT DE PRODUCTO/EVENTO */
-.event-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr; /* Dos columnas: Imagen y Datos */
-  gap: 40px;
-}
-
-/* COLUMNA IZQUIERDA: IMAGEN */
-.event-gallery img {
+.hero-imagen {
   width: 100%;
+  height: 400px;
+  object-fit: cover;
   border-radius: var(--radius);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+}
+
+.box-info {
+  background: white;
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+h1 { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 10px; }
+.tag { font-size: 12px; text-transform: uppercase; color: #888; letter-spacing: 1px; }
+
+.meta-info {
+  margin: 20px 0;
+  padding: 20px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.description { line-height: 1.7; color: var(--text-light); margin-bottom: 30px; }
+
+.btn {
   display: block;
-  margin-bottom: 20px;
+  padding: 20px;
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-/* COLUMNA DERECHA: INFO STICKY */
-.event-info {
-  position: sticky;
-  top: 100px;
-  height: fit-content;
-}
+footer { text-align: center; margin-top: 60px; padding: 60px 20px; border-top: 1px solid #eee; }
+footer img { height: 30px; margin-bottom: 10px; }
 
-.tag-event {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #888;
-  margin-bottom: 10px;
-  display: block;
-}
-
-h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 36px;
-  line-height: 1.2;
-  margin-bottom: 15px;
-}
-
-.event-details-list {
-    list-style: none;
-    margin: 25px 0;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
-}
-
-.event-details-list li {
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-}
-
-.event-details-list li span:first-child {
-    font-weight: 600;
-    color: var(--text-light);
-}
-
-.event-description {
-    line-height: 1.7;
-    color: var(--text-light);
-    font-size: 15px;
-    margin-bottom: 30px;
-}
-
-/* BOTÓN DE ACCIÓN (WHATSAPP) */
-.btn-whatsapp {
-    display: block;
-    background: var(--primary);
-    color: white;
-    text-align: center;
-    padding: 20px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-    margin-top: 20px;
-}
-
-.btn-whatsapp:hover {
-    transform: scale(1.02);
-    opacity: 0.9;
-}
-
-.organizador-info {
-    margin-top: 15px;
-    font-size: 12px;
-    color: #999;
-    text-align: center;
-}
-
-/* RESPONSIVE */
-@media (max-width: 800px) {
-  .event-container {
-    grid-template-columns: 1fr;
-  }
-  .event-info {
-    position: static;
-  }
+@media (max-width: 700px) {
+  .hero-imagen { height: 250px; }
+  .box-info { padding: 25px; }
   h1 { font-size: 28px; }
 }
 </style>
@@ -175,44 +123,48 @@ h1 {
 
 <header>
   <div class="nav-container">
-    <a href="index.html" class="logo">Arcos V</a>
-  <a href="index.html#encuentros" class="btn-volver">← Volver a Próximos Encuentros</a>
+    <a href="index.html" class="logo"><img src="logo.png" alt="Arcos V"></a>
+    <div style="font-size: 14px; font-weight: 500;">
+        <a href="index.html#encuentros" style="text-decoration: none; color: var(--text);">← Volver</a>
+    </div>
   </div>
 </header>
 
-<main class="event-container">
-  
-  <section class="event-gallery">
-      <img src="Essen2.jpg" alt="Imagen del evento">
-  </section>
+<div class="container-detalle">
+    <!-- Usamos la imagen Essen2.jpg -->
+    <img src="Essen2.jpg" alt="Taller de cocina Essen organizado por Moira en Arcos V Núñez" class="hero-imagen">
 
-  <section class="event-info">
-      <span class="tag-event">Taller de Cocina • Sin cargo</span>
-      
-      <h1>Evento Essen</h1>
-      
-      <div class="event-description">
-          <p>Querés cocinar más rápido, sano y rico? Este evento es para vos! Qué vas a encontrar? Vas a APRENDER las mejores funciones y beneficios de tu Essen. Vas a COMER RICO ya que hay degustaciones exclusivas, y vas a participar de SORTEOS para llevarte premios espectaculares!</p>
-      </div>
+    <div class="box-info">
+        <span class="tag">Gastronomía · Por Essen / Moira</span>
+        <h1>Taller de Cocina</h1>
+        
+        <div class="meta-info">
+            <span>📅 Jueves 7 de mayo</span>
+            <span>🕒 16:30 hs</span>
+            <span>📍 Arcos 2952, Núñez</span>
+        </div>
 
-      <ul class="event-details-list">
-          <li><span>Fecha</span> <span>Jueves 7 de mayo</span></li>
-          <li><span>Horario</span> <span>16:30 hs.</span></li>
-          <li><span>Modalidad</span> <span>Evento único</span></li>
-          <li><span>Inversión</span> <span>Sin costo</span></li> </ul>
+        <div class="description">
+            <p style="margin-bottom: 15px;">Moira presenta una experiencia práctica pensada para que cocinar sea más rápido, sano y rico. El taller se traslada a nuestro espacio en Núñez para descubrir las mejores funciones y beneficios de las piezas Essen.</p>
+            
+            <p>Un encuentro dinámico donde el sabor y la practicidad son el eje central. Disfrutaremos de degustaciones exclusivas y sorteos especiales en un ambiente privado y distendido.</p>
+            
+            <ul style="margin: 20px 0; padding-left: 20px;">
+                <li>Demostración de técnicas y beneficios Essen.</li>
+                <li>Degustación de preparaciones en el momento.</li>
+                <li>Participación en sorteos exclusivos del evento.</li>
+                <li>Inversión: Sin costo.</li>
+            </ul>
+        </div>
 
-      <a href="https://wa.me/5491121555018?text=Hola!%20Me%20interesa%20sumarme%20al%20Encuentro%20de%20Cocina" target="_blank" class="btn-whatsapp">
-          Reservar mi lugar por WhatsApp
-      </a>
-      
-      <p class="organizador-info">Este evento es organizado por: Essen / Moira</p>
-  </section>
+        <a href="https://wa.me/5491121555018?text=Hola!%20Me%20interesa%20sumarme%20al%20Encuentro%20de%20Cocina" class="btn">🍳 Reservar mi lugar</a>
+    </div>
 
-</main>
-
-<footer style="text-align: center; padding: 60px 20px; color: #999; font-size: 13px;">
-    Arcos V • Boutique para Experiencias
-</footer>
+    <footer>
+        <img src="logo.png" alt="Arcos V">
+        <p>Arcos 2952, Núñez · CABA</p>
+    </footer>
+</div>
 
 </body>
 </html>
