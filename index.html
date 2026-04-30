@@ -4,13 +4,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Arcos V | Espacio Boutique para Experiencias</title>
+<title>Arcos V | Espacio Boutique para Experiencias en Núñez</title>
+
+<!-- SEO Invisible: Lo que Google lee de Arcos V -->
+<meta name="description" content="Arcos V es un espacio boutique en el barrio de Núñez, CABA. Un refugio diseñado para experiencias exclusivas, catas de vino, talleres y encuentros de marcas con jardín y salón versátil.">
+<meta name="keywords" content="espacio para eventos, Núñez, CABA, alquiler salón, talleres, catas de vino, brand experience">
 
 <link rel="icon" type="image/png" href="favicon.png">
   
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+/* --- TU BASE SAGRADA MANTENIDA --- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html, body {
@@ -94,7 +99,7 @@ header {
   gap: 15px;
   margin-top: 20px;
   align-items: center;
-  margin-bottom: 80px; /* Mas aire en PC entre fotos y agenda */
+  margin-bottom: 80px;
 }
 
 .hero-text-center {
@@ -130,7 +135,7 @@ header {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
     gap: 15px;
-    margin-bottom: 20px; /* El espacio lo dará el botón novedades */
+    margin-bottom: 20px;
   }
 
   #top-right, #bottom-left { display: none; }
@@ -147,7 +152,7 @@ header {
   .btn-novedades-container.in-hero { display: none; }
   .btn-novedades-container.pre-agenda { 
     display: block !important; 
-    margin: 40px 0 60px 0; /* Mas aire entre botón y próximos encuentros */
+    margin: 40px 0 60px 0;
     visibility: visible !important;
     opacity: 1 !important;
   }
@@ -198,7 +203,7 @@ footer { text-align: center; margin-top: 100px; padding: 60px 20px; border-top: 
 
 <header>
   <div class="nav-container">
-    <a href="#" class="logo"><img src="logo.png" alt="Arcos V"></a>
+    <a href="#" class="logo"><img src="logo.png" alt="Arcos V - Espacio de experiencias"></a>
     <div class="nav-links">
       <a href="#encuentros">Próximos Encuentros</a>
       <a href="#espacio">El Espacio</a>
@@ -222,12 +227,12 @@ footer { text-align: center; margin-top: 100px; padding: 60px 20px; border-top: 
   <section id="inicio">
     <div class="hero-grid">
       <div class="carousel-box" id="top-left">
-        <img class="split-slide active" src="Carru1.jpg">
-        <img class="split-slide" src="Carru2.jpg">
+        <img class="split-slide active" src="Carru1.jpg" alt="Interior luminoso del salón Arcos V">
+        <img class="split-slide" src="Carru2.jpg" alt="Detalle de decoración moderna en Núñez">
       </div>
       <div class="carousel-box" id="top-right">
-        <img class="split-slide active" src="Carru3.jpg">
-        <img class="split-slide" src="Carru4.jpg">
+        <img class="split-slide active" src="Carru3.jpg" alt="Jardín privado para eventos en CABA">
+        <img class="split-slide" src="Carru4.jpg" alt="Espacio versátil para talleres y encuentros">
       </div>
 
       <div class="hero-text-center">
@@ -239,12 +244,12 @@ footer { text-align: center; margin-top: 100px; padding: 60px 20px; border-top: 
       </div>
 
       <div class="carousel-box" id="bottom-left">
-        <img class="split-slide active" src="Carru5.jpg">
-        <img class="split-slide" src="Carru6.jpg">
+        <img class="split-slide active" src="Carru5.jpg" alt="Configuración de mesa para cata de vinos">
+        <img class="split-slide" src="Carru6.jpg" alt="Ambiente cálido y profesional en Arcos V">
       </div>
       <div class="carousel-box" id="bottom-right">
-        <img class="split-slide active" src="Carru7.jpg">
-        <img class="split-slide" src="Carru8.jpg">
+        <img class="split-slide active" src="Carru7.jpg" alt="Vista del jardín de 250 metros cuadrados">
+        <img class="split-slide" src="Carru8.jpg" alt="Espacio boutique Arcos V en Núñez">
       </div>
     </div>
   </section>
@@ -264,7 +269,7 @@ footer { text-align: center; margin-top: 100px; padding: 60px 20px; border-top: 
     <div class="grid">
       <!-- Encuentro de Cocina -->
       <a href="evento-cocina.html" class="card" data-cat="taller">
-        <img src="Prox1.jpg">
+        <img src="Prox1.jpg" alt="Taller de cocina saludable con Essen">
         <div class="card-content">
           <span style="font-size:11px; text-transform:uppercase; color:#888;">Sin cargo</span>
           <h3 style="margin:5px 0;">Evento Essen</h3>
@@ -274,7 +279,7 @@ footer { text-align: center; margin-top: 100px; padding: 60px 20px; border-top: 
 
       <!-- Nuevo: Encuentro de Madres -->
       <a href="evento-madres.html" class="card" data-cat="taller">
-        <img src="Primeramadres.jpg">
+        <img src="Primeramadres.jpg" alt="Encuentro de comunidad para madres en Núñez">
         <div class="card-content">
           <span style="font-size:11px; text-transform:uppercase; color:#888;">Comunidad</span>
           <h3 style="margin:5px 0;">Encuentro de Madres</h3>
@@ -284,7 +289,7 @@ footer { text-align: center; margin-top: 100px; padding: 60px 20px; border-top: 
 
       <!-- Cata de Vinos -->
       <a href="evento-sensorial.html" class="card" data-cat="cata">
-        <img src="Primera vino.jpg">
+        <img src="Primera vino.jpg" alt="Cata de vinos boutique dirigida por Vino en Jawa">
         <div class="card-content">
           <span style="font-size:11px; text-transform:uppercase; color:#888;">Experiencia sensorial</span>
           <h3 style="margin:5px 0;">Cata de Vinos Boutique</h3>
@@ -300,9 +305,9 @@ footer { text-align: center; margin-top: 100px; padding: 60px 20px; border-top: 
     <h2>El Espacio</h2>
     <p>Combinamos 100 m² de interior versátil con un jardín de 250 m². Un refugio de silencio y luz ideal para marcas y realizadores que buscan exclusividad y enfoque.</p>
     <div class="grid-entorno">
-      <img src="Entorno1.jpg" style="height:150px; width:100%; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
-      <img src="Entorno2.jpg" style="height:150px; width:100%; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
-      <img src="Entorno3.jpg" style="height:150px; width:100%; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
+      <img src="Entorno1.jpg" alt="Vista del jardín de Arcos V" style="height:150px; width:100%; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
+      <img src="Entorno2.jpg" alt="Salón interior para eventos corporativos" style="height:150px; width:100%; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
+      <img src="Entorno3.jpg" alt="Detalle de iluminación natural en el salón" style="height:150px; width:100%; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
     </div>
   </section>
 
@@ -310,27 +315,27 @@ footer { text-align: center; margin-top: 100px; padding: 60px 20px; border-top: 
     <div class="box" style="background: var(--primary); color: white;">
       <h2 style="color: white; margin-bottom:10px;">Organizá tu evento en Arcos V</h2>
       <p style="color: #ccc; margin-bottom:20px;">Utilizá el espacio para tus cursos, reuniones de equipo o presentaciones de marca.</p>
-      <a class="btn" style="background: white; color: var(--primary);" href="https://wa.me/5491162834000">🏡 Consultar</a>
+      <a class="btn" style="background: white; color: var(--primary);" href="https://wa.me/5491162834000">🏡 Consultar disponibilidad</a>
     </div>
     <div class="box">
       <h3>¿Dónde estamos?</h3>
       <p style="margin-bottom:20px;">Arcos 2952, Núñez, CABA.</p>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.071879007469!2d-58.4633719!3d-34.5517144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb42055627677%3A0x600100780287c805!2sArcos%202952%2C%20C1429%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1713456789012!5m2!1ses!2sar" width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.071879007469!2d-58.4633719!3d-34.5517144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb42055627677%3A0x600100780287c805!2sArcos%202952%2C%20C1429%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1713456789012!5m2!1ses!2sar" width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy" title="Mapa de ubicación Arcos V en Núñez"></iframe>
     </div>
   </section>
 
   <footer>
-    <div class="footer-logo"><img src="logo.png" alt="Arcos V"></div>
+    <div class="footer-logo"><img src="logo.png" alt="Logotipo Arcos V"></div>
     <p>Arcos 2952, Núñez · CABA</p>
     <p style="margin-top: 20px;">
-      <a href="https://instagram.com/arcosv.ba" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">Instagram</a> · 
-      <a href="https://wa.me/5491162834000" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">WhatsApp</a>
+      <a href="https://instagram.com/arcosv.ba" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">Seguinos en Instagram</a> · 
+      <a href="https://wa.me/5491162834000" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">Contactanos por WhatsApp</a>
     </p>
   </footer>
 
 </div>
 
-<div id="lightbox" onclick="closeLightbox()"><img id="lightbox-img"></div>
+<div id="lightbox" onclick="closeLightbox()"><img id="lightbox-img" alt="Vista ampliada de Arcos V"></div>
 
 <script>
 function toggleMenu() { document.getElementById("mobile-menu").classList.toggle("active"); }
@@ -361,7 +366,7 @@ function filter(cat, btn) {
 }
 
 function openLightbox(src) { document.getElementById("lightbox").style.display = "flex"; document.getElementById("lightbox-img").src = src; }
-function closeLightbox() { document.getElementById("lightbox").style.none = "none"; }
+function closeLightbox() { document.getElementById("lightbox").style.display = "none"; }
 </script>
 
 </body>
