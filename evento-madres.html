@@ -1,219 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Detalle del Evento | Arcos V</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { width: 100%; overflow-x: hidden; background-color: #faf9f6; }
-
-:root {
-  --primary: #111111;
-  --bg: #faf9f6; 
-  --text: #1a1a1a;
-  --text-light: #555;
-  --radius: 16px;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  color: var(--text);
-  -webkit-font-smoothing: antialiased;
-  padding-top: 80px;
-}
-
-/* NAVBAR FIJA (Igual al Index) */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: var(--bg);
-  z-index: 1000;
-  width: 100%;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-.nav-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo { 
-  font-family: 'Playfair Display', serif; 
-  font-size: 24px; 
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--text);
-}
-
-.btn-volver {
-    text-decoration: none;
-    color: var(--text-light);
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-/* LAYOUT DE PRODUCTO/EVENTO */
-.event-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr; /* Dos columnas: Imagen y Datos */
-  gap: 40px;
-}
-
-/* COLUMNA IZQUIERDA: IMAGEN */
-.event-gallery img {
-  width: 100%;
-  border-radius: var(--radius);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  display: block;
-  margin-bottom: 20px;
-}
-
-/* COLUMNA DERECHA: INFO STICKY */
-.event-info {
-  position: sticky;
-  top: 100px;
-  height: fit-content;
-}
-
-.tag-event {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #888;
-  margin-bottom: 10px;
-  display: block;
-}
-
-h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 36px;
-  line-height: 1.2;
-  margin-bottom: 15px;
-}
-
-.event-details-list {
-    list-style: none;
-    margin: 25px 0;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
-}
-
-.event-details-list li {
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-}
-
-.event-details-list li span:first-child {
-    font-weight: 600;
-    color: var(--text-light);
-}
-
-.event-description {
-    line-height: 1.7;
-    color: var(--text-light);
-    font-size: 15px;
-    margin-bottom: 30px;
-}
-
-/* BOTÓN DE ACCIÓN (WHATSAPP) */
-.btn-whatsapp {
-    display: block;
-    background: var(--primary);
-    color: white;
-    text-align: center;
-    padding: 20px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-    margin-top: 20px;
-}
-
-.btn-whatsapp:hover {
-    transform: scale(1.02);
-    opacity: 0.9;
-}
-
-.organizador-info {
-    margin-top: 15px;
-    font-size: 12px;
-    color: #999;
-    text-align: center;
-}
-
-/* RESPONSIVE */
-@media (max-width: 800px) {
-  .event-container {
-    grid-template-columns: 1fr;
-  }
-  .event-info {
-    position: static;
-  }
-  h1 { font-size: 28px; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuentro de Madres Jóvenes - Arcos V</title>
+    <!-- Aquí van tus mismos links a la base sagrada de CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+    <!-- Copiá acá tu Header/Nav estándar -->
 
-<header>
-  <div class="nav-container">
-    <a href="index.html" class="logo">Arcos V</a>
-  <a href="index.html#encuentros" class="btn-volver">← Volver a Próximos Encuentros</a>
-  </div>
-</header>
+    <main class="detalle-evento">
+        <section class="hero-evento" style="background-image: url('img/encuentro-madres-hero.jpg');">
+            <div class="contenedor">
+                <h1>Encuentro de Madres Jóvenes</h1>
+                <p class="bajada">Un espacio de pertenencia y calma en el corazón de Núñez.</p>
+            </div>
+        </section>
 
-<main class="event-container">
-  
-  <section class="event-gallery">
-      <img src="Casacalma1.jpg" alt="Imagen del evento">
-  </section>
+        <section class="info-detallada">
+            <div class="contenedor grid-dos-columnas">
+                <div class="texto">
+                    <h2>Sobre el encuentro</h2>
+                    <p>Diseñamos este espacio los domingos de 15:00 a 17:00 para que madres jóvenes puedan conectar en un entorno estético y relajado. No es solo una reunión, es un momento para vos.</p>
+                    
+                    <ul class="highlights">
+                        <li>Intercambio de experiencias en comunidad.</li>
+                        <li>Entorno seguro y privado en Arcos V.</li>
+                        <li>Cafetería de especialidad y ambiente climatizado.</li>
+                    </ul>
+                </div>
+                
+                <div class="ficha-tecnica">
+                    <h3>Agendalo</h3>
+                    <ul>
+                        <li><strong>Día:</strong> Todos los domingos</li>
+                        <li><strong>Horario:</strong> 15:00 a 17:00 hs</li>
+                        <li><strong>Ubicación:</strong> Arcos V, Núñez, CABA</li>
+                    </ul>
+                    <a href="https://wa.me/tu-numero" class="btn-reserva">Reservar mi lugar</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <section class="event-info">
-      <span class="tag-event">Tribu para madres</span>
-      
-      <h1>Tribu para madres</h1>
-      
-      <div class="event-description">
-          <p>Te invitamos a un espacio especialmente pensado para pausar, sentir y compartir</p>
-      </div>
-
-      <ul class="event-details-list">
-          <li><span>Fecha</span> <span>Domingo 10 de mayo</span></li>
-          <li><span>Horario</span> <span>15:00 hs.</span></li>
-          <li><span>Modalidad</span> <span>Recurrente</span></li>
-          <li><span>Inversión</span> <span>Consultar</span></li> </ul>
-
-      <a href="https://wa.me/5491121555018?text=Hola!%20Me%20interesa%20sumarme%20al%20Encuentro%20de%20Cocina" target="_blank" class="btn-whatsapp">
-          Reservar mi lugar por WhatsApp
-      </a>
-      
-      <p class="organizador-info">Este evento es organizado por: casacalma</p>
-  </section>
-
-</main>
-
-<footer style="text-align: center; padding: 60px 20px; color: #999; font-size: 13px;">
-    Arcos V • Boutique para Experiencias
-</footer>
-
+    <!-- Copiá acá tu Footer estándar -->
 </body>
 </html>
-
