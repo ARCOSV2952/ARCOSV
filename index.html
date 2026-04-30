@@ -6,16 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Arcos V | Espacio Boutique para Experiencias en Núñez</title>
 
-<!-- SEO Invisible: Lo que Google lee de Arcos V -->
-<meta name="description" content="Arcos V es un espacio boutique en el barrio de Núñez, CABA. Un refugio diseñado para experiencias exclusivas, catas de vino, talleres y encuentros de marcas con jardín y salón versátil.">
-<meta name="keywords" content="espacio para eventos, Núñez, CABA, alquiler salón, talleres, catas de vino, brand experience">
+<meta name="description" content="Arcos V es un espacio boutique en el barrio de Núñez, CABA. Un refugio diseñado para experiencias exclusivas, catas de vino, talleres y encuentros de marcas.">
 
 <link rel="icon" type="image/png" href="favicon.png">
   
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-/* --- TU BASE SAGRADA MANTENIDA --- */
+/* --- BASE SAGRADA --- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html, body {
@@ -64,14 +62,13 @@ header {
   align-items: center;
 }
 
-.logo { display: flex !important; align-items: center; text-decoration: none; min-width: 100px; }
-.logo img { height: 40px; width: auto; display: block !important; object-fit: contain; }
+.logo img { height: 40px; width: auto; }
 
 .nav-links { display: flex; gap: 25px; }
 .nav-links a { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 500; transition: 0.3s; }
 .nav-links a:hover { opacity: 0.6; }
 
-.menu-toggle { display: none; font-size: 28px; cursor: pointer; color: var(--text); padding: 5px; }
+.menu-toggle { display: none; font-size: 28px; cursor: pointer; color: var(--text); }
 
 /* MENÚ MÓVIL */
 .mobile-nav {
@@ -88,36 +85,54 @@ header {
 .mobile-nav.active { right: 0; }
 .mobile-nav a { font-family: 'Playfair Display', serif; font-size: 28px; text-decoration: none; color: var(--text); }
 
-/* CONTENEDOR */
+/* CONTENEDOR PRINCIPAL */
 .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
 
-/* --- HERO GRID (ESTRUCTURA PC) --- */
+/* --- HERO GRID --- */
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto auto;
-  gap: 15px;
+  gap: 20px;
   margin-top: 20px;
   align-items: center;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .hero-text-center {
   grid-column: 1 / -1; 
   grid-row: 2;
   text-align: center;
-  padding: 30px 0;
+  padding: 40px 0;
 }
 
-.hero-title { font-size: 48px; line-height: 1.1; margin-bottom: 15px; }
-.hero-subtitle { font-size: 18px; color: var(--text-light); margin-bottom: 25px; }
+/* ESTILO DE TÍTULO MEJORADO */
+.hero-title-line1 { 
+  font-family: 'Playfair Display', serif; 
+  font-size: 32px; 
+  font-weight: 400; 
+  font-style: italic;
+  line-height: 1;
+  color: var(--text-light);
+}
+.hero-title-line2 { 
+  font-family: 'Playfair Display', serif; 
+  font-size: 52px; 
+  font-weight: 700; 
+  text-transform: uppercase; 
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-top: 5px;
+}
+.hero-subtitle { font-size: 18px; color: var(--text-light); margin-top: 20px; font-weight: 300; }
 
 .carousel-box {
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
-  height: 250px;
+  height: 280px;
+  background: #eee;
 }
 
 .split-slide {
@@ -125,81 +140,75 @@ header {
   width: 100%; height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 1.5s ease-in-out;
+  transition: opacity 1.2s ease-in-out;
 }
 .split-slide.active { opacity: 1; }
 
-/* --- MODIFICACIONES CELULAR --- */
+/* --- RESPONSIVE CELULAR (CAMBIOS SOLICITADOS) --- */
 @media (max-width: 700px) {
+  header { height: 60px; }
+  body { padding-top: 60px; }
+  
+  .container { padding: 0; } /* Quitamos padding lateral del contenedor para que las fotos toquen bordes */
+  
+  /* Secciones con contenido de texto vuelven a tener padding lateral */
+  #encuentros, #espacio, #contacto, footer, .hero-text-center { padding-left: 20px; padding-right: 20px; }
+
   .hero-grid {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
-    gap: 15px;
-    margin-bottom: 20px;
+    gap: 0; /* Sin espacio entre fotos y texto en móvil */
+    margin-top: 0;
   }
 
   #top-right, #bottom-left { display: none; }
   
   #top-left, #bottom-right { 
     grid-column: 1 / -1; 
-    height: 220px; 
+    height: 300px; 
+    border-radius: 0; /* Sin bordes redondeados */
+    box-shadow: none;
   }
 
-  .hero-text-center { padding: 20px 0; }
-  .hero-title { font-size: 34px; }
+  .hero-title-line1 { font-size: 24px; }
+  .hero-title-line2 { font-size: 38px; }
   .hero-subtitle { font-size: 16px; }
-
-  .btn-novedades-container.in-hero { display: none; }
-  .btn-novedades-container.pre-agenda { 
-    display: block !important; 
-    margin: 40px 0 60px 0;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
 
   .nav-links { display: none; }
   .menu-toggle { display: block; }
-  .grid-entorno { grid-template-columns: 1fr; }
+  
+  .filters { padding: 10px 20px; }
+  .grid { padding: 0 20px; }
 }
 
-/* BOTONES NOVEDADES */
-.btn-novedades-container { text-align: center; width: 100%; }
-.btn-novedades-container.pre-agenda { display: none; } 
-
+/* COMPONENTES RESTANTES */
+.btn-novedades-container { text-align: center; margin-top: 30px; }
 .btn-novedades {
   display: inline-block;
-  text-decoration: none; color: var(--primary); font-size: 18px; font-weight: 600;
+  text-decoration: none; color: var(--primary); font-size: 16px; font-weight: 600;
   border-bottom: 2px solid var(--primary); padding-bottom: 4px; transition: 0.3s;
-  cursor: pointer;
 }
 
-/* FILTROS Y GRIDS */
-.filters { display: flex; gap: 12px; margin: 20px 0 30px 0; position: sticky; top: 75px; z-index: 10; background: var(--bg); padding: 10px 0; }
+.filters { display: flex; gap: 12px; margin-bottom: 30px; position: sticky; top: 70px; z-index: 10; background: var(--bg); }
 .filter-btn { padding: 8px 20px; border-radius: 30px; border: 1px solid #ddd; background: white; cursor: pointer; font-size: 14px; }
 .filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
 
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
-.card { text-decoration: none; color: inherit; background: white; border-radius: var(--radius); overflow: hidden; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: block; }
+.card { text-decoration: none; color: inherit; background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
 .card img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
-.card-content { padding: 25px; }
+.card-content { padding: 20px; }
 
 .box { background: white; padding: 40px; border-radius: var(--radius); margin-top: 30px; box-shadow: var(--shadow); }
+.grid-entorno { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 25px; }
+.grid-entorno img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer; }
 
-/* AJUSTE SOLICITADO: AIRE EN EL TÍTULO EL ESPACIO */
-.box h2 { margin-bottom: 30px; }
+.quote-separator { text-align: center; padding: 100px 20px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 26px; color: #666; }
 
-.grid-entorno { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 25px; }
+.btn { display: block; padding: 18px; background: var(--primary); color: white; text-align: center; border-radius: 12px; text-decoration: none; font-weight: 600; margin-top: 20px; }
 
-.quote-separator { text-align: center; padding: 80px 20px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 24px; color: #888; }
-
-.btn { display: block; padding: 20px; background: var(--primary); color: white; text-align: center; border-radius: 12px; text-decoration: none; font-weight: 600; margin-top: 20px; }
-
-footer { text-align: center; margin-top: 100px; padding: 60px 20px; border-top: 1px solid #eee; }
-.footer-logo { display: block; margin-bottom: 15px; }
-.footer-logo img { height: 40px; width: auto; }
-
+footer { text-align: center; margin-top: 80px; padding: 60px 20px; border-top: 1px solid #eee; }
 #lightbox { display: none; position: fixed; z-index: 3000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
-#lightbox img { max-width: 90%; max-height: 80%; border-radius: 8px; }
+#lightbox img { max-width: 90%; max-height: 80%; }
 </style>
 </head>
 
@@ -207,7 +216,7 @@ footer { text-align: center; margin-top: 100px; padding: 60px 20px; border-top: 
 
 <header>
   <div class="nav-container">
-    <a href="#" class="logo"><img src="logo.png" alt="Arcos V - Espacio de experiencias"></a>
+    <a href="#" class="logo"><img src="logo.png" alt="Arcos V"></a>
     <div class="nav-links">
       <a href="#encuentros">Próximos Encuentros</a>
       <a href="#espacio">El Espacio</a>
@@ -219,11 +228,9 @@ footer { text-align: center; margin-top: 100px; padding: 60px 20px; border-top: 
 
 <div id="mobile-menu" class="mobile-nav">
   <span style="position:absolute; top:20px; right:20px; font-size:30px; cursor:pointer;" onclick="toggleMenu()">✕</span>
-  <a href="#" onclick="toggleMenu()">Inicio</a>
   <a href="#encuentros" onclick="toggleMenu()">Próximos Encuentros</a>
   <a href="#espacio" onclick="toggleMenu()">El Espacio</a>
   <a href="#contacto" onclick="toggleMenu()">Organizá tu evento</a>
-  <a href="https://wa.me/5491162834000" onclick="toggleMenu()">Recibir Novedades</a>
 </div>
 
 <div class="container">
@@ -231,40 +238,36 @@ footer { text-align: center; margin-top: 100px; padding: 60px 20px; border-top: 
   <section id="inicio">
     <div class="hero-grid">
       <div class="carousel-box" id="top-left">
-        <img class="split-slide active" src="Carru1.jpg" alt="Interior luminoso del salón Arcos V">
-        <img class="split-slide" src="Carru2.jpg" alt="Detalle de decoración moderna en Núñez">
+        <img class="split-slide active" src="Carru1.jpg">
+        <img class="split-slide" src="Carru2.jpg">
       </div>
       <div class="carousel-box" id="top-right">
-        <img class="split-slide active" src="Carru3.jpg" alt="Jardín privado para eventos en CABA">
-        <img class="split-slide" src="Carru4.jpg" alt="Espacio versátil para talleres y encuentros">
+        <img class="split-slide active" src="Carru3.jpg">
+        <img class="split-slide" src="Carru4.jpg">
       </div>
 
       <div class="hero-text-center">
-        <h1 class="hero-title">Por acá pasa</h1>
-         <h1 class="hero-title">LO QUE TE GUSTA HACER</h1>
-        <p class="hero-subtitle">El marco ideal en Núñez para tus encuentros, talleres y experiencias</p>
-        <div class="btn-novedades-container in-hero">
+        <div class="hero-title-line1">Por acá pasa</div>
+        <div class="hero-title-line2">LO QUE TE GUSTA HACER</div>
+        <p class="hero-subtitle">El marco ideal en Núñez para tus encuentros, talleres y experiencias curadas.</p>
+        <div class="btn-novedades-container">
             <a href="https://wa.me/5491162834000" target="_blank" class="btn-novedades">✨ Quiero recibir novedades</a>
         </div>
       </div>
 
       <div class="carousel-box" id="bottom-left">
-        <img class="split-slide active" src="Carru5.jpg" alt="Configuración de mesa para cata de vinos">
-        <img class="split-slide" src="Carru6.jpg" alt="Ambiente cálido y profesional en Arcos V">
+        <img class="split-slide active" src="Carru5.jpg">
+        <img class="split-slide" src="Carru6.jpg">
       </div>
       <div class="carousel-box" id="bottom-right">
-        <img class="split-slide active" src="Carru7.jpg" alt="Vista del jardín de 250 metros cuadrados">
-        <img class="split-slide" src="Carru8.jpg" alt="Espacio boutique Arcos V en Núñez">
+        <img class="split-slide active" src="Carru7.jpg">
+        <img class="split-slide" src="Carru8.jpg">
       </div>
     </div>
   </section>
 
-  <div class="btn-novedades-container pre-agenda">
-      <a href="https://wa.me/5491162834000" target="_blank" class="btn-novedades">✨ Quiero recibir novedades</a>
-  </div>
-
   <section id="encuentros">
-    <h2>Próximos Encuentros: mayo</h2>
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 10px;">Próximos Encuentros</h2>
     <div class="filters">
       <div class="filter-btn active" onclick="filter('all', this)">Todos</div>
       <div class="filter-btn" onclick="filter('taller', this)">Talleres</div>
@@ -272,76 +275,73 @@ footer { text-align: center; margin-top: 100px; padding: 60px 20px; border-top: 
     </div>
 
     <div class="grid">
-      <!-- Encuentro de Cocina -->
-      <a href="evento-cocina.html" class="card" data-cat="taller">
-        <img src="Prox1.jpg" alt="Taller de cocina saludable con Essen">
+      <a href="#" class="card" data-cat="taller">
+        <img src="Prox1.jpg">
         <div class="card-content">
-          <span style="font-size:11px; text-transform:uppercase; color:#888;">Sin cargo</span>
-          <h3 style="margin:5px 0;">Evento Essen</h3>
-          <p style="font-size:13px;">Jueves 7 de mayo 16:30 hs.</p>
+          <span style="font-size:11px; text-transform:uppercase; color:#888; letter-spacing:1px;">Sin cargo</span>
+          <h3 style="margin:5px 0; font-family: 'Playfair Display', serif;">Evento Essen</h3>
+          <p style="font-size:13px; color: var(--text-light);">Jueves 7 de mayo 16:30 hs.</p>
         </div>
       </a>
 
-      <!-- Nuevo: Encuentro de Madres -->
-      <a href="evento-madres.html" class="card" data-cat="taller">
-        <img src="Primeramadres.jpg" alt="Encuentro de comunidad para madres en Núñez">
+      <a href="#" class="card" data-cat="taller">
+        <img src="Primeramadres.jpg">
         <div class="card-content">
-          <span style="font-size:11px; text-transform:uppercase; color:#888;">Comunidad</span>
-          <h3 style="margin:5px 0;">Encuentro de Madres</h3>
-          <p style="font-size:13px;">Domingo 10 de mayo 15:00 hs.</p>
+          <span style="font-size:11px; text-transform:uppercase; color:#888; letter-spacing:1px;">Comunidad</span>
+          <h3 style="margin:5px 0; font-family: 'Playfair Display', serif;">Encuentro de Madres</h3>
+          <p style="font-size:13px; color: var(--text-light);">Domingo 10 de mayo 15:00 hs.</p>
         </div>
       </a>
 
-      <!-- Cata de Vinos -->
-      <a href="evento-sensorial.html" class="card" data-cat="cata">
-        <img src="Primera vino.jpg" alt="Cata de vinos boutique dirigida por Vino en Jawa">
+      <a href="#" class="card" data-cat="cata">
+        <img src="Primera vino.jpg">
         <div class="card-content">
-          <span style="font-size:11px; text-transform:uppercase; color:#888;">Experiencia sensorial</span>
-          <h3 style="margin:5px 0;">Cata de Vinos Boutique</h3>
-          <p style="font-size:13px;">Sábado 16 de mayo 20:30 hs.</p>
+          <span style="font-size:11px; text-transform:uppercase; color:#888; letter-spacing:1px;">Experiencia</span>
+          <h3 style="margin:5px 0; font-family: 'Playfair Display', serif;">Cata de Vinos Boutique</h3>
+          <p style="font-size:13px; color: var(--text-light);">Sábado 16 de mayo 20:30 hs.</p>
         </div>
       </a>
     </div>
   </section>
 
-  <!-- CAMBIO SOLICITADO: NUEVA FRASE -->
   <div class="quote-separator">"Un escenario diseñado para encuentros con su propia identidad."</div>
 
   <section id="espacio" class="box">
-    <h2>El Espacio</h2>
-    <p>Combinamos 100 m² de interior versátil con un jardín de 280 m². Un refugio ideal para marcas y realizadores que buscan exclusividad y enfoque.</p>
+    <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 15px;">El Espacio</h2>
+    <p style="color: var(--text-light); line-height: 1.6;">Combinamos 100 m² de interior versátil con un jardín privado de 280 m². Un refugio ideal para marcas y realizadores que buscan exclusividad.</p>
     <div class="grid-entorno">
-      <img src="Entorno1.jpg" alt="Vista del jardín de Arcos V" style="height:150px; width:100%; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
-      <img src="Entorno2.jpg" alt="Salón interior para eventos corporativos" style="height:150px; width:100%; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
-      <img src="Entorno3.jpg" alt="Detalle de iluminación natural en el salón" style="height:150px; width:100%; object-fit:cover; border-radius:8px; cursor:pointer;" onclick="openLightbox(this.src)">
+      <img src="Entorno1.jpg" onclick="openLightbox(this.src)">
+      <img src="Entorno2.jpg" onclick="openLightbox(this.src)">
+      <img src="Entorno3.jpg" onclick="openLightbox(this.src)">
     </div>
   </section>
 
-  <section id="contacto" style="margin-top: 60px;">
+  <section id="contacto" style="margin-top: 40px;">
     <div class="box" style="background: var(--primary); color: white;">
-      <h2 style="color: white; margin-bottom:10px;">Querés organizar tu evento en Arcos V?</h2>
-      <p style="color: #ccc; margin-bottom:20px;">Utilizá el espacio para tus cursos, reuniones de equipo o presentaciones de marca.</p>
-      <a class="btn" style="background: white; color: var(--primary);" href="https://wa.me/5491162834000">🏡 Consultá disponibilidad</a>
+      <h2 style="color: white; font-family: 'Playfair Display', serif; margin-bottom:10px;">¿Querés organizar tu evento?</h2>
+      <p style="opacity: 0.8; margin-bottom:20px;">Utilizá Arcos V para tus cursos, reuniones de equipo o presentaciones.</p>
+      <a class="btn" style="background: white; color: var(--primary);" href="https://wa.me/5491162834000">🏡 Consultar disponibilidad</a>
     </div>
+    
     <div class="box">
-      <h3>¿Dónde estamos?</h3>
+      <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 15px;">Ubicación</h3>
       <p style="margin-bottom:20px;">Arcos 2952, Núñez, CABA.</p>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.071879007469!2d-58.4633719!3d-34.5517144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb42055627677%3A0x600100780287c805!2sArcos%202952%2C%20C1429%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1713456789012!5m2!1ses!2sar" width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy" title="Mapa de ubicación Arcos V en Núñez"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.071879007469!2d-58.4633719!3d-34.5517144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb42055627677%3A0x600100780287c805!2sArcos%202952%2C%20C1429%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1713456789012" width="100%" height="250" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </section>
 
   <footer>
-    <div class="footer-logo"><img src="logo.png" alt="Logotipo Arcos V"></div>
-    <p>Arcos 2952, Núñez · CABA</p>
+    <img src="logo.png" alt="Arcos V" style="height: 30px; margin-bottom: 10px;">
+    <p>Núñez · Ciudad de Buenos Aires</p>
     <p style="margin-top: 20px;">
-      <a href="https://instagram.com/arcosv.ba" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">Seguinos en Instagram</a> · 
-      <a href="https://wa.me/5491162834000" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">Contactanos por WhatsApp</a>
+      <a href="https://instagram.com/arcosv.ba" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">Instagram</a> · 
+      <a href="https://wa.me/5491162834000" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">WhatsApp</a>
     </p>
   </footer>
 
 </div>
 
-<div id="lightbox" onclick="closeLightbox()"><img id="lightbox-img" alt="Vista ampliada de Arcos V"></div>
+<div id="lightbox" onclick="closeLightbox()"><img id="lightbox-img"></div>
 
 <script>
 function toggleMenu() { document.getElementById("mobile-menu").classList.toggle("active"); }
@@ -358,10 +358,10 @@ function startCarousel(id, interval) {
   }, interval);
 }
 
-startCarousel('top-left', 4000);
-startCarousel('top-right', 5500);
-startCarousel('bottom-left', 7000);
-startCarousel('bottom-right', 4800);
+startCarousel('top-left', 5000);
+startCarousel('top-right', 6500);
+startCarousel('bottom-left', 8000);
+startCarousel('bottom-right', 5500);
 
 function filter(cat, btn) {
   document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
