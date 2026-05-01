@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Taller de Cocina Essen en Núñez | Arcos V</title>
 
-<!-- SEO Invisible: Optimización para el taller de cocina -->
 <meta name="description" content="Participá del taller de cocina Essen en Arcos V, Núñez. Una experiencia práctica y gratuita guiada por Moira para descubrir técnicas de cocina saludable y rápida.">
 
 <link rel="icon" type="image/png" href="favicon.png">
@@ -14,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-/* --- BASE SAGRADA DE ARCOS V (IDÉNTICA A MADRES) --- */
+/* --- BASE SAGRADA --- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html, body {
@@ -90,14 +89,28 @@ header {
 h1 { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 10px; }
 .tag { font-size: 12px; text-transform: uppercase; color: #888; letter-spacing: 1px; }
 
+/* CORRECCIÓN DE ALINEACIÓN (MÉTODO GRID) */
 .meta-info {
   margin: 20px 0;
   padding: 20px 0;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas en escritorio */
   gap: 20px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: flex-start; /* Alinea ícono arriba si el texto quiebra */
+  gap: 10px;
   font-size: 14px;
+  line-height: 1.4;
+}
+
+.meta-item span.icon {
+  font-size: 18px;
+  flex-shrink: 0; /* Evita que el ícono se achique */
 }
 
 .description { line-height: 1.7; color: var(--text-light); margin-bottom: 30px; }
@@ -116,10 +129,20 @@ h1 { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 10p
 footer { text-align: center; margin-top: 60px; padding: 60px 20px; border-top: 1px solid #eee; }
 footer img { height: 30px; margin-bottom: 10px; }
 
+/* --- AJUSTES MÓVIL --- */
 @media (max-width: 700px) {
   .hero-imagen { height: 250px; }
   .box-info { padding: 25px; }
   h1 { font-size: 28px; }
+  
+  .meta-info {
+    grid-template-columns: 1fr; /* Una sola columna en móvil */
+    gap: 15px;
+  }
+  
+  .meta-item {
+    font-size: 15px; /* Un poco más grande para legibilidad */
+  }
 }
 </style>
 </head>
@@ -136,17 +159,26 @@ footer img { height: 30px; margin-bottom: 10px; }
 </header>
 
 <div class="container-detalle">
-    <!-- IMAGEN OPTIMIZADA -->
-    <img src="Segundaessen.jpg" alt="Taller práctico de cocina Essen por Moira en el salón Arcos V de Núñez" class="hero-imagen">
+    <img src="Segundaessen.jpg" alt="Taller práctico de cocina Essen" class="hero-imagen">
 
     <div class="box-info">
         <span class="tag">Gastronomía · Por Essen</span>
         <h1>Encuentro de Cocina</h1>
         
+        <!-- SECCIÓN CORREGIDA -->
         <div class="meta-info">
-            <span>📅 Jueves 7 de mayo</span>
-            <span>🕒 16:30 hs</span>
-            <span>📍 Arcos 2952, Núñez</span>
+            <div class="meta-item">
+                <span class="icon">📅</span>
+                <div>Jueves 7 de mayo</div>
+            </div>
+            <div class="meta-item">
+                <span class="icon">🕒</span>
+                <div>16:30 hs</div>
+            </div>
+            <div class="meta-item">
+                <span class="icon">📍</span>
+                <div>Arcos 2952, Núñez</div>
+            </div>
         </div>
 
         <div class="description">
