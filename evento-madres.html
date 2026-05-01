@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Encuentro de Madres en Núñez | Arcos V</title>
 
-<!-- SEO Invisible: Optimización para el encuentro de comunidad -->
+<!-- SEO Invisible -->
 <meta name="description" content="Unite al Encuentro de Madres organizado por Casa Calma en Arcos V, Núñez. Un espacio boutique diseñado para conectar, compartir experiencias y disfrutar de una tarde de bienestar.">
 
 <link rel="icon" type="image/png" href="favicon.png">
@@ -14,7 +14,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-/* --- ESTA ES TU BASE SAGRADA REPLICADA --- */
+/* --- BASE SAGRADA --- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html, body {
@@ -64,7 +64,7 @@ header {
 
 .logo img { height: 40px; width: auto; }
 
-/* --- ESTILOS ESPECÍFICOS PARA LA PÁGINA DE DETALLE --- */
+/* --- ESTILOS DE DETALLE --- */
 .container-detalle {
   max-width: 800px;
   margin: 40px auto;
@@ -90,14 +90,28 @@ header {
 h1 { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 10px; }
 .tag { font-size: 12px; text-transform: uppercase; color: #888; letter-spacing: 1px; }
 
+/* CORRECCIÓN DE ALINEACIÓN MÓVIL */
 .meta-info {
   margin: 20px 0;
   padding: 20px 0;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
   font-size: 14px;
+  line-height: 1.4;
+}
+
+.meta-item span.icon {
+  font-size: 18px;
+  flex-shrink: 0;
 }
 
 .description { line-height: 1.7; color: var(--text-light); margin-bottom: 30px; }
@@ -120,6 +134,15 @@ footer img { height: 30px; margin-bottom: 10px; }
   .hero-imagen { height: 250px; }
   .box-info { padding: 25px; }
   h1 { font-size: 28px; }
+
+  /* Ajuste Grid para Celular */
+  .meta-info {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .meta-item {
+    font-size: 15px;
+  }
 }
 </style>
 </head>
@@ -136,17 +159,26 @@ footer img { height: 30px; margin-bottom: 10px; }
 </header>
 
 <div class="container-detalle">
-    <!-- IMAGEN CON ALT OPTIMIZADO -->
-    <img src="Segundamadres.jpg" alt="Encuentro de madres organizado por Casa Calma en el salón luminoso de Arcos V Núñez" class="hero-imagen">
+    <img src="Segundamadres.jpg" alt="Encuentro de madres organizado por Casa Calma" class="hero-imagen">
 
     <div class="box-info">
         <span class="tag">Comunidad · Por Casa Calma</span>
         <h1>Encuentro de Madres</h1>
         
+        <!-- SECCIÓN CORREGIDA CON META-ITEMS -->
         <div class="meta-info">
-            <span>📅 Domingos</span>
-            <span>🕒 15:00 a 17:00 hs</span>
-            <span>📍 Arcos 2952, Núñez</span>
+            <div class="meta-item">
+                <span class="icon">📅</span>
+                <div>Domingos</div>
+            </div>
+            <div class="meta-item">
+                <span class="icon">🕒</span>
+                <div>15:00 a 17:00 hs</div>
+            </div>
+            <div class="meta-item">
+                <span class="icon">📍</span>
+                <div>Arcos 2952, Núñez</div>
+            </div>
         </div>
 
         <div class="description">
