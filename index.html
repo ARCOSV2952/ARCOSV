@@ -39,6 +39,11 @@ body {
   padding-top: 80px; 
 }
 
+/* FIX PARA ANCLAJES (Scroll offset) */
+section {
+  scroll-margin-top: 100px; /* Reserva el espacio del header + aire visual */
+}
+
 /* NAVBAR */
 header {
   position: fixed;
@@ -175,6 +180,9 @@ header {
   .container { padding: 0; } 
   
   #encuentros, #espacio, #contacto, footer, .hero-text-center { padding-left: 20px; padding-right: 20px; }
+
+  /* Ajuste de scroll para móvil */
+  section { scroll-margin-top: 80px; }
 
   .hero-grid {
     grid-template-columns: 1fr;
