@@ -104,9 +104,11 @@ header {
   grid-row: 2;
   text-align: center;
   padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* ESTILO DE TÍTULO MEJORADO */
 .hero-title-line1 { 
   font-family: 'Playfair Display', serif; 
   font-size: 32px; 
@@ -115,6 +117,7 @@ header {
   line-height: 1;
   color: var(--text-light);
 }
+
 .hero-title-line2 { 
   font-family: 'Playfair Display', serif; 
   font-size: 52px; 
@@ -124,7 +127,31 @@ header {
   line-height: 1.1;
   margin-top: 5px;
 }
-.hero-subtitle { font-size: 18px; color: var(--text-light); margin-top: 20px; font-weight: 300; }
+
+/* AJUSTE SOLICITADO: Alineación asimétrica */
+.hero-subtitle { 
+  font-size: 18px; 
+  color: var(--text-light); 
+  margin-top: 20px; 
+  font-weight: 300;
+  max-width: 550px;
+  margin-right: 60px; /* Desplaza hacia la izquierda */
+  text-align: center;
+}
+
+.btn-novedades-container { 
+  text-align: center; 
+  margin-top: 30px; 
+  width: 100%;
+  max-width: 550px;
+  margin-left: 100px; /* Desplaza hacia la derecha */
+}
+
+.btn-novedades {
+  display: inline-block;
+  text-decoration: none; color: var(--primary); font-size: 16px; font-weight: 600;
+  border-bottom: 2px solid var(--primary); padding-bottom: 4px; transition: 0.3s;
+}
 
 .carousel-box {
   position: relative;
@@ -144,20 +171,18 @@ header {
 }
 .split-slide.active { opacity: 1; }
 
-/* --- RESPONSIVE CELULAR (CAMBIOS SOLICITADOS) --- */
+/* --- RESPONSIVE CELULAR --- */
 @media (max-width: 700px) {
   header { height: 60px; }
   body { padding-top: 60px; }
+  .container { padding: 0; } 
   
-  .container { padding: 0; } /* Quitamos padding lateral del contenedor para que las fotos toquen bordes */
-  
-  /* Secciones con contenido de texto vuelven a tener padding lateral */
   #encuentros, #espacio, #contacto, footer, .hero-text-center { padding-left: 20px; padding-right: 20px; }
 
   .hero-grid {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
-    gap: 0; /* Sin espacio entre fotos y texto en móvil */
+    gap: 0;
     margin-top: 0;
   }
 
@@ -166,29 +191,24 @@ header {
   #top-left, #bottom-right { 
     grid-column: 1 / -1; 
     height: 300px; 
-    border-radius: 0; /* Sin bordes redondeados */
+    border-radius: 0; 
     box-shadow: none;
   }
 
   .hero-title-line1 { font-size: 24px; }
-  .hero-title-line2 { font-size: 38px; }
-  .hero-subtitle { font-size: 16px; }
+  .hero-title-line2 { font-size: 36px; }
+  
+  /* Suavizamos la asimetría en móvil para que no se rompa el diseño */
+  .hero-subtitle { margin-right: 0; font-size: 16px; }
+  .btn-novedades-container { margin-left: 0; }
 
   .nav-links { display: none; }
   .menu-toggle { display: block; }
-  
   .filters { padding: 10px 20px; }
   .grid { padding: 0 20px; }
 }
 
 /* COMPONENTES RESTANTES */
-.btn-novedades-container { text-align: center; margin-top: 30px; }
-.btn-novedades {
-  display: inline-block;
-  text-decoration: none; color: var(--primary); font-size: 16px; font-weight: 600;
-  border-bottom: 2px solid var(--primary); padding-bottom: 4px; transition: 0.3s;
-}
-
 .filters { display: flex; gap: 12px; margin-bottom: 30px; position: sticky; top: 70px; z-index: 10; background: var(--bg); }
 .filter-btn { padding: 8px 20px; border-radius: 30px; border: 1px solid #ddd; background: white; cursor: pointer; font-size: 14px; }
 .filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
@@ -266,6 +286,7 @@ footer { text-align: center; margin-top: 80px; padding: 60px 20px; border-top: 1
     </div>
   </section>
 
+  <!-- El resto de las secciones se mantienen iguales siguiendo tu base -->
   <section id="encuentros">
     <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 10px;">Próximos Encuentros</h2>
     <div class="filters">
