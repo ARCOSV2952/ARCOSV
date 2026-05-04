@@ -92,7 +92,7 @@ header {
 /* CONTENEDOR PRINCIPAL */
 .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
 
-/* --- HERO GRID LIMPIO (UNA SOLA FILA DE IMÁGENES) --- */
+/* --- HERO GRID --- */
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -163,7 +163,8 @@ header {
   width: 100%; height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 1.2s ease-in-out;
+  /* Transición alargada a 1.8s para un efecto más elegante */
+  transition: opacity 1.8s ease-in-out;
 }
 .split-slide.active { opacity: 1; }
 
@@ -250,15 +251,20 @@ footer { text-align: center; margin-top: 80px; padding: 60px 20px; border-top: 1
   
   <section id="inicio">
     <div class="hero-grid">
-      <!-- BLOQUE DE IMAGEN IZQUIERDA -->
+      <!-- BLOQUE IZQUIERDO: Ahora contiene las 8 imágenes para el celular -->
       <div class="carousel-box" id="top-left">
         <img class="split-slide active" src="hero-interior-1.jpg">
         <img class="split-slide" src="hero-interior-2.jpg">
         <img class="split-slide" src="hero-detalle-1.jpg">
         <img class="split-slide" src="hero-detalle-2.jpg">
+        <!-- Imágenes del jardín sumadas aquí también -->
+        <img class="split-slide" src="hero-jardin-1.jpg">
+        <img class="split-slide" src="hero-jardin-2.jpg">
+        <img class="split-slide" src="hero-evento-1.jpg">
+        <img class="split-slide" src="hero-evento-2.jpg">
       </div>
       
-      <!-- BLOQUE DE IMAGEN DERECHA -->
+      <!-- BLOQUE DERECHO: (Se oculta en celular) -->
       <div class="carousel-box" id="top-right">
         <img class="split-slide active" src="hero-jardin-1.jpg">
         <img class="split-slide" src="hero-jardin-2.jpg">
@@ -266,7 +272,6 @@ footer { text-align: center; margin-top: 80px; padding: 60px 20px; border-top: 1
         <img class="split-slide" src="hero-evento-2.jpg">
       </div>
 
-      <!-- BLOQUE DE TEXTO (Ahora cierra la sección) -->
       <div class="hero-text-center">
         <div class="hero-title-line1">Por acá pasa</div>
         <div class="hero-title-line2">LO QUE TE GUSTA HACER</div>
@@ -278,6 +283,7 @@ footer { text-align: center; margin-top: 80px; padding: 60px 20px; border-top: 1
     </div>
   </section>
 
+  <!-- El resto del contenido se mantiene igual -->
   <section id="encuentros">
     <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 10px;">Próximos Encuentros</h2>
     <div class="filters">
@@ -373,9 +379,15 @@ function startCarousel(id, interval) {
   }, interval);
 }
 
-// Solo los dos bloques superiores están activos
-startCarousel('top-left', 4000);
-startCarousel('top-right', 5500);
+// LÓGICA DE TIEMPOS PERSONALIZADA
+// Si el ancho de pantalla es menor a 700px, usamos 3000ms (3s). Si no, 4500ms (4.5s).
+const isMobile = window.innerWidth <= 700;
+const mobileTime = 3000;
+const desktopTimeLeft = 4500;
+const desktopTimeRight = 5800; // Un poco desfasado para dinamismo en PC
+
+startCarousel('top-left', isMobile ? mobileTime : desktopTimeLeft);
+startCarousel('top-right', desktopTimeRight);
 
 function filter(cat, btn) {
   document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
