@@ -9,40 +9,54 @@
         :root { --primary: #111111; --bg: #faf9f6; --text: #1a1a1a; --text-light: #555; }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; margin: 0; padding: 40px 20px; }
         .content { max-width: 700px; margin: 0 auto; }
-        .back-link { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 600; display: inline-block; margin-bottom: 40px; }
-        h1 { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 20px; }
-        .step { margin-bottom: 40px; }
-        .step-number { font-family: 'Playfair Display', serif; font-style: italic; font-size: 24px; color: #888; margin-bottom: 10px; display: block; }
-        h2 { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 10px; }
-        .highlight-box { background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); margin-top: 50px; }
-        .btn-ws { display: block; background: var(--primary); color: white; text-align: center; padding: 18px; border-radius: 12px; text-decoration: none; font-weight: 600; margin-top: 20px; }
+        .back-link { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 600; display: inline-block; margin-bottom: 40px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 38px; margin-bottom: 30px; letter-spacing: -0.5px; }
+        .step { margin-bottom: 50px; }
+        .step-number { font-family: 'Playfair Display', serif; font-style: italic; font-size: 26px; color: #aaa; margin-bottom: 10px; display: block; }
+        h2 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 12px; }
+        p { color: var(--text-light); margin-bottom: 15px; }
+        .price-tag { background: #eee; padding: 15px 20px; border-radius: 12px; font-size: 15px; color: var(--primary); display: inline-block; margin-top: 10px; border-left: 4px solid var(--primary); }
+        .highlight-box { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); margin-top: 60px; text-align: center; }
+        .btn-ws { display: block; background: var(--primary); color: white; text-align: center; padding: 20px; border-radius: 14px; text-decoration: none; font-weight: 600; margin-top: 25px; transition: 0.3s; }
+        .btn-ws:hover { opacity: 0.9; transform: translateY(-2px); }
     </style>
 </head>
 <body>
+
 <div class="content">
     <a href="index.html" class="back-link">← Volver al inicio</a>
+    
     <h1>Cómo reservar tu espacio</h1>
+
     <div class="step">
         <span class="step-number">01.</span>
         <h2>Primer contacto</h2>
-        <p>Escribinos por whatsapp indicando la fecha de interés, el tipo de evento y la cantidad aproximada de personas. En ese momento, te confirmamos la disponibilidad.</p>
-        <p>No olvides contarnos si querés hacer un evento único (presentación de producto, sesión de fotos, etc.) o recurrente (como clases o cursos).</p>
-        <p>El precio base de eventos recurrentes es de $25.000 la hora y el alquiler mínimo es de 2 horas.</p>
+        <p>Escribinos por WhatsApp indicando la fecha de interés, el tipo de evento y la cantidad aproximada de personas. En ese momento, te confirmamos la disponibilidad.</p>
+        <p>No olvides contarnos si querés hacer un <strong>evento único</strong> (presentación de producto, sesión de fotos, etc.) o <strong>recurrente</strong> (como clases o cursos).</p>
+        <div class="price-tag">
+            <strong>Eventos recurrentes:</strong> $25.000 la hora <br>
+            <small>(Alquiler mínimo de 2 horas)</small>
+        </div>
     </div>
+
     <div class="step">
         <span class="step-number">02.</span>
         <h2>Visita al espacio</h2>
         <p>Coordinamos una entrevista para que puedas conocer las características, dimensiones y amenities del espacio, y el potencial de nuestro jardín.</p>
     </div>
+
     <div class="step">
         <span class="step-number">03.</span>
         <h2>Reserva y Seña</h2>
         <p>Para confirmar y bloquear la fecha para vos, te solicitamos una seña del 50%. Una vez recibida, la fecha queda reservada.</p>
     </div>
+
     <div class="highlight-box">
-        <h2>¿Tenés una fecha en mente?</h2>
-        <a href="https://wa.me/5491162834000" class="btn-ws">Consultar por whatsapp</a>
+        <h2 style="margin-bottom: 5px;">¿Tenés una fecha en mente?</h2>
+        <p>Consultanos ahora por disponibilidad y presupuestos personalizados.</p>
+        <a href="https://wa.me/5491162834000" class="btn-ws">🏡 Consultar por WhatsApp</a>
     </div>
 </div>
+
 </body>
 </html>
