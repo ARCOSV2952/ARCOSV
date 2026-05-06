@@ -9,16 +9,27 @@
         :root { --primary: #111111; --bg: #faf9f6; --text: #1a1a1a; --text-light: #555; }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; margin: 0; padding: 40px 20px; }
         .content { max-width: 700px; margin: 0 auto; }
-        .back-link { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 600; display: inline-block; margin-bottom: 40px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+        
+        /* Ajuste para que el link de volver sea más visible y coherente */
+        .back-link { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 600; display: inline-block; margin-bottom: 40px; border-bottom: 2px solid var(--primary); padding-bottom: 2px; transition: 0.3s; }
+        .back-link:hover { opacity: 0.6; }
+
         h1 { font-family: 'Playfair Display', serif; font-size: 38px; margin-bottom: 30px; letter-spacing: -0.5px; }
         .step { margin-bottom: 50px; }
         .step-number { font-family: 'Playfair Display', serif; font-style: italic; font-size: 26px; color: #aaa; margin-bottom: 10px; display: block; }
         h2 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 12px; }
         p { color: var(--text-light); margin-bottom: 15px; }
+        
         .price-tag { background: #eee; padding: 15px 20px; border-radius: 12px; font-size: 15px; color: var(--primary); display: inline-block; margin-top: 10px; border-left: 4px solid var(--primary); }
+        
         .highlight-box { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); margin-top: 60px; text-align: center; }
         .btn-ws { display: block; background: var(--primary); color: white; text-align: center; padding: 20px; border-radius: 14px; text-decoration: none; font-weight: 600; margin-top: 25px; transition: 0.3s; }
         .btn-ws:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 32px; }
+            .highlight-box { padding: 30px 20px; }
+        }
     </style>
 </head>
 <body>
