@@ -1,206 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Encuentro de Madres en Núñez | Arcos V</title>
-
-<!-- SEO Invisible -->
-<meta name="description" content="Unite al Encuentro de Madres organizado por Casa Calma en Arcos V, Núñez. Un espacio boutique diseñado para conectar, compartir experiencias y disfrutar de una tarde de bienestar.">
-
-<link rel="icon" type="image/png" href="favicon.png">
-  
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<style>
-/* --- BASE SAGRADA --- */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-  background-color: #faf9f6;
-  scroll-behavior: smooth;
-}
-
-:root {
-  --primary: #111111;
-  --bg: #faf9f6; 
-  --text: #1a1a1a;
-  --text-light: #555;
-  --radius: 16px;
-  --shadow: 0 10px 30px rgba(0,0,0,0.04);
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  color: var(--text);
-  -webkit-font-smoothing: antialiased;
-  padding-top: 80px; 
-}
-
-header {
-  position: fixed;
-  top: 0; left: 0;
-  background: var(--bg);
-  z-index: 1000;
-  width: 100%;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-  height: 70px;
-  display: flex;
-  align-items: center;
-}
-
-.nav-container {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo img { height: 40px; width: auto; }
-
-/* --- ESTILOS DE DETALLE --- */
-.container-detalle {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-.hero-imagen {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  margin-bottom: 30px;
-}
-
-.box-info {
-  background: white;
-  padding: 40px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
-h1 { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 10px; }
-.tag { font-size: 12px; text-transform: uppercase; color: #888; letter-spacing: 1px; }
-
-/* CORRECCIÓN DE ALINEACIÓN MÓVIL */
-.meta-info {
-  margin: 20px 0;
-  padding: 20px 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.meta-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-.meta-item span.icon {
-  font-size: 18px;
-  flex-shrink: 0;
-}
-
-.description { line-height: 1.7; color: var(--text-light); margin-bottom: 30px; }
-
-.btn {
-  display: block;
-  padding: 20px;
-  background: var(--primary);
-  color: white;
-  text-align: center;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-footer { text-align: center; margin-top: 60px; padding: 60px 20px; border-top: 1px solid #eee; }
-footer img { height: 30px; margin-bottom: 10px; }
-
-@media (max-width: 700px) {
-  .hero-imagen { height: 250px; }
-  .box-info { padding: 25px; }
-  h1 { font-size: 28px; }
-
-  /* Ajuste Grid para Celular */
-  .meta-info {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-  .meta-item {
-    font-size: 15px;
-  }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuentro de Madres - Arcos V</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background-color: #faf9f6; color: #1a1a1a; line-height: 1.6; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); }
+        h1 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 10px; text-align: center; }
+        .fecha { text-align: center; color: #555; margin-bottom: 30px; font-weight: 300; }
+        img { width: 100%; border-radius: 12px; margin-bottom: 30px; object-fit: cover; }
+        h2 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 15px; }
+        p { margin-bottom: 20px; color: #444; }
+        .btn-ws { display: block; text-align: center; background-color: #25d366; color: white; padding: 18px; text-decoration: none; border-radius: 12px; font-weight: 600; margin-top: 30px; }
+        .back { display: block; text-align: center; margin-top: 40px; color: #888; text-decoration: none; font-size: 14px; }
+    </style>
 </head>
-
 <body>
 
-<header>
-  <div class="nav-container">
-    <a href="index.html" class="logo"><img src="logo.png" alt="Arcos V - Espacio Boutique"></a>
-    <div style="font-size: 14px; font-weight: 500;">
-        <a href="index.html#encuentros" style="text-decoration: none; color: var(--text);">← Volver</a>
-    </div>
-  </div>
-</header>
+    <div class="container">
+        <header>
+            <h1>Encuentro de Madres</h1>
+            <p class="fecha">Domingo 10 de mayo 15:00 hs.</p>
+        </header>
 
-<div class="container-detalle">
-    <img src="Segundamadres.jpg" alt="Encuentro de madres organizado por Casa Calma" class="hero-imagen">
+        <main>
+            <section id="fotos-evento">
+                <!-- Usamos la imagen que ya tenés vinculada en el index -->
+                <img src="Primeramadres.jpg" alt="Madres compartiendo un momento de relax en el jardín de Arcos V">
+            </section>
 
-    <div class="box-info">
-        <span class="tag">Comunidad · Por Casa Calma</span>
-        <h1>Encuentro de Madres</h1>
-        
-        <!-- SECCIÓN CORREGIDA CON META-ITEMS -->
-        <div class="meta-info">
-            <div class="meta-item">
-                <span class="icon">📅</span>
-                <div>Domingo 10 de mayo</div>
-            </div>
-            <div class="meta-item">
-                <span class="icon">🕒</span>
-                <div>15:00 hs</div>
-            </div>
-            <div class="meta-item">
-                <span class="icon">📍</span>
-                <div>Arcos 2952, Núñez</div>
-            </div>
-        </div>
+            <section id="descripcion">
+                <h2>Comunidad y Relax</h2>
+                <p>Un espacio pensado para nosotras. Te invitamos a compartir una tarde de charlas, café y conexión en la tranquilidad de nuestro jardín en Núñez.</p>
+                <p>El objetivo es crear un momento de pausa en la rutina, rodeadas de verde y buena compañía. Un encuentro de comunidad para disfrutar lo que nos gusta hacer.</p>
+            </section>
 
-        <div class="description">
-            <p style="margin-bottom: 15px;">Casa Calma presenta un espacio de pertenencia pensado para conectar y compartir experiencias. En esta edición, nos encontramos para disfrutar de una tarde de pausa en un entorno que invita al diálogo.</p>
-            
-            <p>Un momento diseñado para vos, donde la comunidad y el bienestar son el eje central, facilitado por profesionales en un ambiente privado, luminoso y cuidado.</p>
-            
-            <ul style="margin: 20px 0; padding-left: 20px;">
-                <li>Coordinación grupal por el equipo de Casa Calma.</li>
-                <li>Coffee break.</li>
-                <li>Cupos limitados para preservar la intimidad y calma del grupo.</li>
-            </ul>
-        </div>
+            <a href="https://wa.me/5491162834000" class="btn-ws">
+                Quiero sumarme al encuentro
+            </a>
+        </main>
 
-        <a href="https://wa.me/5491169187200" class="btn">🏡 Consultar disponibilidad</a>
+        <footer>
+            <a href="index.html" class="back">← Volver al inicio</a>
+        </footer>
     </div>
 
-    <footer>
-        <img src="logo.png" alt="Logotipo Arcos V">
-        <p>Arcos 2952, Núñez · CABA</p>
-    </footer>
-</div>
-
+    <script>
+        // Mantenemos la velocidad de carga optimizada
+        let intervalo = 3000; 
+    </script>
 </body>
 </html>
