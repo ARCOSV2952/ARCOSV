@@ -16,14 +16,11 @@
     <meta property="og:image" content="logo.png"> 
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://arcosv.ba">
+    <meta property="og:url" content="https://arcosv.com.ar">
     <meta property="og:site_name" content="Arcos V">
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Arcos V | Espacio Boutique">
-    <meta name="twitter:description" content="Refugio boutique para experiencias y encuentros de marcas en Núñez.">
-    <meta name="twitter:image" content="logo.png">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
@@ -41,7 +38,7 @@
             --primary: #111111;
             --bg: #faf9f6; 
             --text: #1a1a1a;
-            --text-light: #444;
+            --text-light: #333333; /* Ajustado para mejor contraste/accesibilidad */
             --radius: 16px;
             --shadow: 0 10px 30px rgba(0,0,0,0.04);
         }
@@ -53,7 +50,6 @@
             padding-top: 80px; 
         }
 
-        /* Ajuste de ancla para navegación */
         section { scroll-margin-top: 120px; }
 
         /* NAVBAR */
@@ -82,10 +78,10 @@
         .logo img { height: 40px; width: auto; }
 
         .nav-links { display: flex; gap: 25px; }
-        .nav-links a { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 500; transition: 0.3s; }
+        .nav-links a { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 500; transition: 0.3s; padding: 10px 0; }
         .nav-links a:hover { opacity: 0.6; }
 
-        .menu-toggle { display: block; font-size: 28px; cursor: pointer; color: var(--text); }
+        .menu-toggle { display: block; font-size: 28px; cursor: pointer; color: var(--text); padding: 5px; }
 
         @media (min-width: 701px) { .menu-toggle { display: none; } }
 
@@ -102,7 +98,7 @@
             transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .mobile-nav.active { right: 0; }
-        .mobile-nav a { font-family: 'Playfair Display', serif; font-size: 28px; text-decoration: none; color: var(--text); }
+        .mobile-nav a { font-family: 'Playfair Display', serif; font-size: 28px; text-decoration: none; color: var(--text); padding: 10px; }
 
         /* CONTENEDOR PRINCIPAL */
         .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
@@ -194,7 +190,7 @@
         }
 
         .filters { display: flex; gap: 12px; margin-bottom: 30px; position: sticky; top: 70px; z-index: 10; background: var(--bg); padding: 10px 0; }
-        .filter-btn { padding: 8px 20px; border-radius: 30px; border: 1px solid #ddd; background: white; cursor: pointer; font-size: 14px; }
+        .filter-btn { padding: 10px 22px; border-radius: 30px; border: 1px solid #ddd; background: white; cursor: pointer; font-size: 14px; min-width: 44px; min-height: 44px; }
         .filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
@@ -207,9 +203,9 @@
         .grid-entorno { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 25px; }
         .grid-entorno img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer; }
 
-        .quote-separator { text-align: center; padding: 100px 20px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 26px; color: #666; }
+        .quote-separator { text-align: center; padding: 100px 20px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 26px; color: #444; }
 
-        .btn { display: block; padding: 18px; background: var(--primary); color: white; text-align: center; border-radius: 12px; text-decoration: none; font-weight: 600; margin-top: 20px; transition: 0.3s; }
+        .btn { display: block; padding: 18px; background: var(--primary); color: white; text-align: center; border-radius: 12px; text-decoration: none; font-weight: 600; margin-top: 20px; transition: 0.3s; min-height: 48px; }
         .btn:hover { opacity: 0.9; }
 
         footer { text-align: center; margin-top: 80px; padding: 60px 20px; border-top: 1px solid #eee; }
@@ -221,51 +217,51 @@
 <body>
 
 <header>
-    <div class="nav-container">
-        <a href="#" class="logo"><img src="logo.png" alt="Arcos V"></a>
+    <nav class="nav-container">
+        <a href="#" class="logo"><img src="logo.png" alt="Arcos V Home" width="160" height="40"></a>
         <div class="nav-links">
             <a href="#encuentros">Próximos Encuentros</a>
             <a href="#espacio">El Espacio</a>
             <a href="#contacto">Organizá tu evento</a>
             <a href="como-reservar.html">Cómo reservar</a>
         </div>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    </div>
+        <button class="menu-toggle" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+    </nav>
 </header>
 
 <div id="mobile-menu" class="mobile-nav">
-    <span style="position:absolute; top:20px; right:20px; font-size:30px; cursor:pointer;" onclick="toggleMenu()">✕</span>
+    <button style="position:absolute; top:20px; right:20px; font-size:30px; cursor:pointer; background:none; border:none;" onclick="toggleMenu()">✕</button>
     <a href="#encuentros" onclick="toggleMenu()">Próximos Encuentros</a>
     <a href="#espacio" onclick="toggleMenu()">El Espacio</a>
     <a href="#contacto" onclick="toggleMenu()">Organizá tu evento</a>
     <a href="como-reservar.html" onclick="toggleMenu()">Cómo reservar</a>
 </div>
 
-<div class="container">
+<main class="container">
     
     <section id="inicio">
         <div class="hero-grid">
             <div class="carousel-box" id="top-left">
-                <img class="split-slide active" src="hero-interior-1.webp">
-                <img class="split-slide" src="hero-interior-2.webp">
-                <img class="split-slide" src="hero-detalle-1.webp">
-                <img class="split-slide" src="hero-detalle-2.webp">
-                <img class="split-slide" src="hero-jardin-1.webp">
-                <img class="split-slide" src="hero-jardin-2.webp">
-                <img class="split-slide" src="hero-evento-1.webp">
-                <img class="split-slide" src="hero-evento-2.webp">
+                <img class="split-slide active" src="hero-interior-1.webp" fetchpriority="high" alt="Interior Arcos V" width="500" height="320">
+                <img class="split-slide" src="hero-interior-2.webp" loading="lazy" alt="Salón boutique" width="500" height="320">
+                <img class="split-slide" src="hero-detalle-1.webp" loading="lazy" alt="Detalle decoración" width="500" height="320">
+                <img class="split-slide" src="hero-detalle-2.webp" loading="lazy" alt="Mesa servida" width="500" height="320">
+                <img class="split-slide" src="hero-jardin-1.webp" loading="lazy" alt="Jardín exterior" width="500" height="320">
+                <img class="split-slide" src="hero-jardin-2.webp" loading="lazy" alt="Galería exterior" width="500" height="320">
+                <img class="split-slide" src="hero-evento-1.webp" loading="lazy" alt="Evento con gente" width="500" height="320">
+                <img class="split-slide" src="hero-evento-2.webp" loading="lazy" alt="Cata de vinos" width="500" height="320">
             </div>
             
             <div class="carousel-box" id="top-right">
-                <img class="split-slide active" src="hero-jardin-1.webp">
-                <img class="split-slide" src="hero-jardin-2.webp">
-                <img class="split-slide" src="hero-evento-1.webp">
-                <img class="split-slide" src="hero-evento-2.webp">
+                <img class="split-slide active" src="hero-jardin-1.webp" alt="Espacio exterior" width="500" height="320">
+                <img class="split-slide" src="hero-jardin-2.webp" loading="lazy" alt="Jardín verde" width="500" height="320">
+                <img class="split-slide" src="hero-evento-1.webp" loading="lazy" alt="Gente disfrutando" width="500" height="320">
+                <img class="split-slide" src="hero-evento-2.webp" loading="lazy" alt="Encuentro taller" width="500" height="320">
             </div>
 
             <div class="hero-text-center">
-                <div class="hero-title-line1">Por acá pasa</div>
-                <div class="hero-title-line2">LO QUE TE GUSTA HACER</div>
+                <p class="hero-title-line1">Por acá pasa</p>
+                <h1 class="hero-title-line2">LO QUE TE GUSTA HACER</h1>
                 <p class="hero-subtitle">El marco ideal en Núñez para encuentros, talleres y experiencias curadas.</p>
                 <a href="https://wa.me/5491162834000" target="_blank" class="btn-novedades">✨ Quiero recibir novedades</a>
             </div>
@@ -275,34 +271,34 @@
     <section id="encuentros">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 10px;">Próximos Encuentros</h2>
         <div class="filters">
-            <div class="filter-btn active" onclick="filter('all', this)">Todos</div>
-            <div class="filter-btn" onclick="filter('taller', this)">Talleres</div>
-            <div class="filter-btn" onclick="filter('cata', this)">Catas</div>
+            <button class="filter-btn active" onclick="filter('all', this)">Todos</button>
+            <button class="filter-btn" onclick="filter('taller', this)">Talleres</button>
+            <button class="filter-btn" onclick="filter('cata', this)">Catas</button>
         </div>
 
         <div class="grid">
             <a href="evento-cocina.html" class="card" data-cat="taller">
-                <img src="Prox1.webp" alt="Evento Essen">
+                <img src="Prox1.webp" alt="Taller de cocina Essen" width="300" height="375" loading="lazy">
                 <div class="card-content">
-                    <span style="font-size:11px; text-transform:uppercase; color:#888; letter-spacing:1px;">Sin cargo</span>
+                    <span style="font-size:11px; text-transform:uppercase; color:#666; letter-spacing:1px;">Sin cargo</span>
                     <h3 style="margin:5px 0; font-family: 'Playfair Display', serif;">Evento Essen</h3>
                     <p style="font-size:13px; color: var(--text-light);">Jueves 7 de mayo 16:30 hs.</p>
                 </div>
             </a>
 
             <a href="evento-madres.html" class="card" data-cat="taller">
-                <img src="Primeramadres.webp" alt="Encuentro de Madres">
+                <img src="Primeramadres.webp" alt="Encuentro de Madres" width="300" height="375" loading="lazy">
                 <div class="card-content">
-                    <span style="font-size:11px; text-transform:uppercase; color:#888; letter-spacing:1px;">Comunidad</span>
+                    <span style="font-size:11px; text-transform:uppercase; color:#666; letter-spacing:1px;">Comunidad</span>
                     <h3 style="margin:5px 0; font-family: 'Playfair Display', serif;">Encuentro de Madres</h3>
                     <p style="font-size:13px; color: var(--text-light);">Domingo 10 de mayo 15:00 hs.</p>
                 </div>
             </a>
 
             <a href="evento-sensorial.html" class="card" data-cat="cata">
-                <img src="Primera vino.webp" alt="Cata de Vinos Boutique">
+                <img src="Primera vino.webp" alt="Cata de Vinos Boutique" width="300" height="375" loading="lazy">
                 <div class="card-content">
-                    <span style="font-size:11px; text-transform:uppercase; color:#888; letter-spacing:1px;">Experiencia</span>
+                    <span style="font-size:11px; text-transform:uppercase; color:#666; letter-spacing:1px;">Experiencia</span>
                     <h3 style="margin:5px 0; font-family: 'Playfair Display', serif;">Cata de Vinos Boutique</h3>
                     <p style="font-size:13px; color: var(--text-light);">Sábado 16 de mayo 20:30 hs.</p>
                 </div>
@@ -310,15 +306,15 @@
         </div>
     </section>
 
-    <div class="quote-separator">El lugar perfecto donde la ciudad se detiene y comienza lo bueno</div>
+    <div class="quote-separator">"El lugar perfecto donde la ciudad se detiene y comienza lo bueno"</div>
 
     <section id="espacio" class="box">
         <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 15px;">El Espacio</h2>
         <p style="color: var(--text-light); line-height: 1.6;">Combinamos 100 m² de interior versátil con un jardín privado de 280 m². Un refugio ideal para marcas y realizadores que buscan exclusividad.</p>
         <div class="grid-entorno">
-            <img src="Entorno1.webp" onclick="openLightbox(this.src)" alt="Interior">
-            <img src="Entorno2.webp" onclick="openLightbox(this.src)" alt="Jardín">
-            <img src="Entorno3.webp" onclick="openLightbox(this.src)" alt="Detalle">
+            <img src="Entorno1.webp" onclick="openLightbox(this.src)" alt="Interior luminoso" width="300" height="300" loading="lazy">
+            <img src="Entorno2.webp" onclick="openLightbox(this.src)" alt="Jardín con vegetación" width="300" height="300" loading="lazy">
+            <img src="Entorno3.webp" onclick="openLightbox(this.src)" alt="Detalles boutique" width="300" height="300" loading="lazy">
         </div>
     </section>
 
@@ -332,25 +328,25 @@
         <div class="box">
             <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 15px;">Ubicación</h3>
             <p style="margin-bottom:20px;">Arcos 2952, Núñez, CABA.</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.06416174244!2d-58.4655!3d-34.5518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb42792078651%3A0x6b86c757c917088b!2sArcos%202952%2C%20C1429%20CABA!5e0!3m2!1ses!2sar!4v1714000000000!5m2!1ses!2sar" width="100%" height="250" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe title="Mapa Ubicación Arcos V" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.136534575611!2d-58.465063!3d-34.545084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb429393309a1%3A0x6b3b27b9c97b83f!2sArcos%202952!5e0!3m2!1ses!2sar!4v1715000000000!5m2!1ses!2sar" width="100%" height="250" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
     <footer>
-        <img src="logo.png" alt="Arcos V" style="height: 30px; margin-bottom: 10px;">
+        <img src="logo.png" alt="Arcos V Logo" width="120" height="30" style="margin-bottom: 10px;">
         <p>Arcos 2952, Núñez · Ciudad de Buenos Aires</p>
-        <p style="margin-top: 15px;">
-            <a href="https://instagram.com/arcosv.ba" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">Instagram</a> · 
-            <a href="https://wa.me/5491162834000" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">WhatsApp</a>
-        </p>
-        <p style="font-size: 12px; color: #888; margin-top: 20px; letter-spacing: 0.5px;">
+        <nav style="margin-top: 15px;">
+            <a href="https://instagram.com/arcosv.ba" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600; padding: 10px;">Instagram</a> · 
+            <a href="https://wa.me/5491162834000" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600; padding: 10px;">WhatsApp</a>
+        </nav>
+        <p style="font-size: 12px; color: #666; margin-top: 20px; letter-spacing: 0.5px;">
             Copyright Arcos V - 2026. Todos los derechos reservados.
         </p>
     </footer>
 
-</div>
+</main>
 
-<div id="lightbox" onclick="closeLightbox()"><img id="lightbox-img"></div>
+<div id="lightbox" role="dialog" aria-label="Visualizador de imagen" onclick="closeLightbox()"><img id="lightbox-img" alt="Imagen ampliada"></div>
 
 <script>
     function toggleMenu() { document.getElementById("mobile-menu").classList.toggle("active"); }
