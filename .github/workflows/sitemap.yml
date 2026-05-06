@@ -19,9 +19,7 @@ jobs:
       uses: cicirello/generate-sitemap@v1
       with:
         base-url-path: https://arcosv.com.ar/
-        # Aquí puedes ignorar archivos que no quieres en Google
-        path-to-exclude: './404.html'
-
+       
     - name: Commit and push if changed
       run: |
         git config --global user.name 'github-actions'
