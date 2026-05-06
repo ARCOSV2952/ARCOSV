@@ -3,7 +3,7 @@ name: Generate xml sitemap
 on:
   push:
     branches:
-      - main  # Se activa cada vez que subes algo a la rama principal
+      - main
 
 jobs:
   sitemap_job:
@@ -19,10 +19,13 @@ jobs:
       uses: cicirello/generate-sitemap@v1
       with:
         base-url-path: https://arcosv.com.ar/
-       
+
     - name: Commit and push if changed
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
         git add sitemap.xml
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Automated sitemap update" && git push)
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update sitemap.xml to include all files" && git push)
+
+    - name: Ping Google
+      run: curl "https://www.google.com/ping?sitemap=https://arcosv.com.ar/sitemap.xml"
