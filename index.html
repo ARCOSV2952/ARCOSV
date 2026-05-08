@@ -38,7 +38,7 @@
             --primary: #111111;
             --bg: #faf9f6; 
             --text: #1a1a1a;
-            --text-light: #333333; /* Ajustado para mejor contraste/accesibilidad */
+            --text-light: #333333; 
             --radius: 16px;
             --shadow: 0 10px 30px rgba(0,0,0,0.04);
         }
@@ -178,7 +178,7 @@
             header { height: 60px; }
             body { padding-top: 60px; }
             .container { padding: 0; } 
-            #encuentros, #espacio, #contacto, footer, .hero-text-center { padding-left: 20px; padding-right: 20px; }
+            #encuentros, #espacio, #contacto, #lo-que-paso, footer, .hero-text-center { padding-left: 20px; padding-right: 20px; }
             section { scroll-margin-top: 90px; }
             .hero-grid { grid-template-columns: 1fr; gap: 0; margin-top: 0; }
             #top-right { display: none; }
@@ -221,6 +221,7 @@
         <a href="#" class="logo"><img src="logo.png" alt="Arcos V Home" width="160" height="40"></a>
         <div class="nav-links">
             <a href="#encuentros">Próximos Encuentros</a>
+            <a href="#lo-que-paso">Lo que pasó</a>
             <a href="#espacio">El Espacio</a>
             <a href="#contacto">Organizá tu evento</a>
             <a href="como-reservar.html">Cómo reservar</a>
@@ -232,6 +233,7 @@
 <div id="mobile-menu" class="mobile-nav">
     <button style="position:absolute; top:20px; right:20px; font-size:30px; cursor:pointer; background:none; border:none;" onclick="toggleMenu()">✕</button>
     <a href="#encuentros" onclick="toggleMenu()">Próximos Encuentros</a>
+    <a href="#lo-que-paso" onclick="toggleMenu()">Lo que pasó</a>
     <a href="#espacio" onclick="toggleMenu()">El Espacio</a>
     <a href="#contacto" onclick="toggleMenu()">Organizá tu evento</a>
     <a href="como-reservar.html" onclick="toggleMenu()">Cómo reservar</a>
@@ -277,15 +279,6 @@
         </div>
 
         <div class="grid">
-            <a href="evento-cocina.html" class="card" data-cat="taller">
-                <img src="Prox1.webp" alt="Taller de cocina Essen" width="300" height="375" loading="lazy">
-                <div class="card-content">
-                    <span style="font-size:11px; text-transform:uppercase; color:#666; letter-spacing:1px;">Sin cargo</span>
-                    <h3 style="margin:5px 0; font-family: 'Playfair Display', serif;">Evento Essen</h3>
-                    <p style="font-size:13px; color: var(--text-light);">Jueves 7 de mayo 16:30 hs.</p>
-                </div>
-            </a>
-
             <a href="evento-madres.html" class="card" data-cat="taller">
                 <img src="Primeramadres.webp" alt="Encuentro de Madres" width="300" height="375" loading="lazy">
                 <div class="card-content">
@@ -301,6 +294,23 @@
                     <span style="font-size:11px; text-transform:uppercase; color:#666; letter-spacing:1px;">Experiencia</span>
                     <h3 style="margin:5px 0; font-family: 'Playfair Display', serif;">Cata de Vinos Boutique</h3>
                     <p style="font-size:13px; color: var(--text-light);">Sábado 16 de mayo 20:30 hs.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN LO QUE PASÓ -->
+    <section id="lo-que-paso" style="margin-top: 60px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 10px;">Lo que pasó</h2>
+        <p style="color: var(--text-light); margin-bottom: 25px; font-style: italic;">Encuentros que ya dejaron su huella en el jardín.</p>
+        
+        <div class="grid">
+            <a href="taller-cocina-pasado.html" class="card" style="opacity: 0.85;">
+                <img src="Prox1.webp" alt="Taller de cocina consciente" width="300" height="375" loading="lazy">
+                <div class="card-content">
+                    <span style="font-size:11px; text-transform:uppercase; color:#666; letter-spacing:1px;">Taller</span>
+                    <h3 style="margin:5px 0; font-family: 'Playfair Display', serif;">Cocina Consciente</h3>
+                    <p style="font-size:13px; color: var(--text-light);">Experiencias de sabor en Arcos V.</p>
                 </div>
             </a>
         </div>
