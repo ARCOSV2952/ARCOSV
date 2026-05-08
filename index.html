@@ -41,6 +41,7 @@
             --text-light: #333333; 
             --radius: 16px;
             --shadow: 0 10px 30px rgba(0,0,0,0.04);
+            --green-dark: #1a302a; /* Color para el botón de novedades */
         }
 
         body {
@@ -148,13 +149,6 @@
             max-width: 550px;
         }
 
-        .btn-novedades {
-            display: inline-block;
-            text-decoration: none; color: var(--primary); font-size: 16px; font-weight: 600;
-            border-bottom: 2px solid var(--primary); padding-bottom: 4px; transition: 0.3s;
-            margin-top: 30px;
-        }
-
         .carousel-box {
             position: relative;
             border-radius: var(--radius);
@@ -178,7 +172,7 @@
             header { height: 60px; }
             body { padding-top: 60px; }
             .container { padding: 0; } 
-            #encuentros, #espacio, #contacto, #lo-que-paso, footer, .hero-text-center { padding-left: 20px; padding-right: 20px; }
+            #encuentros, #espacio, #contacto, #lo-que-paso, #ubicacion, footer, .hero-text-center { padding-left: 20px; padding-right: 20px; }
             section { scroll-margin-top: 90px; }
             .hero-grid { grid-template-columns: 1fr; gap: 0; margin-top: 0; }
             #top-right { display: none; }
@@ -205,10 +199,10 @@
 
         .quote-separator { text-align: center; padding: 100px 20px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 26px; color: #444; }
 
-        .btn { display: block; padding: 18px; background: var(--primary); color: white; text-align: center; border-radius: 12px; text-decoration: none; font-weight: 600; margin-top: 20px; transition: 0.3s; min-height: 48px; }
+        .btn { display: block; padding: 18px; background: var(--primary); color: white; text-align: center; border-radius: 12px; text-decoration: none; font-weight: 600; transition: 0.3s; min-height: 48px; }
         .btn:hover { opacity: 0.9; }
 
-        footer { text-align: center; margin-top: 80px; padding: 60px 20px; border-top: 1px solid #eee; }
+        footer { text-align: center; margin-top: 40px; padding: 60px 20px; border-top: 1px solid #eee; }
         #lightbox { display: none; position: fixed; z-index: 3000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
         #lightbox img { max-width: 90%; max-height: 80%; }
     </style>
@@ -265,7 +259,6 @@
                 <p class="hero-title-line1">Por acá pasa</p>
                 <h1 class="hero-title-line2">LO QUE TE GUSTA HACER</h1>
                 <p class="hero-subtitle">El marco ideal en Núñez para encuentros, talleres y experiencias curadas.</p>
-                <a href="https://wa.me/5491162834000" target="_blank" class="btn-novedades">✨ Quiero recibir novedades</a>
             </div>
         </div>
     </section>
@@ -297,6 +290,11 @@
                 </div>
             </a>
         </div>
+
+        <!-- Botón Quiero Recibir Novedades -->
+        <div style="margin-top: 30px;">
+            <a class="btn" style="background: var(--green-dark); color: white;" href="https://wa.me/5491162834000">✨ Quiero recibir novedades</a>
+        </div>
     </section>
 
     <section id="contacto" style="margin-top: 40px;">
@@ -304,12 +302,6 @@
             <h2 style="color: white; font-family: 'Playfair Display', serif; margin-bottom:10px;">¿Querés organizar tu evento?</h2>
             <p style="opacity: 0.8; margin-bottom:20px;">Utilizá Arcos V para tus cursos, reuniones de equipo o presentaciones.</p>
             <a class="btn" style="background: white; color: var(--primary);" href="https://wa.me/5491162834000">🏡 Consultar disponibilidad</a>
-        </div>
-        
-        <div class="box">
-            <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 15px;">Ubicación</h3>
-            <p style="margin-bottom:20px;">Arcos 2952, Núñez, CABA.</p>
-            <iframe title="Mapa Ubicación Arcos V" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.2081545464194!2d-58.4651347!3d-34.5483256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6a4610738eb%3A0xc069f98436440c9e!2sArcos%202952%2C%20C1429%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!4far!4v1714488888888!5m2!1ses!4far" width="100%" height="250" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
@@ -339,6 +331,12 @@
             <img src="Entorno2.webp" onclick="openLightbox(this.src)" alt="Jardín con vegetación" width="300" height="300" loading="lazy">
             <img src="Entorno3.webp" onclick="openLightbox(this.src)" alt="Detalles boutique" width="300" height="300" loading="lazy">
         </div>
+    </section>
+
+    <section id="ubicacion" class="box" style="margin-top: 40px;">
+        <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 15px;">Ubicación</h3>
+        <p style="margin-bottom:20px;">Arcos 2952, Núñez, CABA.</p>
+        <iframe title="Mapa Ubicación Arcos V" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.2081545464194!2d-58.4651347!3d-34.5483256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6a4610738eb%3A0xc069f98436440c9e!2sArcos%202952%2C%20C1429%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!4far!4v1714488888888!5m2!1ses!4far" width="100%" height="250" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
     </section>
 
     <footer>
