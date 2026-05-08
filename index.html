@@ -1,251 +1,105 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Arcos V | Espacio Boutique para Experiencias en Núñez</title>
-
-    <meta name="description" content="Arcos V es un espacio boutique en el barrio de Núñez, CABA. Un refugio diseñado para experiencias exclusivas, catas de vino, talleres y encuentros de marcas.">
-
-    <link rel="icon" type="image/png" href="favicon.png">
-
+    <title>Arcos V | Espacio Boutique</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
-        /* --- BASE SACRA --- */
+        /* BASE SACRA */
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        :root { --primary: #000000; --bg: #f4f1ea; --text: #000000; --text-light: #444444; --accent: #1a302a; --white: #ffffff; }
+        html, body { width: 100%; overflow-x: hidden; background-color: var(--bg); scroll-behavior: smooth; font-family: 'Inter', sans-serif; color: var(--text); }
+        
+        body { padding-top: 100px; } /* Espacio para el header fijo */
 
-        :root {
-            --primary: #000000;
-            --bg: #f4f1ea; 
-            --text: #000000;
-            --text-light: #444444; 
-            --accent: #1a302a; 
-            --white: #ffffff;
-            --shadow: 0 15px 35px rgba(0,0,0,0.1);
-        }
-
-        html, body {
-            width: 100%;
-            overflow-x: hidden;
-            background-color: var(--bg);
-            scroll-behavior: smooth;
-            font-family: 'Inter', sans-serif;
-            color: var(--text);
-            -webkit-font-smoothing: antialiased;
-        }
-
-        body { padding-top: 70px; }
-
-        section { padding: 40px 0; scroll-margin-top: 100px; }
-
-        /* NAVBAR */
+        /* HEADER CON LOGO CENTRADO */
         header {
-            position: fixed;
-            top: 0; left: 0;
-            background: var(--white);
-            z-index: 1000;
-            width: 100%;
-            border-bottom: 2px solid var(--primary);
-            height: 70px;
-            display: flex;
-            align-items: center;
+            position: fixed; top: 0; left: 0; width: 100%; height: 90px;
+            background: var(--white); z-index: 1000; border-bottom: 2px solid var(--primary);
+            display: flex; align-items: center;
         }
-
         .nav-container {
-            width: 100%;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo img { height: 35px; width: auto; }
-
-        .nav-links a { 
-            text-decoration: none; 
-            color: var(--text); 
-            font-size: 11px; 
-            font-weight: 600; 
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-            margin-left: 20px;
-        }
-
-        .menu-toggle { font-size: 28px; cursor: pointer; color: var(--text); background: none; border: none; }
-
-        @media (min-width: 900px) { .menu-toggle { display: none; } }
-        @media (max-width: 899px) { .nav-links { display: none; } }
-
-        /* MENÚ MÓVIL */
-        .mobile-nav {
-            position: fixed;
-            top: 0; right: -100%;
-            width: 100%; height: 100%;
-            background: var(--bg);
-            z-index: 2000;
-            display: flex; flex-direction: column;
-            justify-content: center; align-items: center;
-            gap: 25px;
-            transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-        }
-        .mobile-nav.active { right: 0; }
-        .mobile-nav a { font-family: 'Lora', serif; font-size: 24px; text-decoration: none; color: var(--text); text-transform: uppercase; letter-spacing: 1px; }
-
-        /* CONTENEDOR PRINCIPAL */
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-        /* HERO AJUSTADO */
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .hero-text-center {
-            grid-column: 1 / -1; 
-            text-align: center;
-            padding: 30px 0; /* Reducido arriba y abajo */
-        }
-
-        .hero-title-line1 { 
-            font-family: 'Lora', serif; 
-            font-size: 24px; 
-            font-style: italic;
-            color: var(--accent);
-            margin-bottom: 5px;
-        }
-
-        .hero-title-line2 { 
-            font-family: 'Lora', serif; 
-            font-size: 52px; 
-            font-weight: 700; 
-            line-height: 1;
-            letter-spacing: -1px;
-            text-transform: uppercase;
-        }
-
-        .hero-subtitle { 
-            font-size: 16px; 
-            margin: 15px auto 0;
-            max-width: 600px;
-            color: var(--text-light);
-        }
-
-        .carousel-box {
+            width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px;
+            display: flex; justify-content: space-between; align-items: center;
             position: relative;
-            overflow: hidden;
-            height: 450px; 
-            background: #ddd;
-            border: 1px solid rgba(0,0,0,0.1);
+        }
+        .logo-centered {
+            position: absolute; left: 50%; transform: translateX(-50%);
+            display: flex; align-items: center;
+        }
+        .logo-centered img { height: 50px; width: auto; }
+        
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { text-decoration: none; color: var(--text); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .menu-toggle { font-size: 32px; cursor: pointer; background: none; border: none; }
+
+        @media (max-width: 950px) {
+            .nav-links { display: none; }
         }
 
-        .split-slide {
-            position: absolute;
-            width: 100%; height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 1.5s ease-in-out;
-        }
+        /* HERO - ESPACIO ENTRE LOGO E IMAGEN */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 20px; margin-top: 20px; }
+        .carousel-box { position: relative; overflow: hidden; height: 450px; background: #ddd; border: 1px solid rgba(0,0,0,0.1); }
+        .split-slide { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.5s ease-in-out; }
         .split-slide.active { opacity: 1; }
 
-        /* TARJETAS RESTAURADAS */
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+        .hero-text-center { text-align: center; padding: 30px 0; }
+        .hero-title-line1 { font-family: 'Lora', serif; font-size: 24px; font-style: italic; color: var(--accent); }
+        .hero-title-line2 { font-family: 'Lora', serif; font-size: 52px; font-weight: 700; text-transform: uppercase; line-height: 1; }
 
-        .card { 
-            background: var(--white); 
-            border: 1px solid rgba(0,0,0,0.05);
-            transition: 0.4s;
-            cursor: pointer;
-        }
-        
+        /* TARJETAS - FIX INTERACTIVIDAD */
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+        .card { background: var(--white); border: 1px solid rgba(0,0,0,0.05); cursor: pointer; }
         .card-image-container { position: relative; width: 100%; aspect-ratio: 4/5; overflow: hidden; }
-        .card-image-container img { width: 100%; height: 100%; object-fit: cover; position: absolute; transition: 0.6s; }
-        
+        .card-image-container img { width: 100%; height: 100%; object-fit: cover; position: absolute; transition: 0.6s ease; }
         .img-back { opacity: 0; }
         .card.active .img-back { opacity: 1; }
         .card.active .img-front { opacity: 0; }
-
         .card-content { padding: 25px; }
-        .card-content h3 { font-family: 'Lora', serif; font-size: 22px; margin: 5px 0; }
 
-        .btn { 
-            display: inline-block; 
-            width: 100%;
-            padding: 16px; 
-            background: var(--primary); 
-            color: var(--white); 
-            text-align: center; 
-            text-decoration: none; 
-            font-weight: 600; 
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: 0.3s;
-            border: 1px solid var(--primary);
-        }
-
-        /* CONTACTO Y SEPARADOR */
-        .box-dark { 
-            background: var(--primary); 
-            color: var(--white); 
-            padding: 60px 20px; 
-            text-align: center;
-            margin-bottom: 20px; /* Aire para "Lo que pasó" */
-        }
-        .box-dark h2 { font-family: 'Lora', serif; font-size: 32px; margin-bottom: 15px; }
-        .box-dark .btn { background: var(--white); color: var(--primary); width: auto; padding: 15px 40px; }
-
-        .quote-separator { 
-            background-color: var(--accent); 
-            color: var(--bg); 
-            text-align: center; 
-            padding: 80px 20px; /* Reducido aire */
-            font-family: 'Lora', serif; 
-            font-size: 28px; 
-            font-style: italic;
-            line-height: 1.3;
-            margin-top: 10px; /* Menos aire con el rectángulo */
-            margin-bottom: 60px; /* Más aire con El Espacio */
-        }
+        /* SECCIONES Y AIRE */
+        .box-dark { background: var(--primary); color: var(--white); padding: 60px 20px; text-align: center; }
+        .quote-separator { background-color: var(--accent); color: var(--bg); text-align: center; padding: 60px 20px; font-family: 'Lora', serif; font-size: 28px; font-style: italic; }
+        
+        #espacio { padding: 100px 0; } /* MUCHO AIRE PARA EL ESPACIO */
+        #ubicacion { padding: 80px 0; border-top: 1px solid #ddd; }
 
         .grid-entorno { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 20px; }
-        .grid-entorno img { width: 100%; aspect-ratio: 1; object-fit: cover; cursor: pointer; }
+        .grid-entorno img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+
+        /* MOBILE NAV */
+        .mobile-nav { position: fixed; top: 0; right: -100%; width: 100%; height: 100%; background: var(--bg); z-index: 2000; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 25px; transition: 0.5s; }
+        .mobile-nav.active { right: 0; }
+        .mobile-nav a { font-family: 'Lora', serif; font-size: 24px; text-decoration: none; color: #000; text-transform: uppercase; }
 
         @media (max-width: 700px) {
-            .hero-grid { grid-template-columns: 1fr; gap: 0; }
-            .hero-title-line2 { font-size: 38px; }
-            .carousel-box { height: 350px; } /* Altura celular optimizada */
+            .hero-grid { grid-template-columns: 1fr; }
+            .carousel-box { height: 350px; }
             #top-right { display: none; }
-            section { padding: 30px 0; }
+            .hero-title-line2 { font-size: 38px; }
         }
-
-        footer { background: #000; color: #fff; padding: 60px 20px; text-align: center; }
-        #lightbox { display: none; position: fixed; z-index: 3000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
-        #lightbox img { max-width: 90%; max-height: 80%; }
     </style>
 </head>
-
 <body>
 
 <header>
     <nav class="nav-container">
-        <a href="#" class="logo"><img src="logo.png" alt="Arcos V"></a>
         <div class="nav-links">
-            <a href="#encuentros">Próximos Encuentros</a>
-            <a href="#contacto">Organizá tu evento</a>
-            <a href="#lo-que-paso">Lo que pasó</a>
-            <a href="como-reservar.html">Cómo reservar</a>
-            <a href="#espacio">El Espacio</a>
+            <a href="#encuentros">Encuentros</a>
+            <a href="#contacto">Contacto</a>
         </div>
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <div class="logo-centered">
+            <img src="logo.png" alt="Arcos V">
+        </div>
+        <div style="flex:1; display:flex; justify-content: flex-end;">
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        </div>
     </nav>
 </header>
 
@@ -259,7 +113,7 @@
 </div>
 
 <main>
-    <section class="container" id="inicio">
+    <section class="container">
         <div class="hero-grid">
             <div class="carousel-box" id="top-left">
                 <img class="split-slide active" src="hero-interior-1.webp">
@@ -273,37 +127,33 @@
             <div class="hero-text-center">
                 <p class="hero-title-line1">Por acá pasa</p>
                 <h1 class="hero-title-line2">LO QUE TE GUSTA HACER</h1>
-                <p class="hero-subtitle">Un refugio diseñado para experiencias exclusivas y encuentros curados en el corazón de Núñez.</p>
             </div>
         </div>
     </section>
 
     <section class="container" id="encuentros">
-        <h2 style="font-family: 'Lora', serif; font-size: 32px; margin-bottom: 30px; text-align: center;">Próximos Encuentros</h2>
+        <h2 style="text-align: center; margin-bottom: 40px; font-family: 'Lora', serif;">Próximos Encuentros</h2>
         <div class="grid">
             <div class="card" onclick="this.classList.toggle('active')">
                 <div class="card-image-container">
                     <img src="Primeramadres.webp" class="img-front">
-                    <img src="Primeramadres.webp" class="img-back" style="filter: brightness(0.6);"> 
+                    <img src="Primeramadres.webp" class="img-back" style="filter: brightness(0.5);">
                 </div>
                 <div class="card-content">
-                    <span style="font-size:10px; text-transform:uppercase; letter-spacing:1px; color: var(--accent); font-weight: 700;">Comunidad</span>
                     <h3>Encuentro de Madres</h3>
-                    <p style="font-size:13px; color: var(--text-light); margin-bottom: 15px;">Mayo 10, 15:00 hs. Un espacio para conectar.</p>
-                    <a href="https://wa.me/5491162834000" class="btn">Reservar lugar</a>
+                    <p>Mayo 10, 15:00 hs.</p>
+                    <div style="background:#000; color:#fff; text-align:center; padding:10px; margin-top:15px; font-size:10px; letter-spacing:1px;">RESERVAR</div>
                 </div>
             </div>
-
             <div class="card" onclick="this.classList.toggle('active')">
                 <div class="card-image-container">
                     <img src="Primera vino.webp" class="img-front">
-                    <img src="Primera vino.webp" class="img-back" style="filter: brightness(0.6);">
+                    <img src="Primera vino.webp" class="img-back" style="filter: brightness(0.5);">
                 </div>
                 <div class="card-content">
-                    <span style="font-size:10px; text-transform:uppercase; letter-spacing:1px; color: var(--accent); font-weight: 700;">Experiencia</span>
                     <h3>Cata Boutique</h3>
-                    <p style="font-size:13px; color: var(--text-light); margin-bottom: 15px;">Mayo 16, 20:30 hs. Etiquetas curadas.</p>
-                    <a href="https://wa.me/5491162834000" class="btn">Reservar lugar</a>
+                    <p>Mayo 16, 20:30 hs.</p>
+                    <div style="background:#000; color:#fff; text-align:center; padding:10px; margin-top:15px; font-size:10px; letter-spacing:1px;">RESERVAR</div>
                 </div>
             </div>
         </div>
@@ -312,60 +162,29 @@
     <section id="contacto">
         <div class="box-dark">
             <h2>¿Querés organizar tu evento?</h2>
-            <p style="margin-bottom: 30px; opacity: 0.8; font-size: 16px;">Arcos V es el marco ideal para tu próximo taller o evento de marca.</p>
-            <a class="btn" href="https://wa.me/5491162834000">Consultar Disponibilidad</a>
+            <a href="https://wa.me/5491162834000" style="display:inline-block; background:#fff; color:#000; padding:15px 30px; text-decoration:none; margin-top:20px; font-weight:700;">WHATSAPP</a>
         </div>
     </section>
 
-    <div class="quote-separator">"El lugar donde la ciudad se detiene y comienza lo bueno"</div>
-
-    <section class="container" id="lo-que-paso">
-        <h2 style="font-family: 'Lora', serif; font-size: 32px; margin-bottom: 30px; text-align: center;">Lo que pasó</h2>
-        <div class="grid">
-            <div class="card" onclick="this.classList.toggle('active')">
-                <div class="card-image-container">
-                    <img src="Prox1.webp" class="img-front" alt="Taller Pasado">
-                    <img src="Segundaessen.webp" class="img-back" alt="Detalle Taller Pasado">
-                </div>
-                <div class="card-content">
-                    <span style="font-size:10px; text-transform:uppercase; letter-spacing:1px; color: #666; font-weight: 700;">Taller</span>
-                    <h3>Cocina Consciente</h3>
-                    <p style="font-size:13px; color: var(--text-light); line-height: 1.4;">
-                        Una tarde dedicada a los sabores naturales. Evento finalizado.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="quote-separator">"El lugar donde la ciudad se detiene"</div>
 
     <section class="container" id="espacio">
-        <h2 style="font-family: 'Lora', serif; font-size: 32px; text-align: center; margin-bottom: 15px;">El Espacio</h2>
-        <p style="text-align: center; max-width: 700px; margin: 0 auto 30px; color: var(--text-light);">100 m² cubiertos y 280 m² de jardín privado. Un entorno versátil diseñado para la inspiración.</p>
+        <h2 style="text-align: center; font-family: 'Lora', serif; margin-bottom: 20px;">El Espacio</h2>
         <div class="grid-entorno">
-            <img src="Entorno1.webp" onclick="openLightbox(this.src)">
-            <img src="Entorno2.webp" onclick="openLightbox(this.src)">
-            <img src="Entorno3.webp" onclick="openLightbox(this.src)">
+            <img src="Entorno1.webp">
+            <img src="Entorno2.webp">
+            <img src="Entorno3.webp">
         </div>
     </section>
 
     <section id="ubicacion" class="container">
-        <h3 style="font-family: 'Lora', serif; font-size: 24px; margin-bottom: 15px; text-align: center;">Ubicación</h3>
-        <p style="text-align: center; margin-bottom:20px;">Arcos 2952, Núñez, CABA.</p>
-        <iframe title="Mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.197!2d-58.465!3d-34.548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDMyJzUyLjgiUyA1OMKwMjcnNTQuMCJX!5e0!3m2!1ses!2sar!4v1600000000000!5m2!1ses!2sar" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </section>
-
-    <footer>
-        <img src="logo.png" alt="Arcos V" style="height: 40px; filter: invert(1); margin-bottom: 20px;">
-        <p style="opacity: 0.6; margin-bottom: 10px;">Arcos 2952, Núñez · CABA</p>
-        <div style="margin: 15px 0;">
-            <a href="https://instagram.com/arcosv.ba" style="color:white; margin: 0 10px; text-decoration: none; font-size: 12px;">Instagram</a>
-            <a href="https://wa.me/5491162834000" style="color:white; margin: 0 10px; text-decoration: none; font-size: 12px;">WhatsApp</a>
+        <h2 style="text-align: center; font-family: 'Lora', serif; margin-bottom: 20px;">Ubicación</h2>
+        <p style="text-align: center; margin-bottom: 30px;">Arcos 2952, Núñez, CABA.</p>
+        <div style="height: 300px; background: #eee;">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.197!2d-58.465!3d-34.548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDMyJzUyLjgiUyA1OMKwMjcnNTQuMCJX!5e0!3m2!1ses!2sar!4v1600000000000" width="100%" height="100%" style="border:0;" allowfullscreen=""></iframe>
         </div>
-        <p style="font-size: 10px; opacity: 0.3; margin-top: 30px;">© 2026 ARCOS V. DISEÑO BOUTIQUE.</p>
-    </footer>
+    </section>
 </main>
-
-<div id="lightbox" onclick="closeLightbox()"><img id="lightbox-img"></div>
 
 <script>
     function toggleMenu() { document.getElementById("mobile-menu").classList.toggle("active"); }
@@ -381,12 +200,8 @@
             slides[current].classList.add('active');
         }, interval);
     }
-
     startCarousel('top-left', 4000);
     startCarousel('top-right', 5500);
-
-    function openLightbox(src) { document.getElementById("lightbox").style.display = "flex"; document.getElementById("lightbox-img").src = src; }
-    function closeLightbox() { document.getElementById("lightbox").style.display = "none"; }
 </script>
 
 </body>
