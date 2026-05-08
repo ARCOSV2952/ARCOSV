@@ -221,10 +221,10 @@
         <a href="#" class="logo"><img src="logo.png" alt="Arcos V Home" width="160" height="40"></a>
         <div class="nav-links">
             <a href="#encuentros">Próximos Encuentros</a>
-            <a href="#lo-que-paso">Lo que pasó</a>
-            <a href="#espacio">El Espacio</a>
             <a href="#contacto">Organizá tu evento</a>
+            <a href="#lo-que-paso">Lo que pasó</a>
             <a href="como-reservar.html">Cómo reservar</a>
+            <a href="#espacio">El Espacio</a>
         </div>
         <button class="menu-toggle" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
     </nav>
@@ -233,10 +233,10 @@
 <div id="mobile-menu" class="mobile-nav">
     <button style="position:absolute; top:20px; right:20px; font-size:30px; cursor:pointer; background:none; border:none;" onclick="toggleMenu()">✕</button>
     <a href="#encuentros" onclick="toggleMenu()">Próximos Encuentros</a>
-    <a href="#lo-que-paso" onclick="toggleMenu()">Lo que pasó</a>
-    <a href="#espacio" onclick="toggleMenu()">El Espacio</a>
     <a href="#contacto" onclick="toggleMenu()">Organizá tu evento</a>
+    <a href="#lo-que-paso" onclick="toggleMenu()">Lo que pasó</a>
     <a href="como-reservar.html" onclick="toggleMenu()">Cómo reservar</a>
+    <a href="#espacio" onclick="toggleMenu()">El Espacio</a>
 </div>
 
 <main class="container">
@@ -299,7 +299,20 @@
         </div>
     </section>
 
-    <!-- NUEVA SECCIÓN LO QUE PASÓ -->
+    <section id="contacto" style="margin-top: 40px;">
+        <div class="box" style="background: var(--primary); color: white;">
+            <h2 style="color: white; font-family: 'Playfair Display', serif; margin-bottom:10px;">¿Querés organizar tu evento?</h2>
+            <p style="opacity: 0.8; margin-bottom:20px;">Utilizá Arcos V para tus cursos, reuniones de equipo o presentaciones.</p>
+            <a class="btn" style="background: white; color: var(--primary);" href="https://wa.me/5491162834000">🏡 Consultar disponibilidad</a>
+        </div>
+        
+        <div class="box">
+            <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 15px;">Ubicación</h3>
+            <p style="margin-bottom:20px;">Arcos 2952, Núñez, CABA.</p>
+            <iframe title="Mapa Ubicación Arcos V" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.2081545464194!2d-58.4651347!3d-34.5483256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6a4610738eb%3A0xc069f98436440c9e!2sArcos%202952%2C%20C1429%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!4far!4v1714488888888!5m2!1ses!4far" width="100%" height="250" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
     <section id="lo-que-paso" style="margin-top: 60px;">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 10px;">Lo que pasó</h2>
         <p style="color: var(--text-light); margin-bottom: 25px; font-style: italic;">Encuentros que ya dejaron su huella en el jardín.</p>
@@ -328,22 +341,8 @@
         </div>
     </section>
 
-    <section id="contacto" style="margin-top: 40px;">
-        <div class="box" style="background: var(--primary); color: white;">
-            <h2 style="color: white; font-family: 'Playfair Display', serif; margin-bottom:10px;">¿Querés organizar tu evento?</h2>
-            <p style="opacity: 0.8; margin-bottom:20px;">Utilizá Arcos V para tus cursos, reuniones de equipo o presentaciones.</p>
-            <a class="btn" style="background: white; color: var(--primary);" href="https://wa.me/5491162834000">🏡 Consultar disponibilidad</a>
-        </div>
-        
-        <div class="box">
-            <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 15px;">Ubicación</h3>
-            <p style="margin-bottom:20px;">Arcos 2952, Núñez, CABA.</p>
-            <iframe title="Mapa Ubicación Arcos V" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.136534575611!2d-58.465063!3d-34.545084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb429393309a1%3A0x6b3b27b9c97b83f!2sArcos%202952!5e0!3m2!1ses!2sar!4v1715000000000!5m2!1ses!2sar" width="100%" height="250" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-    </section>
-
     <footer>
-        <img src="logo.png" alt="Arcos V Logo" width="120" height="30" style="margin-bottom: 10px;">
+        <img src="logo.png" alt="Arcos V Logo" style="max-height: 40px; width: auto; margin-bottom: 10px;">
         <p>Arcos 2952, Núñez · Ciudad de Buenos Aires</p>
         <nav style="margin-top: 15px;">
             <a href="https://instagram.com/arcosv.ba" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600; padding: 10px;">Instagram</a> · 
