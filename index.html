@@ -198,7 +198,14 @@
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
         .card { text-decoration: none; color: inherit; background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: 0.3s; }
         .card:hover { transform: translateY(-5px); }
-        .card img { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; }
+       .card img { 
+    width: 100%; 
+    max-width: 100%; /* Evita que se salga de la tarjeta */
+    height: auto;    /* Mantiene la proporción correcta */
+    aspect-ratio: 4/5; 
+    object-fit: cover; 
+    display: block; 
+}
         .card-content { padding: 20px; }
 
         .box { background: white; padding: 40px; border-radius: var(--radius); margin-top: 30px; box-shadow: var(--shadow); }
