@@ -47,7 +47,7 @@
             font-family: 'Inter', sans-serif;
             color: var(--text);
             -webkit-font-smoothing: antialiased;
-            padding-top: 80px; 
+            padding-top: 110px; /* Ajustado para el nuevo tamaño del header */
         }
 
         section { scroll-margin-top: 120px; }
@@ -60,7 +60,7 @@
             z-index: 1000;
             width: 100%;
             border-bottom: 1px solid rgba(0,0,0,0.05);
-            height: 70px;
+            height: 100px; /* Header más alto para el logo grande */
             display: flex;
             align-items: center;
         }
@@ -75,7 +75,8 @@
             align-items: center;
         }
 
-        .logo img { height: 40px; width: auto; }
+        /* LOGO AGRANDADO */
+        .logo img { height: 65px; width: auto; }
 
         .nav-links { display: flex; gap: 25px; }
         .nav-links a { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 500; transition: 0.3s; padding: 10px 0; }
@@ -175,8 +176,9 @@
 
         /* RESPONSIVE CELULAR */
         @media (max-width: 700px) {
-            header { height: 60px; }
-            body { padding-top: 60px; }
+            header { height: 75px; }
+            body { padding-top: 75px; }
+            .logo img { height: 50px; }
             .container { padding: 0; } 
             #encuentros, #espacio, #contacto, #lo-que-paso, footer, .hero-text-center { padding-left: 20px; padding-right: 20px; }
             section { scroll-margin-top: 90px; }
@@ -218,7 +220,7 @@
 
 <header>
     <nav class="nav-container">
-        <a href="#" class="logo"><img src="logo.png" alt="Arcos V Home" width="160" height="40"></a>
+        <a href="#" class="logo"><img src="logo.png" alt="Arcos V Home"></a>
         <div class="nav-links">
             <a href="#encuentros">Próximos Encuentros</a>
             <a href="#lo-que-paso">Lo que pasó</a>
@@ -261,11 +263,11 @@
                 <img class="split-slide" src="hero-evento-2.webp" loading="lazy" alt="Encuentro taller" width="500" height="320">
             </div>
 
-           <div class="hero-text-center">
-    <p class="hero-title-line1">Por acá pasa</p>
-    <h1 class="hero-title-line2">LO QUE TE GUSTA HACER</h1>
-    <p class="hero-subtitle">El marco ideal en Núñez para encuentros, talleres y experiencias curadas.</p>
-</div>
+            <div class="hero-text-center">
+                <p class="hero-title-line1">Por acá pasa</p>
+                <h1 class="hero-title-line2">LO QUE TE GUSTA HACER</h1>
+                <p class="hero-subtitle">El marco ideal en Núñez para encuentros, talleres y experiencias curadas.</p>
+            </div>
         </div>
     </section>
 
@@ -298,8 +300,7 @@
         </div>
     </section>
 
-    <!-- NUEVO BLOQUE DE NOVEDADES ENTRE SECCIONES -->
-<section id="novedades-whatsapp" style="margin-top: 40px;">
+    <section id="novedades-whatsapp" style="margin-top: 40px;">
     <div class="box" style="background: var(--primary); color: white; text-align: center;">
         <h2 style="color: white; font-family: 'Playfair Display', serif; margin-bottom:10px;">¿Querés saber todo lo que pasa en Arcos V?</h2>
         <p style="opacity: 0.8; margin-bottom:20px;">¡Mandanos un WhatsApp para enterarte de los nuevos cursos y eventos!</p>
@@ -307,7 +308,6 @@
     </div>
 </section>
 
-    <!-- NUEVA SECCIÓN LO QUE PASÓ -->
     <section id="lo-que-paso" style="margin-top: 60px;">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 10px;">Lo que pasó</h2>
         <p style="color: var(--text-light); margin-bottom: 25px; font-style: italic;">Jueves 7 de mayo</p>
@@ -351,7 +351,6 @@
 </section>
 
     <footer>
-        <!-- Se cambió width="120" por style="height: 40px; width: auto;" para evitar la distorsión -->
         <img src="logo.png" alt="Arcos V Logo" style="height: 40px; width: auto; margin-bottom: 10px;">
         
         <p>Arcos 2952, Núñez · Ciudad de Buenos Aires</p>
