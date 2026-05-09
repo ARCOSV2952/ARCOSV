@@ -14,7 +14,7 @@
         :root { --primary: #000000; --bg: #f4f1ea; --text: #000000; --text-light: #444444; --accent: #1a302a; --white: #ffffff; }
         html, body { width: 100%; overflow-x: hidden; background-color: var(--bg); scroll-behavior: smooth; font-family: 'Inter', sans-serif; color: var(--text); }
         
-        body { padding-top: 100px; } /* Espacio para el header fijo */
+        body { padding-top: 100px; }
 
         /* HEADER CON LOGO CENTRADO */
         header {
@@ -42,7 +42,7 @@
             .nav-links { display: none; }
         }
 
-        /* HERO - ESPACIO ENTRE LOGO E IMAGEN */
+        /* HERO */
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
         .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 20px; margin-top: 20px; }
         .carousel-box { position: relative; overflow: hidden; height: 450px; background: #ddd; border: 1px solid rgba(0,0,0,0.1); }
@@ -53,27 +53,27 @@
         .hero-title-line1 { font-family: 'Lora', serif; font-size: 24px; font-style: italic; color: var(--accent); }
         .hero-title-line2 { font-family: 'Lora', serif; font-size: 52px; font-weight: 700; text-transform: uppercase; line-height: 1; }
 
-        /* TARJETAS - FIX INTERACTIVIDAD */
+        /* TARJETAS - CORRECCIÓN DE NAVEGACIÓN */
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
-        .card { background: var(--white); border: 1px solid rgba(0,0,0,0.05); cursor: pointer; position: relative; overflow: hidden; }
+        .card { background: var(--white); border: 1px solid rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.3s ease; }
+        .card:hover { transform: translateY(-5px); }
         
-        .card-image-container { position: relative; width: 100%; aspect-ratio: 4/5; overflow: hidden; background-color: #000; }
-        .card-image-container img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; transition: opacity 0.6s ease; }
+        .card-image-container { position: relative; width: 100%; aspect-ratio: 4/5; overflow: hidden; background: #000; }
+        .card-image-container img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; transition: 0.6s ease; }
         
         .img-back { opacity: 0; z-index: 2; }
         .img-front { opacity: 1; z-index: 1; }
 
-        /* Cuando la tarjeta tiene la clase active, mostramos la de atrás */
         .card.active .img-back { opacity: 1; }
-        .card.active .img-front { opacity: 0.4; } /* La de adelante se oscurece un poco */
+        .card.active .img-front { opacity: 0.4; }
 
-        .card-content { padding: 25px; position: relative; z-index: 3; background: var(--white); }
+        .card-content { padding: 25px; }
 
         /* SECCIONES Y AIRE */
         .box-dark { background: var(--primary); color: var(--white); padding: 60px 20px; text-align: center; }
         .quote-separator { background-color: var(--accent); color: var(--bg); text-align: center; padding: 60px 20px; font-family: 'Lora', serif; font-size: 28px; font-style: italic; }
         
-        #espacio { padding: 100px 0; } /* MUCHO AIRE PARA EL ESPACIO */
+        #espacio { padding: 100px 0; }
         #ubicacion { padding: 80px 0; border-top: 1px solid #ddd; }
 
         .grid-entorno { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 20px; }
@@ -140,8 +140,7 @@
     <section class="container" id="encuentros">
         <h2 style="text-align: center; margin-bottom: 40px; font-family: 'Lora', serif;">Próximos Encuentros</h2>
         <div class="grid">
-            <!-- Tarjeta 1 -->
-            <div class="card" onclick="this.classList.toggle('active')">
+            <div class="card" onclick="location.href='madres.html'">
                 <div class="card-image-container">
                     <img src="Primeramadres.webp" class="img-front">
                     <img src="Primeramadres.webp" class="img-back" style="filter: brightness(0.5);">
@@ -152,8 +151,7 @@
                     <div style="background:#000; color:#fff; text-align:center; padding:10px; margin-top:15px; font-size:10px; letter-spacing:1px;">RESERVAR</div>
                 </div>
             </div>
-            <!-- Tarjeta 2 -->
-            <div class="card" onclick="this.classList.toggle('active')">
+            <div class="card" onclick="location.href='vino.html'">
                 <div class="card-image-container">
                     <img src="Primera vino.webp" class="img-front">
                     <img src="Primera vino.webp" class="img-back" style="filter: brightness(0.5);">
