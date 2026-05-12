@@ -4,80 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOMBRE DEL EVENTO - Lo que pasó - Arcos V</title>
-    <!-- Mantengo tus estilos para asegurar la estética del espacio boutique -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
-        .carousel-item { transition: transform 0.6s ease-in-out; }
+        :root {
+            --primary: #8c2b32; /* Tu bordó oficial */
+            --text: #1a1a1a;
+            --bg: #faf9f6;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         
-        /* Estilos para los botones con diferente jerarquía */
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg); 
+            color: var(--text); 
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container { max-width: 800px; margin: 0 auto; }
+
+        header { text-align: center; margin-bottom: 40px; }
+        
+        .tag { text-transform: uppercase; letter-spacing: 2px; color: #888; font-size: 12px; font-weight: 600; }
+        
+        h1 { font-family: 'Lora', serif; font-size: 38px; margin: 10px 0; color: var(--text); }
+
+        /* AJUSTE PARA TUS NUEVAS IMÁGENES 1080x1350 */
+        .main-image {
+            width: 100%;
+            max-width: 100%;
+            aspect-ratio: 4 / 5; /* Mantiene la proporción de tus fotos */
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        .description { margin: 40px 0; font-size: 17px; }
+        .description h2 { font-family: 'Lora', serif; margin-bottom: 15px; }
+
+        /* BOTONES UX MEJORADA */
+        .btn-container { text-align: center; margin: 50px 0; }
+        
         .btn-principal {
-            background-color: #25d366; /* Verde WhatsApp o el color de tu marca */
+            background-color: var(--primary);
             color: white;
-            padding: 15px 25px;
+            padding: 18px 30px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
+            border-radius: 12px;
+            font-weight: 600;
             display: inline-block;
             margin: 10px;
+            transition: 0.3s;
         }
         
         .btn-secundario {
             background-color: transparent;
-            color: #555; /* Un tono gris para que sea sutil */
-            padding: 15px 25px;
+            color: #555;
+            padding: 17px 30px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 12px;
             border: 1px solid #ccc;
-            font-weight: normal;
             display: inline-block;
             margin: 10px;
+            transition: 0.3s;
         }
+
+        .btn-principal:hover, .btn-secundario:hover { opacity: 0.8; transform: translateY(-2px); }
+
+        footer { text-align: center; padding-top: 40px; border-top: 1px solid #eee; margin-top: 40px; }
+        footer a { color: #888; text-decoration: none; font-size: 14px; }
     </style>
 </head>
 <body>
 
-    <header>
-        <p style="text-transform: uppercase; letter-spacing: 2px; color: #888;">Lo que pasó</p>
-        <h1>NOMBRE DEL EVENTO</h1>
-        <p>REGISTRO DEL ENCUENTRO</p>
-    </header>
+    <div class="container">
+        <header>
+            <p class="tag">Lo que pasó</p>
+            <h1>ENCUENTRO DE MADRES</h1> <p style="font-style: italic; color: var(--primary);">Domingo 10 de Mayo</p>
+        </header>
 
-    <main>
-        <!-- REGISTRO VISUAL -->
-        <section id="fotos-evento">
-            <!-- Como no hay fotos nuevas, usamos la imagen de convocatoria optimizada -->
-            <img src="tu-foto-evento.jpg" alt="Registro del evento en Arcos V" style="width:100%; max-width: 800px; display: block; margin: auto;">
-        </section>
+        <main>
+            <img src="Primeramadres.webp" alt="Registro del evento" class="main-image">
 
-        <section id="descripcion" style="max-width: 800px; margin: auto; padding: 20px;">
-            <h2>Sobre esta experiencia</h2>
-            <p>Aquí puedes relatar brevemente lo que inspiró este encuentro. Al ser parte de "Lo que pasó", queda como un testimonio de la versatilidad de la base sagrada de Arcos V.</p>
-        </section>
+            <section class="description">
+                <h2>Sobre esta experiencia</h2>
+                <p>Aquí relatas brevemente lo que pasó. Por ejemplo: "Compartimos una tarde de té, charlas profundas y conexión en nuestro jardín boutique. Gracias a todas las madres que se acercaron a Arcos V."</p>
+            </section>
 
-        <!-- SECCIÓN DE ACCIÓN (UX MEJORADA) -->
-        <section style="text-align: center; margin: 40px 0;">
-            <p>¿Te gustaría organizar o participar en un encuentro similar?</p>
-            
-            <!-- Botón Principal (CTA) -->
-            <a href="https://wa.me/5491162834000" class="btn-principal">
-                Quiero organizar algo así
-            </a>
-            
-            <br>
-            
-            <!-- Botón Secundario (Navegación) -->
-            <a href="index.html" class="btn-secundario">
-                Ver agenda actual
-            </a>
-        </section>
-    </main>
+            <div class="btn-container">
+                <p style="margin-bottom: 20px; font-weight: 500;">¿Te gustaría participar en el próximo?</p>
+                
+                <a href="https://wa.me/5491162834000?text=Hola!%20Me%20gustaría%20anotarme%20para%20el%20próximo%20evento" class="btn-principal">
+                    Avisame de nuevas fechas
+                </a>
+                
+                <br>
+                
+                <a href="index.html" class="btn-secundario">
+                    Ver otros eventos
+                </a>
+            </div>
+        </main>
 
-    <footer style="text-align: center; padding: 20px; border-top: 1px solid #eee;">
-        <a href="index.html" style="color: #888; text-decoration: none;">← Volver al inicio</a>
-    </footer>
+        <footer>
+            <a href="index.html">← Volver al inicio de Arcos V</a>
+        </footer>
+    </div>
 
-    <script>
-        // Mantenemos la lógica de fluidez que ya optimizamos para móviles
-        let intervalo = 3000; 
-    </script>
 </body>
 </html>
