@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOMBRE DEL EVENTO - Lo que pasó - Arcos V</title>
+    <title>[NOMBRE DEL EVENTO] | Arcos V</title>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    
     <style>
         :root {
-            --primary: #8c2b32; /* Tu bordó oficial */
-            --text: #1a1a1a;
+            --primary: #8c2b32; /* Tu color bordó oficial */
             --bg: #faf9f6;
+            --text: #1a1a1a;
+            --text-light: #666;
+            --radius: 16px;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,94 +26,121 @@
 
         .container { max-width: 800px; margin: 0 auto; }
 
-        header { text-align: center; margin-bottom: 40px; }
-        
-        .tag { text-transform: uppercase; letter-spacing: 2px; color: #888; font-size: 12px; font-weight: 600; }
-        
-        h1 { font-family: 'Lora', serif; font-size: 38px; margin: 10px 0; color: var(--text); }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
 
-        /* AJUSTE PARA TUS IMÁGENES */
-.main-image {
-    width: 100%;
-    max-width: 520px; /* Tamaño contenido, igual que tu tarjeta */
-    aspect-ratio: 4 / 5; 
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    margin: 0 auto 30px auto; /* Centrada */
-    display: block;
-}
+        /* IMAGEN FLEXIBLE Y CONTENIDA */
+        .main-image {
+            width: 100%;
+            max-width: 520px; /* El tamaño que te gusta de la tarjeta */
+            height: auto;
+            aspect-ratio: 4 / 5; /* Proporción para fotos 1080x1350 */
+            object-fit: cover;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin: 0 auto 30px auto; /* Centrada */
+            display: block;
+        }
 
-        .description { margin: 40px 0; font-size: 17px; }
-        .description h2 { font-family: 'Lora', serif; margin-bottom: 15px; }
+        .event-category {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            display: block;
+            text-align: center;
+        }
 
-        /* BOTONES UX MEJORADA */
-        .btn-container { text-align: center; margin: 50px 0; }
-        
-        .btn-principal {
-            background-color: var(--primary);
+        h1 {
+            font-family: 'Lora', serif;
+            font-size: 42px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .event-meta {
+            font-style: italic;
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .description {
+            font-size: 17px;
+            color: #444;
+            margin-bottom: 40px;
+            max-width: 600px; /* Para que el texto no sea tan largo y sea fácil de leer */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .box-info {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            border: 1px solid #eee;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: var(--primary);
             color: white;
-            padding: 18px 30px;
             text-decoration: none;
             border-radius: 12px;
             font-weight: 600;
-            display: inline-block;
-            margin: 10px;
-            transition: 0.3s;
-        }
-        
-        .btn-secundario {
-            background-color: transparent;
-            color: #555;
-            padding: 17px 30px;
-            text-decoration: none;
-            border-radius: 12px;
-            border: 1px solid #ccc;
-            display: inline-block;
-            margin: 10px;
-            transition: 0.3s;
+            margin-top: 20px;
+            transition: 0.3s ease;
         }
 
-        .btn-principal:hover, .btn-secundario:hover { opacity: 0.8; transform: translateY(-2px); }
+        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
-        footer { text-align: center; padding-top: 40px; border-top: 1px solid #eee; margin-top: 40px; }
-        footer a { color: #888; text-decoration: none; font-size: 14px; }
+        @media (max-width: 600px) {
+            h1 { font-size: 32px; }
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <header>
-            <p class="tag">Lo que pasó</p>
-            <h1>ENCUENTRO DE MADRES</h1> <p style="font-style: italic; color: var(--primary);">Domingo 10 de Mayo</p>
-        </header>
+        <a href="index.html" class="back-link">← Volver al inicio</a>
 
-        <main>
-            <img src="Primeramadres.webp" alt="Registro del evento" class="main-image">
+        <!-- REEMPLAZAR: Foto del evento pasado -->
+        <img src="[NOMBRE-FOTO].webp" alt="Registro del evento" class="main-image">
 
-            <section class="description">
-                <h2>Sobre esta experiencia</h2>
-                <p>Aquí relatas brevemente lo que pasó. Por ejemplo: "Compartimos una tarde de té, charlas profundas y conexión en nuestro jardín boutique. Gracias a todas las madres que se acercaron a Arcos V."</p>
-            </section>
+        <span class="event-category">Evento Finalizado</span>
+        
+        <!-- REEMPLAZAR: Título del evento -->
+        <h1>[NOMBRE DEL EVENTO]</h1>
+        
+        <!-- REEMPLAZAR: Fecha real -->
+        <p class="event-meta">Se llevó a cabo el [FECHA]</p>
 
-            <div class="btn-container">
-                <p style="margin-bottom: 20px; font-weight: 500;">¿Te gustaría participar en el próximo?</p>
-                
-                <a href="https://wa.me/5491162834000?text=Hola!%20Me%20gustaría%20anotarme%20para%20el%20próximo%20evento" class="btn-principal">
-                    Avisame de nuevas fechas
-                </a>
-                
-                <br>
-                
-                <a href="index.html" class="btn-secundario">
-                    Ver otros eventos
-                </a>
-            </div>
-        </main>
+        <div class="description">
+            <p>[Escribe aquí un resumen breve de lo que pasó. Por ejemplo: Compartimos una tarde de charlas y conexión en nuestro jardín boutique.]</p>
+            <br>
+            <p>Gracias a todos los que formaron parte de esta experiencia. ¡Pronto anunciaremos nuevas fechas!</p>
+        </div>
 
-        <footer>
-            <a href="index.html">← Volver al inicio de Arcos V</a>
-        </footer>
+        <div class="box-info">
+            <h3 style="font-family: 'Lora', serif;">¿Te quedaste con ganas de participar?</h3>
+            <p style="font-size: 14px; margin-top: 10px; color: var(--text-light);">Sumate a nuestro WhatsApp para ser el primero en enterarte de los próximos encuentros.</p>
+            
+            <!-- REEMPLAZAR: Link de WhatsApp con mensaje personalizado -->
+            <a href="https://wa.me/5491162834000?text=Hola!%20Me%20gustaría%20recibir%20info%20de%20los%20próximos%20eventos" class="btn">Quiero enterarme de lo próximo</a>
+        </div>
     </div>
 
 </body>
