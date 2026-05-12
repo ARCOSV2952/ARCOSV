@@ -1,13 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[NOMBRE DEL EVENTO] | Arcos V</title>
+    <title>Cocina Consciente | Arcos V</title>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #8c2b32; /* Tu color bordó oficial */
+            --primary: #8c2b32; /* Tu color bordó */
             --bg: #faf9f6;
             --text: #1a1a1a;
             --text-light: #666;
@@ -26,6 +27,7 @@
 
         .container { max-width: 800px; margin: 0 auto; }
 
+        /* HEADER INTERNO */
         .back-link {
             text-decoration: none;
             color: var(--primary);
@@ -35,19 +37,16 @@
             margin-bottom: 30px;
         }
 
-        /* IMAGEN FLEXIBLE Y CONTENIDA */
+        /* IMAGEN PRINCIPAL */
         .main-image {
             width: 100%;
-            max-width: 520px; /* El tamaño que te gusta de la tarjeta */
-            height: auto;
-            aspect-ratio: 4 / 5; /* Proporción para fotos 1080x1350 */
-            object-fit: cover;
             border-radius: var(--radius);
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            margin: 0 auto 30px auto; /* Centrada */
+            margin-bottom: 30px;
             display: block;
         }
 
+        /* CONTENIDO */
         .event-category {
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -55,7 +54,6 @@
             color: var(--text-light);
             margin-bottom: 10px;
             display: block;
-            text-align: center;
         }
 
         h1 {
@@ -63,7 +61,6 @@
             font-size: 42px;
             line-height: 1.1;
             margin-bottom: 20px;
-            text-align: center;
         }
 
         .event-meta {
@@ -71,16 +68,12 @@
             color: var(--primary);
             margin-bottom: 30px;
             font-size: 18px;
-            text-align: center;
         }
 
         .description {
             font-size: 17px;
             color: #444;
             margin-bottom: 40px;
-            max-width: 600px; /* Para que el texto no sea tan largo y sea fácil de leer */
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .box-info {
@@ -89,8 +82,6 @@
             border-radius: var(--radius);
             border: 1px solid #eee;
             text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
         }
 
         .btn {
@@ -102,10 +93,7 @@
             border-radius: 12px;
             font-weight: 600;
             margin-top: 20px;
-            transition: 0.3s ease;
         }
-
-        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
         @media (max-width: 600px) {
             h1 { font-size: 32px; }
@@ -117,29 +105,23 @@
     <div class="container">
         <a href="index.html" class="back-link">← Volver al inicio</a>
 
-        <!-- REEMPLAZAR: Foto del evento pasado -->
-        <img src="[NOMBRE-FOTO].webp" alt="Registro del evento" class="main-image">
+        <!-- La imagen que pediste -->
+        <img src="Segundaessen.webp" alt="Taller Cocina Consciente" class="main-image">
 
         <span class="event-category">Evento Finalizado</span>
-        
-        <!-- REEMPLAZAR: Título del evento -->
-        <h1>[NOMBRE DEL EVENTO]</h1>
-        
-        <!-- REEMPLAZAR: Fecha real -->
-        <p class="event-meta">Se llevó a cabo el [FECHA]</p>
+        <h1>Evento de Cocina</h1>
+        <p class="event-meta">Se llevó a cabo el Jueves 7 de mayo</p>
 
         <div class="description">
-            <p>[Escribe aquí un resumen breve de lo que pasó. Por ejemplo: Compartimos una tarde de charlas y conexión en nuestro jardín boutique.]</p>
+            <p>En este evento compartimos técnicas de cocina saludable, degustamos preparaciones de autor y disfrutamos de una tarde única.</p>
             <br>
-            <p>Gracias a todos los que formaron parte de esta experiencia. ¡Pronto anunciaremos nuevas fechas!</p>
+            <p>Gracias a todos los que formaron parte de esta experiencia. Pronto anunciaremos nuevas fechas!</p>
         </div>
 
         <div class="box-info">
             <h3 style="font-family: 'Lora', serif;">¿Te quedaste con ganas de participar?</h3>
-            <p style="font-size: 14px; margin-top: 10px; color: var(--text-light);">Sumate a nuestro WhatsApp para ser el primero en enterarte de los próximos encuentros.</p>
-            
-            <!-- REEMPLAZAR: Link de WhatsApp con mensaje personalizado -->
-            <a href="https://wa.me/5491162834000?text=Hola!%20Me%20gustaría%20recibir%20info%20de%20los%20próximos%20eventos" class="btn">Quiero enterarme de lo próximo</a>
+            <p style="font-size: 14px; margin-top: 10px; color: var(--text-light);">Sumate a nuestro WhatsApp para ser el primero en enterarte de los próximos talleres.</p>
+            <a href="https://wa.me/5491162834000" class="btn">Quiero enterarme de lo próximo</a>
         </div>
     </div>
 
