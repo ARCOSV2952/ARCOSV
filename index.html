@@ -220,6 +220,46 @@
         #lightbox { display: none; position: fixed; z-index: 3000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
         #lightbox img { max-width: 90%; max-height: 80%; }
 
+        /* --- CARRUSEL INFINITO DE LOGOS --- */
+        .carrusel-logos {
+            overflow: hidden;
+            padding: 40px 0;
+            background: white;
+            white-space: nowrap;
+            position: relative;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Degradados sutiles a los costados para dar efecto de desvanecido */
+        .carrusel-logos::before, .carrusel-logos::after {
+            position: absolute;
+            top: 0; width: 100px; height: 100%;
+            content: ""; z-index: 2;
+        }
+        .carrusel-logos::before { left: 0; background: linear-gradient(to right, white, transparent); }
+        .carrusel-logos::after { right: 0; background: linear-gradient(to left, white, transparent); }
+
+        .track-logos {
+            display: inline-block;
+            animation: desplazarLogos 25s linear infinite;
+        }
+
+        .track-logos img {
+            height: 45px; /* Altura de los logos */
+            margin: 0 40px;
+            vertical-align: middle;
+            opacity: 0.6; /* Un tono grisáceo elegante */
+            transition: opacity 0.3s;
+        }
+        .track-logos img:hover { opacity: 1; } /* Se enciende al pasar el mouse */
+
+        /* Animación que mueve los logos de derecha a izquierda */
+        @keyframes desplazarLogos {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        
 /* --- CAMBIO PARA GRILLA DE 2 EN MÓVIL (ESTILO TIENDANUBE) --- */
         @media (max-width: 700px) {
             /* Ajustamos el contenedor de "Lo que pasó" */
@@ -389,7 +429,21 @@
 </section>
 
     <div class="quote-separator">El lugar perfecto donde la ciudad se detiene <br> y comienza lo bueno</div>
-
+<section class="carrusel-logos">
+        <div class="track-logos">
+            <img src="https://placehold.co/150x50/ffffff/021050?text=Empresa+A" alt="Empresa A">
+            <img src="https://placehold.co/150x50/ffffff/021050?text=Marca+B" alt="Marca B">
+            <img src="https://placehold.co/150x50/ffffff/021050?text=Eventos+C" alt="Eventos C">
+            <img src="https://placehold.co/150x50/ffffff/021050?text=Catering+D" alt="Catering D">
+            <img src="https://placehold.co/150x50/ffffff/021050?text=Bodega+E" alt="Bodega E">
+            
+            <img src="https://placehold.co/150x50/ffffff/021050?text=Empresa+A" alt="Empresa A">
+            <img src="https://placehold.co/150x50/ffffff/021050?text=Marca+B" alt="Marca B">
+            <img src="https://placehold.co/150x50/ffffff/021050?text=Eventos+C" alt="Eventos C">
+            <img src="https://placehold.co/150x50/ffffff/021050?text=Catering+D" alt="Catering D">
+            <img src="https://placehold.co/150x50/ffffff/021050?text=Bodega+E" alt="Bodega E">
+        </div>
+    </section>
     <section id="espacio" class="box">
         <h2 style="font-family: 'Lora', serif; margin-bottom: 15px;">El Espacio</h2>
         <p style="color: var(--text-light); line-height: 1.6;">Combinamos 100 m² de interior versátil con un jardín privado de 280 m². Un refugio ideal para marcas y realizadores.</p>
