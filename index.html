@@ -314,7 +314,7 @@
     <a href="como-reservar.html" onclick="toggleMenu()">Cómo reservar</a>
 </div>
 
-<main class="container">
+<main>
     
   <section id="inicio" style="width: 100vw; margin-left: calc(-50vw + 50%); position: relative; left: 0; right: 0; overflow: hidden; margin-top: -10px;">
         <div class="hero-grid" style="max-width: 100%; padding: 0; position: relative; height: 75vh; min-height: 450px; max-height: 650px;">
@@ -341,39 +341,46 @@
             </div>
 
         </div>
+      
     </section>
-
-    <section id="encuentros">
-        <h2 style="font-family: 'Lora', serif; font-size: 32px; margin-bottom: 10px;">Próximos Encuentros</h2>
-        <div class="filters">
-            <button class="filter-btn active" onclick="filter('all', this)">Todos</button>
-            <button class="filter-btn" onclick="filter('taller', this)">Talleres</button>
-            <button class="filter-btn" onclick="filter('cata', this)">Catas</button>
-        </div>
-
-        <div class="grid">
-
-             <a href="jawajulio.html" class="card" data-cat="cata">
-                <img src="Primerajawajulio.webp" alt="Cata de Vino en Jawa" width="1080" height="1350" loading="lazy">
-                <div class="card-content">
-                    <span style="font-size:11px; text-transform:uppercase; color:#666; letter-spacing:1px;">Experiencia guiada</span>
-                    <h3 style="margin:5px 0; font-family: 'Lora', serif;">Cata de Vino en Jawa</h3>
-                    <p style="font-size:13px; color: var(--text-light);">Sábado 11 de julio.</p>
-                </div>
-            </a>
-            
-            <a href="taller-jardineria.html" class="card" data-cat="taller">
-                <img src="Primerajardin.webp" alt="Taller jardinería" width="1080" height="1350" loading="lazy">
-                <div class="card-content">
-                    <span style="font-size:11px; text-transform:uppercase; color:#666; letter-spacing:1px;">Experiencia</span>
-                    <h3 style="margin:5px 0; font-family: 'Lora', serif;">Taller de Jardinería</h3>
-                    <p style="font-size:13px; color: var(--text-light);">Consultar fechas y horarios</p>
-                </div>
-            </a>
+<section id="encuentros" style="background-color: #faf9f6; padding: 60px 0; width: 100vw; margin-left: calc(-50vw + 50%); overflow: hidden;">
         
-               </div> 
-    </section>
+        <!-- 🔍 ESTE ES EL CONTENEDOR QUE DEJA EL CONTENIDO CENTRADO Y PROLIJO -->
+        <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 0 20px;">
+            
+            <h2 style="font-family: 'Lora', serif; font-size: 32px; margin-bottom: 10px;">Próximos Encuentros</h2>
+            
+            <div class="filters">
+                <button class="filter-btn active" onclick="filter('all', this)">Todos</button>
+                <button class="filter-btn" onclick="filter('taller', this)">Talleres</button>
+                <button class="filter-btn" onclick="filter('cata', this)">Catas</button>
+            </div>
+            
+            <div class="grid">
+                
+                <a href="jawajulio.html" class="card" data-cat="cata">
+                    <img src="Primerajawajulio.webp" alt="Cata de Vino en Jawa" width="1080" height="1350" loading="lazy">
+                    <div class="card-content">
+                        <span style="font-size:11px; text-transform:uppercase; color:#666; letter-spacing:1px;">Experiencia guiada</span>
+                        <h3 style="margin:5px 0; font-family: 'Lora', serif;">Cata de Vino en Jawa</h3>
+                        <p style="font-size:13px; color: var(--text-light);">Sábado 11 de julio.</p>
+                    </div>
+                </a>
 
+                <a href="taller-jardineria.html" class="card" data-cat="taller">
+                    <img src="Primerajardin.webp" alt="Taller Jardinería" width="1080" height="1350" loading="lazy">
+                    <div class="card-content">
+                        <span style="font-size:11px; text-transform:uppercase; color:#666; letter-spacing:1px;">Experiencia guiada</span>
+                        <h3 style="margin:5px 0; font-family: 'Lora', serif;">Taller de Jardinería</h3>
+                        <p style="font-size:13px; color: var(--text-light);">Sábado 18 de julio.</p>
+                    </div>
+                </a>
+                
+            </div>
+
+        </div> <!-- Fin del contenedor centrado -->
+    </section>
+    
     <section id="novedades-whatsapp" style="margin-top: 40px;">
     <div class="box" style="background: var(--primary); color: white; text-align: center;">
         <h2 style="color: white; font-family: 'Lora', serif; margin-bottom:10px;">¿Querés saber todo lo que pasa en Arcos V?</h2>
