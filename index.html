@@ -342,13 +342,13 @@
 
         </div>
       
-    </section>
-<section id="encuentros" style="background-color: #faf9f6; padding: 60px 0; width: 100vw; margin-left: calc(-50vw + 50%); overflow: hidden;">
+   <!-- SECCIÓN CON FONDO GRIS INFINITO -->
+    <section id="encuentros" style="background-color: #faf9f6; padding: 60px 0; width: 100%;">
         
-        <!-- 🔍 ESTE ES EL CONTENEDOR QUE DEJA EL CONTENIDO CENTRADO Y PROLIJO -->
-        <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 0 20px;">
+        <!-- CONTENEDOR SEGURO: Centra el contenido en PC sin romper la grilla -->
+        <div style="max-width: 1000px; margin: 0 auto; padding: 0 20px;">
             
-            <h2 style="font-family: 'Lora', serif; font-size: 32px; margin-bottom: 10px;">Próximos Encuentros</h2>
+            <h2 style="font-family: 'Lora', serif; font-size: 32px; margin-bottom: 20px; text-align: left;">Próximos Encuentros</h2>
             
             <div class="filters">
                 <button class="filter-btn active" onclick="filter('all', this)">Todos</button>
@@ -356,6 +356,7 @@
                 <button class="filter-btn" onclick="filter('cata', this)">Catas</button>
             </div>
             
+            <!-- Tu grilla original intacta para que use tus estilos CSS -->
             <div class="grid">
                 
                 <a href="jawajulio.html" class="card" data-cat="cata">
@@ -378,7 +379,7 @@
                 
             </div>
 
-        </div> <!-- Fin del contenedor centrado -->
+        </div>
     </section>
     
     <section id="novedades-whatsapp" style="margin-top: 40px;">
