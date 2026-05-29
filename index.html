@@ -316,21 +316,30 @@
 
 <main class="container">
     
-   <section id="inicio">
-        <div class="hero-grid">
+  <section id="inicio" style="width: 100vw; margin-left: calc(-50vw + 50%); position: relative; left: 0; right: 0; overflow: hidden; margin-top: -10px;">
+        <div class="hero-grid" style="max-width: 100%; padding: 0; position: relative; height: 75vh; min-height: 450px; max-height: 650px;">
             
-            <!-- NUEVO CARRUSEL OPTIMIZADO CON TUS FOTOS DE TRABAJO -->
-            <div class="carousel-box" id="top-left" style="grid-column: 1 / -1; height: 450px;">
-                <img class="split-slide active" src="hero-1.webp" fetchpriority="high" alt="Espacio boutique Arcos V - Living y diseño cálido">
-                <img class="split-slide" src="hero-2.webp" loading="lazy" alt="Salón de eventos Arcos V - Formato workshops">
-                <img class="split-slide" src="hero-3.webp" loading="lazy" alt="Jardín y pulmón verde de Arcos V">
+            <!-- CARRUSEL DE ANCHO COMPLETO (ESTILO TIENDANUBE) -->
+            <div class="carousel-box" id="top-left" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;">
+                <img class="split-slide active" src="hero-1.webp" fetchpriority="high" alt="Espacio boutique Arcos V" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0;">
+                <img class="split-slide" src="hero-2.webp" loading="lazy" alt="Salón de eventos Arcos V" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0;">
+                <img class="split-slide" src="hero-3.webp" loading="lazy" alt="Jardín de Arcos V" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0;">
+                
+                <!-- Capa oscura sutil para que el texto blanco se lea perfecto encima de las fotos -->
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.25); z-index: 2;"></div>
             </div>
             
-            <div class="hero-text-center">
-                <p class="hero-title-line1">Por acá pasa</p>
-                <h1 class="hero-title-line2" style="font-family: 'Lora', serif; font-weight: 700; text-transform: none;">lo que te <span style="font-family: 'Lora', serif; font-style: italic; font-weight: 400; font-size: 1.15em; line-height: 0;">gusta</span> hacer</h1>
-                <p class="hero-subtitle">El marco ideal en Núñez para encuentros, talleres y experiencias guiadas.</p>
+            <!-- TEXTO SUPERPUESTO E IZQUIERDO -->
+            <div class="hero-text-center" style="position: absolute; bottom: 10%; left: 8%; z-index: 3; text-align: left; max-width: 600px; padding: 20px; background: transparent;">
+                <p class="hero-title-line1" style="color: #ffffff; text-shadow: 1px 1px 4px rgba(0,0,0,0.4); margin-bottom: 5px;">Por acá pasa</p>
+                <h1 class="hero-title-line2" style="font-family: 'Lora', serif; font-weight: 700; text-transform: none; color: #ffffff; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); font-size: 3rem; margin-bottom: 15px; line-height: 1.2;">
+                    lo que te <span style="font-family: 'Lora', serif; font-style: italic; font-weight: 400; font-size: 1.1em;">gusta</span> hacer
+                </h1>
+                <p class="hero-subtitle" style="color: #ffffff; text-shadow: 1px 1px 4px rgba(0,0,0,0.5); font-size: 1.2rem; max-width: 480px; line-height: 1.4;">
+                    El marco ideal en Núñez para encuentros, talleres y experiencias guiadas.
+                </p>
             </div>
+
         </div>
     </section>
 
