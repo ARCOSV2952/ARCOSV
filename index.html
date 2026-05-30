@@ -51,20 +51,33 @@
         }
 
         /* Fuerza a que las franjas ocupen todo el ancho de la pantalla */
-        section { 
-            width: 100%; 
-            margin: 0; 
-            padding: 60px 0; 
-        }
+       /* Fuerza a que las franjas ocupen todo el ancho de la pantalla */
+section { 
+    width: 100%; 
+    margin: 0; 
+    padding: 60px 0; 
+}
 
-        /* Protege y centra el contenido interno en PC para que no quede gigante */
-        .seccion-centrada { 
-            width: 100%;
-            max-width: 1000px; 
-            margin: 0 auto;    
-            padding: 0 20px;   
-            box-sizing: border-box;
-        }
+/* Protege y centra el contenido interno en PC para que no quede gigante */
+.seccion-centrada { 
+    width: 100%;
+    max-width: 1000px; 
+    margin: 0 auto;    
+    padding: 0 20px;   
+    box-sizing: border-box;
+}
+
+/* Forzamos a que las cajas blancas no muerdan el fondo y queden centradas */
+.box { 
+    background: white; 
+    padding: 40px; 
+    border-radius: var(--radius); 
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
 
         /* NAVBAR - ANCHO COMPLETO */
         header {
