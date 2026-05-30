@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Arcos V | Espacio Boutique para Experiencias en Núñez</title>
 
-    <meta name="description" content="Arcos V es un espacio boutique en el barrio de Núñez, CABA. Un refugio diseñado para experiencias exclusivas, catas de vino, talleres y encuentros de marcas.">
+    <meta name="description" content="Arcos V es un espacio boutique en el barrio de Núñez, CABA. Un refugio diseñado para experiences exclusivas, catas de vino, talleres y encuentros de marcas.">
 
     <link rel="icon" type="image/png" href="favicon.png">
 
@@ -30,7 +30,7 @@
         html, body {
             width: 100%;
             overflow-x: hidden;
-            background-color: #ffffff; /* Seteado el fondo base limpio */
+            background-color: #ffffff; 
             scroll-behavior: smooth;
         }
 
@@ -50,21 +50,21 @@
             padding-top: 110px; 
         }
 
-     /* Aseguramos que todas las secciones sean full width por defecto */
-section { 
-    width: 100%; 
-    margin: 0; 
-    padding: 60px 0; 
-}
+        /* Fuerza a que las franjas ocupen todo el ancho de la pantalla */
+        section { 
+            width: 100%; 
+            margin: 0; 
+            padding: 60px 0; 
+        }
 
-/* Esta es la clase mágica que usaremos ADENTRO de las secciones */
-.seccion-centrada { 
-    width: 100%;
-    max-width: 1000px; /* Mantiene la misma alineación prolija de tu navbar (línea 70) */
-    margin: 0 auto;    /* Centra el bloque de contenido automáticamente */
-    padding: 0 20px;   /* Evita que en celulares el texto pegue contra el borde de la pantalla */
-    box-sizing: border-box;
-}
+        /* Protege y centra el contenido interno en PC para que no quede gigante */
+        .seccion-centrada { 
+            width: 100%;
+            max-width: 1000px; 
+            margin: 0 auto;    
+            padding: 0 20px;   
+            box-sizing: border-box;
+        }
 
         /* NAVBAR - ANCHO COMPLETO */
         header {
@@ -113,13 +113,6 @@ section {
         }
         .mobile-nav.active { right: 0; }
         .mobile-nav a { font-family: 'Lora', serif; font-size: 28px; text-decoration: none; color: var(--text); padding: 10px; }
-
-        /* CONTENEDOR INTERNO REUTILIZABLE */
-        .seccion-centrada { 
-            max-width: 1000px; 
-            margin: 0 auto; 
-            padding: 0 20px; 
-        }
 
         /* HERO GRID ANCHO COMPLETO */
         .hero-grid {
@@ -183,8 +176,7 @@ section {
             header { height: 75px; }
             body { padding-top: 75px; }
             .logo img { height: 50px; }
-            .seccion-centrada { padding: 0 20px; }
-            section { scroll-margin-top: 90px; }
+            section { scroll-margin-top: 90px; padding: 40px 0; }
             .hero-grid { gap: 0; margin-top: 0; }
             .hero-title-line1 { font-size: 24px; }
             .hero-title-line2 { font-size: 36px; }
@@ -192,7 +184,7 @@ section {
             .nav-links { display: none; }
         }
 
-        .filters { display: flex; gap: 12px; margin-bottom: 30px; position: sticky; top: 70px; z-index: 10; background: #faf9f6; padding: 10px 0; }
+        .filters { display: flex; gap: 12px; margin-bottom: 30px; position: sticky; top: 70px; z-index: 10; background: inherit; padding: 10px 0; }
         .filter-btn { padding: 10px 22px; border-radius: 30px; border: 1px solid #ddd; background: white; cursor: pointer; font-size: 14px; min-width: 44px; min-height: 44px; }
         .filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
 
@@ -213,12 +205,12 @@ section {
         .grid-entorno { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 25px; }
         .grid-entorno img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer; }
 
-        .quote-separator { text-align: center; padding: 100px 20px; font-family: 'Lora', serif; font-weight: 600; font-size: 26px; color: #444; background: #ffffff; }
+        .quote-separator { text-align: center; padding: 100px 20px; font-family: 'Lora', serif; font-weight: 600; font-size: 26px; color: #444; background: #ffffff; width: 100%; }
 
         .btn { display: block; padding: 18px; background: var(--primary); color: white; text-align: center; border-radius: 12px; text-decoration: none; font-weight: 600; margin-top: 20px; transition: 0.3s; min-height: 48px; }
         .btn:hover { opacity: 0.9; }
 
-        footer { text-align: center; padding: 60px 20px; border-top: 1px solid #eee; background: #ffffff; }
+        footer { text-align: center; padding: 60px 20px; border-top: 1px solid #eee; background: #ffffff; width: 100%; }
         #lightbox { display: none; position: fixed; z-index: 3000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
         #lightbox img { max-width: 90%; max-height: 80%; }
 
@@ -231,6 +223,7 @@ section {
             position: relative;
             border-top: 1px solid #eee;
             border-bottom: 1px solid #eee;
+            width: 100%;
         }
 
         .carrusel-logos::before, .carrusel-logos::after {
@@ -303,8 +296,7 @@ section {
 
 <main>
     
-    <!-- 1. INICIO (ANCHO COMPLETO REAL) -->
-    <section id="inicio" style="width: 100%; position: relative; overflow: hidden; margin-top: -10px;">
+    <section id="inicio" style="position: relative; overflow: hidden; margin-top: -10px; padding: 0;">
         <div class="hero-grid" style="max-width: 100%; padding: 0; position: relative; height: 75vh; min-height: 450px; max-height: 650px;">
             <div class="carousel-box" id="top-left" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;">
                 <img class="split-slide active" src="hero-1.webp" fetchpriority="high" alt="Espacio boutique Arcos V" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0;">
@@ -325,8 +317,7 @@ section {
         </div>
     </section>
       
-    <!-- 2. ENCUENTROS (FONDO GRIS INFINITO - CONTENIDO CENTRADO) -->
-    <section id="encuentros" style="background-color: #faf9f6; padding: 60px 0; width: 100%;">
+    <section id="encuentros" style="background-color: #faf9f6;">
         <div class="seccion-centrada">
             <h2 style="font-family: 'Lora', serif; font-size: 32px; margin-bottom: 20px; text-align: left;">Próximos Encuentros</h2>
             
@@ -358,8 +349,7 @@ section {
         </div>
     </section>
     
-    <!-- 3. WHATSAPP NOVEDADES (FONDO BLANCO - CONTENIDO CENTRADO) -->
-    <section id="novedades-whatsapp" style="background-color: #ffffff; padding: 60px 0; width: 100%;">
+    <section id="novedades-whatsapp" style="background-color: #ffffff;">
         <div class="seccion-centrada">
             <div class="box" style="background: var(--primary); color: white; text-align: center; margin-top: 0;">
                 <h2 style="color: white; font-family: 'Lora', serif; margin-bottom:10px;">¿Querés saber todo lo que pasa en Arcos V?</h2>
@@ -369,8 +359,7 @@ section {
         </div>
     </section>
 
-    <!-- 4. LO QUE PASÓ (FONDO BLANCO - CONTENIDO CENTRADO) -->
-    <section id="lo-que-paso" style="background-color: #ffffff; padding: 20px 0 60px 0; width: 100%;">
+    <section id="lo-que-paso" style="background-color: #ffffff; padding-top: 20px;">
         <div class="seccion-centrada">
             <h2 style="font-family: 'Lora', serif; font-size: 32px; margin-bottom: 10px;">Lo que pasó</h2>
             <p style="color: var(--text-light); margin-bottom: 25px; font-style: italic;">Eventos anteriores en Arcos V</p>
@@ -415,11 +404,9 @@ section {
         </div>
     </section>
 
-    <!-- 5. FRASE SEPARADORA (ANCHO COMPLETO) -->
     <div class="quote-separator">El lugar perfecto donde la ciudad se detiene <br> y comienza lo bueno</div>
 
-    <!-- 6. LOGOS EN CARRUSEL (ANCHO COMPLETO) -->
-    <section class="carrusel-logos">
+    <section class="carrusel-logos" style="padding: 40px 0;">
         <div class="track-logos">
             <img src="bannerlogomq.webp" alt="Empresa A">
             <img src="bannerlogomq.webp" alt="Marca B">
@@ -435,8 +422,7 @@ section {
         </div>
     </section>
 
-    <!-- 7. EL ESPACIO (FONDO BLANCO - CONTENIDO CENTRADO) -->
-    <section id="espacio" style="background-color: #ffffff; padding: 60px 0; width: 100%;">
+    <section id="espacio" style="background-color: #ffffff;">
         <div class="seccion-centrada">
             <div class="box" style="margin-top: 0;">
                 <h2 style="font-family: 'Lora', serif; margin-bottom: 15px;">El Espacio</h2>
@@ -450,8 +436,7 @@ section {
         </div>
     </section>
 
-    <!-- 8. CONTACTO Y MAPA (FONDO BLANCO - CONTENIDO CENTRADO) -->
-    <section id="contacto" style="background-color: #ffffff; padding: 20px 0 60px 0; width: 100%;">
+    <section id="contacto" style="background-color: #ffffff; padding-top: 20px;">
         <div class="seccion-centrada">
             <div class="box" style="background: var(--primary); color: white; margin-top: 0;">
                 <h2 style="color: white; font-family: 'Lora', serif; margin-bottom:10px;">¿Querés organizar tu evento?</h2>
@@ -467,7 +452,6 @@ section {
         </div>
     </section>
 
-    <!-- FOOTER (ANCHO COMPLETO - CONTENIDO CENTRADO) -->
     <footer>
         <div class="seccion-centrada">
             <img src="logo.png" alt="Arcos V Logo" style="height: 40px; width: auto; margin-bottom: 10px;">
