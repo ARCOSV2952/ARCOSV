@@ -1,73 +1,204 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Cómo Reservar | Arcos V</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <meta name="description" content="Conocé los pasos, condiciones y tarifas para reservar tu fecha en el espacio boutique Arcos V en Núñez.">
+
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <style>
-        :root { --primary: #111111; --bg: #faf9f6; --text: #1a1a1a; --text-light: #555; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; margin: 0; padding: 40px 20px; }
-        .content { max-width: 700px; margin: 0 auto; }
-        
-        /* Ajuste para que el link de volver sea más visible y coherente */
-        .back-link { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 600; display: inline-block; margin-bottom: 40px; border-bottom: 2px solid var(--primary); padding-bottom: 2px; transition: 0.3s; }
-        .back-link:hover { opacity: 0.6; }
+        /* --- BASE IGUAL A LA HOME --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        h1 { font-family: 'Playfair Display', serif; font-size: 38px; margin-bottom: 30px; letter-spacing: -0.5px; }
-        .step { margin-bottom: 50px; }
-        .step-number { font-family: 'Playfair Display', serif; font-style: italic; font-size: 26px; color: #aaa; margin-bottom: 10px; display: block; }
-        h2 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 12px; }
-        p { color: var(--text-light); margin-bottom: 15px; }
-        
-        .price-tag { background: #eee; padding: 15px 20px; border-radius: 12px; font-size: 15px; color: var(--primary); display: inline-block; margin-top: 10px; border-left: 4px solid var(--primary); }
-        
-        .highlight-box { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); margin-top: 60px; text-align: center; }
-        .btn-ws { display: block; background: var(--primary); color: white; text-align: center; padding: 20px; border-radius: 14px; text-decoration: none; font-weight: 600; margin-top: 25px; transition: 0.3s; }
-        .btn-ws:hover { opacity: 0.9; transform: translateY(-2px); }
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            background-color: #ffffff; 
+            scroll-behavior: smooth;
+        }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 32px; }
-            .highlight-box { padding: 30px 20px; }
+        :root {
+            --primary: #FFC107;  
+            --bg: #ffffff;       
+            --text: #021050;
+            --text-light: #121212; 
+            --radius: 16px;
+            --shadow: 0 10px 30px rgba(0,0,0,0.04);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            padding-top: 110px; 
+        }
+
+        /* Fuerza a las franjas a ocupar todo el ancho */
+        section { 
+            width: 100%; 
+            margin: 0; 
+            padding: 60px 0; 
+        }
+
+        /* Centra y protege el contenido interno */
+        .seccion-centrada { 
+            width: 100%;
+            max-width: 1000px; 
+            margin: 0 auto;    
+            padding: 0 20px;   
+            box-sizing: border-box;
+        }
+
+        /* NAVBAR IDÉNTICO */
+        header {
+            position: fixed;
+            top: 0; left: 0;
+            background: var(--bg);
+            z-index: 1000;
+            width: 100%;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            height: 100px; 
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img { height: 65px; width: auto; }
+
+        .nav-links { display: flex; gap: 25px; }
+        .nav-links a { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 500; transition: 0.3s; padding: 10px 0; }
+        .nav-links a:hover { opacity: 0.6; }
+
+        .menu-toggle { display: block; font-size: 28px; cursor: pointer; color: var(--text); padding: 5px; background: none; border: none; }
+
+        @media (min-width: 701px) { .menu-toggle { display: none; } }
+
+        /* MENÚ MÓVIL */
+        .mobile-nav {
+            position: fixed;
+            top: 0; right: -100%;
+            width: 100%; height: 100%;
+            background: var(--bg);
+            z-index: 2000;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: flex-end;
+            padding-right: 40px; gap: 25px;
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .mobile-nav.active { right: 0; }
+        .mobile-nav a { font-family: 'Lora', serif; font-size: 28px; text-decoration: none; color: var(--text); padding: 10px; }
+
+        /* ELEMENTOS COMUNES */
+        .box { 
+            background: white; 
+            padding: 40px; 
+            border-radius: var(--radius); 
+            box-shadow: var(--shadow);
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .btn { display: block; padding: 18px; background: var(--primary); color: white; text-align: center; border-radius: 12px; text-decoration: none; font-weight: 600; margin-top: 20px; transition: 0.3s; min-height: 48px; }
+        .btn:hover { opacity: 0.9; }
+
+        footer { text-align: center; padding: 60px 20px; border-top: 1px solid #eee; background: #ffffff; width: 100%; margin-top: 40px; }
+
+        /* RESPONSIVE CELULAR */
+        @media (max-width: 700px) {
+            header { height: 75px; }
+            body { padding-top: 75px; }
+            .logo img { height: 50px; }
+            section { padding: 40px 0; }
+            .nav-links { display: none; }
+            .box { padding: 25px 20px; }
         }
     </style>
 </head>
+
 <body>
 
-<div class="content">
-    <a href="index.html" class="back-link">← Volver al inicio</a>
-    
-    <h1>Cómo reservar tu espacio</h1>
-
-    <div class="step">
-        <span class="step-number">01.</span>
-        <h2>Primer contacto</h2>
-        <p>Escribinos por WhatsApp indicando la fecha de interés, el tipo de evento y la cantidad aproximada de personas. En ese momento, te confirmamos la disponibilidad.</p>
-        <p>No olvides contarnos si querés hacer un <strong>evento único</strong> (presentación de producto, sesión de fotos, etc.) o <strong>recurrente</strong> (como clases o cursos).</p>
-        <div class="price-tag">
-            <strong>Eventos recurrentes:</strong> Consultar por descuentos <br>
-            <small>(Alquiler mínimo de 2 horas)</small>
+<header>
+    <nav class="nav-container">
+        <!-- Reemplazá index.html si tu Home se llama distinto -->
+        <a href="index.html" class="logo"><img src="logo.png" alt="Arcos V Home"></a>
+        <div class="nav-links">
+            <a href="index.html#encuentros">Próximos Encuentros</a>
+            <a href="index.html#lo-que-paso">Lo que pasó</a>
+            <a href="index.html#espacio">El Espacio</a>
+            <a href="index.html#contacto">Organizá tu evento</a>
+            <a href="como-reservar.html" style="color: var(--primary);">Cómo reservar</a>
         </div>
-    </div>
+        <button class="menu-toggle" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+    </nav>
+</header>
 
-    <div class="step">
-        <span class="step-number">02.</span>
-        <h2>Visita al espacio</h2>
-        <p>Coordinamos una entrevista para que puedas conocer las características, dimensiones y amenities del espacio, y el potencial de nuestro jardín.</p>
-    </div>
-
-    <div class="step">
-        <span class="step-number">03.</span>
-        <h2>Reserva y Seña</h2>
-        <p>Para confirmar y bloquear la fecha para vos, te solicitamos una seña del 50%. Una vez recibida, la fecha queda reservada.</p>
-    </div>
-
-    <div class="highlight-box">
-        <h2 style="margin-bottom: 5px;">¿Tenés una fecha en mente?</h2>
-        <p>Consultanos ahora por disponibilidad y presupuestos personalizados.</p>
-        <a href="https://wa.me/5491162834000" class="btn-ws">🏡 Consultar por WhatsApp</a>
-    </div>
+<div id="mobile-menu" class="mobile-nav">
+    <button style="position:absolute; top:20px; right:20px; font-size:30px; cursor:pointer; background:none; border:none;" onclick="toggleMenu()">✕</button>
+    <a href="index.html#encuentros" onclick="toggleMenu()">Próximos Encuentros</a>
+    <a href="index.html#lo-que-paso" onclick="toggleMenu()">Lo que pasó</a>
+    <a href="index.html#espacio" onclick="toggleMenu()">El Espacio</a>
+    <a href="index.html#contacto" onclick="toggleMenu()">Organizá tu evento</a>
+    <a href="como-reservar.html" onclick="toggleMenu()">Cómo reservar</a>
 </div>
+
+<main>
+
+    <!-- TÍTULO DE LA PÁGINA (FONDO COMPLETO GRIS SUTIL) -->
+    <section style="background-color: #faf9f6; padding: 50px 0 30px 0;">
+        <div class="seccion-centrada" style="text-align: center;">
+            <h1 style="font-family: 'Lora', serif; font-size: 42px; margin-bottom: 10px;">Cómo reservar</h1>
+            <p style="color: var(--text-light); font-style: italic; font-size: 16px;">El paso a paso para asegurar tu experiencia en el espacio</p>
+        </div>
+    </section>
+
+    <!-- ACÁ VA A IR EL BLOQUE INTERACTIVO DE LA TIMELINE Y LAS TARIFAS -->
+    <section id="proceso-reserva">
+        <div class="seccion-centrada">
+            <div class="box" style="text-align: center; color: #666; font-style: italic;">
+                [Espacio preparado para la línea de tiempo interactiva]
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="seccion-centrada">
+            <img src="logo.png" alt="Arcos V Logo" style="height: 40px; width: auto; margin-bottom: 10px;">
+            <p>Arcos 2952, Núñez · Ciudad de Buenos Aires</p>
+            <nav style="margin-top: 15px;">
+                <a href="https://instagram.com/arcosv.ba" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600; padding: 10px;">Instagram</a> · 
+                <a href="https://wa.me/5491162834000" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600; padding: 10px;">WhatsApp</a>
+            </nav>
+            <p style="font-size: 12px; color: #666; margin-top: 20px; letter-spacing: 0.5px;">
+                Copyright Arcos V - 2026. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+</main>
+
+<script>
+    function toggleMenu() { document.getElementById("mobile-menu").classList.toggle("active"); }
+</script>
 
 </body>
 </html>
