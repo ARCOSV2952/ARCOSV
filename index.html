@@ -275,6 +275,40 @@ section {
             #lo-que-paso .card-content span, 
             #lo-que-paso .card-content p { font-size: 11px; }
         }
+
+/* --- BOTÓN FLOTANTE PARA CELULARES (THUMB-ZONE) --- */
+.btn-flotante-wa {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366; /* Verde WhatsApp */
+    color: white;
+    text-decoration: none;
+    padding: 14px 22px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    z-index: 2500; /* Asegura que quede por encima de todo al hacer scroll */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Microinteracción al tocarlo */
+.btn-flotante-wa:active {
+    transform: scale(0.95);
+    background-color: #20ba5a;
+}
+
+/* OCULTAR EN ESCRITORIO: Si la pantalla es más grande que un celular, desaparece */
+@media (min-width: 701px) {
+    .btn-flotante-wa {
+        display: none;
+    }
+}
+        
     </style>
 </head>
 
