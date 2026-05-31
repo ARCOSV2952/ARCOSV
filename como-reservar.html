@@ -170,14 +170,277 @@
         </div>
     </section>
 
-    <!-- ACÁ VA A IR EL BLOQUE INTERACTIVO DE LA TIMELINE Y LAS TARIFAS -->
-    <section id="proceso-reserva">
+   <!-- SECCIÓN INTERACTIVA: TIMELINE DE 3 PASOS -->
+    <section id="proceso-reserva" style="background-color: #ffffff; padding: 60px 0 20px 0;">
         <div class="seccion-centrada">
-            <div class="box" style="text-align: center; color: #666; font-style: italic;">
-                [Espacio preparado para la línea de tiempo interactiva]
+            
+            <div class="timeline-container">
+                <!-- Línea de fondo decorativa para escritorio -->
+                <div class="timeline-line"></div>
+                
+                <!-- PASO 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-card">
+                        <h3 class="timeline-title">Elegí tu formato</h3>
+                        <p class="timeline-text">Definí la propuesta de tu encuentro: si se trata de un taller, una cata, un lanzamiento de marca o una producción de fotos. Esto nos ayuda a entender la dinámica y necesidades técnicas del espacio.</p>
+                    </div>
+                </div>
+
+                <!-- PASO 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-card">
+                        <h3 class="timeline-title">Consultá disponibilidad</h3>
+                        <p class="timeline-text">Hacé clic en el botón de contacto para escribirnos directamente por WhatsApp. Revisamos la agenda en tiempo real para confirmar si tu fecha y franja horaria preferida están libres.</p>
+                    </div>
+                </div>
+
+                <!-- PASO 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-card">
+                        <h3 class="timeline-title">Coordiná tu fecha</h3>
+                        <p class="timeline-text">Para congelar la fecha elegida y asegurar el espacio, coordinamos el pago de la seña correspondiente. ¡Y listo! Tu reserva queda confirmada y empezamos a preparar los detalles.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN: TRANSPARENCIA DE TARIFAS Y LLAMADO A LA ACCIÓN (FONDO GRIS SUTIL) -->
+    <section id="tarifas-contacto" style="background-color: #faf9f6; padding: 60px 0;">
+        <div class="seccion-centrada">
+            <div class="box pricing-box" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                
+                <div class="price-tag">
+                    <span class="price-label">Tarifa Base Talleres / Recurrentes</span>
+                    <h2 class="price-amount">$25.000 <span class="price-time">/ hora</span></h2>
+                    <p class="price-detail">*Consultar condiciones para eventos puntuales, jornadas corporativas o activaciones de marca específicas.</p>
+                </div>
+
+                <div style="max-width: 600px; margin-top: 25px;">
+                    <p style="font-size: 16px; line-height: 1.6; color: var(--text-light); margin-bottom: 20px;">
+                        Queremos que llevar adelante tu propuesta sea simple y transparente. Nuestro valor incluye el uso del espacio boutique con su luz natural única, el jardín, climatización y el soporte básico para que tu experiencia sea impecable.
+                    </p>
+                    <a href="https://wa.me/5491162834000" target="_blank" class="btn whatsapp-btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: auto; padding: 18px 40px; margin-top: 10px;">
+                        <span>Consultar fecha por WhatsApp</span>
+                    </a>
+                </div>
+
             </div>
         </div>
     </section>
+
+    <!-- COMPLEMENTO DE ESTILOS CSS EXCLUSIVOS PARA ESTA PÁGINA -->
+    <style>
+        /* --- ESTILOS DE LA LÍNEA DE TIEMPO (TIMELINE) --- */
+        .timeline-container {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        /* Línea horizontal que une los pasos en escritorio */
+        .timeline-line {
+            position: absolute;
+            top: 25px;
+            left: 5%;
+            right: 5%;
+            height: 2px;
+            background: rgba(2, 16, 80, 0.1);
+            z-index: 1;
+        }
+
+        .timeline-item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            z-index: 2;
+        }
+
+        /* Microinteracciones: Círculo del número */
+        .timeline-number {
+            width: 50px;
+            height: 50px;
+            background: var(--bg);
+            border: 2px solid var(--text);
+            color: var(--text);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 25px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            user-select: none;
+        }
+
+        /* Microinteracciones: Tarjeta de texto */
+        .timeline-card {
+            background: white;
+            padding: 30px 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0,0,0,0.02);
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+        }
+
+        .timeline-title {
+            font-family: 'Lora', serif;
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+
+        .timeline-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-light);
+        }
+
+        /* --- EFECTOS HOVER Y TOUCH (MICROINTERACCIONES) --- */
+        /* Al pasar el mouse en PC o mantener presionado en celular */
+        .timeline-item:hover .timeline-number {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            transform: scale(1.15);
+        }
+
+        .timeline-item:hover .timeline-card {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(2, 16, 80, 0.08);
+            border-color: rgba(255, 193, 7, 0.3);
+        }
+
+        /* --- ESTILOS DESTACADOS DE TARIFAS --- */
+        .pricing-box {
+            border: 1px solid rgba(255, 193, 7, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decoración de esquina simulando exclusividad */
+        .pricing-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 6px; height: 100%;
+            background: var(--primary);
+        }
+
+        .price-tag {
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border: 1px solid #eee;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .price-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            color: #666;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .price-amount {
+            font-family: 'Lora', serif;
+            font-size: 40px;
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        .price-time {
+            font-size: 18px;
+            font-weight: 400;
+            color: #555;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .price-detail {
+            font-size: 12px;
+            color: #777;
+            margin-top: 12px;
+            font-style: italic;
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366; /* Color corporativo de WhatsApp para diferenciarlo */
+            color: white;
+        }
+        .whatsapp-btn:hover {
+            background-color: #20ba5a;
+            opacity: 1;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        /* --- DISEÑO RESPONSIVE ADAPTATIVO (CELULARES) --- */
+        @media (max-width: 850px) {
+            .timeline-container {
+                flex-direction: column;
+                gap: 40px;
+                align-items: flex-start;
+                padding-left: 20px;
+            }
+
+            /* La línea se vuelve vertical en pantallas chicas */
+            .timeline-line {
+                top: 0;
+                bottom: 0;
+                left: 45px;
+                width: 2px;
+                height: 90%;
+            }
+
+            .timeline-item {
+                flex-direction: row;
+                gap: 20px;
+                width: 100%;
+                align-items: flex-start;
+            }
+
+            .timeline-number {
+                margin-bottom: 0;
+                flex-shrink: 0;
+                width: 44px;
+                height: 44px;
+                font-size: 16px;
+            }
+
+            .timeline-card {
+                text-align: left;
+                padding: 22px 20px;
+            }
+
+            /* El hover en celular cambia el comportamiento para no deformar */
+            .timeline-item:hover .timeline-card {
+                transform: translateX(5px);
+            }
+            
+            .price-amount {
+                font-size: 34px;
+            }
+            .price-tag {
+                padding: 20px;
+            }
+        }
+    </style>
 
     <!-- FOOTER -->
     <footer>
