@@ -223,6 +223,50 @@ section {
         #lightbox { display: none; position: fixed; z-index: 3000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
         #lightbox img { max-width: 90%; max-height: 80%; }
 
+      /* --- CARRUSEL INFINITO DE TEXTO EN HERO --- */
+.carrusel-texto-hero {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Sutil fondo oscuro para garantizar contraste sobre las fotos */
+    backdrop-filter: blur(4px);    /* Efecto vidriado moderno (opcional) */
+    padding: 12px 0;
+    margin-top: 15px;
+    box-border: border-box;
+}
+
+/* El track duplica el contenido para que el bucle sea invisible */
+.track-texto-hero {
+    display: inline-block;
+    animation: desplazarTextoHero 30s linear infinite;
+}
+
+.track-texto-hero span {
+    font-size: 1.1rem;
+    color: #ffffff;
+    font-weight: 300;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    padding-right: 50px; /* Espaciado entre repeticiones del texto */
+    display: inline-block;
+}
+
+@keyframes desplazarTextoHero {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); } /* Se desplaza exactamente la mitad */
+}
+
+/* Ajuste responsive para celulares */
+@media (max-width: 700px) {
+    .track-texto-hero span {
+        font-size: 0.95rem;
+        padding-right: 30px;
+    }
+    .carrusel-texto-hero {
+        padding: 8px 0;
+    }
+}
+        
         /* --- CARRUSEL INFINITO DE LOGOS --- */
         .carrusel-logos {
             overflow: hidden;
