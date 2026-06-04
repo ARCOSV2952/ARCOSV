@@ -210,6 +210,37 @@ section {
         }
         .card-content { padding: 20px; }
 
+        /* --- ESTILOS PARA EL BOTÓN "MIRÁ MÁS" --- */
+        .card {
+            position: relative; /* Esto hace que el botón se acomode abajo a la derecha de la tarjeta */
+        }
+
+        .btn-mira-mas {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background-color: var(--primary); /* El amarillo de Arcos V */
+            color: #021050; /* Tu azul oscuro para que contraste e impacte */
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 8px 14px;
+            border-radius: 8px; /* Bordes redondeados sutiles */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            pointer-events: none; /* Clave para que no interfiera si hacen clic justo arriba del botón */
+        }
+
+        /* Efecto cuando pasan el mouse por encima de la tarjeta */
+        .card:hover .btn-mira-mas {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            background-color: #021050; /* Cambia a fondo azul oscuro */
+            color: #ffffff; /* Letras blancas */
+        }
+
         .box { background: white; padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow); }
         .grid-entorno { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 25px; }
         .grid-entorno img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer; }
