@@ -86,7 +86,7 @@
         align-items: center;
         box-sizing: border-box;
     }
-    .logo img { height: 65px; width: auto; mix-blend-mode: multiply; }
+    .logo img { height: 65px; width: auto; filter: contrast(110%) multiply; mix-blend-mode: multiply; }
     .nav-links { display: flex; gap: 35px; }
     .nav-links a { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 500; transition: 0.3s; }
     .nav-links a:hover { opacity: 0.6; }
@@ -493,15 +493,17 @@
         <div class="seccion-centrada">
             <div class="newsletter-box">
                 <h2>Recibí primero los nuevos encuentros</h2>
-                <p>Formá parte de nuestra lista exclusiva de WhatsApp y enterate antes que nadie de las próximas fechas de Finanzas, Catas y Talleres.</p>
+                <p>Sumate a nuestra lista exclusiva y enterate antes que nadie de las próximas fechas de Finanzas, Catas y Talleres.</p>
                 
-                <form action="#" method="POST" style="margin: 0; padding: 0;">
-                    <div class="form-group">
-                        <input type="tel" placeholder="Tu WhatsApp (con código de área, ej: 11 1234 5678)" required>
-                        <button type="submit">Quiero enterarme</button>
-                    </div>
-                </form>
-                <p style="font-size: 11px; opacity: 0.6; margin-top: 15px; margin-bottom: 0;">🔒 Prometemos no saturarte. Solo te enviaremos la agenda y fechas exclusivas.</p>
+                <div style="margin-top: 25px;">
+                    <a href="https://wa.me/5491162834000?text=Hola!%20Quiero%20sumarme%20a%20la%20lista%20de%20difusión%20de%20Arcos%20V%20para%20recibir%20los%20próximos%20encuentros." 
+                       target="_blank" 
+                       class="btn-hero-primary" 
+                       style="display: inline-flex; align-items: center; justify-content: center; text-decoration: none; min-height: 48px; padding: 14px 40px;">
+                       💬 Sumarme por WhatsApp
+                    </a>
+                </div>
+                <p style="font-size: 11px; opacity: 0.6; margin-top: 15px; margin-bottom: 0;">🔒 Formato Club: Te agendamos en nuestra lista de difusión privada. Cero spam.</p>
             </div>
         </div>
     </section>
