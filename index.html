@@ -1,4 +1,29 @@
-<style>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Arcos V | Espacio para talleres, catas y encuentros en Núñez</title>
+
+    <meta name="description" content="Arcos V es un espacio boutique con jardín en Núñez para talleres, catas, presentaciones de marcas, encuentros de comunidad y experiencias presenciales.">
+
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Arcos V | Espacio Boutique en Núñez">
+    <meta property="og:description" content="Un refugio diseñado para experiencias exclusivas, catas de vino y encuentros curados en el corazón de Núñez.">
+    <meta property="og:image" content="logo.png"> 
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://arcosv.com.ar">
+    <meta property="og:site_name" content="Arcos V">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+   <style>
     /* --- BASE --- */
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -222,7 +247,7 @@
     }
     .card:hover .btn-mira-mas { background-color: var(--text); color: #ffffff; }
 
-    /* --- SECCION CONCEPTUAL (¿QUÉ ES?) --- */
+    /* --- SECCION CONCEPTUAL --- */
     .tres-columnas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
     .columna-concepto { background: #faf9f6; padding: 35px; border-radius: var(--radius); }
     .columna-concepto h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
@@ -241,7 +266,7 @@
     .espacio-detalles { display: flex; flex-direction: column; gap: 20px; }
     .foto-jardin { width: 100%; height: 260px; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow); }
     
-    /* --- LO QUE YA PASÓ (COMPACTO) --- */
+    /* --- LO QUE YA PASÓ --- */
     .pasado-banner { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 15px; }
     .pasado-stats { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: var(--text-light); }
     .grid-pasado-fotos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
@@ -262,7 +287,7 @@
     .footer-links { margin-top: 15px; }
     .footer-links a { color: var(--text); text-decoration: none; font-weight: 600; padding: 10px; }
 
-    /* --- RESPONSIVE CELULAR --- */
+    /* --- RESPONSIVE --- */
     @media (max-width: 700px) {
         header { height: 75px; }
         body { padding-top: 75px; }
@@ -281,3 +306,29 @@
         .form-group button { width: 100%; }
     }
 </style>
+</head>
+
+<body>
+
+   <header>
+    <div class="nav-container">
+        <div class="logo">
+            <a href="#inicio"><img src="logo.png" alt="Arcos V Logo"></a>
+        </div>
+        <nav class="nav-links">
+            <a href="#encuentros">Encuentros</a>
+            <a href="#que-es">Qué es</a>
+            <a href="#organizar">Organizá</a>
+            <a href="#faq">Preguntas</a>
+            <a href="#novedades">Novedades</a>
+        </nav>
+        <button class="menu-toggle" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+    </div>
+</header>
+
+    <div class="hero-container" id="inicio">
+        <div class="carousel-box">
+            <img class="split-slide active" src="hero-1.webp" fetchpriority="high" alt="Espacio boutique Arcos V">
+            <img class="split-slide" src="hero-2.webp" loading="lazy" alt="Encuentro corporativo">
+            <img class="split-slide" src="hero-3.webp" loading="lazy" alt="Sala taller Arcos V">
+            <img class="split-slide" src="hero-4.webp" loading="lazy" alt="Jardín Arcos V">
