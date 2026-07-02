@@ -1,334 +1,1344 @@
 <!DOCTYPE html>
+
 <html lang="es">
 
+
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <title>Arcos V | Espacio para talleres, catas y encuentros en Núñez</title>
+
+
 
     <meta name="description" content="Arcos V es un espacio boutique con jardín en Núñez para talleres, catas, presentaciones de marcas, encuentros de comunidad y experiencias presenciales.">
 
+
+
     <link rel="icon" type="image/png" href="favicon.png">
 
+
+
     <meta property="og:type" content="website">
+
     <meta property="og:title" content="Arcos V | Espacio Boutique en Núñez">
+
     <meta property="og:description" content="Un refugio diseñado para experiencias exclusivas, catas de vino y encuentros curados en el corazón de Núñez.">
+
     <meta property="og:image" content="logo.png"> 
+
     <meta property="og:image:width" content="1200">
+
     <meta property="og:image:height" content="630">
+
     <meta property="og:url" content="https://arcosv.com.ar">
+
     <meta property="og:site_name" content="Arcos V">
 
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+
+
    <style>
+
     /* --- BASE --- */
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
+
+
     html, body {
+
         width: 100%;
+
         overflow-x: hidden;
+
         background-color: #ffffff; 
+
         scroll-behavior: smooth;
+
     }
+
+
 
     :root {
+
         --primary: #FFC107;  
-        --bg: #f4f6f8;        
+
+        --bg: #f4f6f8;       
+
         --text: #021050;
+
         --text-light: #444444; 
+
         --radius: 16px;
+
         --shadow: 0 10px 30px rgba(0,0,0,0.04);
+
     }
+
+
 
     body {
+
         font-family: 'Inter', sans-serif;
+
         color: var(--text);
+
         -webkit-font-smoothing: antialiased;
+
         padding-top: 100px; 
+
     }
+
+
 
     section {
+
         width: 100%;
+
         margin: 0;
+
         padding: 90px 0; 
+
     }
+
+
 
     .seccion-centrada {
+
         width: 100%;
+
         max-width: 1200px; 
+
         margin: 0 auto;
+
         padding: 0 25px; 
+
         box-sizing: border-box;
+
     }
+
+
 
     /* --- NAVBAR --- */
+
     header {
+
         position: fixed;
+
         top: 0; left: 0;
+
         background: #ffffff;
+
         z-index: 1000;
+
         width: 100%;
+
         border-bottom: 1px solid rgba(0,0,0,0.05);
+
         height: 100px;
+
         display: flex;
+
         align-items: center;
+
     }
+
     .nav-container {
+
         width: 100%;
+
         max-width: 1400px; 
+
         margin: 0 auto;
+
         padding: 0 40px;   
+
         display: flex;
+
         justify-content: space-between;
+
         align-items: center;
+
         box-sizing: border-box;
+
     }
+
     .logo img { height: 65px; width: auto; filter: contrast(110%) multiply; mix-blend-mode: multiply; }
+
     .nav-links { display: flex; gap: 35px; }
+
     .nav-links a { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 500; transition: 0.3s; }
+
     .nav-links a:hover { opacity: 0.6; }
 
+
+
     /* --- HERO --- */
+
     .hero-container {
+
         position: relative;
+
         overflow: hidden;
+
         margin-top: -10px;
+
         padding: 0;
+
         height: 85vh;
+
         min-height: 520px;
+
         max-height: 720px;
+
     }
+
     .carousel-box {
+
         position: absolute;
+
         width: 100%; height: 100%;
+
         top: 0; left: 0; z-index: 1;
+
         background: #eee;
+
     }
+
     .split-slide {
+
         position: absolute;
+
         width: 100%; height: 100%;
+
         object-fit: cover;
+
         opacity: 0;
+
         transition: opacity 1.8s ease-in-out;
+
     }
+
     .split-slide.active { opacity: 1; }
+
     .hero-overlay {
+
         position: absolute;
+
         top: 0; left: 0;
+
         width: 100%; height: 100%;
+
         background: rgba(0, 0, 0, 0.45);
+
         z-index: 2;
+
     }
+
     .hero-content {
+
         position: absolute;
+
         bottom: 10%; left: 0;
+
         width: 100%; z-index: 3;
+
     }
+
     .hero-text {
+
         padding-left: 8%;
+
         max-width: 750px;
+
     }
+
     .hero-title { 
+
         font-family: 'Cormorant Garamond', serif;
+
+}
+
         font-weight: 700; 
+
         color: #ffffff; 
+
         text-shadow: 1px 1px 5px rgba(0,0,0,0.4); 
+
         font-size: 3.4rem; 
+
         line-height: 1.15;
+
     }
-    .hero-title em {
+
+    .hero-title italic-font {
+
         font-family: 'Cormorant Garamond', serif;
+
         font-style: italic;
+
         font-weight: 400;
+
     }
+
     .hero-subtitle { 
+
         font-size: 18px; 
+
         color: #ffffff; 
+
         text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+
         margin-top: 15px; 
+
         font-weight: 500;
+
         line-height: 1.4;
+
     }
-    .hero-subtitle-secondary {
-        font-size: 15px;
-        color: rgba(255,255,255,0.85);
-        margin-top: 10px;
-        font-weight: 500;
-        line-height: 1.5;
-        max-width: 650px;
-    }
+
+       .hero-subtitle-secondary {
+
+    font-size: 15px;
+
+    color: rgba(255,255,255,0.85);
+
+    margin-top: 10px;
+
+    font-weight: 500;
+
+    line-height: 1.5;
+
+    max-width: 650px;
+
+}
+
     .hero-buttons {
+
         display: flex;
+
         gap: 15px;
+
         margin-top: 30px;
+
         padding-left: 8%;
+
     }
+
     .btn-hero-primary {
+
         background-color: var(--primary);
+
         color: #021050;
+
         padding: 14px 28px;
+
         border-radius: 30px;
+
         text-decoration: none;
+
         font-weight: 600;
+
         font-size: 15px;
+
         transition: 0.3s ease;
+
         box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
     }
+
     .btn-hero-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4); }
+
     .btn-hero-secondary {
+
         background-color: transparent;
+
         color: #ffffff;
+
         border: 2px solid #ffffff;
+
         padding: 12px 26px;
+
         border-radius: 30px;
+
         text-decoration: none;
+
         font-weight: 600;
+
         font-size: 15px;
+
         transition: 0.3s ease;
+
     }
+
     .btn-hero-secondary:hover { background-color: rgba(255, 255, 255, 0.15); transform: translateY(-2px); }
 
+
+
     /* --- CARRUSEL CATEGORIAS HERO --- */
+
     .carrusel-texto-hero {
+
         overflow: hidden;
+
         white-space: nowrap;
+
         width: 100%;
+
         background: rgba(0, 0, 0, 0.35);
+
         backdrop-filter: blur(4px);
+
         padding: 10px 0;
+
         margin-top: 35px;
+
         display: flex;
+
         align-items: center;
+
     }
+
     .track-texto-hero {
+
         display: inline-block;
+
         animation: desplazarTextoHero 40s linear infinite;
+
     }
+
     .track-texto-hero span {
+
         font-family: 'Inter', sans-serif;
+
         font-size: 1.1rem;
+
         font-weight: 600;
+
         text-transform: uppercase;
+
         color: #ffffff;
+
         padding-right: 50px;
+
         display: inline-block;
+
         letter-spacing: 2px;
+
     }
+
     @keyframes desplazarTextoHero {
+
         from { transform: translateX(0); }
+
         to { transform: translateX(-50%); }
+
     }
+
+
 
     /* --- FILTROS Y TARJETAS --- */
+
     .section-title { font-family: 'Cormorant Garamond', serif; font-size: 36px; color: var(--text); margin-bottom: 8px; }
+
     .section-tagline { color: var(--text-light); margin-bottom: 35px; font-style: italic; font-size: 16px; }
+
     
+
     .filters { display: flex; gap: 10px; margin-bottom: 35px; overflow-x: auto; white-space: nowrap; padding-bottom: 10px; }
+
     .filter-btn { padding: 10px 20px; border-radius: 30px; border: 1px solid #ddd; background: white; cursor: pointer; font-size: 14px; font-weight: 500; font-family: inherit; transition: 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+
     .filter-btn.active { background: var(--text); color: white; border-color: var(--text); }
 
+
+
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+
     .card { text-decoration: none; color: inherit; background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: 0.3s; position: relative; display: block; }
+
     .card:hover { transform: translateY(-5px); }
+
     .card img { width: 100%; height: auto; aspect-ratio: 4/5; object-fit: cover; display: block; }
+
     .card-content { padding: 22px; padding-bottom: 60px; }
+
     .card-tag { font-size: 11px; text-transform: uppercase; color: #666; letter-spacing: 1px; font-weight: 600; }
+
     .card-title { margin: 6px 0; font-family: 'Cormorant Garamond', serif; font-size: 20px; }
+
     .card-date { font-size: 13px; color: var(--text-light); }
 
+
+
     .btn-mira-mas {
+
         position: absolute; bottom: 20px; right: 20px;
+
         background-color: var(--primary); color: #021050;
+
         font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+
         padding: 8px 14px; border-radius: 8px; transition: all 0.3s ease;
+
     }
+
     .card:hover .btn-mira-mas { background-color: var(--text); color: #ffffff; }
 
-    /* --- SECCION CONCEPTUAL --- */
+
+
+    /* --- SECCION CONCEPTUAL (¿QUÉ ES?) --- */
+
     .tres-columnas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+
     .columna-concepto { background: #faf9f6; padding: 35px; border-radius: var(--radius); }
+
     .columna-concepto h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
     .columna-concepto ul { list-style: none; }
+
     .columna-concepto ul li { margin-bottom: 10px; color: var(--text-light); font-size: 15px; display: flex; align-items: center; gap: 8px; }
+
     .columna-concepto ul li::before { content: "•"; color: var(--primary); font-weight: bold; }
 
+
+
     /* --- SECCION B2B + ESPACIO UNIFICADO --- */
+
     .b2b-layout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; margin-top: 30px; }
+
     .b2b-info-box { background: var(--text); color: white; padding: 45px; border-radius: var(--radius); display: flex; flex-direction: column; justify-content: center; }
+
     .b2b-info-box h2 { font-family: 'Cormorant Garamond', serif; font-size: 32px; margin-bottom: 15px; color: white; }
+
     .b2b-info-box p { opacity: 0.85; line-height: 1.6; margin-bottom: 25px; font-size: 16px; }
+
     .btn-b2b { background: var(--primary); color: var(--text); text-decoration: none; font-weight: 600; padding: 15px 30px; border-radius: 30px; display: inline-block; align-self: flex-start; transition: 0.2s; }
+
     .btn-b2b:hover { opacity: 0.95; transform: translateY(-1px); }
+
     
+
     .espacio-detalles { display: flex; flex-direction: column; gap: 20px; }
+
     .foto-jardin { width: 100%; height: 260px; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow); }
+
     
-    /* --- LO QUE YA PASÓ --- */
+
+    /* --- LO QUE YA PASÓ (COMPACTO) --- */
+
     .pasado-banner { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 15px; }
+
     .pasado-stats { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: var(--text-light); }
+
     .grid-pasado-fotos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+
     .grid-pasado-fotos img { width: 100%; aspect-ratio: 1.1; object-fit: cover; border-radius: 12px; filter: grayscale(20%); opacity: 0.9; }
 
+
+
     /* --- NOVEDADES --- */
+
     .newsletter-box { background: #faf9f6; padding: 50px; border-radius: var(--radius); text-align: center; max-width: 700px; margin: 0 auto; }
+
     .newsletter-box h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; margin-bottom: 12px; }
+
     .newsletter-box p { color: var(--text-light); margin-bottom: 25px; }
+
     .form-group { display: flex; gap: 10px; max-width: 500px; margin: 0 auto; }
+
     .form-group input { flex: 1; padding: 14px 20px; border-radius: 30px; border: 1px solid #ddd; font-family: inherit; font-size: 14px; }
+
     .form-group button { background: var(--text); color: white; border: none; padding: 14px 25px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: 0.2s; }
+
     .form-group button:hover { opacity: 0.9; }
 
+
+
     /* --- FOOTER --- */
+
     footer { text-align: center; padding: 60px 20px; border-top: 1px solid #eee; background: #ffffff; width: 100%; margin-top: 40px; }
+
     footer p { color: var(--text-light); font-size: 14px; }
+
     .footer-links { margin-top: 15px; }
+
     .footer-links a { color: var(--text); text-decoration: none; font-weight: 600; padding: 10px; }
 
-    /* --- RESPONSIVE --- */
+
+
+    /* --- RESPONSIVE CELULAR --- */
+
     @media (max-width: 700px) {
+
         header { height: 75px; }
+
         body { padding-top: 75px; }
+
         .logo img { height: 50px; }
+
         .nav-links { display: none; }
+
         section { padding: 50px 0; }
+
         
+
         .hero-title { font-size: 2.1rem; }
+
         .hero-subtitle { font-size: 15px; }
+
         .hero-buttons { flex-direction: column; gap: 10px; padding-right: 8%; }
+
         .btn-hero-primary, .btn-hero-secondary { width: 100%; text-align: center; justify-content: center; }
+
         
+
         .tres-columnas, .b2b-layout { grid-template-columns: 1fr; gap: 20px; }
+
         .grid-pasado-fotos { grid-template-columns: repeat(2, 1fr); }
+
         .form-group { flex-direction: column; }
+
         .form-group button { width: 100%; }
+
     }
+
 </style>
+
 </head>
+
+
 
 <body>
 
+
+
    <header>
+
     <div class="nav-container">
+
         <div class="logo">
+
             <a href="#inicio"><img src="logo.png" alt="Arcos V Logo"></a>
+
         </div>
+
         <nav class="nav-links">
+
             <a href="#encuentros">Encuentros</a>
+
             <a href="#que-es">Qué es</a>
+
             <a href="#organizar">Organizá</a>
+
             <a href="#faq">Preguntas</a>
+
             <a href="#novedades">Novedades</a>
+
         </nav>
+
         <button class="menu-toggle" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+
     </div>
+
 </header>
 
+
+
     <div class="hero-container" id="inicio">
+
         <div class="carousel-box">
+
             <img class="split-slide active" src="hero-1.webp" fetchpriority="high" alt="Espacio boutique Arcos V">
+
             <img class="split-slide" src="hero-2.webp" loading="lazy" alt="Encuentro corporativo">
+
             <img class="split-slide" src="hero-3.webp" loading="lazy" alt="Sala taller Arcos V">
+
             <img class="split-slide" src="hero-4.webp" loading="lazy" alt="Jardín Arcos V">
+
+        </div>
+
+        <div class="hero-overlay"></div>
+
+        
+
+        <div class="hero-content">
+
+           <div class="hero-text">
+
+   <h1 class="hero-title" style="font-family: 'Cormorant Garamond', serif; font-size: 4rem; color: #ffffff; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); font-weight: 700; line-height: 1.1; margin-bottom: 15px;">
+
+    Por acá pasa lo que te <em style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700; color: #FFC107;">gusta</em> hacer
+
+</h1>
+
+
+
+    <p class="hero-subtitle">
+
+        Espacio boutique con jardín para talleres, catas y encuentros.
+
+    </p>
+
+
+
+    <p class="hero-subtitle-secondary">
+
+        En Núñez. Para marcas, especialistas y comunidades que crean experiencias presenciales.
+
+    </p>
+
+</div>
+
+            
+
+            <div class="hero-buttons">
+
+                <a href="#encuentros" class="btn-hero-primary">Descubrir experiencias</a>
+
+                <a href="#organizar" class="btn-hero-secondary">Organizar un evento</a>
+
+            </div>
+
+
+
+            <div class="carrusel-texto-hero">
+
+                <div class="track-texto-hero">
+
+                    <span>Bienestar • Catas • Encuentros • Creatividad • Comunidad • </span>
+
+                    <span>Bienestar • Catas • Jardinería • Creatividad • Comunidad • </span>
+
+                    <span>Bienestar • Catas • Jardinería • Creatividad • Comunidad • </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <section id="encuentros" style="background-color: #faf9f6;">
+
+        <div class="seccion-centrada">
+
+            <h2 class="section-title">Próximos Encuentros</h2>
+
+            <p class="section-tagline">Explorá la grilla de actividades y sumate al club.</p>
+
+            
+
+            <div class="filters">
+
+                <button class="filter-btn active" onclick="filter('all', this)">✨ Todos</button>
+
+                <button class="filter-btn" onclick="filter('aprendizaje', this)">🧠 Aprendizaje</button>
+
+                <button class="filter-btn" onclick="filter('gastronomia', this)">🍷 Gastronomía</button>
+
+                <button class="filter-btn" onclick="filter('bienestar', this)">🌱 Bienestar</button>
+
+                <button class="filter-btn" onclick="filter('comunidad', this)">🤝 Comunidad</button>
+
+                <button class="filter-btn" onclick="filter('creatividad', this)">🎨 Creatividad</button>
+
+            </div>
+
+
+
+            <div class="grid">
+
+               
+
+               <a href="scrapbook-julio26.html" class="card" data-cat="comunidad">
+
+                    <img src="Scrapbook julio.webp" alt="Scrapbook" loading="lazy">
+
+                    <div class="card-content">
+
+                        <span class="card-tag">Tarde de Scrapbook</span>
+
+                        <h3 class="card-title">Tarde de Scrapbook</h3>
+
+                        <p class="card-date">Sábado 18 de julio.</p>
+
+                    </div>
+
+                   <div class="btn-mira-mas">Mirá más</div>
+
+                </a>
+
+                
+
+                <a href="burako.html" class="card" data-cat="comunidad">
+
+                    <img src="Primeraburako.webp" alt="Domingos de burako" loading="lazy">
+
+                    <div class="card-content">
+
+                        <span class="card-tag">Club</span>
+
+                        <h3 class="card-title">Juegos de Burako</h3>
+
+                        <p class="card-date">Domingos 16 hs.</p>
+
+                    </div>
+
+                    <div class="btn-mira-mas">Mirá más</div>
+
+                </a>
+
+
+
+               <a href="jawajulio.html" class="card" data-cat="gastronomia">
+
+                    <img src="Primerajawajulio.webp" alt="Cata de Vino en Jawa" loading="lazy">
+
+                    <div class="card-content">
+
+                        <span class="card-tag">Cata Curada</span>
+
+                        <h3 class="card-title">Cata de Vino en Jawa</h3>
+
+                        <p class="card-date">Sábado 25 de julio.</p>
+
+                    </div>
+
+                   <div class="btn-mira-mas">Mirá más</div>
+
+                </a>
+
+
+
+                <a href="Resinart-julio-26.html" class="card" data-cat="aprendizaje">
+
+                    <img src="Resinart julio26.webp" alt="Workshop de resina" loading="lazy">
+
+                    <div class="card-content">
+
+                        <span class="card-tag">Workshop de resina</span>
+
+                        <h3 class="card-title">Workshop de Resinart</h3>
+
+                        <p class="card-date">Domingo 26 de julio.</p>
+
+                    </div>
+
+                   <div class="btn-mira-mas">Mirá más</div>
+
+                </a>
+
+                
+
+                <a href="taller-jardineria.html" class="card" data-cat="bienestar">
+
+                    <img src="Primerajardin.webp" alt="Taller Jardinería" loading="lazy">
+
+                    <div class="card-content">
+
+                        <span class="card-tag">Naturaleza</span>
+
+                        <h3 class="card-title">Taller de Jardinería</h3>
+
+                        <p class="card-date">Sábado 8 de agosto.</p>
+
+                    </div>
+
+                    <div class="btn-mira-mas">Mirá más</div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="que-es">
+
+        <div class="seccion-centrada">
+
+            <h2 class="section-title" style="text-align: center;">¿Qué es Arcos V?</h2>
+
+            <p class="section-tagline" style="text-align: center; max-width: 650px; margin: 0 auto 40px auto;">Un espacio boutique en Núñez donde especialistas, marcas y comunidades crean talleres, catas, encuentros y experiencias presenciales.</p>
+
+            
+
+            <div class="tres-columnas">
+
+                <div class="columna-concepto">
+
+                    <h3>🧠 Aprender</h3>
+
+                    <ul>
+
+                        <li>Talleres y workshops</li>
+
+                        <li>Cursos y capacitaciones</li>
+
+                        <li>Charlas temáticas</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="columna-concepto">
+
+                    <h3>🤝 Conectar</h3>
+
+                    <ul>
+
+                        <li>Networking</li>
+
+                        <li>Comunidades</li>
+
+                        <li>Encuentros profesionales</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="columna-concepto">
+
+                    <h3>🍷 Disfrutar</h3>
+
+                    <ul>
+
+                        <li>Catas y degustaciones</li>
+
+                        <li>Experiencias gastronómicas</li>
+
+                        <li>Actividades recreativas</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="organizar" style="background-color: #faf9f6;">
+
+        <div class="seccion-centrada">
+
+            <h2 class="section-title">Organizá tu Experiencia</h2>
+
+            <p class="section-tagline">El punto donde el diseño boutique se encuentra con tu proyecto.</p>
+
+            
+
+            <div class="b2b-layout">
+
+                <div class="b2b-info-box">
+
+                    <h2>¿Tenés una comunidad, marca o proyecto?</h2>
+
+                    <p>Arcos V es un refugio a puertas cerradas diseñado estratégicamente para dictar tus talleres, lanzar productos, armar reuniones de equipo o dictar cursos en un entorno premium y estimulante.</p>
+
+                    <a class="btn-b2b" href="https://wa.me/5491162834000" target="_blank">🏡 Conocer el espacio</a>
+
+                </div>
+
+                
+
+                <div class="espacio-detalles">
+
+                    <img src="hero-4.webp" class="foto-jardin" alt="Jardín exclusivo Arcos V">
+
+                    <div style="background: white; padding: 25px; border-radius: var(--radius); box-shadow: var(--shadow);">
+
+                        <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 18px; margin-bottom: 10px;">El Espacio Incluye:</h4>
+
+                        <p style="font-size: 14px; color: var(--text-light); line-height: 1.5;">
+
+                            📍 Ubicación estratégica en Núñez, CABA.<br>
+
+                            🌿 Jardín e interiores con luz natural.<br>
+
+                            Setup flexible para capacitación, catas o living.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div style="margin-top: 40px;">
+
+                <p style="margin-bottom:15px; color: var(--text-light); font-weight: 500;">Ubicación: Arcos 2952, Núñez, Ciudad de Buenos Aires.</p>
+
+                <iframe title="Mapa Ubicación Arcos V" src="https://maps.google.com/maps?q=Arcos%202952,%20Núñez&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="320" style="border:0; border-radius:12px; box-shadow: var(--shadow);" allowfullscreen="" loading="lazy"></iframe>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="lo-que-paso">
+
+        <div class="seccion-centrada">
+
+            <div class="pasado-banner">
+
+                <div>
+
+                    <h2 class="section-title" style="margin-bottom: 0;">Lo que ya pasó</h2>
+
+                    <div class="pasado-stats">Más de 20 encuentros realizados 🚀</div>
+
+                </div>
+
+                <a href="https://instagram.com/arcosv.ba" target="_blank" class="filter-btn" style="text-dash: none; color: inherit;">Ver experiencias anteriores</a>
+
+            </div>
+
+            
+
+            <div class="grid-pasado-fotos">
+
+                <img src="Scrapbook junio.webp" alt="Taller de jardinería pasado" loading="lazy">
+
+                <img src="Primera vino.webp" alt="Cata pasada" loading="lazy">
+
+                <img src="Primeramadres.webp" alt="Encuentro de madres pasado" loading="lazy">
+
+                <img src="Prox1.webp" alt="Evento Essen pasado" loading="lazy">
+
+                
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+<!-- ==================== SECCIÓN PREGUNTAS FRECUENTES ==================== -->
+
+    <section id="faq" style="background-color: #ffffff; padding: 90px 0; border-top: 1px solid #eee;">
+
+        <div class="seccion-centrada" style="max-width: 800px;">
+
+            <h2 class="section-title" style="text-align: center; margin-bottom: 10px;">Preguntas frecuentes</h2>
+
+            <p class="section-tagline" style="text-align: center; margin-bottom: 50px;">Despejá tus dudas sobre cómo sumarte o cómo organizar tu propuesta.</p>
+
+            
+
+            <div style="display: grid; grid-template-columns: 1fr; gap: 40px;">
+
+                
+
+                <!-- GRUPO 1: ASISTENTES -->
+
+                <div>
+
+                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 22px; margin-bottom: 20px; color: var(--text); border-bottom: 2px solid var(--primary); padding-bottom: 8px; display: inline-block;">Para asistentes</h3>
+
+                    <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
+
+                        
+
+                        <details style="background: #faf9f6; padding: 18px; border-radius: 12px; cursor: pointer;">
+
+                            <summary style="font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: var(--text); outline: none;">¿Qué es Arcos V?</summary>
+
+                            <p style="margin-top: 10px; font-size: 14px; color: var(--text-light); line-height: 1.6;">Arcos V es un espacio boutique en Núñez donde especialistas, marcas y comunidades organizan talleres, catas, encuentros y experiencias presenciales.</p>
+
+                        </details>
+
+
+
+                        <details style="background: #faf9f6; padding: 18px; border-radius: 12px; cursor: pointer;">
+
+                            <summary style="font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: var(--text); outline: none;">¿Cómo participo de una experiencia?</summary>
+
+                            <p style="margin-top: 10px; font-size: 14px; color: var(--text-light); line-height: 1.6;">Podés inscribirte directamente en los encuentros publicados en nuestra agenda o sumarte a nuestra lista de difusión de WhatsApp para enterarte de las próximas fechas.</p>
+
+                        </details>
+
+
+
+                        <details style="background: #faf9f6; padding: 18px; border-radius: 12px; cursor: pointer;">
+
+                            <summary style="font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: var(--text); outline: none;">¿Qué tipo de experiencias se realizan?</summary>
+
+                            <p style="margin-top: 10px; font-size: 14px; color: var(--text-light); line-height: 1.6;">Vas a encontrar talleres prácticos, charlas, catas de vino, encuentros de networking, actividades recreativas, propuestas de bienestar y experiencias gastronómicas.</p>
+
+                        </details>
+
+
+
+                        <details style="background: #faf9f6; padding: 18px; border-radius: 12px; cursor: pointer;">
+
+                            <summary style="font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: var(--text); outline: none;">¿Necesito ser socio para ir?</summary>
+
+                            <p style="margin-top: 10px; font-size: 14px; color: var(--text-light); line-height: 1.6;">No, el espacio funciona bajo un formato abierto. Cada taller o experiencia tiene su propia modalidad de inscripción independiente, permitiéndote venir a las actividades que más te gusten.</p>
+
+                        </details>
+
+
+
+                        <details style="background: #faf9f6; padding: 18px; border-radius: 12px; cursor: pointer;">
+
+                            <summary style="font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: var(--text); outline: none;">¿Dónde está ubicado Arcos V?</summary>
+
+                            <p style="margin-top: 10px; font-size: 14px; color: var(--text-light); line-height: 1.6;">Estamos ubicados en Arcos 2952 (CP 1429), en el barrio de Núñez, Ciudad Autónoma de Buenos Aires. Es una zona de excelente accesibilidad tanto desde el centro como desde Zona Norte.</p>
+
+                        </details>
+
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- GRUPO 2: ORGANIZADORES -->
+
+                <div>
+
+                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 22px; margin-bottom: 20px; color: var(--text); border-bottom: 2px solid var(--primary); padding-bottom: 8px; display: inline-block;">Para organizadores</h3>
+
+                    <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
+
+                        
+
+                        <details style="background: #faf9f6; padding: 18px; border-radius: 12px; cursor: pointer;">
+
+                            <summary style="font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: var(--text); outline: none;">¿Puedo organizar mi evento en Arcos V?</summary>
+
+                            <p style="margin-top: 10px; font-size: 14px; color: var(--text-light); line-height: 1.6;">Sí. Arcos V recibe con entusiasmo propuestas de especialistas, marcas, empresas y comunidades independientes que busquen un entorno premium y estimulante para desarrollar experiencias presenciales de formato cuidado.</p>
+
+                        </details>
+
+
+
+                        <details style="background: #faf9f6; padding: 18px; border-radius: 12px; cursor: pointer;">
+
+                            <summary style="font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: var(--text); outline: none;">¿Arcos V alquila el espacio para cualquier tipo de evento?</summary>
+
+                            <p style="margin-top: 10px; font-size: 14px; color: var(--text-light); line-height: 1.6;"><strong>No.</strong> Nuestro espacio está pensado de manera exclusiva para talleres, experiencias, encuentros corporativos, actividades gastronómicas, propuestas culturales y presentaciones de marca alineadas con el espíritu y la estética del lugar. No alquilamos para fiestas sociales tradicionales o eventos masivos.</p>
+
+                        </details>
+
+
+
+                        <details style="background: #faf9f6; padding: 18px; border-radius: 12px; cursor: pointer;">
+
+                            <summary style="font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: var(--text); outline: none;">¿Qué espacios e infraestructura incluye la locación?</summary>
+
+                            <p style="margin-top: 10px; font-size: 14px; color: var(--text-light); line-height: 1.6;">Ofrecemos 100 m² de superficie cubierta distribuidos en un layout integrado en L (Recepción de 22 m², Bar de 20,5 m² y Sala Taller principal de 35,5 m²) que garantiza una circulación interna fluida. Además, incluye un destacado jardín privado parquizado de 257 m².</p>
+
+                        </details>
+
+
+
+                        <details style="background: #faf9f6; padding: 18px; border-radius: 12px; cursor: pointer;">
+
+                            <summary style="font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: var(--text); outline: none;">¿Con qué equipamiento técnico y mobiliario cuentan?</summary>
+
+                            <p style="margin-top: 10px; font-size: 14px; color: var(--text-light); line-height: 1.6;">El valor incluye climatización integral (frío/calor), monitor de 55" para presentaciones, torre de sonido/parlante y Wi-Fi de alta velocidad. En cuanto a mobiliario, disponemos de 22 sillas operativas, 4 mesas de 1,80 m y 2 mesas de 60 cm, adaptables a formatos tipo auditorio, mesas de trabajo o en U.</p>
+
+                        </details>
+
+
+
+                        <details style="background: #faf9f6; padding: 18px; border-radius: 12px; cursor: pointer;">
+
+                            <summary style="font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: var(--text); outline: none;">¿Es adecuado para eventos corporativos y empresas?</summary>
+
+                            <p style="margin-top: 10px; font-size: 14px; color: var(--text-light); line-height: 1.6;">Totalmente. Funciona de manera óptima para capacitaciones, jornadas de planificación de equipos (offsites), sesiones de team building, lanzamientos de producto y networking en un entorno privado a puertas cerradas.</p>
+
+                        </details>
+
+
+
+                        <details style="background: #faf9f6; padding: 18px; border-radius: 12px; cursor: pointer;">
+
+                            <summary style="font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: var(--text); outline: none;">¿Se puede visitar el espacio antes de reservar?</summary>
+
+                            <p style="margin-top: 10px; font-size: 14px; color: var(--text-light); line-height: 1.6;">Sí, por supuesto. Coordinamos visitas técnicas programadas para que puedas conocer el lugar en detalle, evaluar los montajes posibles y conversar sobre las necesidades logísticas de tu propuesta.</p>
+
+                        </details>
+
+
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+
+    <section id="novedades" style="background-color: #faf9f6; padding: 60px 0;">
+
+        <div class="seccion-centrada">
+
+            <div class="newsletter-box">
+
+                <h2>Recibí primero los nuevos encuentros</h2>
+
+                <p>Sumate a nuestra lista exclusiva y enterate antes que nadie de las próximas fechas de Finanzas, Catas y Talleres.</p>
+
+                
+
+                <div style="margin-top: 25px;">
+
+                    <a href="https://wa.me/5491162834000?text=Hola!%20Quiero%20sumarme%20a%20la%20lista%20de%20difusión%20de%20Arcos%20V%20para%20recibir%20los%20próximos%20encuentros." 
+
+                       target="_blank" 
+
+                       class="btn-hero-primary" 
+
+                       style="display: inline-flex; align-items: center; justify-content: center; text-decoration: none; min-height: 48px; padding: 14px 40px;">
+
+                       💬 Sumarme por WhatsApp
+
+                    </a>
+
+                </div>
+
+                <p style="font-size: 11px; opacity: 0.6; margin-top: 15px; margin-bottom: 0;">🔒 Formato Club: Te agendamos en nuestra lista de difusión privada. Cero spam.</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <footer>
+
+        <div class="seccion-centrada">
+
+            <img src="logo.png" alt="Arcos V Logo" style="height: 40px; width: auto; margin-bottom: 10px;">
+
+           <p>Arcos 2952, Núñez · Ciudad de Buenos Aires (CP 1429)</p>
+
+            <div class="footer-links">
+
+                <a href="https://instagram.com/arcosv.ba" target="_blank">Instagram</a> · 
+
+                <a href="https://wa.me/5491162834000" target="_blank">WhatsApp</a>
+
+            </div>
+
+            <p style="font-size: 12px; color: #666; margin-top: 25px; letter-spacing: 0.5px;">
+
+                &copy; Arcos V - 2026. Todos los derechos reservados.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <script>
+
+        function filter(category, button) {
+
+            // Cambiar clase activa en botones
+
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            button.classList.add('active');
+
+
+
+            // Filtrar tarjetas
+
+            const cards = document.querySelectorAll('.grid .card');
+
+            cards.forEach(card => {
+
+                if (category === 'all') {
+
+                    card.style.display = 'block';
+
+                } else {
+
+                    if (card.getAttribute('data-cat') === category) {
+
+                        card.style.display = 'block';
+
+                    } else {
+
+                        card.style.display = 'none';
+
+                    }
+
+                }
+
+            });
+
+        }
+
+
+
+        // Script simple para carrusel de imágenes de fondo (Hero)
+
+        let slides = document.querySelectorAll('.split-slide');
+
+        let currentSlide = 0;
+
+        setInterval(() => {
+
+            slides[currentSlide].classList.remove('active');
+
+            currentSlide = (currentSlide + 1) % slides.length;
+
+            slides[currentSlide].classList.add('active');
+
+        }, 5000);
+
+    </script>
+
+</body>
+
+</html> 
+
