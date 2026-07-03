@@ -1,52 +1,25 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
-
 
 <head>
 
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
     <title>Arcos V | Espacio para talleres, catas y encuentros en Núñez</title>
-
-
-
     <meta name="description" content="Arcos V es un espacio boutique con jardín en Núñez para talleres, catas, presentaciones de marcas, encuentros de comunidad y experiencias presenciales.">
-
-
-
     <link rel="icon" type="image/png" href="favicon.png">
-
-
-
     <meta property="og:type" content="website">
-
     <meta property="og:title" content="Arcos V | Espacio Boutique en Núñez">
-
     <meta property="og:description" content="Un refugio diseñado para experiencias exclusivas, catas de vino y encuentros curados en el corazón de Núñez.">
-
     <meta property="og:image" content="logo.png"> 
-
     <meta property="og:image:width" content="1200">
-
     <meta property="og:image:height" content="630">
-
     <meta property="og:url" content="https://arcosv.com.ar">
-
     <meta property="og:site_name" content="Arcos V">
 
-
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-
 
    <style>
 
@@ -54,360 +27,201 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-
-
     html, body {
-
         width: 100%;
-
         overflow-x: hidden;
-
         background-color: #ffffff; 
-
         scroll-behavior: smooth;
-
     }
-
-
 
     :root {
-
         --primary: #FFC107;  
-
         --bg: #f4f6f8;       
-
         --text: #021050;
-
         --text-light: #444444; 
-
         --radius: 16px;
-
         --shadow: 0 10px 30px rgba(0,0,0,0.04);
-
     }
-
-
 
     body {
-
         font-family: 'Inter', sans-serif;
-
         color: var(--text);
-
         -webkit-font-smoothing: antialiased;
-
         padding-top: 100px; 
-
     }
-
-
 
     section {
-
         width: 100%;
-
         margin: 0;
-
         padding: 90px 0; 
-
     }
-
-
 
     .seccion-centrada {
-
         width: 100%;
-
         max-width: 1200px; 
-
         margin: 0 auto;
-
         padding: 0 25px; 
-
         box-sizing: border-box;
-
     }
-
-
 
     /* --- NAVBAR --- */
 
     header {
-
         position: fixed;
-
         top: 0; left: 0;
-
         background: #ffffff;
-
         z-index: 1000;
-
         width: 100%;
-
         border-bottom: 1px solid rgba(0,0,0,0.05);
-
         height: 100px;
-
         display: flex;
-
         align-items: center;
-
     }
 
     .nav-container {
-
         width: 100%;
-
         max-width: 1400px; 
-
         margin: 0 auto;
-
         padding: 0 40px;   
-
         display: flex;
-
         justify-content: space-between;
-
         align-items: center;
-
         box-sizing: border-box;
-
     }
 
     .logo img { height: 65px; width: auto; filter: contrast(110%) multiply; mix-blend-mode: multiply; }
-
     .nav-links { display: flex; gap: 35px; }
-
     .nav-links a { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 500; transition: 0.3s; }
-
     .nav-links a:hover { opacity: 0.6; }
-
-
 
     /* --- HERO --- */
 
     .hero-container {
-
         position: relative;
-
         overflow: hidden;
-
         margin-top: -10px;
-
         padding: 0;
-
         height: 85vh;
-
         min-height: 520px;
-
         max-height: 720px;
-
     }
 
     .carousel-box {
-
         position: absolute;
-
         width: 100%; height: 100%;
-
         top: 0; left: 0; z-index: 1;
-
         background: #eee;
-
     }
 
     .split-slide {
-
         position: absolute;
-
         width: 100%; height: 100%;
-
         object-fit: cover;
-
         opacity: 0;
-
         transition: opacity 1.8s ease-in-out;
-
     }
 
     .split-slide.active { opacity: 1; }
-
     .hero-overlay {
-
         position: absolute;
-
         top: 0; left: 0;
-
         width: 100%; height: 100%;
-
         background: rgba(0, 0, 0, 0.45);
-
         z-index: 2;
-
     }
 
     .hero-content {
-
         position: absolute;
-
         bottom: 10%; left: 0;
-
         width: 100%; z-index: 3;
-
     }
 
     .hero-text {
-
         padding-left: 8%;
-
         max-width: 750px;
-
     }
 
     .hero-title { 
-
         font-family: 'Cormorant Garamond', serif;
-
 }
 
         font-weight: 700; 
-
         color: #ffffff; 
-
         text-shadow: 1px 1px 5px rgba(0,0,0,0.4); 
-
         font-size: 3.4rem; 
-
         line-height: 1.15;
-
     }
 
     .hero-title italic-font {
 
         font-family: 'Cormorant Garamond', serif;
-
         font-style: italic;
-
         font-weight: 400;
-
     }
 
     .hero-subtitle { 
-
         font-size: 18px; 
-
         color: #ffffff; 
-
         text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
-
         margin-top: 15px; 
-
         font-weight: 500;
-
         line-height: 1.4;
-
     }
 
        .hero-subtitle-secondary {
-
     font-size: 15px;
-
     color: rgba(255,255,255,0.85);
-
     margin-top: 10px;
-
     font-weight: 500;
-
     line-height: 1.5;
-
     max-width: 650px;
-
 }
 
     .hero-buttons {
-
         display: flex;
-
         gap: 15px;
-
         margin-top: 30px;
-
         padding-left: 8%;
-
     }
 
     .btn-hero-primary {
-
         background-color: var(--primary);
-
         color: #021050;
-
         padding: 14px 28px;
-
         border-radius: 30px;
-
         text-decoration: none;
-
         font-weight: 600;
-
         font-size: 15px;
-
         transition: 0.3s ease;
-
         box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-
     }
 
     .btn-hero-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4); }
-
     .btn-hero-secondary {
-
         background-color: transparent;
-
         color: #ffffff;
-
         border: 2px solid #ffffff;
-
         padding: 12px 26px;
-
         border-radius: 30px;
-
         text-decoration: none;
-
         font-weight: 600;
-
         font-size: 15px;
-
         transition: 0.3s ease;
-
     }
 
     .btn-hero-secondary:hover { background-color: rgba(255, 255, 255, 0.15); transform: translateY(-2px); }
 
-
-
     /* --- CARRUSEL CATEGORIAS HERO --- */
-
     .carrusel-texto-hero {
-
         overflow: hidden;
-
         white-space: nowrap;
-
         width: 100%;
-
         background: rgba(0, 0, 0, 0.35);
-
         backdrop-filter: blur(4px);
-
         padding: 10px 0;
-
         margin-top: 35px;
-
         display: flex;
-
         align-items: center;
-
     }
 
     .track-texto-hero {
@@ -659,14 +473,11 @@
     <div class="hero-container" id="inicio">
 
         <div class="carousel-box">
-
             <img class="split-slide active" src="hero-1.webp" fetchpriority="high" alt="Espacio boutique Arcos V">
-
             <img class="split-slide" src="hero-2.webp" loading="lazy" alt="Encuentro corporativo">
-
             <img class="split-slide" src="hero-3.webp" loading="lazy" alt="Sala taller Arcos V">
-
             <img class="split-slide" src="hero-4.webp" loading="lazy" alt="Jardín Arcos V">
+            <img class="split-slide" src="hero-5.webp" loading="lazy" alt="Encuentro de Srapbook">
 
         </div>
 
