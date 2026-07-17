@@ -15,15 +15,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Arcos V | Espacio para talleres, catas y encuentros en Núñez</title>
     <meta name="description" content="Arcos V es un espacio boutique con jardín en Núñez para talleres, catas, presentaciones de marcas, encuentros de comunidad y experiencias presenciales.">
+    <link rel="canonical" href="https://arcosv.com.ar/">
     <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="logo.png">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Arcos V | Espacio Boutique en Núñez">
     <meta property="og:description" content="Un refugio diseñado para experiencias exclusivas, catas de vino y encuentros curados en el corazón de Núñez.">
-    <meta property="og:image" content="logo.png"> 
+    <meta property="og:image" content="https://arcosv.com.ar/hero-1.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Espacio boutique Arcos V en Núñez">
     <meta property="og:url" content="https://arcosv.com.ar">
     <meta property="og:site_name" content="Arcos V">
+    <meta property="og:locale" content="es_AR">
+
+    <!-- Datos estructurados para SEO local -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EventVenue",
+      "name": "Arcos V",
+      "description": "Espacio boutique con jardín en Núñez (CABA) para talleres, catas, presentaciones de marcas y encuentros presenciales.",
+      "url": "https://arcosv.com.ar",
+      "telephone": "+5491162834000",
+      "image": "https://arcosv.com.ar/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Arcos 2952",
+        "addressLocality": "Núñez, Buenos Aires",
+        "postalCode": "1429",
+        "addressCountry": "AR"
+      },
+      "sameAs": [
+        "https://instagram.com/arcosv.ba"
+      ]
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,12 +122,22 @@
         justify-content: space-between;
         align-items: center;
         box-sizing: border-box;
+        position: relative;
     }
 
     .logo img { height: 65px; width: auto; filter: contrast(110%) multiply; mix-blend-mode: multiply; }
     .nav-links { display: flex; gap: 35px; }
     .nav-links a { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 500; transition: 0.3s; }
     .nav-links a:hover { opacity: 0.6; }
+
+    .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 26px;
+        cursor: pointer;
+        color: var(--text);
+    }
 
     /* --- HERO --- */
 
@@ -153,16 +190,16 @@
         font-family: 'Cormorant Garamond', serif;
         font-weight: 700; 
         color: #ffffff; 
-        text-shadow: 1px 1px 5px rgba(0,0,0,0.4); 
-        font-size: 3.4rem; 
-        line-height: 1.15;
+        text-shadow: 1px 1px 5px rgba(0,0,0,0.5); 
+        font-size: 4rem; 
+        line-height: 1.1;
+        margin-bottom: 15px;
     }
 
-    .hero-title italic-font {
-
-        font-family: 'Cormorant Garamond', serif;
+    .hero-title em {
         font-style: italic;
-        font-weight: 400;
+        font-weight: 700;
+        color: var(--primary);
     }
 
     .hero-subtitle { 
@@ -408,7 +445,29 @@
 
         .logo img { height: 50px; }
 
-        .nav-links { display: none; }
+        .menu-toggle { display: block; }
+
+        .nav-links {
+            display: none;
+            position: absolute;
+            top: 75px;
+            left: 0;
+            width: 100%;
+            background: #ffffff;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+            padding: 10px 25px 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .nav-links a {
+            width: 100%;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .nav-links.mobile-open { display: flex; }
 
         section { padding: 50px 0; }
 
@@ -454,21 +513,21 @@
 
         </div>
 
-        <nav class="nav-links">
+        <nav class="nav-links" id="navLinks">
 
-            <a href="#encuentros">Encuentros</a>
+            <a href="#encuentros" onclick="closeMenu()">Encuentros</a>
 
-            <a href="#que-es">Qué es</a>
+            <a href="#que-es" onclick="closeMenu()">Qué es</a>
 
-            <a href="#organizar">Organizá</a>
+            <a href="#organizar" onclick="closeMenu()">Organizá</a>
 
-            <a href="#faq">Preguntas</a>
+            <a href="#faq" onclick="closeMenu()">Preguntas</a>
 
-            <a href="#novedades">Novedades</a>
+            <a href="#novedades" onclick="closeMenu()">Novedades</a>
 
         </nav>
 
-        <button class="menu-toggle" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+        <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" onclick="toggleMenu()">☰</button>
 
     </div>
 
@@ -483,7 +542,7 @@
             <img class="split-slide" src="hero-2.webp" loading="lazy" alt="Encuentro corporativo">
             <img class="split-slide" src="hero-3.webp" loading="lazy" alt="Sala taller Arcos V">
             <img class="split-slide" src="hero-4.webp" loading="lazy" alt="Jardín Arcos V">
-            <img class="split-slide" src="hero-5.webp" loading="lazy" alt="Encuentro de Srapbook">
+            <img class="split-slide" src="hero-5.webp" loading="lazy" alt="Encuentro de Scrapbook">
 
         </div>
 
@@ -495,9 +554,9 @@
 
         <div class="hero-text">
 
-   <h1 class="hero-title" style="font-family: 'Cormorant Garamond', serif; font-size: 4rem; color: #ffffff; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); font-weight: 700; line-height: 1.1; margin-bottom: 15px;">
+   <h1 class="hero-title">
 
-    Por acá pasa lo que te <em style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700; color: #FFC107;">gusta</em> hacer
+    Por acá pasa lo que te <em>gusta</em> hacer
 
 </h1>
 
@@ -537,9 +596,9 @@
 
                     <span>Bienestar • Catas • Encuentros • Creatividad • Comunidad • </span>
 
-                    <span>Bienestar • Catas • Jardinería • Creatividad • Comunidad • </span>
+                    <span>Bienestar • Catas • Encuentros • Creatividad • Comunidad • </span>
 
-                    <span>Bienestar • Catas • Jardinería • Creatividad • Comunidad • </span>
+                    <span>Bienestar • Catas • Encuentros • Creatividad • Comunidad • </span>
 
                 </div>
 
@@ -775,7 +834,7 @@
 
                     <p>Arcos V es un refugio a puertas cerradas diseñado estratégicamente para dictar tus talleres, lanzar productos, armar reuniones de equipo o dictar cursos en un entorno premium y estimulante.</p>
 
-                    <a class="btn-b2b" href="https://wa.me/5491162834000" target="_blank">🏡 Conocer el espacio</a>
+                    <a class="btn-b2b" href="https://wa.me/5491162834000" target="_blank" rel="noopener">🏡 Conocer el espacio</a>
 
                 </div>
 
@@ -840,7 +899,7 @@
 
                 </div>
 
-                <a href="https://instagram.com/arcosv.ba" target="_blank" class="filter-btn" style="text-dash: none; color: inherit;">Ver experiencias anteriores</a>
+                <a href="https://instagram.com/arcosv.ba" target="_blank" rel="noopener" class="filter-btn" style="text-dash: none; color: inherit;">Ver experiencias anteriores</a>
 
             </div>
 
@@ -1050,6 +1109,8 @@
 
                        target="_blank" 
 
+                       rel="noopener"
+
                        class="btn-hero-primary" 
 
                        style="display: inline-flex; align-items: center; justify-content: center; text-decoration: none; min-height: 48px; padding: 14px 40px;">
@@ -1080,9 +1141,9 @@
 
             <div class="footer-links">
 
-                <a href="https://instagram.com/arcosv.ba" target="_blank">Instagram</a> · 
+                <a href="https://instagram.com/arcosv.ba" target="_blank" rel="noopener">Instagram</a> · 
 
-                <a href="https://wa.me/5491162834000" target="_blank">WhatsApp</a>
+                <a href="https://wa.me/5491162834000" target="_blank" rel="noopener">WhatsApp</a>
 
             </div>
 
@@ -1099,6 +1160,21 @@
 
 
     <script>
+
+        // Menú mobile
+        function toggleMenu() {
+            const nav = document.getElementById('navLinks');
+            const btn = document.querySelector('.menu-toggle');
+            const isOpen = nav.classList.toggle('mobile-open');
+            btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+
+        function closeMenu() {
+            const nav = document.getElementById('navLinks');
+            const btn = document.querySelector('.menu-toggle');
+            nav.classList.remove('mobile-open');
+            btn.setAttribute('aria-expanded', 'false');
+        }
 
         function filter(category, button) {
 
@@ -1162,5 +1238,4 @@
 
 </body>
 
-</html> 
-
+</html>
