@@ -1,1 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Capacitaciones fuera de la oficina: qué necesitás para que funcionen de verdad</title>
+    <meta name="description" content="No cualquier salón fuera de la oficina logra que una capacitación funcione. Te contamos qué pedirle al espacio para que la jornada realmente cambie algo.">
+    <link rel="canonical" href="https://arcosv.com.ar/capacitaciones-fuera-de-la-oficina.html">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="logo.png">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Capacitaciones fuera de la oficina: qué necesitás para que funcionen de verdad">
+    <meta property="og:description" content="No cualquier salón fuera de la oficina logra que una capacitación funcione. Te contamos qué pedirle al espacio para que la jornada realmente cambie algo.">
+    <meta property="og:image" content="https://arcosv.com.ar/hero-2.webp">
+    <meta property="og:url" content="https://arcosv.com.ar/capacitaciones-fuera-de-la-oficina.html">
+    <meta property="og:site_name" content="Arcos V">
+    <meta property="og:locale" content="es_AR">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            background-color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: #FFC107;
+            --bg: #f4f6f8;
+            --text: #021050;
+            --text-light: #444444;
+            --radius: 16px;
+            --shadow: 0 10px 30px rgba(0,0,0,0.04);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            padding-top: 100px;
+        }
+
+        /* --- NAVBAR (idéntica al index) --- */
+
+        header {
+            position: fixed;
+            top: 0; left: 0;
+            background: #ffffff;
+            z-index: 1000;
+            width: 100%;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            height: 100px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .logo img { height: 65px; width: auto; filter: contrast(110%) multiply; mix-blend-mode: multiply; }
+        .nav-links { display: flex; gap: 35px; }
+        .nav-links a { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { opacity: 0.6; }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 26px;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        /* --- ARTÍCULO --- */
+
+        .articulo-hero {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .articulo-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px 90px;
+        }
+
+        .volver {
+            display: inline-block;
+            margin-bottom: 25px;
+            font-size: 13px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .volver:hover { color: var(--text); }
+
+        .articulo-eyebrow {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #666;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .articulo-titulo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--text);
+            margin-bottom: 30px;
+        }
+
+        .articulo-cuerpo p {
+            font-size: 16px;
+            line-height: 1.75;
+            color: var(--text-light);
+            margin-bottom: 22px;
+        }
+
+        .articulo-cuerpo h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            color: var(--text);
+            margin-top: 40px;
+            margin-bottom: 18px;
+        }
+
+        .articulo-cuerpo ul {
+            margin: 0 0 22px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .articulo-cuerpo ul li {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-light);
+            margin-bottom: 14px;
+            padding-left: 22px;
+            position: relative;
+        }
+
+        .articulo-cuerpo ul li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .articulo-cuerpo strong { color: var(--text); }
+
+        .cta-box {
+            margin-top: 45px;
+            background: var(--text);
+            color: white;
+            padding: 35px;
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .cta-box p {
+            color: rgba(255,255,255,0.9);
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .btn-cta {
+            background-color: var(--primary);
+            color: #021050;
+            padding: 14px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            display: inline-block;
+            transition: 0.3s ease;
+        }
+
+        .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4); }
+
+        /* --- FOOTER (idéntico al index) --- */
+
+        footer { text-align: center; padding: 60px 20px; border-top: 1px solid #eee; background: #ffffff; width: 100%; margin-top: 40px; }
+        footer p { color: var(--text-light); font-size: 14px; }
+        .footer-links { margin-top: 15px; }
+        .footer-links a { color: var(--text); text-decoration: none; font-weight: 600; padding: 10px; }
+
+        @media (max-width: 700px) {
+            header { height: 75px; }
+            body { padding-top: 75px; }
+            .logo img { height: 50px; }
+            .menu-toggle { display: block; }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: #ffffff;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                padding: 10px 25px 20px;
+                box-shadow: var(--shadow);
+            }
+            .nav-links a { width: 100%; padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+            .nav-links.mobile-open { display: flex; }
+
+            .articulo-hero { height: 220px; }
+            .articulo-titulo { font-size: 1.9rem; }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html#inicio"><img src="logo.png" alt="Arcos V Logo"></a>
+            </div>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html#encuentros" onclick="closeMenu()">Encuentros</a>
+                <a href="index.html#que-es" onclick="closeMenu()">Qué es</a>
+                <a href="index.html#organizar" onclick="closeMenu()">Organizá</a>
+                <a href="index.html#faq" onclick="closeMenu()">Preguntas</a>
+                <a href="index.html#blog" onclick="closeMenu()">Blog</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" onclick="toggleMenu()">☰</button>
+        </div>
+    </header>
+
+    <img class="articulo-hero" src="hero-2.webp" alt="Encuentro corporativo en Arcos V">
+
+    <div class="articulo-container">
+
+        <a href="index.html#inicio" class="volver">← Volver al inicio</a>
+
+        <div class="articulo-eyebrow">Para organizadores</div>
+        <h1 class="articulo-titulo">Capacitaciones fuera de la oficina: qué necesitás para que funcionen de verdad</h1>
+
+        <div class="articulo-cuerpo">
+
+            <p>Sacar una capacitación de la oficina suena bien en la teoría: menos interrupciones, más foco, un cambio de aire que ayuda a que el equipo se involucre distinto. Pero en la práctica, no cualquier salón "fuera de la oficina" logra ese efecto. A veces el cambio de lugar no alcanza, y la dinámica termina siendo la misma reunión de siempre, solo que en otra silla.</p>
+
+            <h2>Por qué el lugar importa más de lo que parece</h2>
+
+            <p>Una capacitación no es solo contenido y un buen facilitador — también es el entorno en el que pasa. Un espacio que se siente igual de corporativo y rígido que la oficina no ayuda a que el equipo baje la guardia. Y bajar la guardia es, muchas veces, la condición para que una capacitación realmente cale: que la gente pregunte, participe, se anime a decir lo que no diría en la sala de reuniones de siempre.</p>
+
+            <h2>Lo que conviene pedirle al espacio</h2>
+
+            <p>Antes de reservar un lugar para la próxima jornada, hay algunas cosas que vale la pena chequear:</p>
+
+            <ul>
+                <li><strong>Flexibilidad de formato.</strong> Que se pueda armar en auditorio, en mesas de trabajo o en U según lo que necesite la dinámica del día — no todas las capacitaciones funcionan igual.</li>
+                <li><strong>Equipamiento que no falle.</strong> Wi-Fi estable, buena proyección y sonido. Suena básico, pero es lo primero que arruina el clima si no funciona.</li>
+                <li><strong>Un lugar para desconectar entre bloques.</strong> Los mejores momentos de una capacitación muchas veces pasan en los cortes — un espacio con un lugar distinto para el café o el break ayuda a que esas conversaciones informales también sumen.</li>
+                <li><strong>Que no se sienta "prestado".</strong> Un espacio boutique, con identidad propia, cambia la energía del grupo de una forma que una sala de hotel genérica no logra.</li>
+            </ul>
+
+            <h2>Cómo se traduce esto en Arcos V</h2>
+
+            <p>La sala principal de Arcos V está pensada justamente para esa flexibilidad: se arma en formato auditorio, en mesas de trabajo o en U según lo que necesite el equipo, con climatización, monitor de 55" y sonido incluidos. Y el jardín cumple el rol del "afuera": un lugar distinto para el break, que corta el ritmo de la jornada sin que el grupo tenga que salir del predio.</p>
+
+            <h2>Antes de armar la próxima jornada</h2>
+
+            <p>Si estás por organizar una capacitación o un offsite de equipo, vale la pena mirar el lugar con la misma atención que se le pone al contenido. El mejor programa pierde fuerza en un entorno que no acompaña.</p>
+
+        </div>
+
+        <div class="cta-box">
+            <p>¿Querés conocer el espacio antes de decidir?</p>
+            <a href="https://wa.me/5491162834000" target="_blank" rel="noopener" class="btn-cta">💬 Coordinar una visita técnica</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="seccion-centrada">
+            <img src="logo.png" alt="Arcos V Logo" style="height: 40px; width: auto; margin-bottom: 10px;">
+            <p>Arcos 2952, Núñez · Ciudad de Buenos Aires (CP 1429)</p>
+            <div class="footer-links">
+                <a href="https://instagram.com/arcosv.ba" target="_blank" rel="noopener">Instagram</a> ·
+                <a href="https://wa.me/5491162834000" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+            <p style="font-size: 12px; color: #666; margin-top: 25px; letter-spacing: 0.5px;">
+                &copy; Arcos V - 2026. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('navLinks');
+            const btn = document.querySelector('.menu-toggle');
+            const isOpen = nav.classList.toggle('mobile-open');
+            btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+        function closeMenu() {
+            const nav = document.getElementById('navLinks');
+            const btn = document.querySelector('.menu-toggle');
+            nav.classList.remove('mobile-open');
+            btn.setAttribute('aria-expanded', 'false');
+        }
+    </script>
+
+</body>
+</html>
 
