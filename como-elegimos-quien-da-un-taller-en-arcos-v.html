@@ -1,1 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cómo elegimos quién da un taller o cata en Arcos V</title>
+    <meta name="description" content="Detrás de cada taller, cata o encuentro en Arcos V hay un proceso de curación. Te contamos cómo elegimos con quién compartimos el espacio.">
+    <link rel="canonical" href="https://arcosv.com.ar/como-elegimos-quien-da-un-taller-en-arcos-v.html">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="logo.png">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Cómo elegimos quién da un taller o cata en Arcos V">
+    <meta property="og:description" content="Detrás de cada taller, cata o encuentro en Arcos V hay un proceso de curación. Te contamos cómo elegimos con quién compartimos el espacio.">
+    <meta property="og:image" content="https://arcosv.com.ar/hero-4.webp">
+    <meta property="og:url" content="https://arcosv.com.ar/como-elegimos-quien-da-un-taller-en-arcos-v.html">
+    <meta property="og:site_name" content="Arcos V">
+    <meta property="og:locale" content="es_AR">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            background-color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: #FFC107;
+            --bg: #f4f6f8;
+            --text: #021050;
+            --text-light: #444444;
+            --radius: 16px;
+            --shadow: 0 10px 30px rgba(0,0,0,0.04);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            padding-top: 100px;
+        }
+
+        /* --- NAVBAR (idéntica al index) --- */
+
+        header {
+            position: fixed;
+            top: 0; left: 0;
+            background: #ffffff;
+            z-index: 1000;
+            width: 100%;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            height: 100px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .logo img { height: 65px; width: auto; filter: contrast(110%) multiply; mix-blend-mode: multiply; }
+        .nav-links { display: flex; gap: 35px; }
+        .nav-links a { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { opacity: 0.6; }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 26px;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        /* --- ARTÍCULO --- */
+
+        .articulo-hero {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .articulo-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px 90px;
+        }
+
+        .volver {
+            display: inline-block;
+            margin-bottom: 25px;
+            font-size: 13px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .volver:hover { color: var(--text); }
+
+        .articulo-eyebrow {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #666;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .articulo-titulo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--text);
+            margin-bottom: 30px;
+        }
+
+        .articulo-cuerpo p {
+            font-size: 16px;
+            line-height: 1.75;
+            color: var(--text-light);
+            margin-bottom: 22px;
+        }
+
+        .articulo-cuerpo h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            color: var(--text);
+            margin-top: 40px;
+            margin-bottom: 18px;
+        }
+
+        .articulo-cuerpo ul {
+            margin: 0 0 22px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .articulo-cuerpo ul li {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-light);
+            margin-bottom: 14px;
+            padding-left: 22px;
+            position: relative;
+        }
+
+        .articulo-cuerpo ul li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .articulo-cuerpo strong { color: var(--text); }
+
+        .cta-box {
+            margin-top: 45px;
+            background: var(--text);
+            color: white;
+            padding: 35px;
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .cta-box p {
+            color: rgba(255,255,255,0.9);
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .btn-cta {
+            background-color: var(--primary);
+            color: #021050;
+            padding: 14px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            display: inline-block;
+            transition: 0.3s ease;
+        }
+
+        .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4); }
+
+        /* --- FOOTER (idéntico al index) --- */
+
+        footer { text-align: center; padding: 60px 20px; border-top: 1px solid #eee; background: #ffffff; width: 100%; margin-top: 40px; }
+        footer p { color: var(--text-light); font-size: 14px; }
+        .footer-links { margin-top: 15px; }
+        .footer-links a { color: var(--text); text-decoration: none; font-weight: 600; padding: 10px; }
+
+        @media (max-width: 700px) {
+            header { height: 75px; }
+            body { padding-top: 75px; }
+            .logo img { height: 50px; }
+            .menu-toggle { display: block; }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: #ffffff;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                padding: 10px 25px 20px;
+                box-shadow: var(--shadow);
+            }
+            .nav-links a { width: 100%; padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+            .nav-links.mobile-open { display: flex; }
+
+            .articulo-hero { height: 220px; }
+            .articulo-titulo { font-size: 1.9rem; }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html#inicio"><img src="logo.png" alt="Arcos V Logo"></a>
+            </div>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html#encuentros" onclick="closeMenu()">Encuentros</a>
+                <a href="index.html#que-es" onclick="closeMenu()">Qué es</a>
+                <a href="index.html#organizar" onclick="closeMenu()">Organizá</a>
+                <a href="index.html#faq" onclick="closeMenu()">Preguntas</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" onclick="toggleMenu()">☰</button>
+        </div>
+    </header>
+
+    <img class="articulo-hero" src="hero-4.webp" alt="Jardín de Arcos V">
+
+    <div class="articulo-container">
+
+        <a href="index.html#inicio" class="volver">← Volver al inicio</a>
+
+        <div class="articulo-eyebrow">Detrás de escena</div>
+        <h1 class="articulo-titulo">Cómo elegimos quién da un taller o cata en Arcos V</h1>
+
+        <div class="articulo-cuerpo">
+
+            <p>Cuando alguien entra por primera vez a Arcos V, lo que más nos suelen decir no es sobre el jardín ni sobre la luz natural de la sala — es sobre el clima. Esa sensación de que el lugar "está cuidado". Y eso no pasa solo, ni por casualidad.</p>
+
+            <p>Detrás de cada taller, cata o encuentro que ves en la agenda hay un filtro. No alquilamos el espacio a quien primero pregunta: elegimos con quién compartimos Arcos V.</p>
+
+            <h2>Por qué curamos en vez de simplemente alquilar</h2>
+
+            <p>Podríamos abrir la puerta a cualquier propuesta y llenar la agenda más rápido. No lo hacemos, por una razón simple: cada persona que viene a un encuentro en Arcos V —ya sea a una cata, un taller o un evento de empresa— está confiando en que va a vivir algo bien armado, no un evento improvisado en un lugar lindo.</p>
+
+            <p>Por eso, antes de sumar a alguien a la agenda, nos importa:</p>
+
+            <ul>
+                <li><strong>Que la propuesta tenga un formato claro.</strong> No buscamos que esté todo perfectamente armado, simplemente que podamos imaginarnos juntos qué se va a vivir en esas horas.</li>
+                <li><strong>Que el estilo dialogue con el espíritu del lugar.</strong> Arcos V es íntimo, a puertas cerradas, pensado para grupos chicos. Buscamos que cada propuesta encaje con esa esencia — y aplicamos la misma mirada tanto a quien organiza un taller de cerámica como a la empresa que quiere lanzar un producto.</li>
+                <li><strong>Confianza mutua.</strong> Confiamos en que cada persona que dicta un taller o una cata conoce su oficio mejor que nadie. Nosotros nos encargamos de que el marco esté a la altura: el espacio, la atención y que cada detalle de la experiencia sume.</li>
+            </ul>
+
+            <h2>Por eso cada encuentro se siente cuidado</h2>
+
+            <p>Cada vez que ves un taller, una cata o un encuentro publicado en la agenda de Arcos V, ya pasó por este filtro. Es lo que buscamos sostener en cada edición: que entrar acá, sea para lo que sea, se sienta cuidado de principio a fin.</p>
+
+        </div>
+
+        <div class="cta-box">
+            <p>¿Tenés ganas de sumarte a la próxima fecha o de contarnos tu propuesta?</p>
+            <a href="https://wa.me/5491162834000" target="_blank" rel="noopener" class="btn-cta">💬 Escribinos por WhatsApp</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="seccion-centrada">
+            <img src="logo.png" alt="Arcos V Logo" style="height: 40px; width: auto; margin-bottom: 10px;">
+            <p>Arcos 2952, Núñez · Ciudad de Buenos Aires (CP 1429)</p>
+            <div class="footer-links">
+                <a href="https://instagram.com/arcosv.ba" target="_blank" rel="noopener">Instagram</a> ·
+                <a href="https://wa.me/5491162834000" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+            <p style="font-size: 12px; color: #666; margin-top: 25px; letter-spacing: 0.5px;">
+                &copy; Arcos V - 2026. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('navLinks');
+            const btn = document.querySelector('.menu-toggle');
+            const isOpen = nav.classList.toggle('mobile-open');
+            btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+        function closeMenu() {
+            const nav = document.getElementById('navLinks');
+            const btn = document.querySelector('.menu-toggle');
+            nav.classList.remove('mobile-open');
+            btn.setAttribute('aria-expanded', 'false');
+        }
+    </script>
+
+</body>
+</html>
 
