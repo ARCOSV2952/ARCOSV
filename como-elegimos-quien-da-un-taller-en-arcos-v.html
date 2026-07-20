@@ -118,9 +118,38 @@
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            color: #666;
+            color: #8a6d00;
             font-weight: 600;
             margin-bottom: 10px;
+        }
+
+        .articulo-accent-bar {
+            width: 48px;
+            height: 3px;
+            background: #B8860B;
+            margin-bottom: 18px;
+            border-radius: 2px;
+        }
+
+        .articulo-cuerpo p:first-of-type::first-letter {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.4rem;
+            font-weight: 700;
+            float: left;
+            line-height: 0.8;
+            margin: 6px 8px 0 0;
+            color: #B8860B;
+        }
+
+        .cita-destacada {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.5rem;
+            line-height: 1.4;
+            color: var(--text);
+            border-left: 3px solid #B8860B;
+            padding: 6px 0 6px 24px;
+            margin: 36px 0;
         }
 
         .articulo-titulo {
@@ -249,6 +278,7 @@
                 <a href="index.html#que-es" onclick="closeMenu()">Qué es</a>
                 <a href="index.html#organizar" onclick="closeMenu()">Organizá</a>
                 <a href="index.html#faq" onclick="closeMenu()">Preguntas</a>
+                <a href="index.html#blog" onclick="closeMenu()">Blog</a>
             </nav>
             <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" onclick="toggleMenu()">☰</button>
         </div>
@@ -261,6 +291,7 @@
         <a href="index.html#inicio" class="volver">← Volver al inicio</a>
 
         <div class="articulo-eyebrow">Detrás de escena</div>
+        <div class="articulo-accent-bar"></div>
         <h1 class="articulo-titulo">Cómo elegimos quién da un taller o cata en Arcos V</h1>
 
         <div class="articulo-cuerpo">
@@ -274,6 +305,8 @@
             <p>Podríamos abrir la puerta a cualquier propuesta y llenar la agenda más rápido. No lo hacemos, por una razón simple: cada persona que viene a un encuentro en Arcos V —ya sea a una cata, un taller o un evento de empresa— está confiando en que va a vivir algo bien armado, no un evento improvisado en un lugar lindo.</p>
 
             <p>Por eso, antes de sumar a alguien a la agenda, nos importa:</p>
+
+            <div class="cita-destacada">"No alquilamos el espacio a quien primero pregunta: elegimos con quién compartimos Arcos V."</div>
 
             <ul>
                 <li><strong>Que la propuesta tenga un formato claro.</strong> No buscamos que esté todo perfectamente armado, simplemente que podamos imaginarnos juntos qué se va a vivir en esas horas.</li>
@@ -325,4 +358,3 @@
 
 </body>
 </html>
-
