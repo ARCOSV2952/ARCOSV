@@ -125,7 +125,7 @@
         position: relative;
     }
 
-    .logo img { height: 65px; width: auto; filter: contrast(110%) multiply; mix-blend-mode: multiply; }
+    .logo img { height: 65px; width: auto; }
     .nav-links { display: flex; gap: 35px; }
     .nav-links a { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 500; transition: 0.3s; }
     .nav-links a:hover { opacity: 0.6; }
@@ -137,6 +137,33 @@
         font-size: 26px;
         cursor: pointer;
         color: var(--text);
+    }
+
+    /* --- INDICADOR DE SCROLL --- */
+
+    .scroll-track {
+        position: fixed;
+        top: 120px;
+        bottom: 30px;
+        right: 18px;
+        width: 2px;
+        background: rgba(2,16,80,0.12);
+        border-radius: 2px;
+        z-index: 900;
+    }
+
+    .scroll-dot {
+        position: fixed;
+        right: 14px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--primary);
+        z-index: 901;
+    }
+
+    @media (max-width: 700px) {
+        .scroll-track, .scroll-dot { display: none; }
     }
 
     /* --- HERO --- */
@@ -534,6 +561,9 @@
     </div>
 
 </header>
+
+    <div class="scroll-track"></div>
+    <div class="scroll-dot" id="scrollDot"></div>
 
 
 
@@ -1289,6 +1319,64 @@
             slides[currentSlide].classList.add('active');
 
         }, 5000);
+
+        // Indicador de scroll: lineal en el medio, rebote al llegar a los extremos
+        (function() {
+            const dot = document.getElementById('scrollDot');
+            const track = document.querySelector('.scroll-track');
+            if (!dot || !track) return;
+
+            let current = 0;
+            let velocity = 0;
+            let springing = false;
+
+            function trackBounds() {
+                const rect = track.getBoundingClientRect();
+                return { top: rect.top, height: rect.height };
+            }
+
+            function targetTop() {
+                const max = document.documentElement.scrollHeight - window.innerHeight;
+                const ratio = max > 0 ? window.scrollY / max : 0;
+                const bounds = trackBounds();
+                return bounds.top + ratio * (bounds.height - 10);
+            }
+
+            function atEdge() {
+                const max = document.documentElement.scrollHeight - window.innerHeight;
+                return window.scrollY <= 0 || window.scrollY >= max - 1;
+            }
+
+            function springStep() {
+                const target = targetTop();
+                const stiffness = 0.15, damping = 0.72;
+                const force = (target - current) * stiffness;
+                velocity = (velocity + force) * damping;
+                current += velocity;
+                dot.style.top = current + 'px';
+                if (Math.abs(velocity) > 0.05 || Math.abs(target - current) > 0.3) {
+                    requestAnimationFrame(springStep);
+                } else {
+                    current = target;
+                    dot.style.top = current + 'px';
+                    springing = false;
+                }
+            }
+
+            function onScroll() {
+                if (atEdge()) {
+                    if (!springing) { springing = true; requestAnimationFrame(springStep); }
+                } else {
+                    current = targetTop();
+                    dot.style.top = current + 'px';
+                }
+            }
+
+            window.addEventListener('scroll', onScroll);
+            window.addEventListener('resize', onScroll);
+            current = targetTop();
+            dot.style.top = current + 'px';
+        })();
 
     </script>
 
