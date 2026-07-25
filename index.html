@@ -40,23 +40,25 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Space+Grotesk:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { width: 100%; overflow-x: hidden; background-color: #F7F3EC; scroll-behavior: smooth; }
+    html, body { width: 100%; overflow-x: hidden; background-color: #F4F6F8; scroll-behavior: smooth; }
 
     :root {
-        --ink: #1C1A2E;
-        --ink-soft: #6B6659;
-        --cream: #F7F3EC;
-        --cream-deep: #F0E9DC;
-        --wine: #7C1F2E;
-        --wine-deep: #5C1521;
-        --plum: #4B3A63;
+        --ink: #021050;
+        --ink-soft: #55606E;
+        --cream: #F4F6F8;
+        --cream-deep: #E7EBEF;
+        --wine: #B8860B;
+        --wine-deep: #96690A;
+        --plum: #021050;
+        --gold: #FFC107;
+        --gold-deep: #E6AC00;
         --white: #FFFFFF;
-        --radius: 18px;
-        --shadow: 0 14px 40px rgba(28,26,46,0.08);
+        --radius: 8px;
+        --shadow: 0 8px 24px rgba(2,16,80,0.08);
     }
 
     body {
@@ -69,17 +71,17 @@
     section { width: 100%; padding: 100px 0; }
     .seccion-centrada { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 25px; box-sizing: border-box; }
 
-    h1, h2, h3, .display { font-family: 'Fraunces', serif; }
+    h1, h2, h3, .display { font-family: 'Space Grotesk', sans-serif; }
 
     .eyebrow {
-        font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;
+        font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 2.5px;
         color: var(--wine); display: inline-block; margin-bottom: 14px;
     }
 
     /* --- NAVBAR --- */
     header {
-        position: fixed; top: 0; left: 0; background: rgba(247,243,236,0.92); backdrop-filter: blur(10px);
-        z-index: 1000; width: 100%; border-bottom: 1px solid rgba(28,26,46,0.08);
+        position: fixed; top: 0; left: 0; background: rgba(244,246,248,0.92); backdrop-filter: blur(10px);
+        z-index: 1000; width: 100%; border-bottom: 1px solid rgba(2,16,80,0.08);
         height: 96px; display: flex; align-items: center;
     }
     .nav-container {
@@ -97,22 +99,23 @@
     .carousel-box { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 1; background: #eee; }
     .split-slide { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.8s ease-in-out; filter: saturate(0.9); }
     .split-slide.active { opacity: 1; }
-    .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(28,26,46,0.35) 0%, rgba(28,26,46,0.7) 100%); z-index: 2; }
+    .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(2,16,80,0.35) 0%, rgba(2,16,80,0.72) 100%); z-index: 2; }
 
     .hero-content { position: absolute; bottom: 0; left: 0; width: 100%; z-index: 3; padding-bottom: 0; }
     .hero-text { padding: 0 8%; max-width: 820px; }
     .hero-eyebrow { color: var(--cream); font-size: 12px; text-transform: uppercase; letter-spacing: 3px; font-weight: 600; opacity: 0.8; }
     .hero-title {
-        font-weight: 500; color: #ffffff; font-size: 4.4rem; line-height: 1.02; margin: 14px 0 18px;
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 700; color: #ffffff; font-size: 4.6rem; line-height: 1.02; margin: 14px 0 18px;
         letter-spacing: -0.5px;
     }
-    .hero-title em { font-style: italic; font-weight: 400; color: #C25A6B; }
+    .hero-title em { font-style: italic; font-weight: 700; color: var(--gold); }
     .hero-subtitle { font-size: 17px; color: rgba(255,255,255,0.88); max-width: 480px; line-height: 1.5; margin-bottom: 32px; }
 
     .hero-buttons { display: flex; gap: 14px; padding: 0 8%; margin-bottom: 40px; }
-    .btn-primary { background-color: var(--wine); color: #fff; padding: 15px 30px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 14px; letter-spacing: 0.3px; transition: 0.3s ease; }
-    .btn-primary:hover { background-color: var(--wine-deep); transform: translateY(-2px); }
-    .btn-secondary { background-color: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.6); padding: 14px 28px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 14px; transition: 0.3s ease; }
+    .btn-primary { background-color: var(--gold); color: var(--ink); padding: 15px 30px; border-radius: 2px; text-decoration: none; font-weight: 700; font-size: 14px; letter-spacing: 0.3px; transition: 0.3s ease; }
+    .btn-primary:hover { background-color: var(--gold-deep); transform: translateY(-2px); }
+    .btn-secondary { background-color: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.6); padding: 14px 28px; border-radius: 2px; text-decoration: none; font-weight: 600; font-size: 14px; transition: 0.3s ease; }
     .btn-secondary:hover { background-color: rgba(255,255,255,0.12); border-color: #fff; }
 
     /* --- SUMARIO (elemento de firma) --- */
@@ -124,7 +127,7 @@
     }
     .sumario-item:last-child { border-right: none; }
     .sumario-item:hover { color: #fff; background: rgba(255,255,255,0.04); }
-    .sumario-num { font-family: 'Fraunces', serif; font-style: italic; font-size: 13px; color: var(--wine); }
+    .sumario-num { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--gold); }
     .sumario-item span.label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; white-space: nowrap; }
 
     /* --- SECTION TITLES --- */
@@ -133,20 +136,20 @@
 
     /* --- ENCUENTROS: layout tipo revista, asimétrico --- */
     .filters { display: flex; gap: 10px; margin-bottom: 40px; overflow-x: auto; white-space: nowrap; padding-bottom: 6px; }
-    .filter-btn { padding: 9px 18px; border-radius: 30px; border: 1px solid rgba(28,26,46,0.15); background: transparent; cursor: pointer; font-size: 13px; font-weight: 500; font-family: 'Work Sans', sans-serif; transition: 0.2s; color: var(--ink); }
+    .filter-btn { padding: 9px 18px; border-radius: 3px; border: 1px solid rgba(2,16,80,0.15); background: transparent; cursor: pointer; font-size: 13px; font-weight: 500; font-family: 'Work Sans', sans-serif; transition: 0.2s; color: var(--ink); }
     .filter-btn.active { background: var(--ink); color: white; border-color: var(--ink); }
 
     .editorial-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 34px; }
     .portada-card { text-decoration: none; color: inherit; display: block; position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
     .portada-card img { width: 100%; height: 560px; object-fit: cover; display: block; transition: transform 0.5s ease; }
     .portada-card:hover img { transform: scale(1.04); }
-    .portada-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 36px 30px; background: linear-gradient(0deg, rgba(28,26,46,0.85) 0%, transparent 100%); }
+    .portada-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 36px 30px; background: linear-gradient(0deg, rgba(2,16,80,0.85) 0%, transparent 100%); }
     .portada-tag { color: var(--cream); font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; opacity: 0.8; }
     .portada-title { color: #fff; font-size: 30px; font-weight: 500; margin: 8px 0 6px; }
     .portada-date { color: rgba(255,255,255,0.75); font-size: 13px; }
 
     .lista-eventos { display: flex; flex-direction: column; gap: 0; }
-    .item-evento { display: flex; gap: 18px; text-decoration: none; color: inherit; padding: 22px 0; border-bottom: 1px solid rgba(28,26,46,0.1); align-items: center; transition: 0.2s; }
+    .item-evento { display: flex; gap: 18px; text-decoration: none; color: inherit; padding: 22px 0; border-bottom: 1px solid rgba(2,16,80,0.1); align-items: center; transition: 0.2s; }
     .item-evento:hover { padding-left: 8px; }
     .item-evento img { width: 88px; height: 88px; object-fit: cover; border-radius: 10px; flex-shrink: 0; }
     .item-evento-tag { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--wine); font-weight: 700; }
@@ -154,7 +157,7 @@
     .item-evento-date { font-size: 12px; color: var(--ink-soft); }
 
     /* --- QUÉ ES --- */
-    .tres-columnas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 40px; background: rgba(28,26,46,0.08); border-radius: var(--radius); overflow: hidden; }
+    .tres-columnas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 40px; background: rgba(2,16,80,0.08); border-radius: var(--radius); overflow: hidden; }
     .columna-concepto { background: var(--white); padding: 42px 36px; }
     .columna-concepto h3 { font-size: 24px; font-weight: 500; margin-bottom: 16px; }
     .columna-concepto ul { list-style: none; }
@@ -168,7 +171,7 @@
     .tallerista-card img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(15%); }
     .tallerista-card.destacada img { min-height: 480px; }
     .tallerista-card:not(.destacada) img { height: 220px; }
-    .tallerista-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 24px; background: linear-gradient(0deg, rgba(28,26,46,0.9) 0%, transparent 100%); }
+    .tallerista-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 24px; background: linear-gradient(0deg, rgba(2,16,80,0.9) 0%, transparent 100%); }
     .tallerista-nombre { color: #fff; font-size: 22px; font-weight: 500; }
     .tallerista-especialidad { color: var(--cream-deep); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-top: 3px; }
     .tallerista-bio { color: rgba(255,255,255,0.75); font-size: 13px; margin-top: 8px; line-height: 1.5; display: none; }
@@ -183,8 +186,8 @@
     .b2b-info-box ul { list-style: none; margin-bottom: 28px; }
     .b2b-info-box ul li { color: rgba(255,255,255,0.85); font-size: 14px; margin-bottom: 9px; padding-left: 18px; position: relative; }
     .b2b-info-box ul li::before { content: "—"; color: var(--wine); position: absolute; left: 0; }
-    .btn-wine { background: var(--wine); color: #fff; text-decoration: none; font-weight: 600; padding: 15px 30px; border-radius: 4px; display: inline-block; align-self: flex-start; transition: 0.2s; font-size: 14px; }
-    .btn-wine:hover { background: var(--wine-deep); }
+    .btn-wine { background: var(--gold); color: var(--ink); text-decoration: none; font-weight: 700; padding: 15px 30px; border-radius: 2px; display: inline-block; align-self: flex-start; transition: 0.2s; font-size: 14px; }
+    .btn-wine:hover { background: var(--gold-deep); }
     .btn-outline-dark { border: 1px solid rgba(255,255,255,0.4); color: #fff; text-decoration: none; font-weight: 600; padding: 14px 28px; border-radius: 4px; display: inline-block; align-self: flex-start; margin-top: 12px; font-size: 13px; }
 
     .espacio-detalles { display: flex; flex-direction: column; gap: 20px; }
@@ -223,7 +226,7 @@
     .newsletter-box p { color: rgba(255,255,255,0.75); margin-bottom: 26px; }
 
     /* --- FOOTER --- */
-    footer { text-align: center; padding: 60px 20px; border-top: 1px solid rgba(28,26,46,0.08); background: var(--cream); width: 100%; }
+    footer { text-align: center; padding: 60px 20px; border-top: 1px solid rgba(2,16,80,0.08); background: var(--cream); width: 100%; }
     footer p { color: var(--ink-soft); font-size: 14px; }
     .footer-links { margin-top: 15px; }
     .footer-links a { color: var(--ink); text-decoration: none; font-weight: 600; padding: 10px; }
