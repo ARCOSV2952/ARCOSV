@@ -1,551 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J5T8QFY2EW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-J5T8QFY2EW');
-</script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Arcos V | Espacio para talleres, catas y encuentros en Núñez</title>
-    <meta name="description" content="Arcos V es un espacio boutique con jardín en Núñez para talleres, catas, presentaciones de marcas, encuentros de comunidad y experiencias presenciales.">
-    <link rel="canonical" href="https://arcosv.com.ar/">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="logo.png">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Arcos V | Espacio Boutique en Núñez">
-    <meta property="og:description" content="Un refugio diseñado para experiencias exclusivas, catas de vino y encuentros curados en el corazón de Núñez.">
-    <meta property="og:image" content="https://arcosv.com.ar/hero-1.webp">
-    <meta property="og:url" content="https://arcosv.com.ar">
-    <meta property="og:site_name" content="Arcos V">
-    <meta property="og:locale" content="es_AR">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "EventVenue",
-      "name": "Arcos V",
-      "description": "Espacio boutique con jardín en Núñez (CABA) para talleres, catas, presentaciones de marcas y encuentros presenciales.",
-      "url": "https://arcosv.com.ar",
-      "telephone": "+5491162834000",
-      "image": "https://arcosv.com.ar/logo.png",
-      "address": { "@type": "PostalAddress", "streetAddress": "Arcos 2952", "addressLocality": "Núñez, Buenos Aires", "postalCode": "1429", "addressCountry": "AR" },
-      "sameAs": ["https://instagram.com/arcosv.ba"]
-    }
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Space+Grotesk:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcos V - Pronto</title>
     <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { width: 100%; overflow-x: hidden; background-color: #F4F6F8; scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0f172a;
+            color: #f8fafc;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            text-align: center;
+        }
 
-    :root {
-        --ink: #021050;
-        --ink-soft: #55606E;
-        --cream: #F4F6F8;
-        --cream-deep: #E7EBEF;
-        --wine: #B8860B;
-        --wine-deep: #96690A;
-        --plum: #021050;
-        --gold: #FFC107;
-        --gold-deep: #E6AC00;
-        --white: #FFFFFF;
-        --radius: 8px;
-        --shadow: 0 8px 24px rgba(2,16,80,0.08);
-    }
+        .container {
+            max-width: 600px;
+            padding: 2.5rem;
+        }
 
-    body {
-        font-family: 'Work Sans', sans-serif;
-        color: var(--ink);
-        -webkit-font-smoothing: antialiased;
-        padding-top: 96px;
-    }
+        .badge {
+            display: inline-block;
+            background-color: #3b82f6;
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-    section { width: 100%; padding: 100px 0; }
-    .seccion-centrada { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 25px; box-sizing: border-box; }
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
 
-    h1, h2, h3, .display { font-family: 'Space Grotesk', sans-serif; }
+        p {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
 
-    .eyebrow {
-        font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 2.5px;
-        color: var(--wine); display: inline-block; margin-bottom: 14px;
-    }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-left-color: #3b82f6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
 
-    /* --- NAVBAR --- */
-    header {
-        position: fixed; top: 0; left: 0; background: rgba(244,246,248,0.92); backdrop-filter: blur(10px);
-        z-index: 1000; width: 100%; border-bottom: 1px solid rgba(2,16,80,0.08);
-        height: 96px; display: flex; align-items: center;
-    }
-    .nav-container {
-        width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 40px;
-        display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; position: relative;
-    }
-    .logo img { height: 58px; width: auto; }
-    .nav-links { display: flex; gap: 34px; }
-    .nav-links a { text-decoration: none; color: var(--ink); font-size: 13px; font-weight: 500; letter-spacing: 0.4px; transition: 0.3s; }
-    .nav-links a:hover { color: var(--wine); }
-    .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--ink); }
-
-    /* --- HERO --- */
-    .hero-container { position: relative; overflow: hidden; height: 88vh; min-height: 560px; max-height: 760px; }
-    .carousel-box { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 1; background: #eee; }
-    .split-slide { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.8s ease-in-out; filter: saturate(0.9); }
-    .split-slide.active { opacity: 1; }
-    .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(10,10,10,0.15) 0%, rgba(10,10,10,0.55) 100%); z-index: 2; }
-
-    .hero-content { position: absolute; bottom: 0; left: 0; width: 100%; z-index: 3; padding-bottom: 0; }
-    .hero-text { padding: 0 8%; max-width: 820px; }
-    .hero-eyebrow { color: var(--cream); font-size: 14px; text-transform: uppercase; letter-spacing: 3px; font-weight: 600; opacity: 0.8; }
-    .hero-title {
-        font-family: 'Cormorant Garamond', serif;
-        font-weight: 700; color: #ffffff; font-size: 5.2rem; line-height: 1.02; margin: 14px 0 18px;
-        letter-spacing: -0.5px;
-    }
-    .hero-title em { font-style: italic; font-weight: 700; color: var(--gold); }
-    .hero-subtitle { font-size: 19px; color: rgba(255,255,255,0.88); max-width: 480px; line-height: 1.5; margin-bottom: 32px; }
-
-    .hero-buttons { display: flex; gap: 14px; padding: 0 8%; margin-bottom: 40px; }
-    .btn-primary { background-color: var(--gold); color: var(--ink); padding: 15px 30px; border-radius: 2px; text-decoration: none; font-weight: 700; font-size: 14px; letter-spacing: 0.3px; transition: 0.3s ease; }
-    .btn-primary:hover { background-color: var(--gold-deep); transform: translateY(-2px); }
-    .btn-secondary { background-color: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.6); padding: 14px 28px; border-radius: 2px; text-decoration: none; font-weight: 600; font-size: 14px; transition: 0.3s ease; }
-    .btn-secondary:hover { background-color: rgba(255,255,255,0.12); border-color: #fff; }
-
-    /* --- SUMARIO (elemento de firma) --- */
-    .sumario { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.08); }
-    .sumario-track { display: flex; overflow-x: auto; }
-    .sumario-item {
-        flex: 1; min-width: 150px; padding: 22px 20px; text-decoration: none; color: rgba(255,255,255,0.6);
-        border-right: 1px solid rgba(255,255,255,0.08); transition: 0.25s; display: flex; align-items: baseline; gap: 10px;
-    }
-    .sumario-item:last-child { border-right: none; }
-    .sumario-item:hover { color: #fff; background: rgba(255,255,255,0.04); }
-    .sumario-num { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--gold); }
-    .sumario-item span.label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; white-space: nowrap; }
-
-    /* --- SECTION TITLES --- */
-    .section-title { font-size: 42px; font-weight: 500; color: var(--ink); margin-bottom: 10px; line-height: 1.05; }
-    .section-tagline { color: var(--ink-soft); margin-bottom: 44px; font-size: 16px; max-width: 500px; }
-
-    /* --- ENCUENTROS: layout tipo revista, asimétrico --- */
-    .filters { display: flex; gap: 10px; margin-bottom: 40px; overflow-x: auto; white-space: nowrap; padding-bottom: 6px; }
-    .filter-btn { padding: 9px 18px; border-radius: 3px; border: 1px solid rgba(2,16,80,0.15); background: transparent; cursor: pointer; font-size: 13px; font-weight: 500; font-family: 'Work Sans', sans-serif; transition: 0.2s; color: var(--ink); }
-    .filter-btn.active { background: var(--ink); color: white; border-color: var(--ink); }
-
-    .editorial-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 34px; }
-    .portada-card { text-decoration: none; color: inherit; display: block; position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-    .portada-card img { width: 100%; height: 560px; object-fit: cover; display: block; transition: transform 0.5s ease; }
-    .portada-card:hover img { transform: scale(1.04); }
-    .portada-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 36px 30px; background: linear-gradient(0deg, rgba(10,10,10,0.75) 0%, transparent 100%); }
-    .portada-tag { color: var(--cream); font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; opacity: 0.8; }
-    .portada-title { color: #fff; font-size: 30px; font-weight: 500; margin: 8px 0 6px; }
-    .portada-date { color: rgba(255,255,255,0.75); font-size: 13px; }
-
-    .lista-eventos { display: flex; flex-direction: column; gap: 0; }
-    .item-evento { display: flex; gap: 18px; text-decoration: none; color: inherit; padding: 22px 0; border-bottom: 1px solid rgba(2,16,80,0.1); align-items: center; transition: 0.2s; }
-    .item-evento:hover { padding-left: 8px; }
-    .item-evento img { width: 88px; height: 88px; object-fit: cover; border-radius: 10px; flex-shrink: 0; }
-    .item-evento-tag { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--wine); font-weight: 700; }
-    .item-evento-title { font-size: 18px; font-weight: 500; margin: 4px 0; }
-    .item-evento-date { font-size: 12px; color: var(--ink-soft); }
-
-    /* --- QUÉ ES --- */
-    .tres-columnas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 40px; background: rgba(2,16,80,0.08); border-radius: var(--radius); overflow: hidden; }
-    .columna-concepto { background: var(--white); padding: 42px 36px; }
-    .columna-concepto h3 { font-size: 24px; font-weight: 500; margin-bottom: 16px; }
-    .columna-concepto ul { list-style: none; }
-    .columna-concepto ul li { margin-bottom: 10px; color: var(--ink-soft); font-size: 15px; padding-left: 16px; position: relative; }
-    .columna-concepto ul li::before { content: "—"; color: var(--wine); position: absolute; left: 0; }
-
-    /* --- QUIÉNES DICTAN (showcase talleristas) --- */
-    .talleristas-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 24px; margin-top: 40px; }
-    .tallerista-card { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); text-decoration: none; color: inherit; }
-    .tallerista-card.destacada { grid-row: span 2; }
-    .tallerista-card img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(15%); }
-    .tallerista-card.destacada img { min-height: 480px; }
-    .tallerista-card:not(.destacada) img { height: 220px; }
-    .tallerista-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 24px; background: linear-gradient(0deg, rgba(2,16,80,0.9) 0%, transparent 100%); }
-    .tallerista-nombre { color: #fff; font-size: 22px; font-weight: 500; }
-    .tallerista-especialidad { color: var(--cream-deep); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-top: 3px; }
-    .tallerista-bio { color: rgba(255,255,255,0.75); font-size: 13px; margin-top: 8px; line-height: 1.5; display: none; }
-    .tallerista-card.destacada .tallerista-bio { display: block; }
-    .placeholder-note { margin-top: 24px; font-size: 13px; color: var(--ink-soft); font-style: italic; }
-
-    /* --- B2B --- */
-    .b2b-layout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 34px; margin-top: 34px; }
-    .b2b-info-box { background: var(--ink); color: white; padding: 48px; border-radius: var(--radius); display: flex; flex-direction: column; justify-content: center; }
-    .b2b-info-box h2 { font-size: 32px; margin-bottom: 16px; color: white; font-weight: 500; }
-    .b2b-info-box p { opacity: 0.8; line-height: 1.6; margin-bottom: 22px; font-size: 15px; }
-    .b2b-info-box ul { list-style: none; margin-bottom: 28px; }
-    .b2b-info-box ul li { color: rgba(255,255,255,0.85); font-size: 14px; margin-bottom: 9px; padding-left: 18px; position: relative; }
-    .b2b-info-box ul li::before { content: "—"; color: var(--wine); position: absolute; left: 0; }
-    .btn-wine { background: var(--gold); color: var(--ink); text-decoration: none; font-weight: 700; padding: 15px 30px; border-radius: 2px; display: inline-block; align-self: flex-start; transition: 0.2s; font-size: 14px; }
-    .btn-wine:hover { background: var(--gold-deep); }
-    .btn-outline-dark { border: 1px solid rgba(255,255,255,0.4); color: #fff; text-decoration: none; font-weight: 600; padding: 14px 28px; border-radius: 4px; display: inline-block; align-self: flex-start; margin-top: 12px; font-size: 13px; }
-
-    .espacio-detalles { display: flex; flex-direction: column; gap: 20px; }
-    .foto-jardin { width: 100%; height: 250px; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow); }
-
-    /* --- TESTIMONIOS --- */
-    .testi-card { background: white; padding: 28px; border-radius: var(--radius); box-shadow: var(--shadow); }
-    .testi-stars { color: var(--wine); font-size: 15px; margin-bottom: 12px; }
-    .testi-text { font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin-bottom: 14px; }
-    .testi-name { font-size: 13px; font-weight: 600; }
-
-    /* --- LO QUE PASÓ --- */
-    .pasado-banner { display: flex; justify-content: space-between; align-items: center; margin-bottom: 34px; flex-wrap: wrap; gap: 15px; }
-    .pasado-stats { font-family: 'Work Sans', sans-serif; font-weight: 500; font-size: 15px; letter-spacing: 0.3px; color: var(--wine); margin-top: 6px; }
-    .grid-pasado-fotos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    .grid-pasado-fotos img { width: 100%; aspect-ratio: 1.1; object-fit: cover; border-radius: 12px; filter: grayscale(30%); opacity: 0.92; }
-
-    /* --- BLOG --- */
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
-    .card { text-decoration: none; color: inherit; background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: 0.3s; display: block; }
-    .card:hover { transform: translateY(-5px); }
-    .card img { width: 100%; height: auto; aspect-ratio: 4/5; object-fit: cover; display: block; }
-    .card-content { padding: 24px; }
-    .card-tag { font-size: 11px; text-transform: uppercase; color: var(--wine); letter-spacing: 1px; font-weight: 700; }
-    .card-title { margin: 8px 0; font-size: 21px; font-weight: 500; }
-    .card-date { font-size: 13px; color: var(--ink-soft); }
-
-    /* --- FAQ --- */
-    details { background: var(--white); padding: 20px; border-radius: 12px; cursor: pointer; }
-    summary { font-size: 16px; font-weight: 600; color: var(--ink); outline: none; }
-    details p { margin-top: 10px; font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
-
-    /* --- NEWSLETTER --- */
-    .newsletter-box { background: var(--ink); color: white; padding: 55px; border-radius: var(--radius); text-align: center; max-width: 700px; margin: 0 auto; }
-    .newsletter-box h2 { font-size: 30px; margin-bottom: 12px; color: white; font-weight: 500; }
-    .newsletter-box p { color: rgba(255,255,255,0.75); margin-bottom: 26px; }
-
-    /* --- FOOTER --- */
-    footer { text-align: center; padding: 60px 20px; border-top: 1px solid rgba(2,16,80,0.08); background: var(--cream); width: 100%; }
-    footer p { color: var(--ink-soft); font-size: 14px; }
-    .footer-links { margin-top: 15px; }
-    .footer-links a { color: var(--ink); text-decoration: none; font-weight: 600; padding: 10px; }
-
-    @media (max-width: 900px) {
-        .editorial-grid, .b2b-layout, .talleristas-grid { grid-template-columns: 1fr; }
-        .tallerista-card.destacada img, .tallerista-card:not(.destacada) img { height: 280px; }
-        .tallerista-card.destacada { grid-row: span 1; }
-        .portada-card img { height: 360px; }
-    }
-
-    @media (max-width: 700px) {
-        header { height: 72px; } body { padding-top: 72px; }
-        .logo img { height: 46px; }
-        .menu-toggle { display: block; }
-        .nav-links { display: none; position: absolute; top: 72px; left: 0; width: 100%; background: var(--cream); flex-direction: column; align-items: flex-start; gap: 0; padding: 10px 25px 20px; box-shadow: var(--shadow); }
-        .nav-links a { width: 100%; padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
-        .nav-links.mobile-open { display: flex; }
-        section { padding: 60px 0; }
-        .hero-title { font-size: 2.6rem; }
-        .hero-buttons { flex-direction: column; }
-        .btn-primary, .btn-secondary { width: 100%; text-align: center; }
-        .tres-columnas { grid-template-columns: 1fr; }
-        .grid-pasado-fotos { grid-template-columns: repeat(2, 1fr); }
-        .sumario-item { min-width: 130px; }
-    }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
     </style>
 </head>
-
 <body>
 
-    <header>
-        <div class="nav-container">
-            <div class="logo"><a href="#inicio"><img src="logo.png" alt="Arcos V Logo"></a></div>
-            <nav class="nav-links" id="navLinks">
-                <a href="#encuentros" onclick="closeMenu()">Encuentros</a>
-                <a href="#organizar" onclick="closeMenu()">Organizá</a>
-                <a href="#faq" onclick="closeMenu()">Preguntas</a>
-                <a href="#novedades" onclick="closeMenu()">Novedades</a>
-            </nav>
-            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" onclick="toggleMenu()">☰</button>
-        </div>
-    </header>
-
-    <div class="hero-container" id="inicio">
-        <div class="carousel-box">
-            <img class="split-slide active" src="hero-1.webp" fetchpriority="high" alt="Espacio boutique Arcos V">
-            <img class="split-slide" src="hero-2.webp" loading="lazy" alt="Encuentro corporativo">
-            <img class="split-slide" src="hero-3.webp" loading="lazy" alt="Sala taller Arcos V">
-            <img class="split-slide" src="hero-4.webp" loading="lazy" alt="Jardín Arcos V">
-            <img class="split-slide" src="hero-5.webp" loading="lazy" alt="Encuentro de Scrapbook">
-        </div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <span class="hero-eyebrow">Espacio boutique · Núñez</span>
-                <h1 class="hero-title">Por acá pasa lo que te <em>gusta</em> hacer</h1>
-                <p class="hero-subtitle">Un jardín y una sala para talleres, catas y encuentros — para marcas, especialistas y comunidades que crean experiencias presenciales.</p>
-            </div>
-            <div class="hero-buttons">
-                <a href="#encuentros" class="btn-primary">Descubrir experiencias</a>
-                <a href="#organizar" class="btn-secondary">Organizar un evento</a>
-            </div>
-        </div>
+    <div class="container">
+        <div class="badge">En 5 minutos estoy...</div>
+        <h1>Estamos actualizando la página para incluir los nuevos eventos que se vienen</h1>
+        <p>Estamos listas en 5 Minutos! Bueno... por ahí tardamos un poco más 🤭.</p>
+        <div class="spinner"></div>
     </div>
-
-    <nav class="sumario">
-        <div class="sumario-track">
-            <a href="#encuentros" class="sumario-item"><span class="sumario-num">01</span><span class="label">Encuentros</span></a>
-            <a href="#que-es" class="sumario-item"><span class="sumario-num">02</span><span class="label">Qué es</span></a>
-            <a href="#organizar" class="sumario-item"><span class="sumario-num">03</span><span class="label">Organizá</span></a>
-            <a href="#lo-que-paso" class="sumario-item"><span class="sumario-num">04</span><span class="label">Lo que pasó</span></a>
-            <a href="#faq" class="sumario-item"><span class="sumario-num">05</span><span class="label">Preguntas</span></a>
-        </div>
-    </nav>
-
-    <section id="encuentros">
-        <div class="seccion-centrada">
-            <span class="eyebrow">Agenda</span>
-            <h2 class="section-title">Próximos encuentros</h2>
-            <p class="section-tagline">Explorá la grilla de actividades y sumate al club.</p>
-
-            <div class="filters">
-                <button class="filter-btn active" onclick="filter('all', this)">Todos</button>
-                <button class="filter-btn" onclick="filter('aprendizaje', this)">Aprendizaje</button>
-                <button class="filter-btn" onclick="filter('gastronomia', this)">Gastronomía</button>
-                <button class="filter-btn" onclick="filter('bienestar', this)">Bienestar</button>
-                <button class="filter-btn" onclick="filter('comunidad', this)">Comunidad</button>
-            </div>
-
-            <div class="editorial-grid">
-                <a href="resinart-agosto-26.html" class="portada-card" data-cat="aprendizaje">
-                    <img src="resinart-agosto-26.webp" alt="Workshop de Resina">
-                    <div class="portada-overlay">
-                        <span class="portada-tag">Workshop</span>
-                        <h3 class="portada-title">Workshop de Resina</h3>
-                        <p class="portada-date">Viernes 14 de agosto</p>
-                    </div>
-                </a>
-
-                <div class="lista-eventos">
-                    <a href="Resinart-julio-26.html" class="item-evento" data-cat="aprendizaje">
-                        <img src="Resinart julio26.webp" alt="Workshop de resina">
-                        <div>
-                            <span class="item-evento-tag">Workshop</span>
-                            <h4 class="item-evento-title">Resinart</h4>
-                            <p class="item-evento-date">Domingo 26 de julio</p>
-                        </div>
-                    </a>
-                    <a href="burako.html" class="item-evento" data-cat="comunidad">
-                        <img src="Primeraburako.webp" alt="Domingos de burako">
-                        <div>
-                            <span class="item-evento-tag">Club</span>
-                            <h4 class="item-evento-title">Juegos de Burako</h4>
-                            <p class="item-evento-date">Tardes de domingo</p>
-                        </div>
-                    </a>
-                    <a href="taller-jardineria.html" class="item-evento" data-cat="bienestar">
-                        <img src="Primerajardin.webp" alt="Taller Jardinería">
-                        <div>
-                            <span class="item-evento-tag">Naturaleza</span>
-                            <h4 class="item-evento-title">Taller de Jardinería</h4>
-                            <p class="item-evento-date">Próximamente</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="que-es" style="background: var(--cream-deep);">
-        <div class="seccion-centrada">
-            <span class="eyebrow">La idea</span>
-            <h2 class="section-title">¿Qué es Arcos V?</h2>
-            <p class="section-tagline">Un espacio boutique en Núñez donde especialistas, marcas y comunidades crean talleres, catas, encuentros y experiencias presenciales.</p>
-            <div class="tres-columnas">
-                <div class="columna-concepto"><h3>Aprender</h3><ul><li>Talleres y workshops</li><li>Cursos y capacitaciones</li><li>Charlas temáticas</li></ul></div>
-                <div class="columna-concepto"><h3>Conectar</h3><ul><li>Networking</li><li>Comunidades</li><li>Encuentros profesionales</li></ul></div>
-                <div class="columna-concepto"><h3>Disfrutar</h3><ul><li>Catas y degustaciones</li><li>Experiencias gastronómicas</li><li>Actividades recreativas</li></ul></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="organizar" style="background: var(--cream-deep);">
-        <div class="seccion-centrada">
-            <span class="eyebrow">Para marcas y equipos</span>
-            <h2 class="section-title">Organizá tu experiencia</h2>
-            <p class="section-tagline">El punto donde el diseño boutique se encuentra con tu proyecto.</p>
-
-            <div class="b2b-layout">
-                <div class="b2b-info-box">
-                    <h2>¿Tenés una comunidad, marca o proyecto?</h2>
-                    <p>Arcos V es un refugio a puertas cerradas diseñado para dictar tus talleres, lanzar productos, armar reuniones de equipo o dictar cursos en un entorno premium.</p>
-                    <ul>
-                        <li>Capacitaciones y offsites de equipo</li>
-                        <li>Lanzamientos de producto y presentaciones de marca</li>
-                        <li>Team building y networking corporativo</li>
-                        <li>Cursos, talleres y catas a puertas cerradas</li>
-                    </ul>
-                    <a class="btn-wine" href="https://wa.me/5491162834000" target="_blank" rel="noopener">Conocer el espacio</a>
-                    <a class="btn-outline-dark" href="informacion-alquiler.html">Ver tarifas y condiciones →</a>
-                </div>
-
-                <div class="espacio-detalles">
-                    <img src="hero-4.webp" class="foto-jardin" alt="Jardín exclusivo Arcos V">
-                    <div style="background: white; padding: 26px; border-radius: var(--radius); box-shadow: var(--shadow);">
-                        <h4 style="font-size: 18px; margin-bottom: 10px; font-weight: 500;">El espacio incluye</h4>
-                        <p style="font-size: 14px; color: var(--ink-soft); line-height: 1.6;">Ubicación estratégica en Núñez, CABA.<br>Jardín e interiores con luz natural.<br>Setup flexible para capacitación, catas o living.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div style="margin-top: 50px;">
-                <h4 style="font-size: 20px; text-align: center; margin-bottom: 24px; font-weight: 500;">Lo que dicen quienes ya pasaron por Arcos V</h4>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-                    <div class="testi-card">
-                        <div class="testi-stars">★★★★★</div>
-                        <p class="testi-text">"Excelente ambiente. Muy buena predisposición de las chicas. Es excelente si buscan un lugar al aire libre…"</p>
-                        <p class="testi-name">María José</p>
-                    </div>
-                    <div class="testi-card">
-                        <div class="testi-stars">★★★★★</div>
-                        <p class="testi-text">"Hermoso lugar para realizar eventos. Muy atentas las chicas a lo que necesitábamos nosotras, ya estamos coordinando para repetir…"</p>
-                        <p class="testi-name">Sol Giaccone — Local Guide, Google</p>
-                    </div>
-                </div>
-            </div>
-
-            <div style="margin-top: 40px; text-align: center;">
-                <p style="margin-bottom:15px; color: var(--ink-soft); font-weight: 500;">Ubicación: Arcos 2952, Núñez, CABA.</p>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.189686001097!2d-58.46162382425983!3d-34.542846872958316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6a218524021%3A0x6b1c09d57a4e69b5!2sArcos%202952%2C%20C1429%20CABA!5e0!3m2!1ses-419!2sar!4v1717600000000!5m2!1ses-419!2sar"
-                    width="100%" height="320" style="border:0; border-radius:12px; box-shadow: var(--shadow);"
-                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <section id="lo-que-paso">
-        <div class="seccion-centrada">
-            <div class="pasado-banner">
-                <div>
-                    <span class="eyebrow" style="margin-bottom: 4px;">Archivo</span>
-                    <h2 class="section-title" style="margin-bottom: 0;">Lo que ya pasó</h2>
-                    <div class="pasado-stats">Más de 20 encuentros realizados</div>
-                </div>
-                <a href="https://instagram.com/arcosv.ba" target="_blank" rel="noopener" class="filter-btn">Ver experiencias anteriores</a>
-            </div>
-            <div class="grid-pasado-fotos">
-                <img src="Scrapbook junio.webp" alt="Taller de jardinería pasado" loading="lazy">
-                <img src="Primera vino.webp" alt="Cata pasada" loading="lazy">
-                <img src="Primeramadres.webp" alt="Encuentro de madres pasado" loading="lazy">
-                <img src="Prox1.webp" alt="Evento pasado" loading="lazy">
-            </div>
-        </div>
-    </section>
-
-    <section id="blog" style="background: var(--cream-deep);">
-        <div class="seccion-centrada">
-            <span class="eyebrow">Historias</span>
-            <h2 class="section-title">Del blog</h2>
-            <p class="section-tagline">Detrás de escena de Arcos V.</p>
-            <div class="grid">
-                <a href="como-elegimos-quien-da-un-taller-en-arcos-v.html" class="card">
-                    <img src="hero-4.webp" alt="Cómo elegimos quién da un taller o cata en Arcos V" loading="lazy">
-                    <div class="card-content"><span class="card-tag">Detrás de escena</span><h3 class="card-title">Cómo elegimos quién da un taller o cata</h3><p class="card-date">Por qué curamos en vez de alquilar sin más.</p></div>
-                </a>
-                <a href="capacitaciones-fuera-de-la-oficina.html" class="card">
-                    <img src="hero-2.webp" alt="Capacitaciones fuera de la oficina" loading="lazy">
-                    <div class="card-content"><span class="card-tag">Para organizadores</span><h3 class="card-title">Capacitaciones fuera de la oficina</h3><p class="card-date">Qué pedirle al espacio para que la jornada funcione.</p></div>
-                </a>
-                <a href="secretos-de-nunez.html" class="card">
-                    <img src="hero-3.webp" alt="Secretos de Núñez" loading="lazy">
-                    <div class="card-content"><span class="card-tag">Barrio</span><h3 class="card-title">Secretos de Núñez</h3><p class="card-date">Historias que pocos conocen del barrio.</p></div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq">
-        <div class="seccion-centrada" style="max-width: 800px;">
-            <span class="eyebrow" style="display:block; text-align:center;">Dudas</span>
-            <h2 class="section-title" style="text-align: center;">Preguntas frecuentes</h2>
-            <p class="section-tagline" style="text-align: center; margin: 0 auto 50px;">Despejá tus dudas sobre cómo sumarte o cómo organizar tu propuesta.</p>
-
-            <div style="display: grid; gap: 40px;">
-                <div>
-                    <h3 style="font-size: 20px; margin-bottom: 18px; font-weight: 500; border-bottom: 2px solid var(--wine); padding-bottom: 8px; display: inline-block;">Para asistentes</h3>
-                    <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
-                        <details><summary>¿Qué es Arcos V?</summary><p>Arcos V es un espacio boutique en Núñez donde especialistas, marcas y comunidades organizan talleres, catas, encuentros y experiencias presenciales.</p></details>
-                        <details><summary>¿Cómo participo de una experiencia?</summary><p>Podés inscribirte directamente en los encuentros publicados en nuestra agenda o sumarte a nuestra lista de difusión de WhatsApp.</p></details>
-                        <details><summary>¿Necesito ser socio para ir?</summary><p>No, el espacio funciona bajo un formato abierto. Cada taller tiene su propia inscripción independiente.</p></details>
-                        <details><summary>¿Dónde está ubicado Arcos V?</summary><p>Estamos en Arcos 2952 (CP 1429), Núñez, CABA. Excelente accesibilidad desde el centro y Zona Norte.</p></details>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 style="font-size: 20px; margin-bottom: 18px; font-weight: 500; border-bottom: 2px solid var(--wine); padding-bottom: 8px; display: inline-block;">Para organizadores</h3>
-                    <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
-                        <details><summary>¿Puedo organizar mi evento en Arcos V?</summary><p>Sí. Recibimos propuestas de especialistas, marcas y comunidades que busquen un entorno premium para experiencias presenciales cuidadas.</p></details>
-                        <details><summary>¿Arcos V alquila para cualquier tipo de evento?</summary><p><strong>No.</strong> El espacio está pensado para talleres, experiencias, encuentros corporativos y presentaciones de marca — no para fiestas sociales o eventos masivos.</p></details>
-                        <details><summary>¿Qué espacios e infraestructura incluye?</summary><p>100 m² cubiertos en layout en L (Recepción 22 m², Bar 20,5 m², Sala Taller 35,5 m²) más un jardín privado de 257 m².</p></details>
-                        <details><summary>¿Cuánto cuesta y cómo se reserva?</summary><p>Encontrás el detalle completo de tarifas, condiciones de seña y cancelación en nuestra <a href="informacion-alquiler.html" style="color: var(--wine); font-weight:600;">página de información para organizadores</a>.</p></details>
-                        <details><summary>¿Se puede visitar antes de reservar?</summary><p>Sí, coordinamos visitas técnicas para que conozcas el espacio y evalúes los montajes posibles.</p></details>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="novedades" style="background: var(--cream-deep);">
-        <div class="seccion-centrada">
-            <div class="newsletter-box">
-                <h2>Recibí primero los nuevos encuentros</h2>
-                <p>Sumate a nuestra lista exclusiva y enterate antes que nadie de las próximas fechas.</p>
-                <a href="https://wa.me/5491162834000?text=Hola!%20Quiero%20sumarme%20a%20la%20lista%20de%20difusión%20de%20Arcos%20V." target="_blank" rel="noopener" class="btn-primary" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 14px 40px;">Sumarme por WhatsApp</a>
-                <p style="font-size: 11px; opacity: 0.5; margin-top: 15px;">Formato club: te agendamos en nuestra lista privada. Cero spam.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="seccion-centrada">
-            <img src="logo.png" alt="Arcos V Logo" style="height: 40px; margin-bottom: 10px;">
-            <p>Arcos 2952, Núñez · Ciudad de Buenos Aires (CP 1429)</p>
-            <div class="footer-links">
-                <a href="https://instagram.com/arcosv.ba" target="_blank" rel="noopener">Instagram</a> ·
-                <a href="https://wa.me/5491162834000" target="_blank" rel="noopener">WhatsApp</a>
-            </div>
-            <p style="font-size: 12px; color: #888; margin-top: 25px;">&copy; Arcos V - 2026. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <script>
-        function toggleMenu() {
-            const nav = document.getElementById('navLinks');
-            const btn = document.querySelector('.menu-toggle');
-            const isOpen = nav.classList.toggle('mobile-open');
-            btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        }
-        function closeMenu() {
-            document.getElementById('navLinks').classList.remove('mobile-open');
-            document.querySelector('.menu-toggle').setAttribute('aria-expanded', 'false');
-        }
-        function filter(category, button) {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            button.classList.add('active');
-            document.querySelectorAll('[data-cat]').forEach(card => {
-                card.style.display = (category === 'all' || card.getAttribute('data-cat') === category) ? '' : 'none';
-            });
-        }
-        let slides = document.querySelectorAll('.split-slide');
-        let currentSlide = 0;
-        setInterval(() => {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }, 5000);
-    </script>
 
 </body>
 </html>
