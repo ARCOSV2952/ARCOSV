@@ -28,7 +28,7 @@ html,body{
     var(--bg-deep);
   color:var(--cream);
   font-family:'Work Sans', sans-serif;
-  overflow:auto;
+  overflow:hidden;
 }
 
 .stage{
@@ -190,6 +190,37 @@ button:disabled:hover{ background:transparent; color:var(--cream); }
 }
 .status-line b{ color:var(--cream); }
 
+.voice-panel{
+  margin-top:14px;
+  padding-top:14px;
+  border-top:1px solid var(--line);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  width:min(90%, 420px);
+}
+.voice-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:12px;
+  color:var(--cream-dim);
+}
+.voice-row label{ width:66px; flex-shrink:0; }
+.voice-row select{
+  flex:1;
+  background:var(--bg-panel);
+  color:var(--cream);
+  border:1px solid var(--line);
+  border-radius:6px;
+  padding:6px 8px;
+  font-family:'Work Sans', sans-serif;
+  font-size:12px;
+}
+.voice-row input[type=range]{ flex:1; accent-color:var(--gold); }
+.voice-row span{ width:36px; text-align:right; }
+button.small{ padding:6px 14px; font-size:12px; }
+
 /* ---------- right: board ---------- */
 .right{
   display:flex;
@@ -283,6 +314,19 @@ button:disabled:hover{ background:transparent; color:var(--cream); }
       <button class="ghost" id="newGameBtn">Nuevo juego</button>
     </div>
     <div class="status-line" id="statusLine"><b>0</b> de 90 números cantados</div>
+
+    <div class="voice-panel">
+      <div class="voice-row">
+        <label for="voiceSelect">Voz</label>
+        <select id="voiceSelect"></select>
+        <button class="ghost small" id="testVoiceBtn">Probar</button>
+      </div>
+      <div class="voice-row">
+        <label for="rateRange">Velocidad</label>
+        <input type="range" id="rateRange" min="0.6" max="1.1" step="0.05" value="0.8">
+        <span id="rateValue">0.80</span>
+      </div>
+    </div>
   </div>
 
   <div class="right">
@@ -348,11 +392,65 @@ function numeroEnPalabras(n){
 function speak(n){
   if(!('speechSynthesis' in window)) return;
   const utter = new SpeechSynthesisUtterance(numeroEnPalabras(n));
-  utter.lang = 'es-AR';
-  utter.rate = 0.85;
+  const voice = getSelectedVoice();
+  if(voice) utter.voice = voice;
+  utter.lang = voice ? voice.lang : 'es-AR';
+  utter.rate = parseFloat(rateRange.value);
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(utter);
 }
+
+const voiceSelect = document.getElementById('voiceSelect');
+const testVoiceBtn = document.getElementById('testVoiceBtn');
+const rateRange = document.getElementById('rateRange');
+const rateValue = document.getElementById('rateValue');
+let availableVoices = [];
+
+function getSelectedVoice(){
+  const idx = voiceSelect.value;
+  return idx !== '' ? availableVoices[idx] : null;
+}
+
+function populateVoices(){
+  const all = window.speechSynthesis.getVoices();
+  // priorizamos voces en español, pero mostramos todas por si el monitor no tiene ninguna
+  availableVoices = all.filter(v => v.lang.toLowerCase().startsWith('es'))
+    .concat(all.filter(v => !v.lang.toLowerCase().startsWith('es')));
+  voiceSelect.innerHTML = '';
+  if(availableVoices.length === 0){
+    const opt = document.createElement('option');
+    opt.textContent = 'Voz por defecto del navegador';
+    opt.value = '';
+    voiceSelect.appendChild(opt);
+    return;
+  }
+  availableVoices.forEach((v, i) => {
+    const opt = document.createElement('option');
+    opt.value = i;
+    opt.textContent = v.name + ' (' + v.lang + ')';
+    voiceSelect.appendChild(opt);
+  });
+}
+
+if('speechSynthesis' in window){
+  populateVoices();
+  window.speechSynthesis.onvoiceschanged = populateVoices;
+}
+
+testVoiceBtn.addEventListener('click', ()=>{
+  if(!('speechSynthesis' in window)) return;
+  const utter = new SpeechSynthesisUtterance('Treinta y siete');
+  const voice = getSelectedVoice();
+  if(voice) utter.voice = voice;
+  utter.lang = voice ? voice.lang : 'es-AR';
+  utter.rate = parseFloat(rateRange.value);
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(utter);
+});
+
+rateRange.addEventListener('input', ()=>{
+  rateValue.textContent = parseFloat(rateRange.value).toFixed(2);
+});
 
 function updateHistory(){
   historyEl.innerHTML = '';
