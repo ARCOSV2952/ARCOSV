@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ediciones Arcos V — Bingo & Café</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+:root{
+  --bg-deep: #16281c;
+  --bg-panel: #1f3a28;
+  --bg-panel-2: #274633;
+  --cream: #f4ecd8;
+  --cream-dim: #cdc2a6;
+  --gold: #d3a94f;
+  --gold-dim: #9c7f3d;
+  --clay: #a85c32;
+  --line: rgba(244,236,216,0.14);
+}
+
+*{box-sizing:border-box;}
+html,body{
+  margin:0;
+  height:100%;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(211,169,79,0.07), transparent 40%),
+    radial-gradient(circle at 90% 90%, rgba(168,92,50,0.08), transparent 45%),
+    var(--bg-deep);
+  color:var(--cream);
+  font-family:'Work Sans', sans-serif;
+  overflow:hidden;
+}
+
+.stage{
+  height:100%;
+  display:grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap:28px;
+  padding:28px 32px;
+}
+
+/* ---------- header ---------- */
+.eyebrow{
+  grid-column: 1 / -1;
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  border-bottom:1px solid var(--line);
+  padding-bottom:12px;
+  margin-bottom:4px;
+}
+.brand{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  font-size:15px;
+  color:var(--gold);
+}
+.brand span{color:var(--cream-dim); font-weight:300; letter-spacing:0.08em;}
+.edition{
+  font-size:13px;
+  color:var(--cream-dim);
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+
+/* ---------- left: medallion ---------- */
+.left{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:22px;
+  position:relative;
+}
+
+.game-label{
+  font-family:'Fraunces', serif;
+  font-size:20px;
+  letter-spacing:0.06em;
+  color:var(--cream-dim);
+  text-transform:uppercase;
+}
+.game-label b{color:var(--gold); font-weight:600;}
+
+.medallion-wrap{
+  position:relative;
+  width:min(46vh, 420px);
+  height:min(46vh, 420px);
+}
+.medallion-ring{
+  position:absolute; inset:0;
+  border-radius:50%;
+  border:2px solid var(--gold-dim);
+}
+.medallion-ring::before{
+  content:"";
+  position:absolute; inset:14px;
+  border-radius:50%;
+  border:1px solid var(--line);
+}
+.leaf{
+  position:absolute;
+  width:34px; height:34px;
+  opacity:0.85;
+}
+.medallion{
+  position:absolute; inset:34px;
+  border-radius:50%;
+  background: radial-gradient(circle at 35% 30%, var(--bg-panel-2), var(--bg-panel) 70%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow: inset 0 0 0 1px var(--line), 0 20px 60px rgba(0,0,0,0.35);
+}
+.current-number{
+  font-family:'Fraunces', serif;
+  font-weight:700;
+  font-size:min(20vh, 190px);
+  line-height:1;
+  color:var(--cream);
+  font-variant-numeric: tabular-nums;
+  transition: transform .25s ease, opacity .25s ease;
+}
+.current-number.pop{
+  animation: pop .35s ease;
+}
+@keyframes pop{
+  0%{ transform:scale(0.85); opacity:0.3; }
+  100%{ transform:scale(1); opacity:1; }
+}
+.current-word{
+  font-size:22px;
+  letter-spacing:0.05em;
+  color:var(--gold);
+  text-transform:uppercase;
+  min-height:28px;
+  text-align:center;
+}
+
+.history{
+  display:flex;
+  gap:10px;
+}
+.history .chip{
+  width:44px; height:44px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Fraunces', serif;
+  font-size:16px;
+  color:var(--cream-dim);
+  background:var(--bg-panel);
+}
+
+.controls{
+  display:flex;
+  gap:14px;
+  margin-top:6px;
+}
+button{
+  font-family:'Work Sans', sans-serif;
+  font-weight:600;
+  font-size:14px;
+  letter-spacing:0.03em;
+  border-radius:999px;
+  padding:13px 26px;
+  border:1px solid var(--gold-dim);
+  background:transparent;
+  color:var(--cream);
+  cursor:pointer;
+  transition: background .15s ease, color .15s ease, transform .1s ease;
+}
+button:hover{ background:var(--gold); color:var(--bg-deep); }
+button:active{ transform:scale(0.97); }
+button.primary{
+  background:var(--gold);
+  color:var(--bg-deep);
+}
+button.primary:hover{ background:var(--cream); }
+button.ghost{ border-color:var(--line); color:var(--cream-dim); }
+button:disabled{ opacity:0.35; cursor:default; }
+button:disabled:hover{ background:transparent; color:var(--cream); }
+
+.status-line{
+  font-size:13px;
+  color:var(--cream-dim);
+  letter-spacing:0.03em;
+}
+.status-line b{ color:var(--cream); }
+
+/* ---------- right: board ---------- */
+.right{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:8px;
+}
+.board-label{
+  font-size:12px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--cream-dim);
+  margin-bottom:4px;
+}
+.board{
+  display:grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  gap:6px;
+  height:min(66vh, 620px);
+}
+.cell{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Fraunces', serif;
+  font-size:clamp(13px, 1.6vw, 19px);
+  font-variant-numeric: tabular-nums;
+  color:var(--cream-dim);
+  background:var(--bg-panel);
+  border:1px solid var(--line);
+  border-radius:8px;
+}
+.cell.called{
+  background: var(--gold);
+  color:var(--bg-deep);
+  font-weight:700;
+  border-color:var(--gold);
+}
+.cell.called.game1-only{
+  background: transparent;
+  color: var(--gold-dim);
+  border:1px solid var(--gold-dim);
+  font-weight:600;
+}
+
+.legend{
+  display:flex;
+  gap:22px;
+  margin-top:6px;
+  font-size:12px;
+  color:var(--cream-dim);
+  align-items:center;
+}
+.legend .dot{
+  width:10px; height:10px;
+  border-radius:50%;
+  display:inline-block;
+  margin-right:6px;
+  vertical-align:middle;
+}
+.dot.gold{ background:var(--gold); }
+.dot.outline{ background:transparent; border:1px solid var(--gold-dim); }
+</style>
+</head>
+<body>
+
+<div class="stage">
+  <div class="eyebrow">
+    <div class="brand">Ediciones Arcos V <span>· Edición 001</span></div>
+    <div class="edition">Bingo &amp; Café</div>
+  </div>
+
+  <div class="left">
+    <div class="game-label">Juego <b id="gameNumber">1</b> de 2</div>
+
+    <div class="medallion-wrap">
+      <div class="medallion-ring"></div>
+      <svg class="leaf" style="top:-6px; left:50%; transform:translateX(-50%) rotate(0deg);" viewBox="0 0 24 24" fill="none"><path d="M12 2C7 6 6 11 8 15c2 4 6 5 6 5s1-6-1-10C11.5 6 12 2 12 2Z" stroke="#d3a94f" stroke-width="1.2"/></svg>
+      <div class="medallion">
+        <div id="currentNumber" class="current-number">—</div>
+      </div>
+    </div>
+    <div id="currentWord" class="current-word">Listos para empezar</div>
+
+    <div class="history" id="history"></div>
+
+    <div class="controls">
+      <button class="primary" id="nextBtn">Cantar número</button>
+      <button id="autoBtn">Auto: 6s</button>
+      <button class="ghost" id="newGameBtn">Nuevo juego</button>
+    </div>
+    <div class="status-line" id="statusLine"><b>0</b> de 90 números cantados</div>
+  </div>
+
+  <div class="right">
+    <div class="board-label">Tablero — 90 bolillas</div>
+    <div class="board" id="board"></div>
+    <div class="legend">
+      <span><span class="dot gold"></span>Cantado en este juego</span>
+      <span><span class="dot outline"></span>Cantado en juego anterior</span>
+    </div>
+  </div>
+</div>
+
+<script>
+const board = document.getElementById('board');
+const currentNumberEl = document.getElementById('currentNumber');
+const currentWordEl = document.getElementById('currentWord');
+const historyEl = document.getElementById('history');
+const statusLine = document.getElementById('statusLine');
+const nextBtn = document.getElementById('nextBtn');
+const autoBtn = document.getElementById('autoBtn');
+const newGameBtn = document.getElementById('newGameBtn');
+const gameNumberEl = document.getElementById('gameNumber');
+
+let remaining = [];
+let calledThisGame = [];
+let calledPreviousGames = new Set();
+let gameNumber = 1;
+let autoTimer = null;
+let autoOn = false;
+const AUTO_INTERVAL = 6000;
+
+const cells = {};
+for(let n=1;n<=90;n++){
+  const c = document.createElement('div');
+  c.className = 'cell';
+  c.textContent = n;
+  board.appendChild(c);
+  cells[n] = c;
+}
+
+function shuffledDeck(){
+  const arr = Array.from({length:90}, (_,i)=>i+1);
+  for(let i=arr.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]] = [arr[j],arr[i]];
+  }
+  return arr;
+}
+
+const UNIDADES = ['cero','uno','dos','tres','cuatro','cinco','seis','siete','ocho','nueve'];
+const ESPECIALES = {10:'diez',11:'once',12:'doce',13:'trece',14:'catorce',15:'quince',16:'dieciséis',17:'diecisiete',18:'dieciocho',19:'diecinueve',20:'veinte'};
+const DECENAS = {20:'veinte',30:'treinta',40:'cuarenta',50:'cincuenta',60:'sesenta',70:'setenta',80:'ochenta',90:'noventa'};
+
+function numeroEnPalabras(n){
+  if(n<=20) return ESPECIALES[n] || UNIDADES[n];
+  const dec = Math.floor(n/10)*10;
+  const uni = n%10;
+  if(uni===0) return DECENAS[dec];
+  if(dec===20) return 'veinti'+UNIDADES[uni];
+  return DECENAS[dec] + ' y ' + UNIDADES[uni];
+}
+
+function speak(n){
+  if(!('speechSynthesis' in window)) return;
+  const utter = new SpeechSynthesisUtterance(numeroEnPalabras(n));
+  utter.lang = 'es-AR';
+  utter.rate = 0.85;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(utter);
+}
+
+function updateHistory(){
+  historyEl.innerHTML = '';
+  const last5 = calledThisGame.slice(-6, -1).reverse();
+  last5.forEach(n=>{
+    const chip = document.createElement('div');
+    chip.className = 'chip';
+    chip.textContent = n;
+    historyEl.appendChild(chip);
+  });
+}
+
+function callNext(){
+  if(remaining.length === 0){
+    currentWordEl.textContent = '¡Se cantaron los 90 números!';
+    stopAuto();
+    nextBtn.disabled = true;
+    return;
+  }
+  const n = remaining.pop();
+  calledThisGame.push(n);
+
+  currentNumberEl.textContent = n;
+  currentNumberEl.classList.remove('pop');
+  void currentNumberEl.offsetWidth;
+  currentNumberEl.classList.add('pop');
+  currentWordEl.textContent = numeroEnPalabras(n);
+
+  cells[n].classList.add('called');
+  if(calledPreviousGames.has(n)) cells[n].classList.add('game1-only');
+  else cells[n].classList.remove('game1-only');
+
+  speak(n);
+  updateHistory();
+  statusLine.innerHTML = '<b>' + calledThisGame.length + '</b> de 90 números cantados';
+
+  if(remaining.length === 0){
+    nextBtn.disabled = true;
+    stopAuto();
+  }
+}
+
+function startAuto(){
+  autoOn = true;
+  autoBtn.textContent = 'Pausar auto';
+  autoTimer = setInterval(()=>{
+    if(remaining.length>0) callNext();
+    else stopAuto();
+  }, AUTO_INTERVAL);
+}
+function stopAuto(){
+  autoOn = false;
+  autoBtn.textContent = 'Auto: 6s';
+  if(autoTimer){ clearInterval(autoTimer); autoTimer=null; }
+}
+
+function newGame(keepGameCount){
+  // guardamos los números del juego que termina como "juego anterior"
+  calledThisGame.forEach(n => calledPreviousGames.add(n));
+  calledThisGame = [];
+  remaining = shuffledDeck();
+  for(let n=1;n<=90;n++){
+    cells[n].classList.remove('called');
+    cells[n].classList.toggle('game1-only', calledPreviousGames.has(n));
+  }
+  currentNumberEl.textContent = '—';
+  currentWordEl.textContent = 'Listos para empezar';
+  historyEl.innerHTML = '';
+  statusLine.innerHTML = '<b>0</b> de 90 números cantados';
+  nextBtn.disabled = false;
+  stopAuto();
+
+  if(!keepGameCount){
+    gameNumber = gameNumber >= 2 ? 1 : gameNumber + 1;
+  }
+  gameNumberEl.textContent = gameNumber;
+}
+
+nextBtn.addEventListener('click', callNext);
+autoBtn.addEventListener('click', ()=>{ autoOn ? stopAuto() : startAuto(); });
+newGameBtn.addEventListener('click', ()=> newGame(false));
+
+// inicializar
+remaining = shuffledDeck();
+</script>
+</body>
+</html>
