@@ -207,7 +207,9 @@
     .b2b-info-box ul li::before { content: "—"; color: var(--wine); position: absolute; left: 0; }
     .btn-wine { background: var(--gold); color: var(--ink); text-decoration: none; font-weight: 700; padding: 15px 30px; border-radius: 2px; display: inline-block; align-self: flex-start; transition: 0.2s; font-size: 14px; }
     .btn-wine:hover { background: var(--gold-deep); }
-    .btn-outline-dark { border: 1px solid rgba(255,255,255,0.4); color: #fff; text-decoration: none; font-weight: 600; padding: 14px 28px; border-radius: 4px; display: inline-block; align-self: flex-start; margin-top: 12px; font-size: 13px; }
+    .btn-outline-dark { border: 1px solid rgba(255,255,255,0.4); color: #fff; text-decoration: none; font-weight: 600; padding: 14px 28px; border-radius: 4px; display: inline-block; font-size: 13px; }
+    .btn-outline-dark:hover { background: rgba(255,255,255,0.08); border-color: #fff; }
+    .b2b-botones-tarifas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; align-self: flex-start; }
 
     .espacio-detalles { display: flex; flex-direction: column; gap: 20px; }
     .foto-jardin { width: 100%; height: 250px; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow); }
@@ -279,6 +281,8 @@
         .tres-columnas { grid-template-columns: 1fr; }
         .grid-pasado-fotos { grid-template-columns: repeat(2, 1fr); }
         .sumario-item { min-width: 130px; }
+        .b2b-botones-tarifas { flex-direction: column; }
+        .b2b-botones-tarifas .btn-outline-dark { text-align: center; }
     }
     </style>
 </head>
@@ -428,7 +432,10 @@
                         <li>Cursos, talleres y catas a puertas cerradas</li>
                     </ul>
                     <a class="btn-wine" href="https://wa.me/5491162834000" target="_blank" rel="noopener">Conocer el espacio</a>
-                    <a class="btn-outline-dark" href="informacion-alquiler.html">Ver tarifas y condiciones →</a>
+                    <div class="b2b-botones-tarifas">
+                        <a class="btn-outline-dark" href="tarifas-generales.html">Tarifas generales →</a>
+                        <a class="btn-outline-dark" href="programa-pequenos-realizadores.html">Programa Pequeños Realizadores →</a>
+                    </div>
                 </div>
 
                 <div class="espacio-detalles">
@@ -530,7 +537,7 @@
                         <details><summary>¿Puedo organizar mi evento en Arcos V?</summary><p>Sí. Recibimos propuestas de especialistas, marcas y comunidades que busquen un entorno premium para experiencias presenciales cuidadas.</p></details>
                         <details><summary>¿Arcos V alquila para cualquier tipo de evento?</summary><p><strong>No.</strong> El espacio está pensado para talleres, experiencias, encuentros corporativos y presentaciones de marca — no para fiestas sociales o eventos masivos.</p></details>
                         <details><summary>¿Qué espacios e infraestructura incluye?</summary><p>100 m² cubiertos en layout en L (Recepción 22 m², Bar 20,5 m², Sala Taller 35,5 m²) más un jardín privado de 257 m².</p></details>
-                        <details><summary>¿Cuánto cuesta y cómo se reserva?</summary><p>Encontrás el detalle completo de tarifas, condiciones de seña y cancelación en nuestra <a href="informacion-alquiler.html" style="color: var(--wine); font-weight:600;">página de información para organizadores</a>.</p></details>
+                        <details><summary>¿Cuánto cuesta y cómo se reserva?</summary><p>Tenemos dos modalidades: <a href="tarifas-generales.html" style="color: var(--wine); font-weight:600;">tarifas generales de alquiler</a> y, para talleres con cupo de hasta 6 personas, el <a href="programa-pequenos-realizadores.html" style="color: var(--wine); font-weight:600;">Programa Pequeños Realizadores</a>. En cada página encontrás el detalle completo de condiciones de seña y cancelación.</p></details>
                         <details><summary>¿Se puede visitar antes de reservar?</summary><p>Sí, coordinamos visitas técnicas para que conozcas el espacio y evalúes los montajes posibles.</p></details>
                     </div>
                 </div>
@@ -590,4 +597,3 @@
 
 </body>
 </html>
-
