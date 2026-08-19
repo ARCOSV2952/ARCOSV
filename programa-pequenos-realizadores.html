@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Programa Pequeños Realizadores | Arcos V</title>
-    <meta name="description" content="Programa Pequeños Realizadores de Arcos V: alquilá el espacio boutique en Núñez sin costo fijo si tu taller tiene un cupo de hasta 6 personas.">
+    <meta name="description" content="Programa Pequeños Realizadores de Arcos V: alquilá el espacio boutique en Núñez pagando un porcentaje de tus entradas, sin tarifa fija de alquiler.">
     <link rel="canonical" href="https://arcosv.com.ar/programa-pequenos-realizadores.html">
     <link rel="icon" type="image/png" href="favicon.png">
 
@@ -99,6 +99,22 @@
         .tarifa-row .modalidad { font-weight: 500; font-size: 15px; }
         .tarifa-row .precio { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: var(--primary); }
 
+        .minimo-row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 14px 0; border-top: 1px solid rgba(255,255,255,0.15);
+        }
+        .minimo-row .modalidad { font-weight: 500; font-size: 15px; }
+        .minimo-row .precio {
+            font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .ejemplo {
+            background: rgba(255,255,255,0.06); border-radius: 12px; padding: 16px 20px; margin-top: 18px;
+            font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.85);
+        }
+        .ejemplo b { color: #ffffff; font-weight: 600; }
+
         .nota {
             font-size: 13px; font-style: italic; color: #888; margin-top: 12px; padding-top: 12px;
             border-top: 1px dashed #ddd;
@@ -134,7 +150,7 @@
             .logo img { height: 50px; }
             .hero-simple h1 { font-size: 2rem; }
             .grid-dos { grid-template-columns: 1fr; }
-            .tarifa-row { flex-direction: column; align-items: flex-start; gap: 4px; }
+            .tarifa-row, .minimo-row { flex-direction: column; align-items: flex-start; gap: 4px; }
         }
     </style>
 </head>
@@ -154,7 +170,7 @@
         <div class="seccion-centrada">
             <span class="eyebrow">Para organizadores</span>
             <h1>Programa Pequeños Realizadores</h1>
-            <p>Si estás arrancando con tu propuesta y tu taller o workshop tiene un cupo de hasta 6 personas, esta es tu forma de alquilar Arcos V.</p>
+            <p>Si estás arrancando con tu propuesta y tu taller o workshop tiene un cupo de hasta 6 personas, en lugar de una tarifa fija de alquiler pagás un porcentaje de lo que vendas.</p>
         </div>
     </div>
 
@@ -162,13 +178,20 @@
         <div class="seccion-centrada">
 
             <div class="bloque card-destacada">
-                <h2>Programa Pequeños Realizadores</h2>
-                <p style="margin-bottom: 16px;">Si tu taller o workshop tiene un cupo de hasta 6 personas, podés alquilar Arcos V sin costo fijo:</p>
+                <h2>Cómo se cobra</h2>
+                <p style="margin-bottom: 16px;">Si tu taller o workshop tiene un cupo de hasta 6 personas, podés alquilar Arcos V sin tarifa fija de alquiler. El precio de tu entrada lo definís vos, y sobre ese precio se calcula:</p>
                 <div class="tarifa-row">
                     <span class="modalidad">Hasta 6 personas</span>
                     <span class="precio">20% de las entradas</span>
                 </div>
-                <p class="nota">La categoría se define por el cupo que declarás al reservar. Aplica un mínimo garantizado de $15.000 por hora. Si el evento supera las 6 personas, pasa a la tarifa de alquiler fijo habitual ($25.000/h).</p>
+                <div class="minimo-row">
+                    <span class="modalidad">Mínimo por hora reservada</span>
+                    <span class="precio">$15.000</span>
+                </div>
+                <div class="ejemplo">
+                    <b>Un ejemplo.</b> Reservás 2 horas, así que tu mínimo es de $30.000. Si vendés 4 entradas a $30.000, el 20% da $24.000: abonás el mínimo de $30.000. Si vendés 6 entradas a $30.000, el 20% da $36.000 y abonás esa cifra.
+                </div>
+                <p class="nota">La categoría se define por el cupo que declarás al reservar. Si el evento supera las 6 personas, pasa a la tarifa de alquiler general ($25.000/h).</p>
             </div>
 
             <div class="bloque card-suave">
@@ -233,7 +256,7 @@
             <div class="bloque">
                 <h2>Ventas y difusión</h2>
                 <ul>
-                    <li><strong>Comercialización:</strong> podés comercializar tus entradas o productos libremente. No cobramos comisiones ni porcentajes adicionales fuera del 20% del programa.</li>
+                    <li><strong>Comercialización:</strong> podés comercializar tus entradas o productos libremente, por el canal que prefieras. Además de lo que abonás por el espacio, no cobramos ninguna comisión sobre tus ventas.</li>
                     <li><strong>Difusión:</strong> promocionamos tu taller en nuestra web y a nuestra comunidad de WhatsApp. Solo envianos el flyer con tu contacto.</li>
                 </ul>
             </div>
@@ -246,7 +269,8 @@
             <div class="bloque">
                 <h2>Condiciones de reserva</h2>
                 <ul>
-                    <li><strong>Seña:</strong> el espacio se reserva con el 50% del valor total.</li>
+                    <li><strong>Seña:</strong> el espacio se reserva con el 50% del mínimo garantizado. El saldo se abona el día del evento, una vez calculado el 20% sobre las entradas.</li>
+                    <li><strong>Asistentes:</strong> la cantidad de asistentes se registra el día del evento por personal de Arcos V, y sobre ese número se calcula el 20%.</li>
                     <li><strong>Cancelaciones:</strong> la seña no es reembolsable si el aviso se realiza con menos de 7 días corridos de anticipación.</li>
                 </ul>
             </div>
