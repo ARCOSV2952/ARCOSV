@@ -170,15 +170,16 @@
 
     /* Eventos que ya pasaron: siguen visibles pero atenuados */
     .evento-grid-card.pasado img { filter: grayscale(60%); opacity: 0.75; }
-    .evento-grid-card.pasado .evento-grid-tag { color: var(--ink-soft); }
+    .evento-grid-card.pasado .evento-grid-tag { color: rgba(255,255,255,0.5); }
     .evento-grid-card.pasado:hover img { transform: none; }
     
     .evento-grid-content {
         padding: 22px 24px 18px;
+        background: var(--ink);
     }
-    .evento-grid-tag { color: var(--wine); font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; }
-    .evento-grid-title { color: var(--ink); font-size: 22px; font-weight: 500; margin: 6px 0; }
-    .evento-grid-date { color: var(--ink-soft); font-size: 13px; }
+    .evento-grid-tag { color: var(--gold); font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; }
+    .evento-grid-title { color: #fff; font-size: 22px; font-weight: 500; margin: 6px 0; }
+    .evento-grid-date { color: rgba(255,255,255,0.72); font-size: 13px; }
 
     /* --- QUÉ ES --- */
     .tres-columnas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 40px; background: rgba(2,16,80,0.08); border-radius: var(--radius); overflow: hidden; }
