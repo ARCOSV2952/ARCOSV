@@ -165,8 +165,12 @@
         display: block; 
         transition: transform 0.5s ease; 
     }
-    }
     .evento-grid-card:hover img { transform: scale(1.04); }
+
+    /* Eventos que ya pasaron: siguen visibles pero atenuados */
+    .evento-grid-card.pasado img { filter: grayscale(60%); opacity: 0.75; }
+    .evento-grid-card.pasado .evento-grid-tag { color: var(--ink-soft); }
+    .evento-grid-card.pasado:hover img { transform: none; }
     
     .evento-grid-content {
         padding: 24px;
@@ -337,8 +341,8 @@
     <section id="encuentros">
         <div class="seccion-centrada">
             <span class="eyebrow">Agenda</span>
-            <h2 class="section-title">Eventos de Agosto</h2>
-            <p class="section-tagline">Explorá la grilla de actividades y sumate al club.</p>
+            <h2 class="section-title">La agenda de Arcos V</h2>
+            <p class="section-tagline">Lo que está pasando estos meses en el espacio.</p>
 
             <div class="filters">
                 <button class="filter-btn active" onclick="filter('all', this)">Todos</button>
@@ -350,16 +354,6 @@
 
             <div class="editorial-grid">
                 <!-- Evento 1 -->
-                <a href="resinart-agosto-26.html" class="evento-grid-card" data-cat="aprendizaje">
-                    <img src="resinart-agosto-26.webp" alt="Workshop de Resina">
-                    <div class="evento-grid-content">
-                        <span class="evento-grid-tag">Workshop</span>
-                        <h3 class="evento-grid-title">Workshop de Resina</h3>
-                        <p class="evento-grid-date">Viernes 14 de agosto 18:30 hs.</p>
-                    </div>
-                </a>
-
-               <!-- Evento 2 -->
                 <a href="vitulli-agosto-26.html" class="evento-grid-card" data-cat="bienestar">
                     <img src="vitulli-agosto-26.webp" alt="Charla para mujeres">
                     <div class="evento-grid-content">
@@ -370,7 +364,7 @@
                 </a>
               
                <!-- Evento 3 -->
-                <a href="vinoenjawa.html" class="evento-grid-card" data-cat="gastronomía">
+                <a href="vinoenjawa.html" class="evento-grid-card" data-cat="gastronomia">
                     <img src="vinoenjawa-22-08-26.webp" alt="Cata de vino">
                     <div class="evento-grid-content">
                         <span class="evento-grid-tag">Club</span>
@@ -398,8 +392,49 @@
                         <p class="evento-grid-date">Sábado 29 de agosto 14 hs.</p>
                     </div>
                 </a>
-          
+
+               <!-- Evento 6 -->
+                <a href="cosmetica-natural-sept-26.html" class="evento-grid-card" data-cat="aprendizaje">
+                    <img src="cosmetica-natural-sept-26.webp" alt="Taller de Cosmética Natural con Mariana Kame" loading="lazy">
+                    <div class="evento-grid-content">
+                        <span class="evento-grid-tag">Workshop</span>
+                        <h3 class="evento-grid-title">Cosmética Natural</h3>
+                        <p class="evento-grid-date">Sábado 5 de septiembre 15 hs.</p>
+                    </div>
+                </a>
+
+               <!-- Evento 7 -->
+                <a href="ilustracion-botanica-sept-26.html" class="evento-grid-card" data-cat="aprendizaje">
+                    <img src="ilustracion-botanica-sept-26.webp" alt="Taller de Ilustración Botánica con Mariana Kame" loading="lazy">
+                    <div class="evento-grid-content">
+                        <span class="evento-grid-tag">Workshop</span>
+                        <h3 class="evento-grid-title">Ilustración Botánica</h3>
+                        <p class="evento-grid-date">Sábado 12 de septiembre 10 hs.</p>
+                    </div>
+                </a>
+
+               <!-- Evento 8 -->
+                <a href="resina-sept-26.html" class="evento-grid-card" data-cat="aprendizaje">
+                    <img src="segunda-resinart-agosto-26.webp" alt="Taller de resina con Flor de Resinart" loading="lazy">
+                    <div class="evento-grid-content">
+                        <span class="evento-grid-tag">Workshop</span>
+                        <h3 class="evento-grid-title">Taller de Resina</h3>
+                        <p class="evento-grid-date">Domingo 20 de septiembre 10 hs.</p>
+                    </div>
+                </a>
+
+               <!-- YA PASÓ — las tarjetas de eventos pasados van siempre al final -->
+                <div class="evento-grid-card pasado" data-cat="aprendizaje">
+                    <img src="resinart-agosto-26.webp" alt="Workshop de Resina" loading="lazy">
+                    <div class="evento-grid-content">
+                        <span class="evento-grid-tag">Ya pasó</span>
+                        <h3 class="evento-grid-title">Workshop de Resina</h3>
+                        <p class="evento-grid-date">Viernes 14 de agosto</p>
+                    </div>
+                </div>
+
             </div>
+        </div>
     </section>
 
     <section id="que-es" style="background: var(--cream-deep);">
@@ -550,7 +585,7 @@
             <div class="newsletter-box">
                 <h2>Recibí primero los nuevos encuentros</h2>
                 <p>Sumate a nuestra lista exclusiva y enterate antes que nadie de las próximas fechas.</p>
-                <a href="https://wa.me/5491162834000?text=Hola!%20Quiero%20sumarme%20a%20la%20lista%20de%20difusión%20de%20Arcos%20V." target="_blank" rel="noopener" class="btn-primary" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 14px 40px;">Sumarme por WhatsApp</a>
+                <a href="https://wa.me/5491162834000?text=Hola!%20Quiero%20sumarme%20a%20la%20lista%20de%20difusi%C3%B3n%20de%20Arcos%20V." target="_blank" rel="noopener" class="btn-primary" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 14px 40px;">Sumarme por WhatsApp</a>
                 <p style="font-size: 11px; opacity: 0.5; margin-top: 15px;">Formato club: te agendamos en nuestra lista privada. Cero spam.</p>
             </div>
         </div>
