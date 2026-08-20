@@ -172,6 +172,16 @@
     .evento-grid-card.pasado img { filter: grayscale(60%); opacity: 0.75; }
     .evento-grid-card.pasado .evento-grid-tag { color: rgba(255,255,255,0.5); }
     .evento-grid-card.pasado:hover img { transform: none; }
+
+    /* Panel para eventos sin flyer todavía: ocupa el lugar de la imagen */
+    .evento-proximo {
+        aspect-ratio: 1 / 1;
+        background: var(--cream-deep);
+        display: flex; flex-direction: column; justify-content: center; align-items: center;
+        text-align: center; gap: 12px; padding: 30px;
+    }
+    .evento-proximo .ep-marca { font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 500; color: var(--ink); line-height: 1.1; }
+    .evento-proximo .ep-nota { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 2.5px; color: var(--wine); }
     
     .evento-grid-content {
         padding: 22px 24px 18px;
@@ -417,7 +427,10 @@
 
                <!-- Evento 8 -->
                 <a href="resina-sept-26.html" class="evento-grid-card" data-cat="aprendizaje">
-                    <img src="segunda-resinart-agosto-26.webp" alt="Taller de resina con Flor de Resinart" loading="lazy">
+                    <div class="evento-proximo">
+                        <span class="ep-marca">Próximamente</span>
+                        <span class="ep-nota">Más info por WhatsApp</span>
+                    </div>
                     <div class="evento-grid-content">
                         <span class="evento-grid-tag">Workshop</span>
                         <h3 class="evento-grid-title">Taller de Resina</h3>
