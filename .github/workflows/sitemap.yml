@@ -5,27 +5,34 @@ on:
     branches:
       - main
 
+concurrency:
+  group: sitemap-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   sitemap_job:
     runs-on: ubuntu-latest
     name: generate-sitemap
+    permissions:
+      contents: write
     steps:
-    - name: Checkout the repo
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0 
+      - name: Checkout the repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-    - name: Generate XML Sitemap
-      uses: cicirello/generate-sitemap@v1
-      with:
-        base-url-path: https://arcosv.com.ar/
+      - name: Generate XML Sitemap
+        uses: cicirello/generate-sitemap@v1
+        with:
+          base-url-path: https://arcosv.com.ar/
 
-    - name: Commit and push if changed
-      run: |
-        git config --global user.name 'github-actions'
-        git config --global user.email 'github-actions@github.com'
-        git add sitemap.xml
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Update sitemap.xml to include all files" && git push)
-
-    - name: Ping Google
-      run: curl "https://www.google.com/ping?sitemap=https://arcosv.com.ar/sitemap.xml"
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add sitemap.xml
+          if ! git diff --staged --quiet; then
+            git commit -m "Update sitemap.xml to include all files"
+            git pull --rebase origin main
+            git push
+          fi
