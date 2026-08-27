@@ -139,6 +139,14 @@
     .filter-btn { padding: 9px 18px; border-radius: 3px; border: 1px solid rgba(2,16,80,0.15); background: transparent; cursor: pointer; font-size: 13px; font-weight: 500; font-family: 'Work Sans', sans-serif; transition: 0.2s; color: var(--ink); }
     .filter-btn.active { background: var(--ink); color: white; border-color: var(--ink); }
 
+    /* Aviso de que las tarjetas se pueden tocar */
+    .agenda-hint {
+        display: inline-flex; align-items: center; gap: 8px;
+        font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px;
+        color: var(--wine); background: rgba(184,134,11,0.10);
+        padding: 9px 14px; border-radius: 999px; margin-bottom: 22px;
+    }
+
      /* --- ENCUENTROS: 2 por fila --- */
     .editorial-grid { 
         display: grid; 
@@ -158,6 +166,19 @@
         box-shadow: var(--shadow);
         background: white;
     }
+    /* Sólo las tarjetas que son link: se comportan y se ven como tocables */
+    a.evento-grid-card {
+        cursor: pointer;
+        border: 1px solid rgba(2,16,80,0.10);
+        box-shadow: 0 10px 26px rgba(2,16,80,0.14);
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+        -webkit-tap-highlight-color: transparent;
+    }
+    a.evento-grid-card:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(2,16,80,0.20); }
+    /* Feedback al tocar en el celular (no hay hover en mobile) */
+    a.evento-grid-card:active { transform: scale(0.985); box-shadow: 0 6px 16px rgba(2,16,80,0.16); }
+    a.evento-grid-card:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
     .evento-grid-card img { 
         width: 100%; 
         aspect-ratio: 1 / 1; 
@@ -186,10 +207,30 @@
     .evento-grid-content {
         padding: 22px 24px 18px;
         background: var(--ink);
+        position: relative;
     }
     .evento-grid-tag { color: var(--gold); font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; }
-    .evento-grid-title { color: #fff; font-size: 22px; font-weight: 500; margin: 6px 0; }
+    .evento-grid-title { color: #fff; font-size: 22px; font-weight: 500; margin: 6px 0; padding-right: 34px; }
     .evento-grid-date { color: rgba(255,255,255,0.72); font-size: 13px; }
+
+    /* Chevron arriba a la derecha del bloque azul */
+    a.evento-grid-card .evento-grid-content::after {
+        content: "›";
+        position: absolute; top: 16px; right: 20px;
+        font-family: 'Space Grotesk', sans-serif; font-size: 30px; line-height: 1;
+        color: var(--gold); opacity: 0.9;
+    }
+
+    /* Barra de acción: la señal más clara de que se puede tocar */
+    .evento-grid-cta {
+        display: flex; align-items: center; justify-content: space-between; gap: 10px;
+        margin-top: 16px; padding-top: 14px;
+        border-top: 1px solid rgba(255,255,255,0.18);
+        color: var(--gold);
+        font-size: 13px; font-weight: 700; letter-spacing: 0.4px;
+    }
+    .evento-grid-cta .cta-flecha { font-size: 17px; transition: transform 0.2s ease; }
+    a.evento-grid-card:hover .evento-grid-cta .cta-flecha { transform: translateX(4px); }
 
     /* --- QUÉ ES --- */
     .tres-columnas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 40px; background: rgba(2,16,80,0.08); border-radius: var(--radius); overflow: hidden; }
@@ -299,6 +340,12 @@
         .sumario-item { min-width: 130px; }
         .b2b-botones-tarifas { flex-direction: column; }
         .b2b-botones-tarifas .btn-outline-dark { text-align: center; }
+
+        /* En el celular las tarjetas necesitan más separación y más relieve */
+        .editorial-grid { gap: 30px; }
+        a.evento-grid-card { box-shadow: 0 12px 28px rgba(2,16,80,0.20); }
+        .evento-grid-content { padding: 20px 20px 18px; }
+        .evento-grid-cta { font-size: 14px; }
     }
     </style>
 </head>
@@ -356,6 +403,8 @@
             <h2 class="section-title">La agenda de Arcos V</h2>
             <p class="section-tagline">Lo que está pasando estos meses en el espacio.</p>
 
+            <p class="agenda-hint">Tocá cada encuentro para ver los detalles</p>
+
             <div class="filters">
                 <button class="filter-btn active" onclick="filter('all', this)">Todos</button>
                 <button class="filter-btn" onclick="filter('aprendizaje', this)">Aprendizaje</button>
@@ -372,6 +421,7 @@
                         <span class="evento-grid-tag">Club</span>
                         <h3 class="evento-grid-title">Charla mujeres</h3>
                         <p class="evento-grid-date">Sábado 22 de agosto 15:30 hs.</p>
+                        <span class="evento-grid-cta">Ver detalles e inscripción <span class="cta-flecha" aria-hidden="true">→</span></span>
                     </div>
                 </a>
               
@@ -382,6 +432,7 @@
                         <span class="evento-grid-tag">Club</span>
                         <h3 class="evento-grid-title">Cata de vino</h3>
                         <p class="evento-grid-date">Sábado 22 de agosto 20:30 hs.</p>
+                        <span class="evento-grid-cta">Ver detalles e inscripción <span class="cta-flecha" aria-hidden="true">→</span></span>
                     </div>
                 </a>
 
@@ -392,6 +443,7 @@
                         <span class="evento-grid-tag">Bienestar</span>
                         <h3 class="evento-grid-title">Taller de Scrapbook</h3>
                         <p class="evento-grid-date">Sábado 29 de agosto 10:30 hs.</p>
+                        <span class="evento-grid-cta">Ver detalles e inscripción <span class="cta-flecha" aria-hidden="true">→</span></span>
                     </div>
                 </a>
 
@@ -402,6 +454,7 @@
                         <span class="evento-grid-tag">Bienestar</span>
                         <h3 class="evento-grid-title">Taller de Encuadernación</h3>
                         <p class="evento-grid-date">Sábado 29 de agosto 14 hs.</p>
+                        <span class="evento-grid-cta">Ver detalles e inscripción <span class="cta-flecha" aria-hidden="true">→</span></span>
                     </div>
                 </a>
 
@@ -412,6 +465,7 @@
                         <span class="evento-grid-tag">Workshop</span>
                         <h3 class="evento-grid-title">Ilustración Botánica</h3>
                         <p class="evento-grid-date">Sábado 12 de septiembre 10 hs.</p>
+                        <span class="evento-grid-cta">Ver detalles e inscripción <span class="cta-flecha" aria-hidden="true">→</span></span>
                     </div>
                 </a>
               
@@ -422,6 +476,7 @@
                         <span class="evento-grid-tag">Workshop</span>
                         <h3 class="evento-grid-title">Automaquillaje</h3>
                         <p class="evento-grid-date">Domingo 13 de septiembre 16 hs.</p>
+                        <span class="evento-grid-cta">Ver detalles e inscripción <span class="cta-flecha" aria-hidden="true">→</span></span>
                     </div>
                 </a>
 
@@ -435,6 +490,7 @@
                         <span class="evento-grid-tag">Workshop</span>
                         <h3 class="evento-grid-title">Taller de Resina</h3>
                         <p class="evento-grid-date">Domingo 20 de septiembre 10 hs.</p>
+                        <span class="evento-grid-cta">Ver detalles e inscripción <span class="cta-flecha" aria-hidden="true">→</span></span>
                     </div>
                 </a>
 
