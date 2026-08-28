@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catas de vino en Núñez | Arcos V</title>
+    <meta name="description" content="Catas de vino guiadas en Arcos V, Núñez. Noches de degustación con maridaje, en grupos chicos y en un espacio pensado para disfrutar sin apuro.">
+    <link rel="canonical" href="https://arcosv.com.ar/catas-de-vino.html">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8c2b32;
+            --bg: #faf9f6;
+            --text: #1a1a1a;
+            --text-light: #666;
+            --radius: 16px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container { max-width: 800px; margin: 0 auto; }
+
+        .main-image {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        .event-category {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        h1 {
+            font-family: 'Lora', serif;
+            font-size: 42px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-family: 'Lora', serif;
+            font-size: 28px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .event-meta {
+            font-style: italic;
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        .description {
+            font-size: 17px;
+            color: #444;
+            margin-bottom: 40px;
+        }
+
+        .description p { margin-bottom: 16px; }
+
+        .box-info {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            border: 1px solid #eee;
+            text-align: center;
+        }
+
+        .btn-ws {
+            display: block;
+            text-align: center;
+            background-color: #25d366;
+            color: #faf9f6;
+            padding: 18px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            margin-top: 30px;
+        }
+
+        /* Bloque de la próxima edición */
+        .proxima {
+            background: white;
+            border: 1px solid #eee;
+            border-left: 4px solid var(--primary);
+            border-radius: var(--radius);
+            padding: 30px;
+            margin-bottom: 50px;
+        }
+
+        .proxima h2 { margin-bottom: 10px; }
+
+        /* Separador entre secciones */
+        .seccion { margin-bottom: 50px; }
+
+        /* Galería de ediciones anteriores */
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .galeria img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block;
+        }
+
+        .edicion-titulo {
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 6px;
+        }
+
+        .edicion-fecha {
+            font-size: 14px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 32px; }
+            h2 { font-size: 24px; }
+            .galeria { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <img src="catas-portada.webp" alt="Mesa larga durante una cata de vinos en Arcos V" class="main-image">
+
+        <span class="event-category">GASTRONOMIA</span>
+        <h1>Catas de vino en Arcos V</h1>
+        <p class="event-meta">Noches de degustación guiada en Núñez</p>
+
+        <!-- PRÓXIMA EDICIÓN -->
+        <div class="proxima">
+            <h2>Próxima edición</h2>
+            <p class="event-meta">Octubre 2026 &mdash; fecha a confirmar</p>
+            <p>Estamos cerrando el día y la temática de la próxima cata. Escribinos y te avisamos apenas estén las fechas, así reservás tu lugar antes de que se llene.</p>
+            <a href="https://wa.me/5491151530473" class="btn-ws">Consultar por la próxima cata</a>
+        </div>
+
+        <!-- QUÉ ES -->
+        <div class="seccion">
+            <h2>Cómo es una cata acá</h2>
+            <div class="description">
+                <p>Val y Javi, de Vino en Jawa, arman cada encuentro alrededor de una temática distinta: una región, un grupo de cepas, o el desafío de reconocer etiquetas a ciegas. Van guiando la degustación copa por copa, contando de dónde viene cada vino y qué buscar en la vista, la nariz y la boca.</p>
+                <p>Se toma sentado, en una sola mesa larga, con un maridaje pensado para acompañar cada paso. Son grupos chicos, así que hay lugar para preguntar sin sentirse examinado. No hace falta saber nada de vino para venir.</p>
+                <p>Las catas son al caer la noche y duran alrededor de tres horas, aunque la mesa casi siempre se estira un rato más. Se puede venir solo, en pareja o con amigos: la mesa compartida hace el resto.</p>
+            </div>
+        </div>
+
+        <!-- EDICIONES ANTERIORES -->
+        <div class="seccion">
+            <h2>Ediciones anteriores</h2>
+            <div class="description">
+                <p>Por Arcos V ya pasaron una cata de vinos de Entre Ríos con comida del Litoral, otra dedicada a los vinos del Norte argentino, y una edición a ciegas.</p>
+            </div>
+
+            <p class="edicion-titulo">Cata a ciegas</p>
+            <p class="edicion-fecha">Agosto 2026</p>
+            <div class="galeria">
+                <img src="cata-ciegas-ago26-01.webp" alt="Sommelier presentando una botella durante la cata a ciegas" loading="lazy">
+                <img src="cata-ciegas-ago26-02.webp" alt="Planilla de notas de cata y copas sobre la mesa" loading="lazy">
+                <img src="cata-ciegas-ago26-03.webp" alt="Foto grupal de los participantes brindando al final de la cata" loading="lazy">
+            </div>
+        </div>
+
+        <!-- CONTACTO -->
+        <div class="box-info">
+            <h3 style="font-family: 'Lora', serif;">¿Querés participar?</h3>
+            <p>Escribinos y te contamos las fechas, el precio y qué incluye.</p>
+            <a href="https://wa.me/5491151530473" class="btn-ws">Consultar por WhatsApp</a>
+        </div>
+
+        <a href="index.html#encuentros" class="back">← Volver a los encuentros</a>
+
+    </div>
+</body>
+</html>
