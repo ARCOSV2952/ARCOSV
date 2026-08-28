@@ -288,6 +288,8 @@
     .testi-stars { color: var(--wine); font-size: 15px; margin-bottom: 12px; }
     .testi-text { font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin-bottom: 14px; }
     .testi-name { font-size: 13px; font-weight: 600; }
+    .testi-link { color: var(--wine); text-decoration: none; font-weight: 600; border-bottom: 1px solid rgba(156,107,31,0.35); }
+    .testi-link:hover { color: var(--wine-deep); border-bottom-color: var(--wine-deep); }
 
     /* --- LO QUE PASÓ --- */
     .pasado-banner { display: flex; justify-content: space-between; align-items: center; margin-bottom: 34px; flex-wrap: wrap; gap: 15px; }
@@ -567,12 +569,15 @@
             </div>
 
             <div style="margin-top: 50px;">
-                <h4 style="font-size: 20px; text-align: center; margin-bottom: 24px; font-weight: 500;">Lo que dicen quienes ya pasaron por Arcos V</h4>
+                <h4 style="font-size: 20px; text-align: center; margin-bottom: 8px; font-weight: 500;">Opiniones en Google</h4>
+                <p style="text-align: center; margin-bottom: 24px; font-size: 14px; color: var(--ink-soft);">
+                    <a class="testi-link" href="https://www.google.com/maps/place/ARCOS+V/@-34.5524075,-58.4635124,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcb50f631272c9:0x79ac6cce1fb29c25!8m2!3d-34.5524119!4d-58.4609375" target="_blank" rel="noopener">Ver todas las reseñas en Google →</a>
+                </p>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
                     <div class="testi-card">
                         <div class="testi-stars">★★★★★</div>
-                        <p class="testi-text">"Excelente ambiente. Muy buena predisposición de las chicas. Es excelente si buscan un lugar al aire libre…"</p>
-                        <p class="testi-name">María José</p>
+                        <p class="testi-text">"Hermoso lugar para eventos! Súper cálido, muy bien decorado y súper cómodo. Es fabuloso! Ya organicé 2 eventos de catas de vino allí y voy por el tercero! La atención de las chicas es un mil!!! Son súper atentas y están en cada detalle!!"</p>
+                        <p class="testi-name">Valeria González — Local Guide, Google</p>
                     </div>
                     <div class="testi-card">
                         <div class="testi-stars">★★★★★</div>
