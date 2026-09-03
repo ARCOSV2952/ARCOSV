@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Tarifas Generales de Alquiler | Arcos V</title>
-    <meta name="description" content="Capacidad, equipamiento, tarifas generales y condiciones para alquilar Arcos V, espacio boutique en Núñez, para talleres, catas y eventos corporativos.">
+    <meta name="description" content="Capacidad, equipamiento, tarifas generales y condiciones para alquilar Arcos V, espacio boutique en Núñez, para talleres, catas, eventos corporativos y actividades semanales.">
     <link rel="canonical" href="https://arcosv.com.ar/tarifas-generales.html">
     <link rel="icon" type="image/png" href="favicon.png">
 
@@ -77,6 +77,10 @@
             font-family: 'Cormorant Garamond', serif; font-size: 26px; margin-bottom: 16px;
             padding-bottom: 8px; border-bottom: 2px solid var(--primary); display: inline-block;
         }
+        .bloque h3 {
+            font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600;
+            margin: 22px 0 6px; color: var(--text);
+        }
         .bloque p, .bloque li { font-size: 15px; color: var(--text-light); line-height: 1.7; }
         .bloque ul { list-style: none; margin-top: 10px; }
         .bloque ul li { margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px; }
@@ -90,6 +94,7 @@
             background: var(--text); color: white; border-radius: var(--radius); padding: 35px; margin-bottom: 24px;
         }
         .card-destacada h2 { color: white; border-bottom-color: var(--primary); }
+        .card-destacada h3 { color: var(--primary); }
         .card-destacada p, .card-destacada li { color: rgba(255,255,255,0.85); }
         .card-destacada strong { color: var(--primary); }
 
@@ -104,7 +109,9 @@
         }
         .tarifa-row:last-child { border-bottom: none; }
         .tarifa-row .modalidad { font-weight: 500; font-size: 15px; }
-        .tarifa-row .precio { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: var(--primary); }
+        .tarifa-row .modalidad small { display: block; font-weight: 400; font-size: 13px; opacity: 0.75; margin-top: 2px; }
+        .tarifa-row .precio { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: var(--primary); white-space: nowrap; }
+        .card-destacada .tarifa-row { border-bottom-color: rgba(255,255,255,0.15); }
 
         .nota {
             font-size: 13px; font-style: italic; color: #888; margin-top: 12px; padding-top: 12px;
@@ -161,7 +168,7 @@
         <div class="seccion-centrada">
             <span class="eyebrow">Para organizadores</span>
             <h1>Tarifas generales de alquiler</h1>
-            <p>Todo lo que necesitás saber para llevar tu taller, cata o evento corporativo a Arcos V, nuestro espacio en Núñez.</p>
+            <p>Todo lo que necesitás saber para llevar tu taller, cata, evento corporativo o actividad semanal a Arcos V, nuestro espacio en Núñez.</p>
         </div>
     </div>
 
@@ -228,25 +235,44 @@
                 <p>El tiempo que necesites antes del evento para armar, decorar o preparar el espacio —y el de desarme al finalizar— se cuenta dentro del horario que reservás. No es un costo aparte, pero sí ocupa horas de alquiler: te recomendamos calcularlo al momento de reservar para no quedarte corto de tiempo.</p>
             </div>
 
+            <div class="bloque card-suave" style="margin-top: 34px;">
+                <h2>Tu actividad todas las semanas</h2>
+                <p>Si tenés una clase, un grupo o una actividad que se repite, podés tomar <strong>la misma franja horaria de forma fija</strong> y usar Arcos V como sede estable, sin ocuparte del lugar. Funciona para clases regulares, grupos de estudio, talleres por módulos y equipos que se juntan siempre el mismo día.</p>
+                <p style="margin-top:14px;">Cuanto mayor es la frecuencia, mejor es el valor por hora: el compromiso de continuidad es lo que hace bajar la tarifa.</p>
+
+                <h3>Qué incluye</h3>
+                <ul>
+                    <li><strong>Tu franja reservada:</strong> el horario queda bloqueado para vos durante todo el período acordado.</li>
+                    <li><strong>Espacio armado</strong> según tu actividad: mesas de trabajo, formato auditorio o ronda.</li>
+                    <li><strong>Recepción de tus asistentes</strong>, para que puedas enfocarte solo en tu grupo.</li>
+                    <li><strong>Bar disponible</strong> si querés sumar café o algo para compartir.</li>
+                </ul>
+                <p class="nota">Las mañanas de lunes a viernes son la franja con mayor disponibilidad. Si tu actividad puede ir en ese horario, tenés más opciones para elegir día y hora.</p>
+            </div>
+
             <div class="bloque card-destacada">
                 <h2>Tarifas y condiciones</h2>
                 <div class="tarifa-row">
-                    <span class="modalidad">Alquiler por hora</span>
+                    <span class="modalidad">Alquiler por hora<small>Fecha suelta, sin compromiso de continuidad</small></span>
                     <span class="precio">desde $25.000</span>
                 </div>
                 <div class="tarifa-row">
-                    <span class="modalidad">Clases recurrentes — semanal</span>
-                    <span class="precio">$18.000 / h</span>
-                </div>
-                <div class="tarifa-row">
-                    <span class="modalidad">Clases recurrentes — quincenal</span>
+                    <span class="modalidad">Actividad recurrente — quincenal<small>Dos encuentros por mes, misma franja</small></span>
                     <span class="precio">$20.000 / h</span>
                 </div>
-                                <p class="nota">Estos importes son por hora base. El valor final depende de la cantidad de participantes, el mobiliario que requiera el evento y la modalidad de bar. Se pueden contratar fracciones de media hora. Escribinos y te pasamos el presupuesto exacto para tu propuesta.</p>
+                <div class="tarifa-row">
+                    <span class="modalidad">Actividad recurrente — semanal<small>Misma franja todas las semanas</small></span>
+                    <span class="precio">$18.000 / h</span>
+                </div>
+                <p class="nota">Estos importes son por hora base. El valor final depende de la cantidad de participantes, el mobiliario que requiera el evento y la modalidad de bar. Se pueden contratar fracciones de media hora. Las tarifas recurrentes se acuerdan por períodos de tres meses renovables. Escribinos y te pasamos el presupuesto exacto para tu propuesta.</p>
             </div>
 
             <div class="aviso-alt">
                 ¿Tu taller tiene un cupo de hasta 6 personas? Puede convenirte más nuestro <a href="programa-pequenos-realizadores.html">Programa Pequeños Realizadores →</a>
+            </div>
+
+            <div class="aviso-alt" style="margin-top: 12px;">
+                ¿Necesitás el espacio para un shooting, contenido de marca o una sesión de fotos? Tenemos tarifas específicas de <a href="locacion-para-producciones.html">locación para producciones →</a>
             </div>
 
             <div class="bloque" style="margin-top: 24px;">
