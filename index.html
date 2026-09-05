@@ -97,6 +97,9 @@
     .nav-links { display: flex; gap: 34px; }
     .nav-links a { text-decoration: none; color: var(--ink); font-size: 13px; font-weight: 500; letter-spacing: 0.4px; transition: 0.3s; }
     .nav-links a:hover { color: var(--wine); }
+    /* Tarifas se destaca del resto del menú */
+    .nav-links a.nav-destacado { color: var(--wine); font-weight: 700; }
+    .nav-links a.nav-destacado:hover { color: var(--wine-deep); }
     .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--ink); }
 
     /* --- HERO --- */
@@ -134,6 +137,8 @@
     .sumario-item:hover { color: #fff; background: rgba(255,255,255,0.04); }
     .sumario-num { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--gold); }
     .sumario-item span.label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; white-space: nowrap; }
+    .sumario-item.sumario-tarifas { color: #fff; background: rgba(255,193,7,0.10); }
+    .sumario-item.sumario-tarifas:hover { background: rgba(255,193,7,0.18); }
 
     /* --- SECTION TITLES --- */
     .section-title { font-size: 44px; font-weight: 700; letter-spacing: -1.2px; color: var(--ink); margin-bottom: 10px; line-height: 1.02; }
@@ -282,6 +287,11 @@
     .btn-outline-dark:hover { background: rgba(255,255,255,0.08); border-color: #fff; }
     .b2b-botones-tarifas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; align-self: flex-start; }
 
+    /* Bloque de acción principal: tarifas primero, WhatsApp como alternativa */
+    .b2b-accion { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-bottom: 6px; }
+    .b2b-accion-nota { font-size: 13px; color: rgba(255,255,255,0.65); margin: 0 0 18px; }
+    .b2b-otras-modalidades { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; font-family: 'JetBrains Mono', monospace; color: rgba(255,255,255,0.55); margin: 24px 0 4px; }
+
     .espacio-detalles { display: flex; flex-direction: column; gap: 20px; }
     .foto-jardin { width: 100%; height: 250px; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow); }
 
@@ -356,6 +366,8 @@
         .sumario-item { min-width: 130px; }
         .b2b-botones-tarifas { flex-direction: column; }
         .b2b-botones-tarifas .btn-outline-dark { text-align: center; }
+        .b2b-accion { flex-direction: column; align-items: stretch; }
+        .b2b-accion .btn-wine, .b2b-accion .btn-outline-dark { width: 100%; text-align: center; align-self: stretch; }
 
         /* En el celular las tarjetas necesitan más separación y más relieve */
         .editorial-grid { gap: 30px; }
@@ -374,6 +386,7 @@
             <nav class="nav-links" id="navLinks">
                 <a href="#encuentros" onclick="closeMenu()">Encuentros</a>
                 <a href="#organizar" onclick="closeMenu()">Organizá</a>
+                <a href="tarifas-generales.html" class="nav-destacado">Tarifas</a>
                 <a href="#faq" onclick="closeMenu()">Preguntas</a>
                 <a href="#novedades" onclick="closeMenu()">Novedades</a>
             </nav>
@@ -408,8 +421,9 @@
             <a href="#encuentros" class="sumario-item"><span class="sumario-num">01</span><span class="label">Encuentros</span></a>
             <a href="#que-es" class="sumario-item"><span class="sumario-num">02</span><span class="label">Qué es</span></a>
             <a href="#organizar" class="sumario-item"><span class="sumario-num">03</span><span class="label">Organizá</span></a>
-            <a href="#lo-que-paso" class="sumario-item"><span class="sumario-num">04</span><span class="label">Lo que pasó</span></a>
-            <a href="#faq" class="sumario-item"><span class="sumario-num">05</span><span class="label">Preguntas</span></a>
+            <a href="tarifas-generales.html" class="sumario-item sumario-tarifas"><span class="sumario-num">04</span><span class="label">Tarifas</span></a>
+            <a href="#lo-que-paso" class="sumario-item"><span class="sumario-num">05</span><span class="label">Lo que pasó</span></a>
+            <a href="#faq" class="sumario-item"><span class="sumario-num">06</span><span class="label">Preguntas</span></a>
         </div>
     </nav>
 
@@ -519,9 +533,13 @@
                         <li>Team building y networking corporativo</li>
                         <li>Cursos, talleres y catas a puertas cerradas</li>
                     </ul>
-                    <a class="btn-wine" href="https://wa.me/5491162834000?text=Hola!%20Quiero%20consultar%20por%20el%20alquiler%20de%20Arcos%20V." target="_blank" rel="noopener">Conocer el espacio</a>
+                    <div class="b2b-accion">
+                        <a class="btn-wine" href="tarifas-generales.html">Ver tarifas y modalidades →</a>
+                        <a class="btn-outline-dark" href="https://wa.me/5491162834000?text=Hola!%20Quiero%20consultar%20por%20el%20alquiler%20de%20Arcos%20V." target="_blank" rel="noopener">Consultar por WhatsApp</a>
+                    </div>
+                    <p class="b2b-accion-nota">Valores por hora, por media jornada y por jornada completa, con precios especiales para actividades semanales.</p>
+                    <p class="b2b-otras-modalidades">Otras modalidades</p>
                     <div class="b2b-botones-tarifas">
-                        <a class="btn-outline-dark" href="tarifas-generales.html">Tarifas generales →</a>
                         <a class="btn-outline-dark" href="programa-pequenos-realizadores.html">Programa Pequeños Realizadores →</a>
                         <a class="btn-outline-dark" href="locacion-para-producciones.html">Locación para producciones →</a>
                     </div>
@@ -626,10 +644,10 @@
                 <div>
                     <h3 style="font-size: 20px; margin-bottom: 18px; font-weight: 500; border-bottom: 2px solid var(--wine); padding-bottom: 8px; display: inline-block;">Para organizadores</h3>
                     <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
+                        <details><summary>¿Cuánto cuesta y cómo se reserva?</summary><p>Tenemos tres modalidades: <a href="tarifas-generales.html" style="color: var(--wine); font-weight:600;">tarifas generales de alquiler</a>, que incluyen valores especiales para actividades que se repiten cada semana; para talleres con cupo de hasta 6 personas, el <a href="programa-pequenos-realizadores.html" style="color: var(--wine); font-weight:600;">Programa Pequeños Realizadores</a>; y para shootings y contenido de marca, la <a href="locacion-para-producciones.html" style="color: var(--wine); font-weight:600;">locación para producciones</a>. En cada página encontrás el detalle completo de condiciones de seña y cancelación.</p></details>
                         <details><summary>¿Puedo organizar mi evento en Arcos V?</summary><p>Sí. Recibimos propuestas de especialistas, marcas y comunidades que busquen un entorno premium para experiencias presenciales cuidadas.</p></details>
                         <details><summary>¿Arcos V alquila para cualquier tipo de evento?</summary><p><strong>No.</strong> El espacio está pensado para talleres, experiencias, encuentros corporativos y presentaciones de marca — no para fiestas sociales o eventos masivos.</p></details>
                         <details><summary>¿Qué espacios e infraestructura incluye?</summary><p>100 m² cubiertos en layout en L (Recepción 22 m², Bar 20,5 m², Sala Taller 35,5 m²) más un jardín privado de 180 m².</p></details>
-                        <details><summary>¿Cuánto cuesta y cómo se reserva?</summary><p>Tenemos tres modalidades: <a href="tarifas-generales.html" style="color: var(--wine); font-weight:600;">tarifas generales de alquiler</a>, que incluyen valores especiales para actividades que se repiten cada semana; para talleres con cupo de hasta 6 personas, el <a href="programa-pequenos-realizadores.html" style="color: var(--wine); font-weight:600;">Programa Pequeños Realizadores</a>; y para shootings y contenido de marca, la <a href="locacion-para-producciones.html" style="color: var(--wine); font-weight:600;">locación para producciones</a>. En cada página encontrás el detalle completo de condiciones de seña y cancelación.</p></details>
                         <details><summary>¿Se puede visitar antes de reservar?</summary><p>Sí, coordinamos visitas técnicas para que conozcas el espacio y evalúes los montajes posibles.</p></details>
                     </div>
                 </div>
