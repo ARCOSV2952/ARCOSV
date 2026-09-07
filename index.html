@@ -10,7 +10,7 @@
   gtag('config', 'G-J5T8QFY2EW');
 </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arcos V | Espacio para talleres, catas y encuentros en Núñez</title>
     <meta name="description" content="Arcos V es un espacio boutique con jardín en Núñez para talleres, catas, presentaciones de marcas, encuentros de comunidad y experiencias presenciales.">
     <link rel="canonical" href="https://arcosv.com.ar/">
@@ -100,6 +100,16 @@
     /* Tarifas se destaca del resto del menú */
     .nav-links a.nav-destacado { color: var(--wine); font-weight: 700; }
     .nav-links a.nav-destacado:hover { color: var(--wine-deep); }
+    /* Desplegable de Tarifas */
+    .nav-item-drop { position: relative; }
+    .nav-submenu {
+        display: none; position: absolute; top: 100%; left: -18px; min-width: 250px;
+        background: var(--cream); border: 1px solid rgba(23,58,42,0.12);
+        border-radius: var(--radius); box-shadow: var(--shadow); padding: 8px 0; margin-top: 22px;
+    }
+    .nav-item-drop:hover .nav-submenu, .nav-item-drop:focus-within .nav-submenu { display: block; }
+    .nav-submenu a { display: block; padding: 11px 20px; font-size: 13px; color: var(--ink); font-weight: 500; }
+    .nav-submenu a:hover { background: var(--cream-deep); color: var(--wine); }
     .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--ink); }
 
     /* --- HERO --- */
@@ -123,8 +133,8 @@
     .hero-buttons { display: flex; gap: 14px; padding: 0 8%; margin-bottom: 40px; }
     .btn-primary { background-color: var(--gold); color: var(--ink); padding: 15px 30px; border-radius: 2px; text-decoration: none; font-weight: 700; font-size: 14px; letter-spacing: 0.3px; transition: 0.3s ease; }
     .btn-primary:hover { background-color: var(--gold-deep); transform: translateY(-2px); }
-    .btn-secondary { background-color: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.6); padding: 14px 28px; border-radius: 2px; text-decoration: none; font-weight: 600; font-size: 14px; transition: 0.3s ease; }
-    .btn-secondary:hover { background-color: rgba(255,255,255,0.12); border-color: #fff; }
+    .btn-secondary { background-color: var(--ink); color: #fff; border: 1px solid var(--ink); padding: 14px 28px; border-radius: 2px; text-decoration: none; font-weight: 700; font-size: 14px; transition: 0.3s ease; }
+    .btn-secondary:hover { background-color: var(--ink-mid); border-color: var(--ink-mid); transform: translateY(-2px); }
 
     /* --- SUMARIO (elemento de firma) --- */
     .sumario { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.08); }
@@ -357,6 +367,9 @@
         .nav-links { display: none; position: absolute; top: 72px; left: 0; width: 100%; background: var(--cream); flex-direction: column; align-items: flex-start; gap: 0; padding: 10px 25px 20px; box-shadow: var(--shadow); }
         .nav-links a { width: 100%; padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
         .nav-links.mobile-open { display: flex; }
+        .nav-item-drop { width: 100%; }
+        .nav-submenu { display: block; position: static; border: none; box-shadow: none; background: transparent; margin: 0; padding: 0 0 0 16px; min-width: 0; }
+        .nav-submenu a { border-bottom: 1px solid rgba(0,0,0,0.04); font-size: 12.5px; padding: 10px 0; color: var(--ink-soft); }
         section { padding: 60px 0; }
         .hero-title { font-size: 2.5rem; letter-spacing: -1.4px; }
         .hero-buttons { flex-direction: column; }
@@ -386,7 +399,15 @@
             <nav class="nav-links" id="navLinks">
                 <a href="#encuentros" onclick="closeMenu()">Encuentros</a>
                 <a href="#organizar" onclick="closeMenu()">Organizá</a>
-                <a href="tarifas-generales.html" class="nav-destacado">Tarifas</a>
+                <span class="nav-item-drop">
+                    <a href="tarifas-generales.html" class="nav-destacado">Tarifas ▾</a>
+                    <span class="nav-submenu">
+                        <a href="tarifas-generales.html" onclick="closeMenu()">Tarifas generales</a>
+                        <a href="empresas.html" onclick="closeMenu()">Para empresas</a>
+                        <a href="programa-pequenos-realizadores.html" onclick="closeMenu()">Pequeños Realizadores</a>
+                        <a href="locacion-para-producciones.html" onclick="closeMenu()">Locación para producciones</a>
+                    </span>
+                </span>
                 <a href="#faq" onclick="closeMenu()">Preguntas</a>
                 <a href="#novedades" onclick="closeMenu()">Novedades</a>
             </nav>
@@ -645,7 +666,7 @@
                 <div>
                     <h3 style="font-size: 20px; margin-bottom: 18px; font-weight: 500; border-bottom: 2px solid var(--wine); padding-bottom: 8px; display: inline-block;">Para organizadores</h3>
                     <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
-                        <details><summary>¿Cuánto cuesta y cómo se reserva?</summary><p>Tenemos tres modalidades: <a href="tarifas-generales.html" style="color: var(--wine); font-weight:600;">tarifas generales de alquiler</a>, que incluyen valores especiales para actividades que se repiten cada semana; para talleres con cupo de hasta 6 personas, el <a href="programa-pequenos-realizadores.html" style="color: var(--wine); font-weight:600;">Programa Pequeños Realizadores</a>; y para shootings y contenido de marca, la <a href="locacion-para-producciones.html" style="color: var(--wine); font-weight:600;">locación para producciones</a>. En cada página encontrás el detalle completo de condiciones de seña y cancelación.</p></details>
+                        <details><summary>¿Cuánto cuesta y cómo se reserva?</summary><p>Tenemos cuatro modalidades: <a href="tarifas-generales.html" style="color: var(--wine); font-weight:600;">tarifas generales de alquiler</a>, que incluyen valores especiales para actividades que se repiten cada semana; para capacitaciones, offsites y encuentros de equipo, el <a href="empresas.html" style="color: var(--wine); font-weight:600;">alquiler para empresas</a>; para talleres con cupo de hasta 6 personas, el <a href="programa-pequenos-realizadores.html" style="color: var(--wine); font-weight:600;">Programa Pequeños Realizadores</a>; y para shootings y contenido de marca, la <a href="locacion-para-producciones.html" style="color: var(--wine); font-weight:600;">locación para producciones</a>. En cada página encontrás el detalle completo de condiciones de seña y cancelación.</p></details>
                         <details><summary>¿Puedo organizar mi evento en Arcos V?</summary><p>Sí. Recibimos propuestas de especialistas, marcas y comunidades que busquen un entorno premium para experiencias presenciales cuidadas.</p></details>
                         <details><summary>¿Arcos V alquila para cualquier tipo de evento?</summary><p><strong>No.</strong> El espacio está pensado para talleres, experiencias, encuentros corporativos y presentaciones de marca — no para fiestas sociales o eventos masivos.</p></details>
                         <details><summary>¿Qué espacios e infraestructura incluye?</summary><p>100 m² cubiertos en layout en L (Recepción 22 m², Bar 20,5 m², Sala Taller 35,5 m²) más un jardín privado de 180 m².</p></details>
