@@ -105,7 +105,11 @@
     .nav-submenu {
         display: none; position: absolute; top: 100%; left: -18px; min-width: 250px;
         background: var(--cream); border: 1px solid rgba(23,58,42,0.12);
-        border-radius: var(--radius); box-shadow: var(--shadow); padding: 8px 0; margin-top: 22px;
+        border-radius: var(--radius); box-shadow: var(--shadow); padding: 8px 0; margin-top: 0; top: calc(100% + 22px);
+    }
+    /* Puente invisible: evita que el menu se cierre al bajar el mouse */
+    .nav-item-drop::after {
+        content: ""; position: absolute; top: 100%; left: -18px; width: 250px; height: 26px;
     }
     .nav-item-drop:hover .nav-submenu, .nav-item-drop:focus-within .nav-submenu { display: block; }
     .nav-submenu a { display: block; padding: 11px 20px; font-size: 13px; color: var(--ink); font-weight: 500; }
@@ -133,9 +137,9 @@
     .hero-buttons { display: flex; gap: 14px; padding: 0 8%; margin-bottom: 40px; }
     .btn-primary { background-color: var(--gold); color: var(--ink); padding: 15px 30px; border-radius: 2px; text-decoration: none; font-weight: 700; font-size: 14px; letter-spacing: 0.3px; transition: 0.3s ease; }
     .btn-primary:hover { background-color: var(--gold-deep); transform: translateY(-2px); }
-        .btn-secondary { background-color: var(--white); color: var(--ink); border: 1px solid var(--white); padding: 14px 28px; border-radius: 2px; text-decoration: none; font-weight: 700; font-size: 14px; transition: 0.3s ease; }
+    .btn-secondary { background-color: var(--white); color: var(--ink); border: 1px solid var(--white); padding: 14px 28px; border-radius: 2px; text-decoration: none; font-weight: 700; font-size: 14px; transition: 0.3s ease; }
     .btn-secondary:hover { background-color: var(--cream); border-color: var(--cream); transform: translateY(-2px); }
-      
+
     /* --- SUMARIO (elemento de firma) --- */
     .sumario { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.08); }
     .sumario-track { display: flex; overflow-x: auto; }
@@ -370,6 +374,8 @@
         .nav-item-drop { width: 100%; }
         .nav-submenu { display: block; position: static; border: none; box-shadow: none; background: transparent; margin: 0; padding: 0 0 0 16px; min-width: 0; }
         .nav-submenu a { border-bottom: 1px solid rgba(0,0,0,0.04); font-size: 12.5px; padding: 10px 0; color: var(--ink-soft); }
+        .nav-tarifas-label { pointer-events: none; color: var(--wine); }
+        .nav-item-drop::after { display: none; }
         section { padding: 60px 0; }
         .hero-title { font-size: 2.5rem; letter-spacing: -1.4px; }
         .hero-buttons { flex-direction: column; }
@@ -400,7 +406,7 @@
                 <a href="#encuentros" onclick="closeMenu()">Encuentros</a>
                 <a href="#organizar" onclick="closeMenu()">Organizá</a>
                 <span class="nav-item-drop">
-                    <a href="tarifas-generales.html" class="nav-destacado">Tarifas ▾</a>
+                    <a href="tarifas-generales.html" class="nav-destacado nav-tarifas-label">Tarifas ▾</a>
                     <span class="nav-submenu">
                         <a href="tarifas-generales.html" onclick="closeMenu()">Tarifas generales</a>
                         <a href="empresas.html" onclick="closeMenu()">Para empresas</a>
