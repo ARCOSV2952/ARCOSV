@@ -22,7 +22,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Locación para Producciones | Arcos V">
     <meta property="og:description" content="Locación en Núñez para shootings y contenido de marca: luz natural, jardín de 180 m² y exclusividad total.">
-    <meta property="og:image" content="https://arcosv.com.ar/hero-2.webp">
+    <meta property="og:image" content="https://arcosv.com.ar/jardin-01.webp">
     <meta property="og:url" content="https://arcosv.com.ar/locacion-para-producciones.html">
     <meta property="og:site_name" content="Arcos V">
     <meta property="og:locale" content="es_AR">
@@ -151,6 +151,15 @@
     .ejemplo { background: rgba(255,255,255,0.07); border-radius: var(--radius); padding: 18px 22px; margin-top: 20px; font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.84); }
     .ejemplo b { color: var(--gold); font-weight: 600; }
 
+    /* --- GALERIA --- */
+    .galeria { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 34px; }
+    .galeria img {
+        width: 100%; height: 100%; object-fit: cover; display: block;
+        border-radius: var(--radius); box-shadow: var(--shadow); aspect-ratio: 4 / 3;
+    }
+    .galeria .destacada { grid-column: span 2; aspect-ratio: 16 / 9; }
+    .galeria-pie { font-size: 13.5px; color: var(--ink-soft); margin: -20px 0 34px; font-style: italic; }
+
     /* --- AVISOS CRUZADOS --- */
     .aviso-alt {
         background: var(--white); border-left: 3px solid var(--gold); border-radius: var(--radius);
@@ -183,6 +192,8 @@
         .hero-simple h1 { font-size: 2.2rem; letter-spacing: -1.1px; }
         .bloque h2, .card-oscura h2, .card-madera h2, .cta-final h2 { font-size: 25px; }
         .grid-dos { grid-template-columns: 1fr; }
+        .galeria { grid-template-columns: 1fr; gap: 12px; }
+        .galeria .destacada { grid-column: span 1; aspect-ratio: 4 / 3; }
         .card-suave, .card-oscura, .card-madera { padding: 30px 24px; }
         .tarifa-row { flex-direction: column; align-items: flex-start; gap: 6px; }
         .cta-final { padding: 40px 24px; }
@@ -217,6 +228,13 @@
                 <p>Arcos V funciona como locación para shootings de producto, contenido de marca, entrevistas, videoclips y sesiones de fotos. Trabajamos con productoras, estudios y fotógrafos que necesitan luz, verde y privacidad sin salir de la ciudad.</p>
                 <p>Son 100 m² cubiertos en un layout en L —recepción, bar y sala— más un jardín privado de 180 m² con acceso directo desde el interior.</p>
             </div>
+
+            <div class="galeria">
+                <img class="destacada" src="jardin-01.webp" alt="Vista del jardín de Arcos V desde el interior, a través de los ventanales" loading="lazy">
+                <img src="jardin-02.webp" alt="Jardín de Arcos V visto desde la galería, con sombrillas de mimbre" loading="lazy">
+                <img src="jardin-03.webp" alt="Jardín de Arcos V con la palmera y el acceso al salón al fondo" loading="lazy">
+            </div>
+            <p class="galeria-pie">Fotos tomadas en distintas temporadas: el jardín cambia con el año.</p>
 
             <div class="bloque">
                 <h2>Qué ofrece</h2>
