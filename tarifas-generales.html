@@ -103,6 +103,7 @@
     .bloque h3 { font-size: 16px; font-weight: 600; margin: 22px 0 8px; color: var(--ink); }
     .bloque p, .bloque li { font-size: 15px; color: var(--ink-soft); line-height: 1.7; }
     .bloque p + p { margin-top: 12px; }
+    .bloque p strong { color: var(--ink); font-weight: 600; }
 
     .lista-guion { list-style: none; margin-top: 12px; }
     .lista-guion li { margin-bottom: 12px; padding-left: 18px; position: relative; }
@@ -124,6 +125,11 @@
     .card-madera p, .card-madera li { color: rgba(255,255,255,0.86); }
     .card-madera strong { color: #fff; font-weight: 600; }
     .card-madera .lista-guion li::before { color: var(--gold); }
+
+    /* --- NOS GUSTA CONOCERTE --- */
+    .card-conocerte { border-left: 4px solid var(--gold); }
+    .link-suave { color: var(--ink); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--gold); }
+    .link-suave:hover { color: var(--wine); }
 
     /* --- STATS --- */
     .grid-dos { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
@@ -260,7 +266,7 @@
                     <li><strong>Consumo directo:</strong> cada asistente abona lo suyo en el momento.</li>
                 </ul>
                 <h3>Comida</h3>
-                <p>Podés traer comida para tu grupo, avisándonos antes para coordinar el armado. Las bebidas e infusiones son siempre del bar de Arcos V. No está permitido a los asistentes ingresar con equipo de mate.</p>
+                <p>Podés traer comida para tu grupo, avisándonos antes para coordinar el armado. Las bebidas e infusiones son siempre del bar de Arcos V. <strong>No está permitido a los asistentes ingresar con equipo de mate.</strong></p>
                 <p class="nota">Para eventos específicos —como catas de vino u otras propuestas particulares— la coordinación del servicio puede variar.</p>
             </div>
 
@@ -330,10 +336,17 @@
                 </ul>
             </div>
 
+            <!-- NUEVO: Nos gusta conocerte -->
+            <div class="bloque card-suave card-conocerte">
+                <h2>Nos gusta conocerte</h2>
+                <p>Cada taller que pasa por Arcos V suma a la identidad del espacio, y nos gusta conocer a quien está detrás de cada propuesta. Por eso, cuando nos escribas, sumá el link a tu Instagram. Si no tenés redes activas, también nos sirve tu web o algunas fotos de tu trabajo.</p>
+                <p class="nota">Te contamos <a href="como-elegimos-quien-da-un-taller-en-arcos-v.html" class="link-suave">cómo elegimos quién da un taller o cata en Arcos V</a>.</p>
+            </div>
+
             <div class="cta-final">
                 <h2>¿Tenés más preguntas?</h2>
-                <p>Escribinos con la fecha, la cantidad de personas y el tipo de actividad, y te pasamos el presupuesto.</p>
-                <a href="https://wa.me/5491162834000?text=Hola!%20Vi%20las%20tarifas%20generales%20en%20la%20web%20y%20quiero%20consultar%20por%20mi%20evento." target="_blank" rel="noopener" class="btn-cta">Consultar por WhatsApp</a>
+                <p>Escribinos con la fecha, la cantidad de personas, el tipo de actividad y tu Instagram, y te pasamos el presupuesto.</p>
+                <a href="https://wa.me/5491162834000?text=Hola!%20Vi%20las%20tarifas%20generales%20en%20la%20web%20y%20quiero%20consultar%20por%20mi%20evento.%20Les%20paso%20mi%20Instagram%3A%20" target="_blank" rel="noopener" class="btn-cta">Consultar por WhatsApp</a>
             </div>
 
         </div>
