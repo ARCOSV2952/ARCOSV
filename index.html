@@ -39,6 +39,12 @@
       "image": "https://arcosv.com.ar/logo.png",
       "address": { "@type": "PostalAddress", "streetAddress": "Arcos 2952", "addressLocality": "Núñez, Buenos Aires", "postalCode": "1429", "addressCountry": "AR" },
       "sameAs": ["https://instagram.com/arcosv.ba"],
+      "geo": { "@type": "GeoCoordinates", "latitude": -34.5524119, "longitude": -58.4609375 },
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "08:00", "closes": "23:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "22:00" }
+      ],
       "maximumAttendeeCapacity": 35,
       "amenityFeature": [
         { "@type": "LocationFeatureSpecification", "name": "Jardín privado de 180 m²", "value": true },
@@ -143,7 +149,8 @@
         letter-spacing: -2px;
     }
     .hero-title em { font-style: normal; font-weight: 700; color: var(--gold); }
-    .hero-subtitle { font-size: 19px; color: rgba(255,255,255,0.88); max-width: 480px; line-height: 1.5; margin-bottom: 32px; }
+    .hero-subtitle { font-size: 19px; color: rgba(255,255,255,0.88); max-width: 480px; line-height: 1.5; margin-bottom: 14px; }
+    .hero-h2 { font-family: 'Work Sans', sans-serif; font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.75); max-width: 520px; line-height: 1.5; margin-bottom: 28px; letter-spacing: 0.2px; }
 
     .hero-buttons { display: flex; gap: 14px; padding: 0 8%; margin-bottom: 40px; }
     .btn-primary { background-color: var(--gold); color: var(--ink); padding: 15px 30px; border-radius: 2px; text-decoration: none; font-weight: 700; font-size: 14px; letter-spacing: 0.3px; transition: 0.3s ease; }
@@ -389,6 +396,7 @@
         .nav-item-drop::after { display: none; }
         section { padding: 60px 0; }
         .hero-title { font-size: 2.5rem; letter-spacing: -1.4px; }
+        .hero-h2 { font-size: 13px; margin-bottom: 22px; }
         .hero-buttons { flex-direction: column; }
         .btn-primary, .btn-secondary { width: 100%; text-align: center; }
         .tres-columnas { grid-template-columns: 1fr; }
@@ -446,6 +454,7 @@
                 <span class="hero-eyebrow">Espacio boutique · Núñez</span>
                 <h1 class="hero-title">Por acá pasa lo que te <em>gusta</em> hacer</h1>
                 <p class="hero-subtitle">Jardín, sala taller y un bar — para marcas, especialistas y comunidades que crean experiencias presenciales.</p>
+                <h2 class="hero-h2">Espacio para eventos corporativos, talleres y capacitaciones en Núñez, CABA</h2>
             </div>
             <div class="hero-buttons">
                 <a href="#encuentros" class="btn-primary">Descubrir experiencias</a>
