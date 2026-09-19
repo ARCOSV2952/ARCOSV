@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Macetas · Arcos V</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --crema:#FAF6EC;
+  --papel:#F0E8D5;
+  --tinta:#2B2A26;
+  --tinta-suave:#6A665C;
+  --verde-hondo:#173A2A;
+  --madera:#3D2A1D;
+  --linea:#E2D8C2;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--crema);
+  color:var(--tinta);
+  font-family:'Work Sans',system-ui,-apple-system,sans-serif;
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.envoltorio{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* ---------- Encabezado ---------- */
+.cabecera{padding:40px 0 0}
+.volver{
+  display:inline-block;
+  font-size:14px;
+  letter-spacing:.02em;
+  color:var(--tinta-suave);
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+  transition:border-color .2s;
+}
+.volver:hover,.volver:focus{border-bottom-color:var(--tinta-suave)}
+
+.portada{padding:56px 0 48px;border-bottom:1px solid var(--linea)}
+.portada h1{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:700;
+  color:var(--verde-hondo);
+  font-size:clamp(2.6rem,7vw,4.2rem);
+  line-height:1.05;
+  letter-spacing:-.015em;
+}
+.portada p{
+  margin-top:20px;
+  max-width:46ch;
+  color:var(--tinta-suave);
+}
+
+/* ---------- Producto ---------- */
+.producto{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:56px;
+  padding:64px 0;
+  border-bottom:1px solid var(--linea);
+  align-items:start;
+}
+.galeria{display:grid;gap:12px}
+.principal{
+  background:var(--papel);
+  border-radius:4px;
+  overflow:hidden;
+  aspect-ratio:1/1;
+}
+.principal img{width:100%;height:100%;object-fit:cover;display:block}
+.miniaturas{display:flex;gap:12px}
+.miniaturas button{
+  flex:0 0 84px;
+  aspect-ratio:1/1;
+  padding:0;
+  border:1px solid var(--linea);
+  border-radius:4px;
+  background:var(--papel);
+  overflow:hidden;
+  cursor:pointer;
+  transition:border-color .18s;
+}
+.miniaturas button[aria-current="true"]{border-color:var(--verde-hondo)}
+.miniaturas button:focus-visible{outline:2px solid var(--verde-hondo);outline-offset:2px}
+.miniaturas img{width:100%;height:100%;object-fit:cover;display:block}
+
+.ficha h2{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:700;
+  color:var(--verde-hondo);
+  font-size:2.4rem;
+  line-height:1.1;
+}
+.precio{
+  font-size:1.5rem;
+  font-weight:500;
+  margin-top:8px;
+  color:var(--verde-hondo);
+}
+.ficha .resumen{margin-top:20px;max-width:42ch}
+
+.medidas{
+  margin-top:28px;
+  border-top:1px solid var(--linea);
+}
+.medidas div{
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  padding:11px 0;
+  border-bottom:1px solid var(--linea);
+  font-size:15px;
+}
+.medidas dt{color:var(--tinta-suave)}
+.medidas dd{font-weight:500;text-align:right}
+
+.consultar{
+  display:inline-block;
+  margin-top:28px;
+  padding:14px 28px;
+  background:var(--verde-hondo);
+  color:var(--papel);
+  text-decoration:none;
+  border-radius:3px;
+  font-weight:600;
+  font-size:16px;
+  transition:background .2s;
+}
+.consultar:hover,.consultar:focus{background:#0F2A1E}
+.retiro{margin-top:12px;font-size:14px;color:var(--tinta-suave)}
+
+/* ---------- Pie / taller ---------- */
+.taller{padding:56px 0 72px}
+.taller h3{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:700;
+  color:var(--verde-hondo);
+  font-size:1.7rem;
+}
+.taller p{margin-top:12px;max-width:52ch;color:var(--tinta-suave)}
+.taller a{color:var(--verde-hondo);text-decoration:underline;text-underline-offset:3px}
+
+@media (max-width:760px){
+  .producto{grid-template-columns:1fr;gap:36px;padding:44px 0}
+  .ficha h2{font-size:2rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="envoltorio">
+
+  <header class="cabecera">
+    <a class="volver" href="index.html">← Arcos V</a>
+  </header>
+
+  <section class="portada">
+    <h1>Macetas</h1>
+    <p>Piezas de cerámica esmaltada que nos quedaron del vivero. Son unidades contadas: cuando se termina un modelo, no vuelve.</p>
+  </section>
+
+  <!-- ====== PRODUCTO: copiar este bloque entero para agregar otro modelo ====== -->
+  <article class="producto">
+
+    <div class="galeria">
+      <div class="principal">
+        <img id="foto-samba" src="img/samba-1.webp" alt="Maceta Samba de cerámica esmaltada verde pastel">
+      </div>
+      <!-- Cuando tengas la 2da foto, pedime el bloque de miniaturas -->
+    </div>
+
+    <div class="ficha">
+      <h2>Samba</h2>
+      <p class="precio">$35.000</p>
+      <p class="resumen">Cerámica esmaltada en verde pastel, con relieve ondulado en tres anillos. Tiene orificio de drenaje, así que sirve para plantar directo.</p>
+
+      <dl class="medidas">
+        <div><dt>Ancho</dt><dd>15,5 cm</dd></div>
+        <div><dt>Alto</dt><dd>13 cm</dd></div>
+        <div><dt>Boca interna</dt><dd>12,5 cm</dd></div>
+        <div><dt>Peso</dt><dd>1 kg</dd></div>
+        <div><dt>Material</dt><dd>Cerámica esmaltada</dd></div>
+      </dl>
+
+      <a class="consultar" href="https://wa.me/5491162834000?text=Hola!%20Me%20interesa%20la%20maceta%20Samba%20de%20%2435.000." target="_blank" rel="noopener">Consultar por WhatsApp</a>
+      <p class="retiro">Se retira en Arcos 2952, Núñez.</p>
+    </div>
+
+  </article>
+  <!-- ====== FIN PRODUCTO ====== -->
+
+  <section class="taller">
+    <h3>También damos clases de jardinería</h3>
+    <p>Una clase para aprender a elegir, regar y cuidar tus plantas. <a href="jardineria.html">Mirá cómo es y enterate de la próxima fecha.</a></p>
+  </section>
+
+</div>
+
+<script>
+document.querySelectorAll('.miniaturas').forEach(function(grupo){
+  var principal = grupo.closest('.galeria').querySelector('.principal img');
+  grupo.querySelectorAll('button').forEach(function(boton){
+    boton.addEventListener('click', function(){
+      principal.src = boton.dataset.foto;
+      principal.alt = boton.querySelector('img').alt;
+      grupo.querySelectorAll('button').forEach(function(b){ b.setAttribute('aria-current','false'); });
+      boton.setAttribute('aria-current','true');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
