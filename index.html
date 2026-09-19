@@ -424,6 +424,21 @@
    .evento-grid-content {
     background: #3D2A1D !important;
 } 
+    /* --- PLANTAS Y MACETAS --- */
+    .plantas-box { background: var(--cream-deep); border-radius: var(--radius); padding: 44px; display: flex; flex-wrap: wrap; gap: 28px; align-items: center; justify-content: space-between; }
+    .plantas-titulo { font-size: 34px; font-weight: 700; letter-spacing: -0.8px; color: var(--ink); line-height: 1.05; }
+    .plantas-texto { color: var(--wood); font-size: 16px; line-height: 1.6; margin-top: 12px; max-width: 560px; }
+    .plantas-botones { display: flex; flex-wrap: wrap; gap: 12px; }
+    .plantas-botones .btn-wine { background: var(--ink); color: var(--cream); }
+    .plantas-botones .btn-wine:hover { background: var(--ink-mid); }
+    .plantas-btn-sec { border: 1px solid var(--wood); color: var(--wood); text-decoration: none; font-weight: 700; padding: 14px 26px; border-radius: 2px; font-size: 14px; }
+    .plantas-btn-sec:hover { background: var(--wood); color: var(--cream); }
+    @media (max-width: 700px) {
+        .plantas-box { padding: 28px; }
+        .plantas-titulo { font-size: 28px; }
+        .plantas-botones { flex-direction: column; width: 100%; }
+        .plantas-botones a { text-align: center; }
+    }
     </style>
 </head>
 
@@ -558,9 +573,38 @@
                     </div>
                 </a>
 
+               <!-- Evento 9 -->
+                <a href="jardineria.html" class="evento-grid-card" data-cat="aprendizaje">
+                    <img src="img/jardineria-jardin.webp" alt="Clase de jardinería en el patio de Arcos V" loading="lazy">
+                    <div class="evento-grid-content">
+                        <span class="evento-grid-tag">Clase</span>
+                        <h3 class="evento-grid-title">Jardinería para principiantes</h3>
+                        <p class="evento-grid-date">Próxima edición: a confirmar</p>
+                        <span class="evento-grid-cta">Ver detalles y avisame <span class="cta-flecha" aria-hidden="true">→</span></span>
+                    </div>
+                </a>
+
                </div>
         </div>
     </section>
+
+    <!-- ====== PLANTAS Y MACETAS ====== -->
+    <section id="plantas" style="padding-top: 0;">
+        <div class="seccion-centrada">
+            <div class="plantas-box">
+                <div>
+                    <span class="eyebrow">Herencia del vivero</span>
+                    <h2 class="plantas-titulo">Plantas y macetas</h2>
+                    <p class="plantas-texto">Antes de ser Arcos V, acá funcionó el vivero Arcos Verde. Esa parte sigue viva: damos una clase de jardinería para principiantes y vendemos productos de jardinería, en unidades contadas.</p>
+                </div>
+                <div class="plantas-botones">
+                    <a class="btn-wine" href="tienda.html">Ver productos →</a>
+                    <a class="plantas-btn-sec" href="jardineria.html">Clase de jardinería</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====== FIN PLANTAS Y MACETAS ====== -->
 
     <section id="que-es" style="background: var(--cream-deep);">
         <div class="seccion-centrada">
