@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clase de jardinería para principiantes · Arcos V</title>
+<meta name="description" content="Clase de jardinería para principiantes en Arcos V, Núñez. Cómo elegir, regar, iluminar y cuidar tus plantas, y los 10 errores más comunes que las matan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Google Analytics: pegá acá el mismo bloque que tenés en el index -->
+<style>
+:root{
+  --crema:#FAF6EC;
+  --crema-2:#F0E8D5;
+  --verde:#173A2A;
+  --madera:#3D2A1D;
+  --amarillo:#FFC107;
+  --texto:#2B2A26;
+  --suave:#6A665C;
+  --linea:#E2D8C2;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--crema);color:var(--texto);font-family:'Work Sans',system-ui,sans-serif;font-size:17px;line-height:1.65}
+img{display:block;max-width:100%}
+a{color:inherit}
+.env{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* Encabezado */
+.top{padding:28px 0}
+.top a{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:20px;color:var(--verde);text-decoration:none}
+
+/* Portada */
+.portada{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:24px 0 64px}
+.portada h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;color:var(--verde);font-size:clamp(2.3rem,5.5vw,3.9rem);line-height:1.02;letter-spacing:-.02em}
+.portada .bajada{margin-top:22px;font-size:1.15rem;max-width:44ch}
+.datos{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px}
+.datos span{background:var(--crema-2);color:var(--madera);padding:7px 14px;border-radius:999px;font-size:15px;font-weight:500}
+.portada figure img{border-radius:6px;aspect-ratio:4/5;max-height:560px;object-fit:cover;width:100%}
+
+/* Aviso de próxima fecha */
+.aviso{background:var(--verde);color:var(--crema);border-radius:8px;padding:40px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center}
+.aviso h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.8rem;line-height:1.15}
+.aviso p{margin-top:10px;opacity:.85;max-width:52ch}
+.boton{display:inline-block;background:var(--amarillo);color:var(--verde);font-weight:600;text-decoration:none;padding:15px 26px;border-radius:4px;white-space:nowrap}
+.boton:hover,.boton:focus-visible{background:#FFD24D}
+.boton:focus-visible{outline:3px solid var(--crema);outline-offset:3px}
+
+/* Secciones de texto */
+.bloque{padding:80px 0 0}
+.bloque h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;color:var(--verde);font-size:2rem;line-height:1.1;max-width:22ch}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:28px}
+.dos p+p{margin-top:14px}
+.para{background:var(--crema-2);border-radius:8px;padding:28px}
+.para h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:1.2rem;color:var(--madera)}
+.para ul{margin-top:12px;padding-left:20px}
+.para li+li{margin-top:6px}
+
+/* Los 10 no */
+.diez{margin-top:28px;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;border-top:2px solid var(--verde);border-bottom:2px solid var(--verde);padding:36px 0}
+.diez .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;color:var(--verde);font-size:clamp(5rem,14vw,9rem);line-height:.85}
+.diez p{font-size:1.15rem;max-width:48ch}
+
+/* Temario */
+.temas{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linea);border:1px solid var(--linea);border-radius:8px;overflow:hidden}
+.temas div{background:var(--crema);padding:22px}
+.temas h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:1.1rem;color:var(--verde)}
+.temas p{margin-top:6px;font-size:15px;color:var(--suave)}
+
+/* Quién la da */
+.quien{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:48px;align-items:center;margin-top:28px}
+.quien img{border-radius:6px;aspect-ratio:3/4;object-fit:cover;width:100%;height:auto;max-height:440px}
+
+/* Ediciones anteriores */
+.galeria{margin-top:28px;display:grid;grid-template-columns:1.6fr 1fr;gap:12px}
+.galeria img{width:100%;height:100%;object-fit:cover;border-radius:6px;aspect-ratio:4/5}
+.galeria .ancha{aspect-ratio:auto}
+.nota{margin-top:14px;color:var(--suave);font-size:15px}
+
+/* Puente a la tienda */
+.tienda{margin:80px 0 0;background:var(--crema-2);border-radius:8px;padding:40px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center}
+.tienda h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;color:var(--madera);font-size:1.6rem}
+.tienda p{margin-top:8px;max-width:52ch}
+.boton-sec{display:inline-block;border:2px solid var(--madera);color:var(--madera);font-weight:600;text-decoration:none;padding:13px 24px;border-radius:4px;white-space:nowrap}
+.boton-sec:hover,.boton-sec:focus-visible{background:var(--madera);color:var(--crema)}
+
+footer{margin-top:80px;padding:32px 0 48px;border-top:1px solid var(--linea);color:var(--suave);font-size:15px}
+
+@media (max-width:800px){
+  .portada,.dos,.quien,.aviso,.tienda{grid-template-columns:1fr}
+  .portada{gap:28px}
+  .temas{grid-template-columns:1fr 1fr}
+  .galeria{grid-template-columns:1fr 1fr}
+  .galeria .ancha{grid-column:1/-1;aspect-ratio:16/10}
+  .galeria img:not(.ancha){grid-column:1/-1}
+  .aviso,.tienda{padding:28px}
+  .diez{grid-template-columns:1fr;gap:12px}
+}
+@media (max-width:480px){.temas{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="env">
+
+  <header class="top"><a href="index.html">Arcos V</a></header>
+
+  <section class="portada">
+    <div>
+      <h1>Clase de jardinería para principiantes</h1>
+      <p class="bajada">Para quienes quieren llenar la casa de plantas y no saben por dónde empezar, y para quienes las aman pero no les duran.</p>
+      <div class="datos">
+        <span>2 horas</span>
+        <span>Hasta 15 personas</span>
+        <span>$10.000</span>
+        <span>Núñez</span>
+      </div>
+    </div>
+    <figure><img src="img/jardineria-jardin.webp" alt="Clase de jardinería bajo el techo del patio de Arcos V, con la palmera del jardín de fondo" width="972" height="1296"></figure>
+  </section>
+
+  <!-- ====== PRÓXIMA FECHA ======
+       Cuando haya fecha: cambiá el h2 por la fecha y el horario,
+       y el texto del botón por "Quiero anotarme". -->
+  <section class="aviso">
+    <div>
+      <h2>La próxima clase se está armando</h2>
+      <p>Todavía no hay fecha. Escribime y te aviso apenas la tenga, antes de publicarla.</p>
+    </div>
+    <a class="boton" href="https://wa.me/5491162834000?text=Hola%20Marcela!%20Quiero%20que%20me%20avises%20cuando%20haya%20fecha%20para%20la%20clase%20de%20jardiner%C3%ADa." target="_blank" rel="noopener">Avisame por WhatsApp</a>
+  </section>
+  <!-- ====== FIN PRÓXIMA FECHA ====== -->
+
+  <section class="bloque">
+    <h2>Antes de comprar una planta, hay que saber elegirla</h2>
+    <div class="dos">
+      <div>
+        <p>La mayoría de las plantas no se mueren por falta de cariño: se mueren por estar en el lugar equivocado, por agua de más o por un sustrato que no les sirve.</p>
+        <p>Esta clase arranca antes de la compra. Vemos cómo leer tu casa (dónde da el sol, cuánta luz entra, cuánto tiempo tenés) para elegir plantas que vayan a estar bien ahí, y después cómo cuidarlas día a día.</p>
+      </div>
+      <div class="para">
+        <h3>Es para vos si</h3>
+        <ul>
+          <li>nunca tuviste plantas y querés empezar a decorar con ellas</li>
+          <li>te encantan pero se te mueren al poco tiempo</li>
+          <li>no sabés cada cuánto regar ni dónde ponerlas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque">
+    <h2>Los errores más comunes</h2>
+    <div class="diez">
+      <div class="num">10</div>
+      <p>En la clase repasamos los diez "no" que más atentan contra la salud de las plantas de interior. Casi todos se cometen con buena intención, y casi todos tienen arreglo.</p>
+    </div>
+  </section>
+
+  <section class="bloque">
+    <h2>Qué vemos</h2>
+    <div class="temas">
+      <div><h3>Elegir</h3><p>Qué planta va con tu casa, tu luz y tu tiempo.</p></div>
+      <div><h3>Riego</h3><p>Cuánto, cada cuánto y cómo darte cuenta.</p></div>
+      <div><h3>Iluminación</h3><p>Sol directo, luz filtrada y sombra.</p></div>
+      <div><h3>Sustrato</h3><p>Qué tierra usar y cuándo cambiarla.</p></div>
+      <div><h3>Plagas</h3><p>Cómo reconocerlas a tiempo.</p></div>
+      <div><h3>Cuidados generales</h3><p>Macetas, drenaje, limpieza y trasplante.</p></div>
+    </div>
+    <p class="nota">Es una clase teórica, con apoyo de material audiovisual. Traé tus preguntas y, si querés, fotos de tus plantas.</p>
+  </section>
+
+  <section class="bloque">
+    <h2>Quién la da</h2>
+    <div class="quien">
+      <img src="img/jardineria-vivero.webp" alt="El vivero Arcos Verde, que funcionaba en este mismo lugar" width="1050" height="1400" >
+      <div>
+        <p>Soy Marcela. Durante nueve años tuve un vivero en este mismo lugar, antes de que fuera Arcos V. Esta clase junta lo que más me preguntaban del otro lado del mostrador.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque">
+    <h2>Ediciones anteriores</h2>
+    <div class="galeria">
+      <img class="ancha" src="img/jardineria-clase-1.webp" alt="Clase de jardinería en el jardín de Arcos V" width="1344" height="756" >
+      <img src="img/jardineria-grupo.webp" alt="Foto grupal al final de una clase" width="972" height="1296" >
+    </div>
+    <p class="nota">Ya hicimos cinco ediciones.</p>
+  </section>
+
+  <!-- ====== PUENTE A AMANTEA ======
+       Cuando la tienda esté publicada, cambiá el href por su dirección. -->
+  <section class="tienda">
+    <div>
+      <h2>¿Buscás macetas?</h2>
+      <p>Tenemos piezas de cerámica esmaltada del vivero, unidades contadas. Se retiran acá.</p>
+    </div>
+    <a class="boton-sec" href="#" target="_blank" rel="noopener">Ver las macetas</a>
+  </section>
+  <!-- ====== FIN PUENTE ====== -->
+
+  <footer>Arcos V · Arcos 2952, Núñez, CABA</footer>
+
+</div>
+</body>
+</html>
