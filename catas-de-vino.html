@@ -117,6 +117,45 @@
 
         .proxima h2 { margin-bottom: 10px; }
 
+        .proxima-cols {
+            display: flex;
+            gap: 28px;
+            align-items: flex-start;
+        }
+
+        .proxima-flyer {
+            width: 40%;
+            flex-shrink: 0;
+            border-radius: 12px;
+            display: block;
+        }
+
+        .proxima-texto { flex: 1; }
+
+        .pasos {
+            list-style: none;
+            margin: 16px 0 0;
+            padding: 0;
+            color: #444;
+        }
+
+        .pasos li {
+            padding: 8px 0;
+            border-top: 1px solid #eee;
+            font-size: 15px;
+        }
+
+        .pasos li em {
+            display: block;
+            color: var(--text-light);
+        }
+
+        .siguiente-fecha {
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
         /* Separador entre secciones */
         .seccion { margin-bottom: 50px; }
 
@@ -162,6 +201,8 @@
             h1 { font-size: 32px; }
             h2 { font-size: 24px; }
             .galeria { grid-template-columns: repeat(2, 1fr); }
+            .proxima-cols { flex-direction: column; }
+            .proxima-flyer { width: 100%; }
         }
     </style>
 </head>
@@ -177,10 +218,23 @@
 
         <!-- PRÓXIMA EDICIÓN -->
         <div class="proxima">
-            <h2>Próxima edición</h2>
-            <p class="event-meta">Noviembre 2026 &mdash; fecha a confirmar</p>
-            <p>Escribinos y te avisamos apenas estén las fechas, así reservás tu lugar antes de que se llene.</p>
-            <a href="https://wa.me/5491151530473?text=Hola!%20Quiero%20info%20de%20la%20pr%C3%B3xima%20cata%20de%20vino%20en%20Arcos%20V." target="_blank" rel="noopener" class="btn-ws">Consultar por la próxima cata</a>
+            <h2>Próxima edición: Cata de Pinot Noir</h2>
+            <p class="event-meta">Sábado 17 de octubre &mdash; 20:30 hs &mdash; $60.000</p>
+            <div class="proxima-cols">
+                <img src="cata-pinot-oct26.webp" alt="Flyer de la Cata de Pinot Noir del 17 de octubre en Arcos V: 5 vinos y 5 pasos" class="proxima-flyer" loading="lazy">
+                <div class="proxima-texto">
+                    <p>Cinco vinos y cinco pasos para recorrer todas las caras del Pinot Noir: del blanco y el rosado al tinto de reserva, cerrando con un espumante.</p>
+                    <ul class="pasos">
+                        <li>Bomba de papa con salsa de puerros <em>Aniello &mdash; Blanco de Pinot Noir</em></li>
+                        <li>Focaccia con cherrys y albahaca <em>Saurus &mdash; Pinot Rosé</em></li>
+                        <li>Empanada de carne <em>Juguete Rabioso &mdash; Pinot Noir</em></li>
+                        <li>Beef Bourguignon <em>Laureano Gómez &mdash; Pinot Reserva</em></li>
+                        <li>Postre helado <em>Simio &mdash; Extra Brut Rosé de Pinot Noir</em></li>
+                    </ul>
+                </div>
+            </div>
+            <a href="https://wa.me/5491151530473?text=Hola!%20Quiero%20reservar%20para%20la%20cata%20de%20Pinot%20Noir%20del%2017%2F10%20en%20Arcos%20V." target="_blank" rel="noopener" class="btn-ws">Reservar mi lugar</a>
+            <p class="siguiente-fecha">Los lugares son limitados. Siguiente fecha: sábado 14 de noviembre (temática a confirmar).</p>
         </div>
 
         <!-- QUÉ ES -->
