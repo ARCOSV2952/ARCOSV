@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J5T8QFY2EW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J5T8QFY2EW');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio de Acuarela Profesional en Núñez | Arcos V</title>
+        <meta name="description" content="Laboratorio de Acuarela Profesional con Vladimir Merchensky, de la escuela Tantatinta, en Arcos V, Núñez. Diez encuentros semanales para profundizar tu técnica.">
+    <link rel="canonical" href="https://arcosv.com.ar/laboratorio-acuarela.html">
+        <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8c2b32;
+            --bg: #faf9f6;
+            --text: #1a1a1a;
+            --text-light: #666;
+            --radius: 16px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container { max-width: 800px; margin: 0 auto; }
+
+        .main-image {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        .event-category {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        h1 {
+            font-family: 'Lora', serif;
+            font-size: 42px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-family: 'Lora', serif;
+            font-size: 28px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .event-meta {
+            font-style: italic;
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        .description {
+            font-size: 17px;
+            color: #444;
+            margin-bottom: 40px;
+        }
+
+        .description p { margin-bottom: 16px; }
+
+        .box-info {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            border: 1px solid #eee;
+            text-align: center;
+        }
+
+        .btn-ws {
+            display: block;
+            text-align: center;
+            background-color: #25d366;
+            color: #faf9f6;
+            padding: 18px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            margin-top: 30px;
+        }
+
+        /* Bloque de la próxima edición */
+        .proxima {
+            background: white;
+            border: 1px solid #eee;
+            border-left: 4px solid var(--primary);
+            border-radius: var(--radius);
+            padding: 30px;
+            margin-bottom: 50px;
+        }
+
+        .proxima h2 { margin-bottom: 10px; }
+
+        .proxima-cols {
+            display: flex;
+            gap: 28px;
+            align-items: flex-start;
+        }
+
+        .proxima-flyer {
+            width: 40%;
+            flex-shrink: 0;
+            border-radius: 12px;
+            display: block;
+        }
+
+        .proxima-texto { flex: 1; }
+
+        .pasos {
+            list-style: none;
+            margin: 16px 0 0;
+            padding: 0;
+            color: #444;
+        }
+
+        .pasos li {
+            padding: 8px 0;
+            border-top: 1px solid #eee;
+            font-size: 15px;
+        }
+
+        .pasos li em {
+            display: block;
+            color: var(--text-light);
+        }
+
+        .siguiente-fecha {
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Separador entre secciones */
+        .seccion { margin-bottom: 50px; }
+
+        /* Galería de ediciones anteriores */
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .galeria img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block;
+        }
+
+        .edicion-titulo {
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 6px;
+        }
+
+        .edicion-fecha {
+            font-size: 14px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 32px; }
+            h2 { font-size: 24px; }
+            .galeria { grid-template-columns: repeat(2, 1fr); }
+            .proxima-cols { flex-direction: column; }
+            .proxima-flyer { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <img src="laboratorio-acuarela-portada.webp" alt="Materiales de acuarela y pinturas de Vladimir Merchensky sobre la mesa" class="main-image">
+
+        <span class="event-category">ARTE Y OFICIO</span>
+        <h1>Laboratorio de Acuarela Profesional</h1>
+        <p class="event-meta">Con Vladimir Merchensky &mdash; Escuela Tantatinta</p>
+
+        <!-- PRÓXIMA EDICIÓN -->
+        <div class="proxima">
+            <h2>Próxima edición</h2>
+            <p class="event-meta">Arranca el martes 6 de octubre</p>
+            <div class="proxima-cols">
+                <img src="laboratorio-acuarela-flyer.webp" alt="Flyer del Laboratorio de Acuarela Profesional con Vladimir Merchensky en Arcos V" class="proxima-flyer" loading="lazy">
+                <div class="proxima-texto">
+                    <p>Diez encuentros de dos horas, una vez por semana, guiados por Vladimir Merchensky. Pensado para quienes ya tienen experiencia con la acuarela y quieren profundizar, experimentar y encontrar su propia manera de pintar.</p>
+                    <ul class="pasos">
+                        <li>Martes de 18:30 a 20:30<em>desde el 6 de octubre &mdash; 10 encuentros semanales</em></li>
+                        <li>Viernes de 11:00 a 13:00<em>desde el 9 de octubre &mdash; 10 encuentros semanales</em></li>
+                    </ul>
+                </div>
+            </div>
+            <a href="https://wa.me/5491125774215?text=Hola!%20Quiero%20info%20del%20Laboratorio%20de%20Acuarela%20Profesional%20en%20Arcos%20V." target="_blank" rel="noopener" class="btn-ws">Consultar por WhatsApp</a>
+            <p class="siguiente-fecha">Cupos limitados. Elegís el horario que mejor te quede, martes o viernes.</p>
+        </div>
+
+        <!-- QUÉ ES -->
+        <div class="seccion">
+            <h2>Cómo es el laboratorio</h2>
+            <div class="description">
+                <p>Tantatinta es una escuela de acuarela con 14 años de trayectoria. Este laboratorio no es un taller de iniciación: está dirigido a quienes ya conocen la técnica y buscan un espacio de práctica sostenida, con la guía de Vladimir Merchensky, para experimentar y desarrollar un estilo propio.</p>
+                <p>Se dicta una vez por semana durante diez encuentros, con dos horarios a elección: los martes por la tarde o los viernes a la mañana.</p>
+            </div>
+        </div>
+
+        <!-- CONTACTO -->
+        <div class="box-info">
+            <h3 style="font-family: 'Lora', serif;">¿Querés participar?</h3>
+            <p>Escribinos y te contamos las fechas, el precio y cómo anotarte.</p>
+            <a href="https://wa.me/5491125774215?text=Hola!%20Quiero%20info%20del%20Laboratorio%20de%20Acuarela%20Profesional%20en%20Arcos%20V." target="_blank" rel="noopener" class="btn-ws">Consultar por WhatsApp</a>
+        </div>
+
+        <a href="index.html#encuentros" class="back">← Volver a los encuentros</a>
+
+    </div>
+</body>
+</html>
