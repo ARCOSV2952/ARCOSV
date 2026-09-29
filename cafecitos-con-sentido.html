@@ -183,9 +183,44 @@
             .pregunta { font-size: 19px; }
             .galeria { grid-template-columns: repeat(2, 1fr); }
         }
+    
+        /* --- Encabezado del sitio --- */
+        body { padding-top: 116px; }
+        .site-header {
+            position: fixed; top: 0; left: 0; width: 100%; height: 96px; z-index: 1000;
+            background: rgba(250,246,236,0.94); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(23,58,42,0.10); display: flex; align-items: center;
+        }
+        .site-header .nav-container {
+            width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 40px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .site-header .logo img { height: 58px; width: auto; display: block; }
+        .site-header .nav-right { display: flex; align-items: center; gap: 22px; }
+        .site-header .nav-back { text-decoration: none; color: #173A2A; font-size: 13px; font-weight: 500; letter-spacing: 0.4px; white-space: nowrap; transition: 0.3s; }
+        .site-header .nav-back:hover { color: #9C6B1F; }
+        @media (max-width: 700px) {
+            body { padding-top: 92px; }
+            .site-header { height: 72px; }
+            .site-header .logo img { height: 46px; }
+            .site-header .nav-container { padding: 0 18px; }
+            .site-header .nav-right { gap: 14px; }
+            .site-header .nav-back { font-size: 12px; letter-spacing: 0; }
+        }
     </style>
 </head>
 <body>
+
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="logo"><a href="index.html"><img src="logo.png" alt="Arcos V Logo"></a></div>
+            <div class="nav-right">
+                <a href="tienda.html" class="nav-back">La Tienda</a>
+                <a href="index.html" class="nav-back">← Volver al inicio</a>
+            </div>
+        </div>
+    </header>
+
 
     <div class="container">
 
