@@ -802,6 +802,16 @@
             document.getElementById('navLinks').classList.remove('mobile-open');
             document.querySelector('.menu-toggle').setAttribute('aria-expanded', 'false');
         }
+              document.addEventListener('click', function (e) {
+            const nav = document.getElementById('navLinks');
+            const btn = document.querySelector('.menu-toggle');
+            if (nav.classList.contains('mobile-open') && !nav.contains(e.target) && !btn.contains(e.target)) {
+                closeMenu();
+            }
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeMenu();
+        });
         function filter(category, button) {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             button.classList.add('active');
