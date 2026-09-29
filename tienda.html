@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Macetas · Arcos V</title>
+<title>La Tienda · Arcos V</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -42,17 +42,27 @@ body{
 .volver:hover,.volver:focus{border-bottom-color:var(--tinta-suave)}
 
 .portada{padding:56px 0 48px;border-bottom:1px solid var(--linea)}
+.portada-eyebrow{
+  display:block;
+  font-size:12px;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:2.5px;
+  color:#9C6B1F;
+  margin-bottom:14px;
+}
 .portada h1{
   font-family:'Bricolage Grotesque',sans-serif;
   font-weight:700;
   color:var(--verde-hondo);
-  font-size:clamp(2.6rem,7vw,4.2rem);
+  max-width:28ch;
+  font-size:clamp(2.1rem,5.6vw,3.4rem);
   line-height:1.05;
   letter-spacing:-.015em;
 }
 .portada p{
   margin-top:20px;
-  max-width:46ch;
+  max-width:54ch;
   color:var(--tinta-suave);
 }
 
@@ -161,8 +171,9 @@ body{
   </header>
 
   <section class="portada">
-    <h1>Macetas</h1>
-    <p>Piezas de cerámica esmaltada que nos quedaron del vivero. Son unidades contadas: cuando se termina un modelo, no vuelve.</p>
+    <span class="portada-eyebrow">La Tienda de Arcos V</span>
+    <h1>Los productos de nuestros talleres y workshops</h1>
+    <p>Lo que se vende en los workshops de Arcos V, ahora podés verlo y pedirlo por acá. Por ahora, macetas de cerámica esmaltada que nos quedaron del vivero: son unidades contadas, y cuando se termina un modelo, no vuelve.</p>
   </section>
 
   <!-- ====== PRODUCTO: copiar este bloque entero para agregar otro modelo ====== -->
