@@ -392,10 +392,12 @@
         .nav-links a { width: 100%; padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
         .nav-links.mobile-open { display: flex; }
         .nav-item-drop { width: 100%; }
-        .nav-submenu { display: block; position: static; border: none; box-shadow: none; background: transparent; margin: 0; padding: 0 0 0 16px; min-width: 0; }
+        .nav-submenu { display: none; position: static; border: none; box-shadow: none; background: transparent; margin: 0; padding: 0 0 0 16px; min-width: 0; }
         .nav-submenu a { border-bottom: 1px solid rgba(0,0,0,0.04); font-size: 12.5px; padding: 10px 0; color: var(--ink-soft); }
-        .nav-tarifas-label { pointer-events: none; color: var(--wine); }
+        .nav-tarifas-label { color: var(--wine); cursor: pointer; }
         .nav-item-drop::after { display: none; }
+        .nav-item-drop:hover .nav-submenu, .nav-item-drop:focus-within .nav-submenu { display: none; }
+        .nav-item-drop.sub-open .nav-submenu { display: block; }
         section { padding: 60px 0; }
         .hero-title { font-size: 2.5rem; letter-spacing: -1.4px; }
         .hero-h2 { font-size: 13px; margin-bottom: 22px; }
@@ -802,7 +804,14 @@
         function closeMenu() {
             document.getElementById('navLinks').classList.remove('mobile-open');
             document.querySelector('.menu-toggle').setAttribute('aria-expanded', 'false');
+            document.querySelector('.nav-item-drop').classList.remove('sub-open');
         }
+        document.querySelector('.nav-tarifas-label').addEventListener('click', function (e) {
+            if (window.matchMedia('(max-width: 700px)').matches) {
+                e.preventDefault();
+                this.parentElement.classList.toggle('sub-open');
+            }
+        });
               document.addEventListener('click', function (e) {
             const nav = document.getElementById('navLinks');
             const btn = document.querySelector('.menu-toggle');
