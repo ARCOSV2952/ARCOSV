@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charla mujeres | Arcos V</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Work+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         
 .btn-ws { 
     display: block; 
     text-align: center; 
-    background-color: #25d366; /* <--- Este código HEX es el color verde de WhatsApp */
-    color: #faf9f6; 
+    background-color: #FFC107; /* <--- Este código HEX es el color verde de WhatsApp */
+    color: #3D2A1D; 
     padding: 18px; 
     text-decoration: none; 
-    border-radius: 12px; 
-    font-weight: 600; 
+    border-radius: 2px; 
+    font-weight: 700; 
     margin-top: 30px; 
 }
 
@@ -30,17 +30,17 @@
 }
         
         :root {
-            --primary: #8c2b32; /* Tu color bordó */
-            --bg: #faf9f6;
-            --text: #1a1a1a;
-            --text-light: #666;
-            --radius: 16px;
+            --primary: #9C6B1F; /* Tu color bordó */
+            --bg: #FAF6EC;
+            --text: #173A2A;
+            --text-light: #5A6660;
+            --radius: 8px;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body { 
-            font-family: 'Inter', sans-serif; 
+            font-family: 'Work Sans', sans-serif; 
             background-color: var(--bg); 
             color: var(--text); 
             line-height: 1.6;
@@ -79,7 +79,7 @@
         }
 
         h1 {
-            font-family: 'Lora', serif;
+            font-family: 'Bricolage Grotesque', sans-serif;
             font-size: 42px;
             line-height: 1.1;
             margin-bottom: 20px;
@@ -116,6 +116,17 @@
             font-weight: 600;
             margin-top: 20px;
         }
+
+        /* --- Estilo nuevo del sitio --- */
+        h1, h2 { letter-spacing: -0.9px; font-weight: 700; }
+        h1 { letter-spacing: -1.4px; line-height: 1.06; color: var(--text); }
+        .event-category { font-family: 'JetBrains Mono', monospace; letter-spacing: 2.5px; font-size: 11px; color: var(--primary); }
+        .main-image { border-radius: 8px; box-shadow: 0 8px 24px rgba(23,58,42,0.10); }
+        .box-info, .proxima { border: none; box-shadow: 0 8px 24px rgba(23,58,42,0.10); }
+        .proxima { border-left: 4px solid #FFC107; }
+        .btn-ws:hover { background-color: #E6AC00; }
+        .back:hover { color: var(--text); }
+
 
         @media (max-width: 600px) {
             h1 { font-size: 32px; }
@@ -155,7 +166,7 @@ Una charla pensada para mujeres que viven exigiéndose, que sienten que nunca es
         </div>
 
         <div class="box-info">
-            <h3 style="font-family: 'Lora', serif;">¿Querés participar?</h3>
+            <h3 style="font-family: 'Bricolage Grotesque', sans-serif;">¿Querés participar?</h3>
            
  <a href="https://wa.me/5491164899011" class="btn-ws">
                 Consultar para reserva de evento

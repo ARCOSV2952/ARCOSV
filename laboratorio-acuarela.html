@@ -17,20 +17,20 @@
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Work+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #8c2b32;
-            --bg: #faf9f6;
-            --text: #1a1a1a;
-            --text-light: #666;
-            --radius: 16px;
+            --primary: #9C6B1F;
+            --bg: #FAF6EC;
+            --text: #173A2A;
+            --text-light: #5A6660;
+            --radius: 8px;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Work Sans', sans-serif;
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.6;
@@ -57,14 +57,14 @@
         }
 
         h1 {
-            font-family: 'Lora', serif;
+            font-family: 'Bricolage Grotesque', sans-serif;
             font-size: 42px;
             line-height: 1.1;
             margin-bottom: 20px;
         }
 
         h2 {
-            font-family: 'Lora', serif;
+            font-family: 'Bricolage Grotesque', sans-serif;
             font-size: 28px;
             line-height: 1.2;
             margin-bottom: 20px;
@@ -96,12 +96,12 @@
         .btn-ws {
             display: block;
             text-align: center;
-            background-color: #25d366;
-            color: #faf9f6;
+            background-color: #FFC107;
+            color: #3D2A1D;
             padding: 18px;
             text-decoration: none;
-            border-radius: 12px;
-            font-weight: 600;
+            border-radius: 2px;
+            font-weight: 700;
             margin-top: 30px;
         }
 
@@ -197,6 +197,17 @@
             font-size: 14px;
         }
 
+        /* --- Estilo nuevo del sitio --- */
+        h1, h2 { letter-spacing: -0.9px; font-weight: 700; }
+        h1 { letter-spacing: -1.4px; line-height: 1.06; color: var(--text); }
+        .event-category { font-family: 'JetBrains Mono', monospace; letter-spacing: 2.5px; font-size: 11px; color: var(--primary); }
+        .main-image { border-radius: 8px; box-shadow: 0 8px 24px rgba(23,58,42,0.10); }
+        .box-info, .proxima { border: none; box-shadow: 0 8px 24px rgba(23,58,42,0.10); }
+        .proxima { border-left: 4px solid #FFC107; }
+        .btn-ws:hover { background-color: #E6AC00; }
+        .back:hover { color: var(--text); }
+
+
         @media (max-width: 600px) {
             h1 { font-size: 32px; }
             h2 { font-size: 24px; }
@@ -245,7 +256,7 @@
 
         <!-- CONTACTO -->
         <div class="box-info">
-            <h3 style="font-family: 'Lora', serif;">¿Querés participar?</h3>
+            <h3 style="font-family: 'Bricolage Grotesque', sans-serif;">¿Querés participar?</h3>
             <p>Escribinos y te contamos las fechas, el precio y cómo anotarte.</p>
             <a href="https://wa.me/5491125774215?text=Hola!%20Quiero%20info%20del%20Laboratorio%20de%20Acuarela%20Profesional%20en%20Arcos%20V." target="_blank" rel="noopener" class="btn-ws">Consultar por WhatsApp</a>
         </div>
