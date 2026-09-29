@@ -111,6 +111,7 @@
     .logo img { height: 58px; width: auto; }
     .nav-back { text-decoration: none; color: var(--ink); font-size: 13px; font-weight: 500; letter-spacing: 0.4px; transition: 0.3s; }
     .nav-back:hover { color: var(--wine); }
+    .nav-right { display: flex; align-items: center; gap: 22px; }
 
     /* --- HERO SIMPLE --- */
     .hero-simple { background: var(--cream-deep); padding: 76px 0 60px; }
@@ -231,7 +232,10 @@
     <header>
         <div class="nav-container">
             <div class="logo"><a href="index.html"><img src="logo.png" alt="Arcos V Logo"></a></div>
-            <a href="index.html" class="nav-back">← Volver al inicio</a>
+            <div class="nav-right">
+                <a href="tienda.html" class="nav-back">La Tienda</a>
+                <a href="index.html" class="nav-back">← Volver al inicio</a>
+            </div>
         </div>
     </header>
 
