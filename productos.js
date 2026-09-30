@@ -115,6 +115,27 @@ var PRODUCTOS = [
       ["Acabado", "Símil piedra"],
       ["Plato", "Incluido"]
     ]
+  },
+
+  {
+    id: "cilindro-grande-rosa",
+    nombre: "Cilindro Grande Rosa y Arena",
+    categoria: "Macetas",
+    tipo: "la maceta",
+    precio: 42500,
+    ancho: 14,
+    alto: 11,
+    material: "Cerámica esmaltada",
+    plato: true,
+    agotado: false,
+    resumen: "Maceta cilíndrica de cerámica esmaltada a mano, bicolor: esmalte rosa claro arriba y acabado arena mate abajo, con plato del mismo color. Ideal para interiores y exteriores. Recomendamos no dejar agua estancada en el plato para evitar que se filtre humedad. No incluye planta.",
+    fotos: ["cilindro-grande-rosa-1.webp", "cilindro-grande-rosa-2.webp"],
+    medidas: [
+      ["Diámetro", "14 cm"],
+      ["Alto", "11 cm"],
+      ["Plato", "16,5 cm"],
+      ["Material", "Cerámica esmaltada a mano"]
+    ]
   }
 
 ];
