@@ -18,8 +18,8 @@ Guía para quien (Claude u otra persona) cargue productos en `tienda.html`. Si s
    Lo que no diga, **no se inventa** (por ejemplo, no afirmar que tiene drenaje si no lo dijo). Si falta algo importante, preguntar o dejarlo afuera y avisar.
 2. **Armar las fotos** con `fotos.py` (ver abajo).
 3. **Agregar el bloque** al final de `productos.js`, copiando uno existente. `id` en minúsculas sin tildes ni espacios (ej. `cilindro-grande-rosa`); es el link `tienda.html#id`.
-4. **Regenerar la versión para rastreadores**, desde la raíz del repo:
-   `python3 tienda-herramientas/prerender.py` (necesita Node instalado).
+4. **Regenerar la versión para rastreadores y el número de versión**, desde la raíz del repo:
+   `python3 tienda-herramientas/prerender.py` (necesita Node instalado). Este script también actualiza `VER` (un código que se agrega a los links de `productos.js` y de las fotos para que los navegadores no usen copias viejas guardadas). **Correrlo siempre después de cambiar `productos.js` o cualquier foto**, aunque la foto conserve el mismo nombre.
 5. **Probar** en un navegador de prueba (Playwright): que cargue sin errores, que la grilla muestre todos los productos, que abra la ficha, que el WhatsApp salga bien y que también se vea con JavaScript apagado.
 6. **Subir** directo a `main` del repositorio `ARCOSV2952/ARCOSV` (el sitemap lo actualiza solo una acción de GitHub). Mensaje de commit claro, en español.
 7. Si aparece una categoría nueva (herramientas, etc.), revisar que `llms.txt` la describa.

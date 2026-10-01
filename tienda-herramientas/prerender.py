@@ -1,8 +1,13 @@
 # Regenera la parte estática de tienda.html (para rastreadores sin JavaScript) a partir de productos.js
 import json, re, subprocess, html
 BASE='https://arcosv.com.ar/'
+import hashlib
+_h=hashlib.md5(open('productos.js','rb').read())
 prods=json.loads(subprocess.check_output(['node','-e',"const vm=require('vm'),fs=require('fs');const c={};vm.createContext(c);vm.runInContext(fs.readFileSync('productos.js','utf8')+';this.P=PRODUCTOS;this.T=TIENDA;',c);console.log(JSON.stringify({P:c.P,T:c.T}))"]).decode())
 P=prods['P']
+for _p in P:
+    for _f in _p['fotos']: _h.update(open(_f,'rb').read())
+VER=_h.hexdigest()[:8]
 e=lambda s:html.escape(str(s),quote=True)
 def plata(n): return '$'+format(int(n),',').replace(',','.')
 def cm(n): return str(n).replace('.',',')+' cm'
@@ -11,7 +16,7 @@ for p in P:
     etiqueta='Agotada' if p.get('agotado') else ('Con plato' if p.get('plato') else '')
     medidas='; '.join(f'{a}: {b}' for a,b in p['medidas'])
     cards.append(
-f'''<article class="tarjeta{' agotado' if p.get('agotado') else ''}"><a href="#{e(p['id'])}"><div class="foto"><img src="{e(p['fotos'][1] if len(p['fotos'])>1 else p['fotos'][0])}" alt="{e(p['nombre'])} a escala" loading="lazy">{f'<span class="etiqueta">{etiqueta}</span>' if etiqueta else ''}</div><h3>{e(p['nombre'])}</h3><p class="tarjeta-precio">{'Consultar precio' if p.get('precio') is None else plata(p['precio'])}</p><p class="tarjeta-medida">Ancho {cm(p['ancho'])} · Alto {cm(p['alto'])}</p><p class="tarjeta-resumen">{e(p['resumen'])}</p><p class="tarjeta-resumen">Medidas y datos: {e(medidas)}.</p></a></article>''')
+f'''<article class="tarjeta{' agotado' if p.get('agotado') else ''}"><a href="#{e(p['id'])}"><div class="foto"><img src="{e(p['fotos'][1] if len(p['fotos'])>1 else p['fotos'][0])}?v={VER}" alt="{e(p['nombre'])} a escala" loading="lazy">{f'<span class="etiqueta">{etiqueta}</span>' if etiqueta else ''}</div><h3>{e(p['nombre'])}</h3><p class="tarjeta-precio">{'Consultar precio' if p.get('precio') is None else plata(p['precio'])}</p><p class="tarjeta-medida">Ancho {cm(p['ancho'])} · Alto {cm(p['alto'])}</p><p class="tarjeta-resumen">{e(p['resumen'])}</p><p class="tarjeta-resumen">Medidas y datos: {e(medidas)}.</p></a></article>''')
 estatico='<!--PRE:INI-->\n'+'\n'.join(cards)+'\n<!--PRE:FIN-->'
 items=[]
 for i,p in enumerate(P,1):
@@ -29,5 +34,7 @@ ldtag='<script type="application/ld+json" id="ld-tienda">\n'+json.dumps(ld,ensur
 h=open('tienda.html',encoding='utf-8').read()
 h=re.sub(r'<!--PRE:INI-->.*?<!--PRE:FIN-->',lambda m:estatico,h,flags=re.S)
 h=re.sub(r'<script type="application/ld\+json" id="ld-tienda">.*?</script>',lambda m:ldtag,h,flags=re.S)
+h=re.sub(r'productos\.js\?v=[0-9a-f]+',lambda m:'productos.js?v='+VER,h)
+h=re.sub(r"var VER = '[0-9a-f]+';",lambda m:"var VER = '"+VER+"';",h)
 open('tienda.html','w',encoding='utf-8').write(h)
 print(len(P),'productos prerenderizados')
