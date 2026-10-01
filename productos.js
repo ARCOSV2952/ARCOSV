@@ -16,7 +16,10 @@
    plato      true si incluye plato, false si no
    agotado    true cuando se terminó (queda al final y sin botón de compra)
    resumen    texto corto de la ficha
-   fotos      lista de fotos: la primera es la principal, la segunda las medidas
+   fotos      siempre dos fotos, en este orden:
+              1ª = maceta GRANDE con las medidas dibujadas (es la que se ve primero en la ficha)
+              2ª = maceta CHICA a escala real, 24 px = 1 cm (es la que se ve en la grilla,
+                   así se compara el tamaño entre modelos)
    medidas    filas de la tabla: ["Título", "Valor"]
    ===================================================================== */
 
@@ -39,7 +42,7 @@ var PRODUCTOS = [
     plato: false,
     agotado: false,
     resumen: "Cerámica esmaltada en verde pastel, con relieve ondulado en tres anillos. Tiene orificio de drenaje, así que sirve para plantar directo.",
-    fotos: ["samba-1.webp", "samba-2.webp"],
+    fotos: ["samba-2.webp", "samba-1.webp"],
     medidas: [
       ["Diámetro", "15,5 cm"],
       ["Alto", "13 cm"],
@@ -61,7 +64,7 @@ var PRODUCTOS = [
     plato: false,
     agotado: false,
     resumen: "Cerámica esmaltada en verde pastel, con relieve de pliegues facetados. Tiene orificio de drenaje, así que sirve para plantar directo.",
-    fotos: ["diamante-1.webp", "diamante-2.webp"],
+    fotos: ["diamante-2.webp", "diamante-1.webp"],
     medidas: [
       ["Boca", "15 cm"],
       ["Alto", "15 cm"],
@@ -82,7 +85,7 @@ var PRODUCTOS = [
     plato: true,
     agotado: false,
     resumen: "Cerámica esmaltada en amarillo mostaza, forma cilíndrica lisa con plato a juego. Tiene orificio de drenaje, así que sirve para plantar directo.",
-    fotos: ["cilindro-grande-1.webp", "cilindro-grande-2.webp"],
+    fotos: ["cilindro-grande-2.webp", "cilindro-grande-1.webp"],
     medidas: [
       ["Diámetro", "14 cm"],
       ["Alto", "11 cm"],
@@ -103,7 +106,7 @@ var PRODUCTOS = [
     plato: true,
     agotado: false,
     resumen: "Maceta esférica de 7 litros en polietileno rotomoldeado, con acabado símil piedra y plato incluido. Tiene agujero de drenaje. Apta intemperie: soporta sol, lluvia y humedad, con protección UV.",
-    fotos: ["florencia-esfera-1.webp", "florencia-esfera-2.webp"],
+    fotos: ["florencia-esfera-medidas.webp", "florencia-esfera-1.webp"],
     medidas: [
       ["Alto", "19 cm"],
       ["Ancho máximo", "27 cm"],
@@ -129,7 +132,7 @@ var PRODUCTOS = [
     plato: true,
     agotado: false,
     resumen: "Maceta cilíndrica de cerámica esmaltada a mano, bicolor: esmalte rosa claro arriba y acabado arena mate abajo, con plato del mismo color. Ideal para interiores y exteriores. Recomendamos no dejar agua estancada en el plato para evitar que se filtre humedad. No incluye planta.",
-    fotos: ["cilindro-grande-rosa-1.webp", "cilindro-grande-rosa-2.webp"],
+    fotos: ["cilindro-grande-rosa-medidas.webp", "cilindro-grande-rosa-1.webp"],
     medidas: [
       ["Diámetro", "14 cm"],
       ["Alto", "11 cm"],
