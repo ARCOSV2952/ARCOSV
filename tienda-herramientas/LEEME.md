@@ -29,6 +29,7 @@ Guía para quien (Claude u otra persona) cargue productos en `tienda.html`. Si s
 - **Cada producto tiene exactamente 2 fotos, en este orden** en el campo `fotos`:
   1. `<slug>-medidas.webp`: la maceta **GRANDE con las medidas dibujadas**. Es la primera de la ficha.
   2. `<slug>-1.webp`: la maceta **CHICA a escala real**. Es la que se ve en la grilla (`tienda.html` usa `fotos[1]` para la tarjeta).
+- En la grilla, `tienda.html` muestra la foto a escala con **un mismo recorte ampliado para todas** (se calcula solo según la maceta más grande del catálogo: `ENC`, `V`, `X0`, `Y0` en el script). La segunda foto de la ficha usa ese mismo recorte, así es igual a la de la grilla. No hace falta tocar nada al sumar productos; si se suma una maceta mucho más grande, el recorte se ajusta solo.
 - **Escala fija de toda la tienda: 24 px = 1 cm**, en 1080 x 1080 px, para que en la grilla se vea la diferencia real de tamaño entre modelos. Nunca cambiar esa escala.
 - Fondo **beige liso** (RGB 238, 228, 214), sombra suave debajo, luz pareja, sin otros objetos. Formato `.webp` calidad 90.
 - **No se modifica la maceta**: solo se recorta y se reescala. Nada de redibujarla, cambiarle color ni "mejorarla" con IA. Si la foto cruda trae un reflejo de color fuerte (por ejemplo del mantel), se avisa a Marcela antes de decidir qué hacer.

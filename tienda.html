@@ -525,6 +525,7 @@ body:has(dialog[open]){overflow:hidden}
   aspect-ratio:1/1;
 }
 .principal img{width:100%;height:100%;object-fit:cover;display:block}
+.principal,.miniaturas button{position:relative}
 .miniaturas{display:flex;gap:12px}
 .miniaturas button{
   flex:0 0 84px;
@@ -650,6 +651,17 @@ body:has(dialog[open]){overflow:hidden}
 (function(){
   var P = PRODUCTOS, W = TIENDA.whatsapp;
   var TRAMOS = ['Hasta 18 cm','De 18 a 25 cm','Más de 25 cm'];
+
+  /* Encuadre común de las fotos a escala (24 px = 1 cm sobre 1080 px). Se agranda lo
+     que entra de la foto para que la maceta más grande llene casi todo el cuadro; como
+     es el mismo recorte para todas, las diferencias de tamaño se ven de un vistazo. */
+  var PX_CM = 24, BASE_Y = 782;
+  var maxAncho = Math.max.apply(null, P.map(function(p){ return p.ancho; }));
+  var maxAlto  = Math.max.apply(null, P.map(function(p){ return p.alto; }));
+  var V  = Math.min(1080, Math.max(480, Math.max(maxAncho, maxAlto * 1.3) * PX_CM * 1.12));
+  var X0 = (1080 - V) / 2;
+  var Y0 = Math.max(0, Math.min(1080 - V, BASE_Y + 0.10 * V - V));
+  var ENC = 'position:absolute;max-width:none;height:auto;width:' + (100 * 1080 / V).toFixed(3) + '%;left:' + (-100 * X0 / V).toFixed(3) + '%;top:' + (-100 * Y0 / V).toFixed(3) + '%';
   var estado = {cat:'', tramo:'', mat:'', q:'', orden:'lista'};
 
   function esc(s){ return String(s).replace(/[&<>"']/g,function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
@@ -732,7 +744,7 @@ body:has(dialog[open]){overflow:hidden}
       grilla.innerHTML = lista.map(function(p){
         return '<article class="tarjeta' + (p.agotado ? ' agotado' : '') + '">' +
           '<a href="#' + esc(p.id) + '">' +
-            '<div class="foto"><img src="' + esc(p.fotos[p.fotos.length > 1 ? 1 : 0]) + '" alt="' + esc(p.nombre) + ' a escala" loading="lazy">' +
+            '<div class="foto"><img src="' + esc(p.fotos[p.fotos.length > 1 ? 1 : 0]) + '" alt="' + esc(p.nombre) + ' a escala" style="' + ENC + '" loading="lazy">' +
               (p.agotado ? '<span class="etiqueta">Agotada</span>' : (p.plato ? '<span class="etiqueta">Con plato</span>' : '')) +
             '</div>' +
             '<h3>' + esc(p.nombre) + '</h3>' +
@@ -742,8 +754,8 @@ body:has(dialog[open]){overflow:hidden}
       }).join('');
     }
     cuenta.textContent = lista.length === P.length
-      ? P.length + (P.length === 1 ? ' producto' : ' productos')
-      : lista.length + ' de ' + P.length + ' productos';
+      ? P.length + (P.length === 1 ? ' producto' : ' productos') + ' · Las fotos están a la misma escala, así comparás tamaños de un vistazo'
+      : lista.length + ' de ' + P.length + ' productos · Las fotos están a la misma escala';
   }
 
   grilla.addEventListener('click', function(e){
@@ -758,7 +770,7 @@ body:has(dialog[open]){overflow:hidden}
     var alts = [p.nombre + ' con sus medidas', p.nombre + ' a escala real'];
     var miniaturas = p.fotos.length > 1
       ? '<div class="miniaturas" role="group" aria-label="Fotos de ' + esc(p.nombre) + '">' + p.fotos.map(function(f,i){
-          return '<button type="button" aria-current="' + (i === 0) + '" data-foto="' + esc(f) + '" data-alt="' + esc(alts[i] || p.nombre) + '"><img src="' + esc(f) + '" alt="' + esc(alts[i] || p.nombre) + '"></button>';
+          return '<button type="button" aria-current="' + (i === 0) + '" data-foto="' + esc(f) + '" data-alt="' + esc(alts[i] || p.nombre) + '"' + (i === 1 ? ' data-enc="1"' : '') + '><img src="' + esc(f) + '" alt="' + esc(alts[i] || p.nombre) + '"' + (i === 1 ? ' style="' + ENC + '"' : '') + '></button>';
         }).join('') + '</div>'
       : '';
     var msg = 'Hola! Me interesa ' + (p.tipo ? p.tipo + ' ' : '') + p.nombre + (p.precio != null ? ' de ' + plata(p.precio) + '.' : '. ¿Cuál es el precio?');
@@ -786,7 +798,7 @@ body:has(dialog[open]){overflow:hidden}
     if(e.target === dlg || e.target.closest('.cerrar')){ dlg.close(); return; }
     var boton = e.target.closest('.miniaturas button'); if(!boton) return;
     var principal = dlg.querySelector('.principal img');
-    principal.src = boton.dataset.foto; principal.alt = boton.dataset.alt;
+    principal.src = boton.dataset.foto; principal.alt = boton.dataset.alt; principal.setAttribute('style', boton.dataset.enc ? ENC : '');
     dlg.querySelectorAll('.miniaturas button').forEach(function(b){ b.setAttribute('aria-current','false'); });
     boton.setAttribute('aria-current','true');
   });
