@@ -281,6 +281,9 @@
         .precio-box .monto { font-family: 'Bricolage Grotesque', sans-serif; font-size: 30px; font-weight: 700; color: var(--noche); margin: 4px 0; }
         .precio-box p { font-size: 14px; color: #555; }
         .precio-box.destacado { border: 2px solid var(--girasol); }
+        .autora { display: flex; align-items: center; gap: 16px; margin-bottom: 30px; }
+        .autora img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 3px solid var(--girasol); flex-shrink: 0; }
+        .autora .event-meta { margin-bottom: 0; }
         @media (max-width: 600px) {
             h1.titulo-mp { font-size: 40px; letter-spacing: 2px; }
             .experiencia-lista, .precios, .modalidades { grid-template-columns: 1fr; }
@@ -307,7 +310,10 @@
         <span class="event-category">EXPERIENCIA · ARTE Y EMOCIONES</span>
         <h1 class="titulo-mp">Materia Prima</h1>
         <p class="bajada-mp">Una tarde para transformar una emoción en una obra de arte. Sin saber de arte y sin “hacerlo mal”.</p>
-        <p class="event-meta">Con <a href="https://www.instagram.com/camilasantana____/" target="_blank" rel="noopener" style="color: var(--primary);">Camila Santana</a>, directora de arte y coach integral evolutivo</p>
+        <div class="autora">
+            <img src="camila-santana.webp" alt="Camila Santana" width="64" height="64">
+            <p class="event-meta">Con <a href="https://www.instagram.com/camilasantana____/" target="_blank" rel="noopener" style="color: var(--primary);">Camila Santana</a>, directora de arte y coach integral evolutivo</p>
+        </div>
 
         <!-- PRÓXIMA EDICIÓN -->
         <div class="proxima">
