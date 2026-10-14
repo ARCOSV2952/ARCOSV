@@ -148,13 +148,13 @@
     .card-oscura h2 { color: #fff; font-size: 30px; }
     .card-oscura h3 { color: var(--gold); }
     .card-oscura p, .card-oscura li { color: rgba(255,255,255,0.84); }
-    .card-oscura strong { color: #fff; font-weight: 600; }
+    .card-oscura strong, .card-oscura .lista-guion li strong { color: #fff; font-weight: 600; }
     .card-oscura .lista-guion li::before { color: var(--gold); }
 
     .card-madera { background: var(--wood); color: #fff; border-radius: var(--radius); padding: 40px 36px; margin-bottom: 34px; }
     .card-madera h2 { color: #fff; font-size: 30px; }
     .card-madera p, .card-madera li { color: rgba(255,255,255,0.86); }
-    .card-madera strong { color: #fff; font-weight: 600; }
+    .card-madera strong, .card-madera .lista-guion li strong { color: #fff; font-weight: 600; }
     .card-madera .lista-guion li::before { color: var(--gold); }
 
     /* --- NOS GUSTA CONOCERTE --- */
@@ -184,6 +184,7 @@
 
     .nota { font-size: 13.5px; line-height: 1.7; margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.68); }
     .card-suave .nota, .bloque > .nota { border-top: 1px solid rgba(23,58,42,0.12); color: var(--ink-soft); }
+    .card-oscura > .nota, .card-madera > .nota { border-top: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.75); }
 
     .ejemplo { background: rgba(255,255,255,0.07); border-radius: var(--radius); padding: 18px 22px; margin-top: 20px; font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.84); }
     .ejemplo b { color: var(--gold); font-weight: 600; }
