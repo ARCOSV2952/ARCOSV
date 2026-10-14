@@ -169,6 +169,9 @@
         color: var(--gold); white-space: nowrap;
     }
     .prueba-social p { font-size: 17px; color: rgba(255,255,255,0.92); line-height: 1.5; flex: 1; min-width: 260px; margin: 0; }
+    .prueba-social-bloque { margin-top: 34px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .prueba-social-bloque .ps-foto { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
+    .prueba-social-bloque .prueba-social { margin-top: 0; border-radius: 0; }
 
     /* --- CAPACIDAD --- */
     .capacidad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
@@ -388,9 +391,12 @@
                 </div>
             </div>
 
-            <div class="prueba-social">
-                <span class="ps-label">Ya pasaron por acá</span>
-                <p>Recibimos ciclos de capacitación de equipos de Recursos Humanos del sector salud.</p>
+            <div class="prueba-social-bloque">
+                <img class="ps-foto" src="empresas-capacitacion-salud.webp" alt="Equipo del sector salud en una jornada de capacitación en Arcos V" loading="lazy" width="1440" height="960">
+                <div class="prueba-social">
+                    <span class="ps-label">Ya pasaron por acá</span>
+                    <p>Recibimos ciclos de capacitación de equipos de Recursos Humanos del sector salud.</p>
+                </div>
             </div>
         </div>
     </section>
