@@ -172,6 +172,14 @@
     .prueba-social-bloque { margin-top: 34px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
     .prueba-social-bloque .ps-foto { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
     .prueba-social-bloque .prueba-social { margin-top: 0; border-radius: 0; }
+    .ps-titulo { margin-top: 44px; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--wine); }
+    .ps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
+    .ps-grid .prueba-social-bloque { margin-top: 16px; display: flex; flex-direction: column; }
+    .ps-grid .ps-foto { aspect-ratio: 4 / 5; }
+    .ps-grid .ps-foto-retrato { object-position: center 30%; }
+    .ps-grid .prueba-social { flex: 1; flex-direction: column; align-items: flex-start; gap: 10px; padding: 24px 28px; }
+    .ps-grid .prueba-social p { font-size: 16px; min-width: 0; }
+    @media (max-width: 700px) { .ps-grid { grid-template-columns: 1fr; gap: 8px; } }
 
     /* --- CAPACIDAD --- */
     .capacidad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
@@ -391,11 +399,21 @@
                 </div>
             </div>
 
-            <div class="prueba-social-bloque">
-                <img class="ps-foto" src="empresas-capacitacion-salud.webp" alt="Equipo del sector salud en una jornada de capacitación en Arcos V" loading="lazy" width="1440" height="960">
-                <div class="prueba-social">
-                    <span class="ps-label">Ya pasaron por acá</span>
-                    <p>Recibimos ciclos de capacitación de equipos de Recursos Humanos del sector salud.</p>
+            <div class="ps-titulo">Ya pasaron por acá</div>
+            <div class="ps-grid">
+                <div class="prueba-social-bloque">
+                    <img class="ps-foto" src="empresas-capacitacion-salud.webp" alt="Equipo del sector salud en una jornada de capacitación en Arcos V" loading="lazy" width="1440" height="960">
+                    <div class="prueba-social">
+                        <span class="ps-label">Capacitación</span>
+                        <p>Recibimos ciclos de capacitación de equipos de Recursos Humanos del sector salud.</p>
+                    </div>
+                </div>
+                <div class="prueba-social-bloque">
+                    <img class="ps-foto ps-foto-retrato" src="empresas-locacion-produccion.webp" alt="Leandro Paredes en Arcos V durante una producción" loading="lazy" width="1086" height="1448">
+                    <div class="prueba-social">
+                        <span class="ps-label">Locación para producciones</span>
+                        <p>El futbolista Leandro Paredes eligió Arcos V como locación para una producción.</p>
+                    </div>
                 </div>
             </div>
         </div>
