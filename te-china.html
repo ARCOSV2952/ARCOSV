@@ -49,7 +49,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Work+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1E8F8A;
@@ -252,6 +252,30 @@
         .datos li:last-child { border-bottom: none; }
         .flyer { display: block; width: 100%; max-width: 420px; margin: 24px auto 0; border-radius: var(--radius); box-shadow: 0 8px 24px rgba(23,58,42,0.10); }
 
+        /* --- Paleta e impronta propia: tés de China (oolong, laca roja, ámbar, jade) --- */
+        :root { --bg: #FBF4E8; --text: #3A1F17; --rojo: #A8322A; --ambar: #D9963A; --jade: #24A8A2; --primary: #A8322A; --noche: #2B140F; }
+        body { font-family: 'Jost', sans-serif; color: var(--text); }
+        h1, h2, .bajada-te, .event-meta { font-family: 'Fraunces', serif; }
+        h1 { font-weight: 500; letter-spacing: -1px; line-height: 1.05; color: var(--text); font-size: 46px; }
+        h1 em { font-style: italic; font-weight: 400; color: var(--rojo); }
+        h2 { font-weight: 500; letter-spacing: -0.4px; }
+        .event-category { font-family: 'Jost', sans-serif; font-weight: 500; letter-spacing: 4px; font-size: 12px; color: var(--jade); }
+        .bajada-te { font-weight: 400; font-size: 23px; color: #7A4A30; }
+        .event-meta { color: var(--rojo); }
+        .description { color: #5A3E33; }
+        .proxima { border-left: 4px solid var(--ambar); box-shadow: 0 8px 24px rgba(58,31,23,0.10); }
+        .proxima h2 { color: var(--text); }
+        .box-info { box-shadow: 0 8px 24px rgba(58,31,23,0.10); }
+        .main-image, .flyer { box-shadow: 0 8px 24px rgba(58,31,23,0.14); }
+        .autora img { border-color: var(--ambar); }
+        .btn-ws { background-color: var(--rojo); color: #FBF4E8; font-family: 'Jost', sans-serif; font-weight: 600; letter-spacing: 0.3px; }
+        .btn-ws:hover { background-color: #8C2721; }
+        .te-bloque { background: radial-gradient(circle at 82% 12%, rgba(217,150,58,0.28), transparent 45%), linear-gradient(160deg, #5A2A1C 0%, #2B140F 78%); }
+        .te-bloque h2 { color: #FBF4E8; }
+        .te-bloque p { color: #EBD9C6; }
+        .te-bloque strong { color: var(--ambar) !important; }
+        @media (max-width: 600px) { h1 { font-size: 34px; } }
+
     </style>
 </head>
 <body>
@@ -272,7 +296,7 @@
 
         <span class="event-category">CHARLA Y DEGUSTACIÓN · TÉ</span>
         <img src="tea-to-travel-logo.webp" alt="Tea to Travel by Laura Rogel" class="logo-ttt" width="600" height="226">
-        <h1>Viajemos a China a través del té</h1>
+        <h1>Viajemos a China a través del <em>té</em></h1>
         <p class="bajada-te">Historias, lugares y tés que Laura trajo de su viaje, para descubrir nuevos sabores en una tarde distinta.</p>
         <div class="autora">
             <img src="laura-rogel.webp" alt="Laura Rogel" width="64" height="64">
@@ -308,7 +332,7 @@
 
         <!-- CONTACTO -->
         <div class="box-info">
-            <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 26px; font-weight: 700; color: var(--noche);">¿Te gustaría sumarte?</h3>
+            <h3 style="font-family: 'Fraunces', serif; font-size: 30px; font-weight: 500; color: var(--rojo);">¿Te gustaría sumarte?</h3>
             <p>Las consultas e inscripciones las gestiona directamente Laura.</p>
             <a href="https://wa.me/5491132685942?text=Hola%20Laura!%20Quiero%20info%20de%20Viajemos%20a%20China%20a%20trav%C3%A9s%20del%20t%C3%A9%20en%20Arcos%20V." target="_blank" rel="noopener" class="btn-ws">Consultar por WhatsApp</a>
             <p style="margin-top: 16px; font-size: 15px;"><a href="https://www.instagram.com/teatotravelbylaurarogel/" target="_blank" rel="noopener" style="color: #888;">Conocé Tea to Travel en Instagram →</a></p>
