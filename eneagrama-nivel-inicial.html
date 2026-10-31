@@ -175,6 +175,11 @@
         .btn-ws:hover { background-color: #E6AC00; }
         .back:hover { color: var(--text); }
 
+        /* Así se vive el curso: video + fotos */
+        .video-curso { display: block; width: 100%; max-width: 400px; margin: 0 auto 16px; border-radius: 8px; box-shadow: 0 8px 24px rgba(23,58,42,0.10); }
+        .galeria { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .galeria img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 8px; display: block; }
+
 
         @media (max-width: 600px) {
             h1 { font-size: 32px; }
@@ -237,6 +242,17 @@
                 <li>⏰ 9 a 13 hs.</li>
             </ul>
             <a href="https://wa.me/5491138009121?text=Hola%20Gaby!%20Quiero%20info%20del%20Curso%20Nivel%20Inicial%20de%20Eneagrama%20en%20Arcos%20V." target="_blank" rel="noopener" class="btn-ws">Consultar por WhatsApp</a>
+        </div>
+
+        <!-- ASÍ SE VIVE EL CURSO -->
+        <div class="seccion">
+            <h2>Así se vive el curso</h2>
+            <p class="description" style="margin-bottom: 20px;">Segundo encuentro, sábado 31 de octubre, en Arcos V.</p>
+            <video class="video-curso" src="eneagrama-oct26.mp4" autoplay loop muted playsinline aria-label="Gaby Carluccio dando el curso de Eneagrama frente al grupo en Arcos V"></video>
+            <div class="galeria">
+                <img src="eneagrama-oct26-1.webp" alt="Gaby Carluccio explicando el Eneagrama frente a la pantalla, bajo el cartel de Arcos V" loading="lazy">
+                <img src="eneagrama-oct26-2.webp" alt="Grupo del curso de Eneagrama alrededor de la mesa en Arcos V" loading="lazy">
+            </div>
         </div>
 
         <!-- QUÉ VAMOS A TRABAJAR -->
