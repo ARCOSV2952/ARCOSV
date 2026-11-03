@@ -427,6 +427,24 @@
    .evento-grid-content {
     background: #3D2A1D !important;
 } 
+
+    /* --- Celular: agenda de a 2 por fila, estilo tienda (la tarjeta entera es el botón) --- */
+    @media (max-width: 700px) {
+        .editorial-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+        .evento-grid-card { flex-direction: column; }
+        a.evento-grid-card { box-shadow: 0 6px 16px rgba(23,58,42,0.18); }
+        .evento-grid-content { padding: 12px 12px 12px; flex: 1; display: flex; flex-direction: column; }
+        a.evento-grid-card .evento-grid-content::after { display: none; }
+        .evento-grid-tag { font-size: 9.5px; letter-spacing: 1.2px; }
+        .evento-grid-title { font-size: 16px; line-height: 1.2; margin: 4px 0 6px; padding-right: 0; letter-spacing: -0.2px; }
+        .evento-grid-date { font-size: 12px; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+        /* El botón queda corto ("Ver más →") y siempre abajo de todo, alineado en las dos columnas */
+        .evento-grid-cta { margin-top: auto; padding-top: 10px; font-size: 0; border-top: none; }
+        .evento-grid-cta::before { content: "Ver más"; font-size: 12.5px; }
+        .evento-grid-cta .cta-flecha { font-size: 16px; }
+        .evento-grid-date { margin-bottom: 10px; }
+        .agenda-hint { margin-bottom: 18px; }
+    }
     /* --- PLANTAS Y MACETAS --- */
     .plantas-box { background: var(--cream-deep); border-radius: var(--radius); padding: 44px; display: flex; flex-wrap: wrap; gap: 28px; align-items: center; justify-content: space-between; }
     .plantas-titulo { font-size: 34px; font-weight: 700; letter-spacing: -0.8px; color: var(--ink); line-height: 1.05; }
@@ -551,7 +569,7 @@
                     <div class="evento-grid-content">
                         <span class="evento-grid-tag">Taller</span>
                         <h3 class="evento-grid-title">Mujeres &amp; collage</h3>
-                        <p class="evento-grid-date">Viernes 13 de noviembre, 16:30 a 19:30 hs. Técnica mixta con Bea Taverna.</p>
+                        <p class="evento-grid-date">Viernes 13 de noviembre, 16:30 a 19:30 hs. Con Bea Taverna.</p>
                         <span class="evento-grid-cta">Ver detalles e inscripción <span class="cta-flecha" aria-hidden="true">→</span></span>
                     </div>
                 </a>
@@ -584,7 +602,7 @@
                     <div class="evento-grid-content">
                         <span class="evento-grid-tag">Workshop</span>
                         <h3 class="evento-grid-title">Scrapbook</h3>
-                        <p class="evento-grid-date">Próxima edición: Sábado 21 de noviembre, 15:30 a 17:30 hs. Edición especial Van Gogh 🌻</p>
+                        <p class="evento-grid-date">Sábado 21 de noviembre, 15:30 a 17:30 hs. Edición Van Gogh 🌻</p>
                         <span class="evento-grid-cta">Ver detalles e inscripción <span class="cta-flecha" aria-hidden="true">→</span></span>
                     </div>
                 </a>
@@ -606,7 +624,7 @@
                     <div class="evento-grid-content">
                         <span class="evento-grid-tag">Taller</span>
                         <h3 class="evento-grid-title">La Memoria del Aroma</h3>
-                        <p class="evento-grid-date">Domingo 29 de noviembre, 15 a 17 hs. Componé tu perfume botánico.</p>
+                        <p class="evento-grid-date">Domingo 29 de noviembre, 15 a 17 hs. Perfume botánico.</p>
                         <span class="evento-grid-cta">Ver detalles e inscripción <span class="cta-flecha" aria-hidden="true">→</span></span>
                     </div>
                 </a>
