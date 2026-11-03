@@ -164,10 +164,15 @@
         .cita cite { display: block; margin-top: 22px; font-style: normal; font-size: 12px; letter-spacing: 4px; text-transform: uppercase; color: var(--oliva); }
 
         /* --- FACILITADORA --- */
-        .facilita-grid { display: grid; grid-template-columns: 0.75fr 1.25fr; gap: 70px; align-items: center; }
-        .facilita-grid img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 4px; display: block; filter: saturate(0.9); }
+        .facilita-grid { display: grid; grid-template-columns: 0.75fr 1.25fr; gap: 70px; align-items: start; }
+        .facilita-grid img { position: sticky; top: 130px; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 4px; display: block; filter: saturate(0.9); }
         .facilita-grid h2 { font-size: 46px; line-height: 1.1; margin-bottom: 22px; }
         .facilita-grid p { font-size: 17px; color: #4A443E; margin-bottom: 18px; }
+        .facilita-grid .rol { font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; line-height: 1.45; color: var(--carbon); }
+        .formacion-titulo { margin: 34px 0 6px; }
+        .formacion { list-style: none; margin-bottom: 30px; }
+        .formacion li { padding: 14px 0; border-bottom: 1px solid var(--linea); font-size: 15px; color: var(--gris); }
+        .formacion li strong { display: block; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 19px; color: var(--carbon); }
 
         /* --- DATOS + INSCRIPCIÓN --- */
         .inscripcion { background: var(--carbon); color: var(--lino); text-align: center; }
@@ -305,7 +310,16 @@
             <div>
                 <span class="eyebrow">Quién facilita</span>
                 <h2>Julieta <em>Bal</em></h2>
-                <p>Julieta acompaña encuentros de Constelaciones Familiares para que cada persona pueda mirar su historia con amor y tomar la fuerza de su propio lugar.</p>
+                <p class="rol">Facilitadora en Constelaciones Familiares y Nuevas Constelaciones, y coach sistémica formada en el Centro Integral ATHY de Sara Gloria Levita.</p>
+                <p>Su búsqueda espiritual empezó a los 20 años, con viajes y retiros espirituales en la India. Se dedicó casi toda su vida a la actuación y la dirección de teatro, y llegó a esta herramienta hace unos 15 años. Hace 4, como dice ella, <em>se casó</em> con las constelaciones familiares: su vida tuvo, a partir de ese momento, un antes y un después.</p>
+                <p>Hoy atiende a diario sesiones individuales de manera virtual y brinda talleres grupales de Constelaciones en forma presencial.</p>
+                <span class="eyebrow formacion-titulo">Seminarios y talleres en España y Argentina</span>
+                <ul class="formacion">
+                    <li><strong>Sophie Hellinger</strong>Seminario intensivo “La fuerza del origen”</li>
+                    <li><strong>Brigitte Champetier de Ribes</strong>“Análisis transaccional: guion de vida secreto”</li>
+                    <li><strong>Joan Garriga Bacardí</strong>“Constelaciones Familiares y Terapia Gestalt”</li>
+                    <li><strong>Stephan Hausner</strong>“Taller de Constelaciones en salud, síntoma y enfermedad”</li>
+                </ul>
                 <p><a href="https://www.instagram.com/constelacionesjb/" target="_blank" rel="noopener" class="link-sutil" style="margin-left:0;">Conocela en Instagram · @constelacionesjb</a></p>
             </div>
         </div>
