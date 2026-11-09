@@ -99,6 +99,27 @@
     .hero-simple h1 em { font-style: normal; color: var(--wine); }
     .hero-simple p.bajada { color: var(--ink-soft); font-size: 17px; max-width: 620px; line-height: 1.6; }
 
+    /* --- HERO CON FOTO --- */
+    .hero-foto {
+        position: relative; min-height: 600px; display: flex; align-items: flex-end;
+        background: var(--ink) url('locacion-hero.webp') center 60% / cover no-repeat; padding: 0 0 64px;
+    }
+    .hero-foto::before {
+        content: ""; position: absolute; inset: 0;
+        background: linear-gradient(180deg, rgba(23,58,42,0) 15%, rgba(23,58,42,0.62) 50%, rgba(23,58,42,0.9) 100%);
+    }
+    .hero-foto .seccion-centrada { position: relative; text-align: left; }
+    .hero-foto .eyebrow { color: var(--gold); }
+    .hero-foto h1 { font-size: 3.1rem; font-weight: 700; line-height: 1.04; letter-spacing: -1.6px; margin-bottom: 16px; color: #fff; }
+    .hero-foto p.bajada { color: rgba(255,255,255,0.9); font-size: 17px; max-width: 620px; line-height: 1.6; }
+    .hero-sello {
+        display: inline-block; margin-top: 22px; padding: 10px 16px; border-radius: 4px;
+        background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.35); backdrop-filter: blur(6px);
+        color: #fff; font-size: 14px; text-decoration: none; transition: 0.2s;
+    }
+    .hero-sello strong { color: var(--gold); font-weight: 600; }
+    .hero-sello:hover { background: rgba(255,255,255,0.24); }
+
     /* --- BLOQUES --- */
     .bloque { margin-bottom: 34px; }
     .bloque h2 { font-size: 30px; font-weight: 700; letter-spacing: -0.9px; margin-bottom: 14px; color: var(--ink); line-height: 1.1; }
@@ -212,6 +233,9 @@
         section { padding: 50px 0; }
         .hero-simple { padding: 50px 0 40px; }
         .hero-simple h1 { font-size: 2.2rem; letter-spacing: -1.1px; }
+        .hero-foto { min-height: 520px; padding-bottom: 40px; background-position: 30% 60%; }
+        .hero-foto h1 { font-size: 2.2rem; letter-spacing: -1.1px; }
+        .hero-foto p.bajada { font-size: 15.5px; }
         .bloque h2, .card-oscura h2, .card-madera h2, .cta-final h2 { font-size: 25px; }
         .grid-dos { grid-template-columns: 1fr; }
         .galeria { grid-template-columns: 1fr; gap: 12px; }
@@ -242,32 +266,20 @@
         </div>
     </header>
 
-    <div class="hero-simple">
+    <div class="hero-foto" role="img" aria-label="Jardín de Arcos V visto desde la galería cubierta, con plantas en macetas y luz de la tarde">
         <div class="seccion-centrada">
             <div class="firma"><span class="f-verde"></span><span class="f-madera"></span><span class="f-oro"></span></div>
             <span class="eyebrow">Para productoras y fotógrafos</span>
             <h1>Locación para producciones</h1>
             <p class="bajada">Luz natural, jardín propio de 180 m² y exclusividad total, en pleno Núñez. Disponible por hora o por jornada.</p>
+            <a href="#mivictoria" class="hero-sello">Locación de la campaña de <strong>Mi Victoria</strong> ↓</a>
         </div>
     </div>
 
     <section>
         <div class="seccion-centrada">
 
-            <div class="bloque card-suave">
-                <h2>El espacio como locación</h2>
-                <p>Arcos V funciona como locación para shootings de producto, contenido de marca, entrevistas, videoclips y sesiones de fotos. Trabajamos con productoras, estudios y fotógrafos que necesitan luz, verde y privacidad sin salir de la ciudad.</p>
-                <p>Son 100 m² cubiertos en un layout en L —recepción, bar y sala— más un jardín privado de 180 m² con acceso directo desde el interior.</p>
-            </div>
-
-            <div class="galeria">
-                <img class="destacada" src="jardin-01.webp" alt="Vista del jardín de Arcos V desde el interior, a través de los ventanales" loading="lazy">
-                <img src="jardin-02.webp" alt="Jardín de Arcos V visto desde la galería, con sombrillas de mimbre" loading="lazy">
-                <img src="jardin-03.webp" alt="Jardín de Arcos V con la palmera y el acceso al salón al fondo" loading="lazy">
-            </div>
-            <p class="galeria-pie">Fotos tomadas en distintas temporadas: el jardín cambia con el año.</p>
-
-            <div class="bloque card-suave">
+            <div class="bloque card-suave" id="mivictoria" style="scroll-margin-top: 110px;">
                 <span class="eyebrow">Producciones en Arcos V</span>
                 <h2>La campaña de Mi Victoria</h2>
                 <p>En octubre de 2026, Mi Victoria, el vino de Leandro Paredes, eligió el jardín de Arcos V como locación para una de sus producciones, realizada por Flō agency.</p>
@@ -287,6 +299,22 @@
                 </div>
                 <p class="produccion-credito">Campaña: <a href="https://www.instagram.com/mivictoriawines/" target="_blank" rel="noopener">@mivictoriawines</a> · Producción: <a href="https://www.instagram.com/floagency_/" target="_blank" rel="noopener">@floagency_</a></p>
             </div>
+
+            <div class="bloque card-suave">
+                <h2>El espacio como locación</h2>
+                <p>Arcos V funciona como locación para shootings de producto, contenido de marca, entrevistas, videoclips y sesiones de fotos. Trabajamos con productoras, estudios y fotógrafos que necesitan luz, verde y privacidad sin salir de la ciudad.</p>
+                <p>Son 100 m² cubiertos en un layout en L —recepción, bar y sala— más un jardín privado de 180 m² con acceso directo desde el interior.</p>
+            </div>
+
+            <div class="galeria">
+                <img class="destacada" src="locacion-jardin-salon.webp" alt="Jardín de Arcos V con el salón vidriado al fondo" loading="lazy">
+                <img src="locacion-salon.webp" alt="Salón de Arcos V con mesas y ventanales al jardín" loading="lazy">
+                <img src="locacion-sala.webp" alt="Sala de recepción de Arcos V con piso de madera y sillón azul" loading="lazy">
+                <img src="locacion-galeria-palmera.webp" alt="Galería cubierta junto a la palmera, con vista al salón" loading="lazy">
+                <img src="locacion-patio-cubierto.webp" alt="Patio cubierto de Arcos V con piso de cemento, enredaderas y plantas en macetas" loading="lazy">
+            </div>
+            <p class="galeria-pie">Fotos reales del espacio. El jardín cambia con las estaciones.</p>
+
 
             <div class="bloque">
                 <h2>Qué ofrece</h2>
