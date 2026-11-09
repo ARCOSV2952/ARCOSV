@@ -156,6 +156,13 @@
     .hero-h2 { font-family: 'Work Sans', sans-serif; font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.75); max-width: 520px; line-height: 1.5; margin-bottom: 28px; letter-spacing: 0.2px; }
 
     .hero-buttons { display: flex; gap: 14px; padding: 0 8%; margin-bottom: 40px; }
+    .hero-sello {
+        display: inline-block; margin: -10px 0 22px; padding: 8px 14px; border-radius: 4px;
+        background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.35); backdrop-filter: blur(6px);
+        color: #fff; font-size: 13.5px; text-decoration: none; transition: 0.2s;
+    }
+    .hero-sello strong { color: var(--gold); font-weight: 600; }
+    .hero-sello:hover { background: rgba(255,255,255,0.24); }
     .btn-primary { background-color: var(--gold); color: var(--ink); padding: 15px 30px; border-radius: 2px; text-decoration: none; font-weight: 700; font-size: 14px; letter-spacing: 0.3px; transition: 0.3s ease; }
     .btn-primary:hover { background-color: var(--gold-deep); transform: translateY(-2px); }
     .btn-secondary { background-color: var(--white); color: var(--ink); border: 1px solid var(--white); padding: 14px 28px; border-radius: 2px; text-decoration: none; font-weight: 700; font-size: 14px; transition: 0.3s ease; }
@@ -402,6 +409,7 @@
         section { padding: 60px 0; }
         .hero-title { font-size: 2.5rem; letter-spacing: -1.4px; }
         .hero-h2 { font-size: 13px; margin-bottom: 22px; }
+        .hero-sello { font-size: 12.5px; margin: -8px 0 18px; }
         .hero-buttons { flex-direction: column; }
         .btn-primary, .btn-secondary { width: 100%; text-align: center; }
         .tres-columnas { grid-template-columns: 1fr; }
@@ -497,8 +505,9 @@
 
     <div class="hero-container" id="inicio">
         <div class="carousel-box">
-            <img class="split-slide active" src="hero-1.webp" fetchpriority="high" alt="Espacio boutique Arcos V">
+            <img class="split-slide active" src="hero-jardin-galeria.webp" fetchpriority="high" alt="Jardín de Arcos V visto desde la galería, con luz de la tarde">
             <img class="split-slide" src="hero-2.webp" loading="lazy" alt="Encuentro corporativo">
+            <img class="split-slide" src="hero-mivictoria.webp" style="object-position: 38% 50%;" loading="lazy" alt="Rodaje de la campaña de Mi Victoria en el jardín de Arcos V">
             <img class="split-slide" src="hero-3.webp" loading="lazy" alt="Sala taller Arcos V">
             <img class="split-slide" src="hero-4.webp" loading="lazy" alt="Jardín Arcos V">
             <img class="split-slide" src="hero-5.webp" loading="lazy" alt="Encuentro de ">
@@ -510,6 +519,7 @@
                 <h1 class="hero-title">Por acá pasan los que <em>hacen</em>.</h1>
                 <p class="hero-subtitle">Jardín, sala taller y un bar — para realizadores, empresas y comunidades que crean experiencias presenciales.</p>
                 <h2 class="hero-h2">Espacio para eventos corporativos, talleres y capacitaciones en Núñez, CABA</h2>
+                <a href="locacion-para-producciones.html#mivictoria" class="hero-sello">Locación de la campaña de <strong>Mi Victoria</strong> →</a>
             </div>
             <div class="hero-buttons">
                 <a href="#encuentros" class="btn-primary">Descubrir experiencias</a>
