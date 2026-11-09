@@ -163,6 +163,25 @@
     .galeria .destacada { grid-column: span 2; aspect-ratio: 16 / 9; }
     .galeria-pie { font-size: 13.5px; color: var(--ink-soft); margin: -20px 0 34px; font-style: italic; }
 
+    /* --- PRODUCCIONES REALIZADAS --- */
+    .produccion-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 14px; margin-top: 24px; }
+    .produccion-grid video {
+        width: 100%; aspect-ratio: 9 / 16; object-fit: cover; display: block;
+        border-radius: var(--radius); box-shadow: var(--shadow); background: var(--ink);
+    }
+    .produccion-fotos { display: grid; grid-template-rows: 1fr 1fr; gap: 14px; }
+    .produccion-fotos figure { position: relative; margin: 0; min-height: 0; }
+    .produccion-fotos img {
+        position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;
+        border-radius: var(--radius); box-shadow: var(--shadow);
+    }
+    .produccion-fotos figcaption {
+        position: absolute; left: 10px; bottom: 10px; background: rgba(23,58,42,0.82); color: #fff;
+        font-size: 12px; padding: 5px 10px; border-radius: 4px; line-height: 1.3;
+    }
+    .produccion-credito { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--wine); margin-top: 16px; }
+    .produccion-credito a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--gold); }
+
     /* --- AVISOS CRUZADOS --- */
     .aviso-alt {
         background: var(--white); border-left: 3px solid var(--gold); border-radius: var(--radius);
@@ -197,6 +216,10 @@
         .grid-dos { grid-template-columns: 1fr; }
         .galeria { grid-template-columns: 1fr; gap: 12px; }
         .galeria .destacada { grid-column: span 1; aspect-ratio: 4 / 3; }
+        .produccion-grid { grid-template-columns: 1fr; }
+        .produccion-fotos { grid-template-rows: none; grid-template-columns: 1fr 1fr; }
+        .produccion-fotos img { position: static; aspect-ratio: 3 / 4; height: auto; }
+        .produccion-fotos figcaption { font-size: 10.5px; left: 6px; bottom: 6px; padding: 4px 7px; }
         .card-suave, .card-oscura, .card-madera { padding: 30px 24px; }
         .tarifa-row { flex-direction: column; align-items: flex-start; gap: 6px; }
         .cta-final { padding: 40px 24px; }
@@ -243,6 +266,27 @@
                 <img src="jardin-03.webp" alt="Jardín de Arcos V con la palmera y el acceso al salón al fondo" loading="lazy">
             </div>
             <p class="galeria-pie">Fotos tomadas en distintas temporadas: el jardín cambia con el año.</p>
+
+            <div class="bloque card-suave">
+                <span class="eyebrow">Producciones en Arcos V</span>
+                <h2>La campaña de Mi Victoria</h2>
+                <p>En octubre de 2026, Mi Victoria, el vino de Leandro Paredes, eligió el jardín de Arcos V como locación para una de sus producciones, realizada por Flō agency.</p>
+                <p>Así se vivió ese día: el equipo trabajando entre el verde, con luz natural y el espacio entero para la producción.</p>
+                <div class="produccion-grid">
+                    <video src="produccion-mivictoria-reel.mp4" poster="produccion-mivictoria-poster.webp" autoplay muted loop playsinline preload="metadata" aria-label="Reel del día de rodaje de la campaña de Mi Victoria en Arcos V"></video>
+                    <div class="produccion-fotos">
+                        <figure>
+                            <img src="produccion-mivictoria-jardin.webp" alt="Equipo de producción filmando a Leandro Paredes en el jardín de Arcos V" loading="lazy">
+                            <figcaption>Backstage en el jardín</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="produccion-mivictoria-marcela-leandro.webp" alt="Leandro Paredes con Marcela, de Arcos V, en el salón" loading="lazy" style="object-position: 50% 35%;">
+                            <figcaption>Marcela y Leandro Paredes</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <p class="produccion-credito">Campaña: <a href="https://www.instagram.com/mivictoriawines/" target="_blank" rel="noopener">@mivictoriawines</a> · Producción: <a href="https://www.instagram.com/floagency_/" target="_blank" rel="noopener">@floagency_</a></p>
+            </div>
 
             <div class="bloque">
                 <h2>Qué ofrece</h2>
