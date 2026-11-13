@@ -391,14 +391,14 @@
        solo el número acá abajo (sin puntos: 25000 = $25.000)
        ========================================================= */
     var TARIFAS = {
-        taller:      { hora: 25000, hastaPersonas: 20 },
-        semanal:     { hora: 18000 },
+        taller:      { hora: 25000, hastaPersonas: 20, horaGrupoGrande: 35000 },
+        semanal:     { hora: 20000 },
         quincenal:   { hora: 20000 },
         cata:        { hora: 50000 },
         empresa: [
             { hastaPersonas: 15, hora: 40000, mediaJornada: 140000, jornadaCompleta: 280000 },
-            { hastaPersonas: 25, hora: 45000, mediaJornada: 170000, jornadaCompleta: 340000 },
-            { hastaPersonas: 42, hora: 50000, mediaJornada: 200000, jornadaCompleta: 400000 }
+            { hastaPersonas: 25, hora: 50000, mediaJornada: 200000, jornadaCompleta: 400000 },
+            { hastaPersonas: 42, hora: 60000, mediaJornada: 240000, jornadaCompleta: 480000 }
         ],
         empresaMinimoHoras: 2,
         garage: 20000,          /* por jornada, en alquileres de 4 horas o más */
@@ -465,11 +465,9 @@
 
             if (tipo === 'taller' || tipo === 'cata') {
                 var t = TARIFAS[tipo];
-                total = horas * t.hora;
-                lineas.push([hTxt + ' × ' + plata(t.hora), plata(total)]);
-                if (tipo === 'taller' && personas > t.hastaPersonas) {
-                    avisos.push('El valor base es para grupos de hasta ' + t.hastaPersonas + ' personas. Con ' + personas + ' el valor por hora se ajusta: te lo confirmamos en el presupuesto.');
-                }
+                var valorHora = (tipo === 'taller' && personas > t.hastaPersonas) ? t.horaGrupoGrande : t.hora;
+                total = horas * valorHora;
+                lineas.push([hTxt + ' × ' + plata(valorHora), plata(total)]);
             } else if (tipo === 'recurrente') {
                 var frec = valor('frecuencia');
                 var tr = TARIFAS[frec];
@@ -485,7 +483,7 @@
                 var porHora = horas * tramo.hora;
                 if (horas < 4) {
                     total = porHora;
-                    lineas.push([hTxt + ' × ' + plata(tramo.hora), plata(total)]);
+                    lineas.push(['Alquiler por ' + hTxt, plata(total)]);
                 } else if (horas < 8) {
                     var conMedia = tramo.mediaJornada + (horas - 4) * tramo.hora;
                     if (tramo.jornadaCompleta <= conMedia) {
@@ -494,12 +492,12 @@
                     } else {
                         total = conMedia;
                         lineas.push(['Media jornada (4 horas)', plata(tramo.mediaJornada)]);
-                        if (horas > 4) lineas.push(['+ ' + (horas - 4).toLocaleString('es-AR') + ' h extra × ' + plata(tramo.hora), plata((horas - 4) * tramo.hora)]);
+                        if (horas > 4) lineas.push(['+ ' + (horas - 4).toLocaleString('es-AR') + ' h extra', plata((horas - 4) * tramo.hora)]);
                     }
                 } else {
                     total = tramo.jornadaCompleta + (horas - 8) * tramo.hora;
                     lineas.push(['Jornada completa (8 horas)', plata(tramo.jornadaCompleta)]);
-                    if (horas > 8) lineas.push(['+ ' + (horas - 8).toLocaleString('es-AR') + ' h extra × ' + plata(tramo.hora), plata((horas - 8) * tramo.hora)]);
+                    if (horas > 8) lineas.push(['+ ' + (horas - 8).toLocaleString('es-AR') + ' h extra', plata((horas - 8) * tramo.hora)]);
                 }
             }
 
