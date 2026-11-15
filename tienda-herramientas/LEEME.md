@@ -67,3 +67,7 @@ python3 tienda-herramientas/fotos.py --foto cruda.png --slug cilindro-grande-ros
 - **Nunca rehacer un archivo desde cero**: editar solo lo necesario (gasta tokens de más y puede romper lo que ya anda). Si una tarea va a gastar muchísimos tokens, avisarle antes.
 - Verificar el resultado (con un navegador de prueba) antes de decirle que está listo, y decirle con honestidad lo que no se pudo comprobar.
 - Marcela quiere el orden de fotos y la escala de arriba **siempre**, en todos los productos.
+
+## Modelos con variantes
+
+- **Cilindro Combinado**: cilindro de 14 x 11 cm con plato de 16,5 cm, esmaltado en dos tonos, siempre con base champagne mate y orificio de drenaje. Cada combinación se carga como producto aparte con el nombre "Cilindro Combinado <color> y Champagne" (la primera es Rosa y Champagne).

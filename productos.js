@@ -121,8 +121,8 @@ var PRODUCTOS = [
   },
 
   {
-    id: "cilindro-grande-rosa",
-    nombre: "Cilindro Grande Rosa y Arena",
+    id: "cilindro-combinado-rosa",
+    nombre: "Cilindro Combinado Rosa y Champagne",
     categoria: "Macetas",
     tipo: "la maceta",
     precio: 42500,
@@ -131,7 +131,7 @@ var PRODUCTOS = [
     material: "Cerámica esmaltada",
     plato: true,
     agotado: false,
-    resumen: "El mismo cilindro, esmaltado a mano en dos tonos: rosa claro brillante arriba y arena mate abajo, con plato a juego. Sirve para interior y exterior. No conviene dejar agua estancada en el plato.",
+    resumen: "Cilindro esmaltado a mano en dos tonos: rosa claro brillante arriba y champagne mate abajo, con plato a juego. Tiene orificio de drenaje, así que se planta directo. Sirve para interior y exterior. No conviene dejar agua estancada en el plato.",
     fotos: ["cilindro-grande-rosa-medidas.webp", "cilindro-grande-rosa-1.webp"],
     medidas: [
       ["Diámetro", "14 cm"],
