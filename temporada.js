@@ -44,8 +44,8 @@
   var css = document.createElement('style');
   css.textContent = [
     /* Guirnalda */
-    '.tp-guirnalda{position:absolute;left:0;top:100%;width:100%;height:34px;pointer-events:none;z-index:5;overflow:visible}',
-    '.tp-guirnalda svg{display:block;width:100%;height:34px;overflow:visible}',
+    '.tp-guirnalda{position:absolute;left:0;top:100%;width:100%;pointer-events:none;z-index:5;overflow:visible}',
+    '.tp-guirnalda svg{display:block;width:100%;overflow:visible}',
     '.tp-foco{animation:tpTitila 2.8s ease-in-out infinite}',
     '@keyframes tpTitila{0%,100%{opacity:1}50%{opacity:.35}}',
     /* Primer año */
@@ -96,8 +96,10 @@
       var colores = ['#FFC107', '#FFE9A8', '#F2A23A', '#FFF6DC'];
       var dibujar = function () {
         var w = header.offsetWidth || window.innerWidth;
-        var tramos = Math.max(3, Math.round(w / 170));
-        var paso = w / tramos, caida = 16;
+        var g = w < 700 ? 1.5 : 1;               // en el celular, focos más grandes
+        var tramos = Math.max(3, Math.round(w / (w < 700 ? 130 : 170)));
+        var paso = w / tramos, caida = w < 700 ? 10 : 16;
+        var alto = Math.round(2 + caida * 2 + 16 * g);
         var d = 'M0,2', focos = '', n = 0;
         for (var i = 0; i < tramos; i++) {
           var x0 = i * paso, x1 = x0 + paso, cx = x0 + paso / 2;
@@ -109,14 +111,14 @@
             var c = colores[n % colores.length];
             var demora = ((n * 0.37) % 2.8).toFixed(2);
             focos += '<g class="tp-foco" style="animation-delay:' + demora + 's">' +
-              '<rect x="' + (x - 1.5) + '" y="' + (y - 1) + '" width="3" height="3" fill="#3D2A1D"/>' +
-              '<ellipse cx="' + x + '" cy="' + (y + 6) + '" rx="3.6" ry="5" fill="' + c + '"/>' +
-              '<ellipse cx="' + x + '" cy="' + (y + 6) + '" rx="8" ry="9" fill="' + c + '" opacity=".18"/></g>';
+              '<rect x="' + (x - 1.5 * g) + '" y="' + (y - 1) + '" width="' + 3 * g + '" height="' + 3 * g + '" fill="#3D2A1D"/>' +
+              '<ellipse cx="' + x + '" cy="' + (y + 6 * g) + '" rx="' + 3.6 * g + '" ry="' + 5 * g + '" fill="' + c + '"/>' +
+              '<ellipse cx="' + x + '" cy="' + (y + 6 * g) + '" rx="' + 7 * g + '" ry="' + 8 * g + '" fill="#FFC107" opacity="' + (g > 1 ? '.3' : '.2') + '"/></g>';
             n++;
           }
         }
-        guir.innerHTML = '<svg viewBox="0 0 ' + w + ' 34" preserveAspectRatio="none"><path d="' + d +
-          '" fill="none" stroke="#3D2A1D" stroke-width="1.2" opacity=".7"/>' + focos + '</svg>';
+        guir.innerHTML = '<svg width="' + w + '" height="' + alto + '" viewBox="0 0 ' + w + ' ' + alto + '"><path d="' + d +
+          '" fill="none" stroke="#E8DCC0" stroke-width="' + 1.2 * g + '" opacity=".6"/>' + focos + '</svg>';
       };
       dibujar();
       var espera;
