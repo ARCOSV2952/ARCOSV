@@ -21,8 +21,8 @@
     vueltaTexto: 'el lunes 1° de febrero',
     // Números del primer año (cambiá solo el número o el texto)
     resumen: [
-      { numero: 20, prefijo: '+', texto: 'encuentros realizados' },
-      { numero: 10, prefijo: '+', texto: 'realizadores y empresas' },
+      { numero: 40, prefijo: '+', texto: 'encuentros realizados' },
+      { numero: 15, prefijo: '+', texto: 'realizadores y empresas' },
       { numero: 10, prefijo: '',  texto: 'meses de puertas abiertas' }
     ],
     whatsapp: '5491162834000'
