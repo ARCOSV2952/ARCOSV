@@ -25,7 +25,7 @@
 
 var TIENDA = {
   whatsapp: "5491162834000",
-  retiro: "Se retira en Arcos 2952, Núñez."
+  retiro: "Se retira en Arcos 2952, Núñez, de martes a sábado de 10:30 a 13 y de 15:30 a 18:30. Se paga por transferencia o en efectivo al retirar."
 };
 
 var PRODUCTOS = [
@@ -41,7 +41,7 @@ var PRODUCTOS = [
     material: "Cerámica esmaltada",
     plato: false,
     agotado: false,
-    resumen: "Cerámica esmaltada en verde pastel, con relieve ondulado en tres anillos. Tiene orificio de drenaje, así que sirve para plantar directo.",
+    resumen: "Tres anillos ondulados en cerámica esmaltada verde pastel. Chica y con mucha presencia, va bien con suculentas y plantas colgantes cortas. Tiene orificio de drenaje, así que se planta directo.",
     fotos: ["samba-2.webp", "samba-1.webp"],
     medidas: [
       ["Diámetro", "15,5 cm"],
@@ -63,7 +63,7 @@ var PRODUCTOS = [
     material: "Cerámica esmaltada",
     plato: false,
     agotado: false,
-    resumen: "Cerámica esmaltada en verde pastel, con relieve de pliegues facetados. Tiene orificio de drenaje, así que sirve para plantar directo.",
+    resumen: "Cerámica esmaltada verde pastel con pliegues facetados que cambian con la luz. Tiene orificio de drenaje, así que se planta directo.",
     fotos: ["diamante-2.webp", "diamante-1.webp"],
     medidas: [
       ["Boca", "15 cm"],
@@ -84,7 +84,7 @@ var PRODUCTOS = [
     material: "Cerámica esmaltada",
     plato: true,
     agotado: false,
-    resumen: "Cerámica esmaltada en amarillo mostaza, forma cilíndrica lisa con plato a juego. Tiene orificio de drenaje, así que sirve para plantar directo.",
+    resumen: "Cilindro liso en cerámica esmaltada amarillo mostaza, con plato a juego. Tiene orificio de drenaje, así que se planta directo.",
     fotos: ["cilindro-grande-2.webp", "cilindro-grande-1.webp"],
     medidas: [
       ["Diámetro", "14 cm"],
@@ -105,7 +105,7 @@ var PRODUCTOS = [
     material: "Polietileno rotomoldeado",
     plato: true,
     agotado: false,
-    resumen: "Maceta esférica de 7 litros en polietileno rotomoldeado, con acabado símil piedra y plato incluido. Tiene agujero de drenaje. Apta intemperie: soporta sol, lluvia y humedad, con protección UV.",
+    resumen: "Esfera de 7 litros con acabado símil piedra, liviana y resistente. Es apta para intemperie: soporta sol, lluvia y humedad sin decolorarse. Tiene agujero de drenaje y plato incluido.",
     fotos: ["florencia-esfera-medidas.webp", "florencia-esfera-1.webp"],
     medidas: [
       ["Alto", "19 cm"],
@@ -131,7 +131,7 @@ var PRODUCTOS = [
     material: "Cerámica esmaltada",
     plato: true,
     agotado: false,
-    resumen: "Maceta cilíndrica de cerámica esmaltada a mano, bicolor: esmalte rosa claro arriba y acabado arena mate abajo, con plato del mismo color. Ideal para interiores y exteriores. Recomendamos no dejar agua estancada en el plato para evitar que se filtre humedad. No incluye planta.",
+    resumen: "El mismo cilindro, esmaltado a mano en dos tonos: rosa claro brillante arriba y arena mate abajo, con plato a juego. Sirve para interior y exterior. No conviene dejar agua estancada en el plato.",
     fotos: ["cilindro-grande-rosa-medidas.webp", "cilindro-grande-rosa-1.webp"],
     medidas: [
       ["Diámetro", "14 cm"],

@@ -55,7 +55,7 @@ python3 tienda-herramientas/fotos.py --foto cruda.png --slug cilindro-grande-ros
 ## Datos fijos
 
 - **WhatsApp de la tienda y de Arcos V: 1162834000** (`5491162834000` en los links). El `+54 9 11 6489-9011` **no** es de Arcos V; es de Carolina Vitulli, no usarlo en la tienda.
-- Retiro: "Se retira en Arcos 2952, Núñez."
+- Retiro y pago (campo `retiro` de `productos.js`): se retira en Arcos 2952, Núñez, de martes a sábado de 10:30 a 13 y de 15:30 a 18:30; se paga por transferencia o en efectivo al retirar. Todo el stock es contado (no se repone).
 - Precio sin puntos en `productos.js` (`35000`). Si no hay precio todavía: `precio: null` y la tienda dice "Consultar precio".
 - Productos agotados: `agotado: true` (quedan al final de la grilla y sin botón de compra).
 - Los filtros de ancho de la grilla son por tramos (hasta 18 cm, de 18 a 25, más de 25) y se definen en el script de `tienda.html` (`TRAMOS`). Si aparecen macetas muy distintas, revisar los cortes.
