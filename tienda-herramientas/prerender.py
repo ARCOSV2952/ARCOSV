@@ -21,15 +21,15 @@ estatico='<!--PRE:INI-->\n'+'\n'.join(cards)+'\n<!--PRE:FIN-->'
 items=[]
 for i,p in enumerate(P,1):
     prod={"@type":"Product","name":p['nombre'],"description":p['resumen'],"sku":p['id'],
-      "category":p['categoria'],"material":p['material'],
+      "category":p['categoria'],"material":p['material'],"brand":{"@type":"Brand","name":"Arcos V"},
       "image":[BASE+f for f in p['fotos']],
       "height":{"@type":"QuantitativeValue","value":p['alto'],"unitCode":"CMT"},
       "width":{"@type":"QuantitativeValue","value":p['ancho'],"unitCode":"CMT"},
       "additionalProperty":[{"@type":"PropertyValue","name":a,"value":b} for a,b in p['medidas']]+[{"@type":"PropertyValue","name":"Incluye plato","value":"Sí" if p.get('plato') else "No"}]}
     if p.get('precio') is not None:
-        prod["offers"]={"@type":"Offer","price":str(p['precio']),"priceCurrency":"ARS","availability":"https://schema.org/"+("OutOfStock" if p.get('agotado') else "InStock"),"url":BASE+"tienda.html#"+p['id'],"seller":{"@id":BASE+"#business"}}
+        prod["offers"]={"@type":"Offer","price":str(p['precio']),"priceCurrency":"ARS","itemCondition":"https://schema.org/NewCondition","availability":"https://schema.org/"+("OutOfStock" if p.get('agotado') else "InStock"),"url":BASE+"tienda.html#"+p['id'],"seller":{"@id":BASE+"#business"}}
     items.append({"@type":"ListItem","position":i,"item":prod})
-ld={"@context":"https://schema.org","@type":"CollectionPage","name":"La Tienda de Arcos V","url":BASE+"tienda.html","description":"Macetas y productos de jardinería que se retiran en Arcos 2952, Núñez, Buenos Aires.","mainEntity":{"@type":"ItemList","itemListElement":items}}
+ld={"@context":"https://schema.org","@type":"CollectionPage","name":"La Tienda de Arcos V","url":BASE+"tienda.html","description":"Macetas y productos de jardinería que se retiran en Arcos 2952, Núñez, Buenos Aires.","isPartOf":{"@type":"WebSite","name":"Arcos V","url":BASE},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Arcos V","item":BASE},{"@type":"ListItem","position":2,"name":"La Tienda","item":BASE+"tienda.html"}]},"mainEntity":{"@type":"ItemList","itemListElement":items}}
 ldtag='<script type="application/ld+json" id="ld-tienda">\n'+json.dumps(ld,ensure_ascii=False,indent=1)+'\n</script>'
 h=open('tienda.html',encoding='utf-8').read()
 h=re.sub(r'<!--PRE:INI-->.*?<!--PRE:FIN-->',lambda m:estatico,h,flags=re.S)
