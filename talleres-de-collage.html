@@ -189,6 +189,11 @@
         .obras { width: 100%; display: block; border-radius: var(--radius); margin-top: 10px; box-shadow: 0 8px 24px rgba(59,47,40,0.10); }
         .pie { font-size: 14px; color: var(--text-light); margin-top: 10px; text-align: center; font-style: italic; }
 
+        /* Galería de la edición anterior */
+        .galeria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 20px 0 12px; }
+        .galeria img, .galeria video { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: var(--radius); display: block; }
+        @media (max-width: 600px) { .galeria { grid-template-columns: repeat(2, 1fr); } }
+
         .flyer { display: block; width: 100%; max-width: 420px; margin: 24px auto 0; border-radius: var(--radius); box-shadow: 0 8px 24px rgba(59,47,40,0.12); }
 
         .box-info {
@@ -305,6 +310,22 @@
             <h3>Para llevar</h3>
             <p>Pinceles y una tijera. Y lo más importante: si tenés en tu casa puntillas, hilos y tul antiguos, traelos. Son los que le dan alma a cada obra.</p>
             <img src="collage-bea-nov26-flyer.webp" alt="Flyer del taller presencial Mujeres & collage de Bea Taverna en Arcos V" class="flyer" loading="lazy">
+        </div>
+
+        <!-- EDICIÓN ANTERIOR -->
+        <div class="seccion">
+            <h2>Así fue la primera edición</h2>
+            <p>El viernes 13 de noviembre se hizo el primer Mujeres &amp; collage en Arcos V, con cupo completo. Cada una se llevó su obra a casa.</p>
+            <div class="galeria">
+                <video src="collage-nov26-manos.mp4" poster="collage-nov26-manos-poster.webp" autoplay loop muted playsinline aria-label="Manos armando un collage sobre papel durante el taller"></video>
+                <img src="collage-nov26-01.webp" alt="Participante pintando con pincel el vestido de su figura" loading="lazy">
+                <img src="collage-nov26-02.webp" alt="Obra terminada: mujer con vestido rojo, sombrero de collage y globos" loading="lazy">
+                <img src="collage-nov26-03.webp" alt="Trabajo en la mesa durante el taller, con el jardín de fondo" loading="lazy">
+                <img src="collage-nov26-04.webp" alt="Obra terminada: dos mujeres con vestidos de época y una cartera bordada" loading="lazy">
+                <img src="collage-nov26-05.webp" alt="Participante dando los últimos detalles a su figura con un pincel fino" loading="lazy">
+            </div>
+            <img src="collage-nov26-grupo.webp" alt="Foto grupal en el jardín de Arcos V: las participantes mostrando sus obras terminadas" class="obras" loading="lazy">
+            <p class="pie">Viernes 13 de noviembre de 2026, en el jardín de Arcos V.</p>
         </div>
 
         <!-- CONTACTO -->
