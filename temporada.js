@@ -51,7 +51,7 @@
     /* Primer año */
     '.tp-anio{background:#173A2A;color:#FAF6EC;padding:56px 24px;text-align:center;position:relative;overflow:hidden}',
     '.tp-anio-in{max-width:960px;margin:0 auto;position:relative;z-index:1}',
-    '.tp-eyebrow{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#FFC107}',
+    '.tp-eyebrow{font-family:"JetBrains Mono",monospace;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:#FFC107}',
     '.tp-anio h2{font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(26px,4vw,40px);line-height:1.1;letter-spacing:-.5px;margin:12px 0 36px;color:#FAF6EC}',
     '.tp-anio h2 em{color:#FFC107;font-style:normal}',
     '.tp-stats{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:36px}',
@@ -67,19 +67,19 @@
     '.tp-vac{position:fixed;left:20px;bottom:20px;z-index:2000;width:300px;background:#FAF6EC;border:1px solid rgba(23,58,42,.15);border-radius:10px;box-shadow:0 12px 32px rgba(23,58,42,.18);padding:0 20px 18px;text-align:center;font-family:"Work Sans",sans-serif;color:#173A2A;animation:tpEntra .6s ease-out}',
     '@keyframes tpEntra{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}',
     '.tp-cerrar{position:absolute;top:6px;right:8px;background:none;border:0;font-size:20px;line-height:1;color:#5A6660;cursor:pointer;padding:4px}',
-    '.tp-playa{display:block;margin:14px auto 6px;overflow:visible}',
-    '.tp-sombrilla{transform-origin:62px 96px;animation:tpViento 4s ease-in-out infinite}',
-    '@keyframes tpViento{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}',
-    '.tp-sol{transform-origin:150px 22px;animation:tpSol 6s ease-in-out infinite}',
+    '.tp-playa{display:block;margin:12px auto 4px;overflow:visible;max-width:100%;height:auto}',
+    '.tp-sombrilla{transform-origin:80px 140px;animation:tpViento 4s ease-in-out infinite}',
+    '@keyframes tpViento{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}',
+    '.tp-sol{transform-origin:222px 26px;animation:tpSol 6s ease-in-out infinite}',
     '@keyframes tpSol{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}',
-    '.tp-titulo{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:20px;line-height:1.15;margin:0 0 6px}',
-    '.tp-titulo small{display:block;font-family:"JetBrains Mono",monospace;font-weight:500;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#9C6B1F;margin-bottom:4px}',
+    '.tp-cartelito{transform-origin:128px 50px;animation:tpHamaca 3s ease-in-out infinite}',
+    '@keyframes tpHamaca{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}',
     '.tp-vuelta{font-size:14px;margin:0 0 4px}',
-    '.tp-faltan{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#9C6B1F;margin:0 0 14px}',
+    '.tp-faltan{font-family:"JetBrains Mono",monospace;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#9C6B1F;margin:0 0 14px}',
     '.tp-btn{display:block;background:#173A2A;color:#FAF6EC;text-decoration:none;border-radius:6px;padding:11px 14px;font-size:13px;font-weight:600}',
     '.tp-btn:hover{background:#2C5A43}',
     '@media (max-width:700px){.tp-vac{left:12px;right:12px;bottom:12px;width:auto}.tp-anio{padding:44px 16px}.tp-stats{flex-wrap:nowrap;gap:10px}.tp-stat{flex:1 1 0}.tp-num{font-size:36px}.tp-txt{font-size:12px}}',
-    '@media (prefers-reduced-motion:reduce){.tp-foco,.tp-sombrilla,.tp-sol,.tp-chispa,.tp-vac{animation:none}}'
+    '@media (prefers-reduced-motion:reduce){.tp-foco,.tp-sombrilla,.tp-sol,.tp-cartelito,.tp-chispa,.tp-vac{animation:none}}'
   ].join('');
   document.head.appendChild(css);
 
@@ -188,23 +188,29 @@
       vac.setAttribute('role', 'note');
       vac.innerHTML =
         '<button class="tp-cerrar" aria-label="Cerrar aviso">×</button>' +
-        '<svg class="tp-playa" width="190" height="110" viewBox="0 0 190 110" aria-hidden="true">' +
-        '<circle class="tp-sol" cx="150" cy="22" r="12" fill="#FFC107"/>' +
-        '<path d="M0,100 Q95,90 190,100 L190,110 L0,110 Z" fill="#F0E8D5"/>' +
-        '<g class="tp-sombrilla">' +
-        '<line x1="62" y1="28" x2="62" y2="100" stroke="#3D2A1D" stroke-width="2.5" stroke-linecap="round"/>' +
-        '<path d="M14,40 Q62,-4 110,40 Z" fill="#173A2A"/>' +
-        '<path d="M38,40 Q50,8 62,18 Q74,8 86,40 Z" fill="#FAF6EC"/>' +
-        '<path d="M50,40 Q56,14 62,18 Q68,14 74,40 Z" fill="#FFC107"/>' +
-        '<path d="M14,40 Q20,46 26,40 Q32,46 38,40 Q44,46 50,40 Q56,46 62,40 Q68,46 74,40 Q80,46 86,40 Q92,46 98,40 Q104,46 110,40" fill="none" stroke="#173A2A" stroke-width="2"/>' +
-        '<circle cx="62" cy="18" r="2.5" fill="#3D2A1D"/></g>' +
+        '<svg class="tp-playa" width="260" height="150" viewBox="0 0 260 150" role="img" aria-label="Cerrado por vacaciones">' +
+        '<circle class="tp-sol" cx="222" cy="26" r="14" fill="#FFC107"/>' +
+        '<path d="M0,140 Q130,128 260,140 L260,150 L0,150 Z" fill="#F0E8D5"/>' +
         '<g stroke="#6B4E3A" stroke-width="3" stroke-linecap="round" fill="none">' +
-        '<line x1="104" y1="100" x2="146" y2="84"/><line x1="156" y1="100" x2="120" y2="84"/>' +
-        '<line x1="118" y1="84" x2="168" y2="84"/><line x1="168" y1="84" x2="178" y2="58"/></g>' +
-        '<path d="M110,84 L168,84 L177,60 L171,58 L163,80 L112,80 Z" fill="#FFC107" opacity=".9"/>' +
-        '<path d="M126,80 L134,80 L134,84 L126,84 Z M144,80 L152,80 L152,84 L144,84 Z" fill="#FAF6EC"/>' +
+        '<line x1="176" y1="140" x2="220" y2="122"/><line x1="230" y1="140" x2="190" y2="122"/>' +
+        '<line x1="184" y1="122" x2="240" y2="122"/><line x1="240" y1="122" x2="251" y2="94"/></g>' +
+        '<path d="M176,122 L240,122 L250,96 L244,94 L235,118 L178,118 Z" fill="#FFC107"/>' +
+        '<path d="M196,118 L205,118 L205,122 L196,122 Z M216,118 L225,118 L225,122 L216,122 Z" fill="#FAF6EC"/>' +
+        '<g class="tp-sombrilla">' +
+        '<line x1="80" y1="30" x2="80" y2="140" stroke="#3D2A1D" stroke-width="2.5" stroke-linecap="round"/>' +
+        '<path d="M24,50 Q80,-2 136,50 Z" fill="#173A2A"/>' +
+        '<path d="M52,50 Q66,12 80,22 Q94,12 108,50 Z" fill="#FAF6EC"/>' +
+        '<path d="M66,50 Q73,18 80,22 Q87,18 94,50 Z" fill="#FFC107"/>' +
+        '<path d="M24,50 Q31,57 38,50 Q45,57 52,50 Q59,57 66,50 Q73,57 80,50 Q87,57 94,50 Q101,57 108,50 Q115,57 122,50 Q129,57 136,50" fill="none" stroke="#173A2A" stroke-width="2"/>' +
+        '<circle cx="80" cy="22" r="2.8" fill="#3D2A1D"/>' +
+        '<g class="tp-cartelito">' +
+        '<path d="M128,50 L100,70 M128,50 L156,70" stroke="#6B4E3A" stroke-width="1.3" fill="none"/>' +
+        '<circle cx="128" cy="50" r="2" fill="#3D2A1D"/>' +
+        '<rect x="86" y="68" width="84" height="42" rx="4" fill="#3D2A1D"/>' +
+        '<text x="128" y="85.5" text-anchor="middle" fill="#FAF6EC" style="font-family:Bricolage Grotesque,sans-serif;font-weight:700;font-size:13px">Cerrado por</text>' +
+        '<text x="128" y="101.5" text-anchor="middle" fill="#FFC107" style="font-family:Bricolage Grotesque,sans-serif;font-weight:700;font-size:13px">vacaciones</text>' +
+        '</g></g>' +
         '</svg>' +
-        '<p class="tp-titulo"><small>Arcos V</small>Cerrado por vacaciones</p>' +
         '<p class="tp-vuelta">Volvemos <strong>' + CONFIG.vueltaTexto + '</strong></p>' +
         (faltanTxt ? '<p class="tp-faltan">' + faltanTxt + '</p>' : '') +
         '<a class="tp-btn" target="_blank" rel="noopener" href="' +
