@@ -67,18 +67,19 @@
     '.tp-vac{position:fixed;left:20px;bottom:20px;z-index:2000;width:300px;background:#FAF6EC;border:1px solid rgba(23,58,42,.15);border-radius:10px;box-shadow:0 12px 32px rgba(23,58,42,.18);padding:0 20px 18px;text-align:center;font-family:"Work Sans",sans-serif;color:#173A2A;animation:tpEntra .6s ease-out}',
     '@keyframes tpEntra{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}',
     '.tp-cerrar{position:absolute;top:6px;right:8px;background:none;border:0;font-size:20px;line-height:1;color:#5A6660;cursor:pointer;padding:4px}',
-    '.tp-colgado{display:inline-block;transform-origin:50% 0;animation:tpHamaca 3.5s ease-in-out infinite;margin-bottom:12px}',
-    '@keyframes tpHamaca{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}',
-    '.tp-hilo{display:block;margin:0 auto}',
-    '.tp-clavo{width:8px;height:8px;border-radius:50%;background:#3D2A1D;margin:14px auto -4px;position:relative;z-index:1}',
-    '.tp-cartel{background:#3D2A1D;color:#FAF6EC;border-radius:6px;padding:10px 18px;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:17px;line-height:1.15;box-shadow:0 4px 10px rgba(0,0,0,.15)}',
-    '.tp-cartel small{display:block;font-family:"JetBrains Mono",monospace;font-weight:500;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#FFC107;margin-bottom:3px}',
+    '.tp-playa{display:block;margin:14px auto 6px;overflow:visible}',
+    '.tp-sombrilla{transform-origin:62px 96px;animation:tpViento 4s ease-in-out infinite}',
+    '@keyframes tpViento{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}',
+    '.tp-sol{transform-origin:150px 22px;animation:tpSol 6s ease-in-out infinite}',
+    '@keyframes tpSol{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}',
+    '.tp-titulo{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:20px;line-height:1.15;margin:0 0 6px}',
+    '.tp-titulo small{display:block;font-family:"JetBrains Mono",monospace;font-weight:500;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#9C6B1F;margin-bottom:4px}',
     '.tp-vuelta{font-size:14px;margin:0 0 4px}',
     '.tp-faltan{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#9C6B1F;margin:0 0 14px}',
     '.tp-btn{display:block;background:#173A2A;color:#FAF6EC;text-decoration:none;border-radius:6px;padding:11px 14px;font-size:13px;font-weight:600}',
     '.tp-btn:hover{background:#2C5A43}',
     '@media (max-width:700px){.tp-vac{left:12px;right:12px;bottom:12px;width:auto}.tp-anio{padding:44px 16px}.tp-stats{flex-wrap:nowrap;gap:10px}.tp-stat{flex:1 1 0}.tp-num{font-size:36px}.tp-txt{font-size:12px}}',
-    '@media (prefers-reduced-motion:reduce){.tp-foco,.tp-colgado,.tp-chispa,.tp-vac{animation:none}}'
+    '@media (prefers-reduced-motion:reduce){.tp-foco,.tp-sombrilla,.tp-sol,.tp-chispa,.tp-vac{animation:none}}'
   ].join('');
   document.head.appendChild(css);
 
@@ -187,9 +188,23 @@
       vac.setAttribute('role', 'note');
       vac.innerHTML =
         '<button class="tp-cerrar" aria-label="Cerrar aviso">×</button>' +
-        '<div class="tp-clavo"></div>' +
-        '<div class="tp-colgado"><svg class="tp-hilo" width="70" height="22" viewBox="0 0 70 22"><path d="M35,0 L6,22 M35,0 L64,22" stroke="#6B4E3A" stroke-width="1.5" fill="none"/></svg>' +
-        '<div class="tp-cartel"><small>Arcos V</small>Cerrado por<br>vacaciones ☀️</div></div>' +
+        '<svg class="tp-playa" width="190" height="110" viewBox="0 0 190 110" aria-hidden="true">' +
+        '<circle class="tp-sol" cx="150" cy="22" r="12" fill="#FFC107"/>' +
+        '<path d="M0,100 Q95,90 190,100 L190,110 L0,110 Z" fill="#F0E8D5"/>' +
+        '<g class="tp-sombrilla">' +
+        '<line x1="62" y1="28" x2="62" y2="100" stroke="#3D2A1D" stroke-width="2.5" stroke-linecap="round"/>' +
+        '<path d="M14,40 Q62,-4 110,40 Z" fill="#173A2A"/>' +
+        '<path d="M38,40 Q50,8 62,18 Q74,8 86,40 Z" fill="#FAF6EC"/>' +
+        '<path d="M50,40 Q56,14 62,18 Q68,14 74,40 Z" fill="#FFC107"/>' +
+        '<path d="M14,40 Q20,46 26,40 Q32,46 38,40 Q44,46 50,40 Q56,46 62,40 Q68,46 74,40 Q80,46 86,40 Q92,46 98,40 Q104,46 110,40" fill="none" stroke="#173A2A" stroke-width="2"/>' +
+        '<circle cx="62" cy="18" r="2.5" fill="#3D2A1D"/></g>' +
+        '<g stroke="#6B4E3A" stroke-width="3" stroke-linecap="round" fill="none">' +
+        '<line x1="104" y1="100" x2="146" y2="84"/><line x1="156" y1="100" x2="120" y2="84"/>' +
+        '<line x1="118" y1="84" x2="168" y2="84"/><line x1="168" y1="84" x2="178" y2="58"/></g>' +
+        '<path d="M110,84 L168,84 L177,60 L171,58 L163,80 L112,80 Z" fill="#FFC107" opacity=".9"/>' +
+        '<path d="M126,80 L134,80 L134,84 L126,84 Z M144,80 L152,80 L152,84 L144,84 Z" fill="#FAF6EC"/>' +
+        '</svg>' +
+        '<p class="tp-titulo"><small>Arcos V</small>Cerrado por vacaciones</p>' +
         '<p class="tp-vuelta">Volvemos <strong>' + CONFIG.vueltaTexto + '</strong></p>' +
         (faltanTxt ? '<p class="tp-faltan">' + faltanTxt + '</p>' : '') +
         '<a class="tp-btn" target="_blank" rel="noopener" href="' +
