@@ -145,7 +145,7 @@
         '<span class="tp-eyebrow">2026 · Nuestro primer año</span>' +
         '<h2>Gracias por hacer de Arcos V<br>un lugar de <em>encuentro</em></h2>' +
         '<div class="tp-stats">' + stats + '</div>' +
-        '<p class="tp-brindis">Brindemos por un 2027 lleno de encuentros ✨</p>' +
+        '<p class="tp-brindis">Brindemos por un 2027 lleno de proyectos que se hacen realidad ✨</p>' +
         '<p class="tp-aviso">En enero nos tomamos vacaciones. Volvemos ' + CONFIG.vueltaTexto + ' — ' +
         '<a href="' + waLink('Hola! Quiero consultar una fecha en Arcos V para 2027.') + '" target="_blank" rel="noopener">ya podés consultar fechas para 2027</a>.</p>' +
         '</div>';
