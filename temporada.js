@@ -93,7 +93,7 @@
       guir.className = 'tp-guirnalda';
       guir.setAttribute('aria-hidden', 'true');
       header.appendChild(guir);
-      var colores = ['#FFC107', '#FFE9A8', '#F2A23A', '#FFF6DC'];
+      var colores = ['#E53935', '#43A047', '#FFC107'];   // rojo, verde y dorado
       var dibujar = function () {
         var w = header.offsetWidth || window.innerWidth;
         var g = w < 700 ? 1.5 : 1;               // en el celular, focos más grandes
@@ -113,7 +113,7 @@
             focos += '<g class="tp-foco" style="animation-delay:' + demora + 's">' +
               '<rect x="' + (x - 1.5 * g) + '" y="' + (y - 1) + '" width="' + 3 * g + '" height="' + 3 * g + '" fill="#3D2A1D"/>' +
               '<ellipse cx="' + x + '" cy="' + (y + 6 * g) + '" rx="' + 3.6 * g + '" ry="' + 5 * g + '" fill="' + c + '"/>' +
-              '<ellipse cx="' + x + '" cy="' + (y + 6 * g) + '" rx="' + 7 * g + '" ry="' + 8 * g + '" fill="#FFC107" opacity="' + (g > 1 ? '.3' : '.2') + '"/></g>';
+              '<ellipse cx="' + x + '" cy="' + (y + 6 * g) + '" rx="' + 7 * g + '" ry="' + 8 * g + '" fill="' + c + '" opacity="' + (g > 1 ? '.35' : '.25') + '"/></g>';
             n++;
           }
         }
