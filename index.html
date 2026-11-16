@@ -486,6 +486,226 @@
         .plantas-botones { flex-direction: column; width: 100%; }
         .plantas-botones a { text-align: center; }
     }
+
+    /* =====================================================
+       MEJORAS UI/UX (propuesta nov 2026) — todo en este bloque
+       ===================================================== */
+
+    /* 1. Al tocar un link del menú, el título de la sección no queda tapado por el encabezado */
+    section[id] { scroll-margin-top: 96px; }
+    @media (max-width: 700px) { section[id] { scroll-margin-top: 72px; } }
+
+    /* 2. Menos aire vacío entre secciones en la compu */
+    @media (min-width: 701px) { section { padding: 84px 0; } }
+
+    /* 3. Agenda en la compu: 3 por fila, foto arriba y texto en tiza (igual que en el celu) */
+    @media (min-width: 1000px) {
+        .editorial-grid { grid-template-columns: repeat(3, 1fr); gap: 26px; }
+        .evento-grid-card { flex-direction: column; }
+        .editorial-grid .evento-grid-content { background: #F5F4F0 !important; border-top: 1px solid rgba(23,58,42,0.08); padding: 18px 20px 16px; flex: 1; display: flex; flex-direction: column; }
+        .evento-grid-tag { color: var(--wine); }
+        .evento-grid-title { color: var(--ink); font-size: 20px; line-height: 1.2; padding-right: 0; }
+        .evento-grid-date { color: var(--ink-soft); margin-bottom: 12px; }
+        .evento-grid-cta { color: var(--ink); margin-top: auto; }
+        .evento-grid-cta .cta-flecha { color: var(--wine); }
+        a.evento-grid-card .evento-grid-content::after { display: none; }
+        a.evento-grid-card:hover .evento-grid-title { color: var(--wine-deep); }
+    }
+
+    /* 4. Celular: el sumario oscuro muestra que se puede deslizar (la portada queda como la original) */
+    @media (max-width: 700px) {
+        /* El sumario oscuro muestra que se puede deslizar */
+        .sumario { position: relative; }
+        .sumario::after { content: ""; position: absolute; top: 0; right: 0; width: 42px; height: 100%; background: linear-gradient(90deg, rgba(23,58,42,0), var(--ink)); pointer-events: none; }
+    }
+
+    /* 5. Preguntas frecuentes: signo + / − claro y área de toque más cómoda */
+    details { padding: 0; border: 1px solid rgba(23,58,42,0.08); transition: border-color .2s, box-shadow .2s; }
+    details:hover { border-color: rgba(23,58,42,0.22); }
+    details[open] { box-shadow: 0 6px 18px rgba(23,58,42,0.08); border-color: rgba(156,107,31,0.35); }
+    summary { list-style: none; padding: 18px 56px 18px 22px; position: relative; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; background: var(--cream-deep); color: var(--ink); font-size: 18px; line-height: 26px; text-align: center; font-weight: 500; transition: background .2s; }
+    details[open] summary::after { content: "−"; background: var(--gold); }
+    details p { margin: 0; padding: 0 22px 20px; }
+
+    /* 6. Se ve claramente dónde está el foco al navegar con teclado */
+    a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+    /* 7. Botón flotante de WhatsApp para consultas de alquiler */
+    .wa-flotante { position: fixed; right: 22px; bottom: 22px; z-index: 999; display: flex; align-items: center; gap: 10px; background: var(--ink); color: var(--cream); text-decoration: none; font-weight: 600; font-size: 14px; padding: 12px 18px 12px 14px; border-radius: 999px; box-shadow: 0 10px 28px rgba(23,58,42,0.30); border: 1px solid rgba(255,193,7,0.55); transition: transform .2s, opacity .3s; opacity: 0; transform: translateY(16px); pointer-events: none; }
+    .wa-flotante.visible { opacity: 1; transform: none; pointer-events: auto; }
+    .wa-flotante:hover { transform: translateY(-2px); }
+    .wa-flotante svg { width: 24px; height: 24px; fill: #25D366; flex-shrink: 0; }
+    @media (max-width: 700px) { .wa-flotante { display: none !important; } }
+
+    @media (prefers-reduced-motion: reduce) { html, body { scroll-behavior: auto; } * { transition: none !important; } }
+
+    /* =====================================================
+       ESTILO EDITORIAL RÚSTICO (propuesta v2, nov 2026)
+       Misma paleta y mismas tipografías. La portada no se toca.
+       ===================================================== */
+    :root { --radius: 2px; --paper: #F5F4F0; --rule: rgba(61,42,29,0.28); --hard: 5px 5px 0 rgba(61,42,29,0.85); }
+
+    /* Grano de papel sobre toda la página */
+    body::after { content: ""; position: fixed; inset: 0; z-index: 900; pointer-events: none; opacity: .22; mix-blend-mode: multiply;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .24 0 0 0 0 .16 0 0 0 0 .11 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+    /* Títulos de sección: grandes, de revista */
+    .section-title { font-size: clamp(40px, 5.4vw, 72px); letter-spacing: -0.035em; line-height: 0.95; font-weight: 800; margin-bottom: 18px; text-wrap: balance; }
+    .section-tagline { font-size: 17px; line-height: 1.55; max-width: 560px; color: var(--wood-mid); }
+    .seccion-centrada > .eyebrow:not([style]) { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+    .seccion-centrada > .eyebrow:not([style])::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+    .firma { width: 100%; height: 3px; border-radius: 0; margin-bottom: 30px; }
+    .firma .f-verde { flex: 6; } .firma .f-madera { flex: 2; } .firma .f-oro { flex: 1; }
+
+    /* Botones con sombra dura, tipo sello */
+    .btn-wine, .newsletter-box .btn-primary { border-radius: 2px; box-shadow: 4px 4px 0 rgba(0,0,0,0.35); transition: transform .15s, box-shadow .15s, background .2s; }
+    .btn-wine:hover, .newsletter-box .btn-primary:hover { transform: translate(2px,2px); box-shadow: 2px 2px 0 rgba(0,0,0,0.35); }
+    .btn-outline-dark { border-radius: 2px; }
+
+    /* Filtros como pestañas de índice */
+    .filters { gap: 26px; border-bottom: 1px solid var(--rule); padding-bottom: 0; margin-bottom: 46px; }
+    .filter-btn { border: none; border-bottom: 3px solid transparent; border-radius: 0; padding: 10px 2px 12px; font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 1.6px; color: var(--wood-mid); }
+    .filter-btn:hover { color: var(--ink); }
+    .filter-btn.active { background: transparent; color: var(--ink); border-bottom-color: var(--gold); font-weight: 700; }
+    .pasado-banner .filter-btn { border: 1px solid var(--ink); padding: 12px 18px; color: var(--ink); text-decoration: none; }
+    .pasado-banner .filter-btn:hover { background: var(--ink); color: var(--cream); }
+
+    /* AGENDA: cada encuentro es una foto impresa, pegada con cinta */
+    .editorial-grid { gap: 44px 30px; padding-top: 14px; }
+    .editorial-grid .evento-grid-card { overflow: visible; border-radius: 2px; background: var(--paper); padding: 10px 10px 0; border: 1px solid rgba(61,42,29,0.22); box-shadow: var(--hard); transition: transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s; }
+    .editorial-grid .evento-grid-card:nth-child(3n+1) { transform: rotate(-0.9deg); }
+    .editorial-grid .evento-grid-card:nth-child(3n+2) { transform: rotate(0.5deg); }
+    .editorial-grid .evento-grid-card:nth-child(3n) { transform: rotate(-0.3deg); }
+    .editorial-grid a.evento-grid-card:hover { transform: rotate(0) translate(-3px,-5px); box-shadow: 10px 12px 0 rgba(61,42,29,0.85); }
+    .editorial-grid a.evento-grid-card:active { transform: rotate(0) translate(2px,2px); box-shadow: 2px 2px 0 rgba(61,42,29,0.85); }
+    .editorial-grid .evento-grid-card::before { content: ""; position: absolute; top: -13px; left: 50%; width: 92px; height: 26px; margin-left: -46px; background: rgba(255,193,7,0.78); transform: rotate(-2.5deg); box-shadow: 0 1px 2px rgba(61,42,29,0.25); z-index: 3; }
+    .editorial-grid .evento-grid-card:nth-child(even)::before { transform: rotate(2deg); background: rgba(44,90,67,0.55); }
+    .editorial-grid .evento-grid-card img, .editorial-grid .evento-grid-card video, .editorial-grid .evento-proximo { border: 1px solid rgba(61,42,29,0.15); }
+    .editorial-grid .evento-grid-card:hover img { transform: none; }
+    .editorial-grid .evento-grid-card .evento-grid-content { background: transparent !important; border-top: none; padding: 16px 8px 16px; }
+    .editorial-grid .evento-grid-tag { font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 10.5px; letter-spacing: 2px; color: var(--wine); }
+    .editorial-grid .evento-grid-title { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; color: var(--ink); letter-spacing: -0.02em; }
+    .editorial-grid .evento-grid-date { color: var(--wood-mid); }
+    .editorial-grid .evento-grid-cta { border-top: 1px dashed var(--rule); padding-top: 12px; color: var(--ink); }
+    .editorial-grid .evento-grid-card.pasado .evento-grid-tag { color: var(--wood-mid); opacity: .7; }
+    .editorial-grid .evento-grid-card.pasado { box-shadow: 3px 3px 0 rgba(61,42,29,0.35); }
+    @media (min-width: 1000px) { .editorial-grid .evento-grid-title { font-size: 23px; } }
+    @media (max-width: 999px) and (min-width: 701px) {
+        .editorial-grid { grid-template-columns: repeat(2, 1fr); }
+        .editorial-grid .evento-grid-card { flex-direction: column; }
+        .editorial-grid a.evento-grid-card .evento-grid-content::after { display: none; }
+        .editorial-grid .evento-grid-cta .cta-flecha { color: var(--wine); }
+    }
+    @media (max-width: 700px) {
+        .editorial-grid { gap: 30px 14px; }
+        .editorial-grid .evento-grid-card { padding: 6px 6px 0; box-shadow: 3px 3px 0 rgba(61,42,29,0.85); }
+        .editorial-grid .evento-grid-card:nth-child(odd) { transform: rotate(-0.7deg); }
+        .editorial-grid .evento-grid-card:nth-child(even) { transform: rotate(0.6deg); }
+        .editorial-grid .evento-grid-card::before { width: 60px; height: 18px; margin-left: -30px; top: -9px; }
+        .editorial-grid .evento-grid-card .evento-grid-content { padding: 10px 5px 10px; }
+        .editorial-grid .evento-grid-cta { border-top: none; padding-top: 6px; }
+    }
+
+
+    /* La Tienda: etiqueta de papel */
+    #plantas { padding-bottom: 70px; }
+    .plantas-box { background: transparent; border: 1px dashed var(--wood-mid); border-radius: 2px; position: relative; }
+    .plantas-box::before { content: ""; position: absolute; left: -9px; top: 50%; width: 18px; height: 18px; margin-top: -9px; border-radius: 50%; background: var(--cream); border: 1px dashed var(--wood-mid); }
+    .plantas-titulo { font-size: clamp(34px, 4vw, 52px); font-weight: 800; letter-spacing: -0.03em; }
+    .plantas-botones .btn-wine { box-shadow: 4px 4px 0 var(--gold); }
+    .plantas-botones .btn-wine:hover { box-shadow: 2px 2px 0 var(--gold); }
+
+    /* ¿Qué es Arcos V?: tres columnas de revista, sin cajas */
+    #que-es { padding-top: 110px; }
+    .tres-columnas { background: transparent; gap: 0; border-radius: 0; overflow: visible; border-top: 3px solid var(--ink); margin-top: 54px; counter-reset: col; }
+    .columna-concepto { background: transparent; padding: 30px 34px 10px 0; position: relative; counter-increment: col; }
+    .columna-concepto + .columna-concepto { padding-left: 34px; border-left: 1px solid var(--rule); }
+    .columna-concepto::before { content: "0" counter(col); display: block; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 2px; color: var(--wine); margin-bottom: 18px; }
+    .columna-concepto h3 { font-size: clamp(38px, 4.4vw, 60px); font-weight: 800; letter-spacing: -0.04em; line-height: 0.95; margin-bottom: 26px; }
+    .columna-concepto:nth-child(2) h3 { color: var(--wood); }
+    .columna-concepto:nth-child(3) h3 { color: var(--wine); }
+    .columna-concepto ul li { padding: 12px 0; margin: 0; border-top: 1px solid var(--rule); font-size: 16px; color: var(--wood); }
+    .columna-concepto ul li::before { content: none; }
+    @media (max-width: 700px) {
+        .columna-concepto, .columna-concepto + .columna-concepto { padding: 26px 0 18px; border-left: none; }
+        .columna-concepto + .columna-concepto { border-top: 3px solid var(--ink); }
+    }
+
+    /* Organizá: bloque verde con marco fino, foto con sombra dura */
+    #organizar { padding-top: 40px; }
+    .b2b-info-box { background: var(--ink); border-radius: 2px; position: relative; padding: 58px 52px; box-shadow: 8px 8px 0 var(--wood); }
+    .b2b-info-box::before { content: ""; position: absolute; inset: 12px; border: 1px solid rgba(255,193,7,0.38); pointer-events: none; }
+    .b2b-info-box > * { position: relative; }
+    .b2b-info-box h2 { font-size: clamp(32px, 3.6vw, 46px); font-weight: 800; letter-spacing: -0.035em; line-height: 1; }
+    .b2b-info-box ul li { border-bottom: 1px solid rgba(255,255,255,0.14); padding: 0 0 9px 18px; }
+    .foto-jardin { height: 320px; border-radius: 2px; box-shadow: 8px 8px 0 var(--gold); border: 1px solid var(--wood); }
+    .espacio-detalles > div { border-radius: 2px !important; box-shadow: none !important; background: transparent !important; border-top: 3px solid var(--ink); padding: 22px 0 0 !important; margin-top: 14px; }
+    .espacio-detalles h4 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700 !important; font-size: 24px !important; letter-spacing: -0.02em; color: var(--ink); }
+    .espacio-detalles p { font-size: 15px !important; color: var(--wood) !important; line-height: 1.9 !important; }
+    @media (max-width: 700px) { .b2b-info-box { padding: 44px 30px; box-shadow: 5px 5px 0 var(--wood); } .foto-jardin { box-shadow: 5px 5px 0 var(--gold); } }
+
+    /* Opiniones: citas grandes, sin tarjeta */
+    .testi-card { background: transparent; box-shadow: none; border-radius: 0; border-top: 3px solid var(--ink); padding: 26px 0 0 64px; position: relative; }
+    .testi-card::before { content: "“"; position: absolute; left: -4px; top: 2px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 110px; line-height: 1; color: var(--gold); }
+    .testi-text { font-family: 'Bricolage Grotesque', sans-serif; font-size: 20px; line-height: 1.4; color: var(--ink); letter-spacing: -0.01em; }
+    .testi-name { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 500; color: var(--wood-mid); }
+    #organizar h4[style] { font-family: 'Bricolage Grotesque', sans-serif; font-size: 34px !important; font-weight: 800 !important; letter-spacing: -0.03em; color: var(--ink); }
+    #organizar iframe { border-radius: 2px !important; box-shadow: 8px 8px 0 var(--wood) !important; border: 1px solid var(--wood) !important; filter: sepia(0.28) saturate(0.85); box-sizing: border-box; }
+
+    /* Lo que ya pasó: fotos sueltas sobre la mesa */
+    .grid-pasado-fotos { gap: 26px; padding: 10px 6px 0; }
+    .grid-pasado-fotos img { border: 9px solid #fff; border-bottom-width: 30px; border-radius: 1px; box-shadow: 0 10px 22px rgba(61,42,29,0.22); box-sizing: border-box; transition: transform .3s cubic-bezier(.2,.8,.2,1); }
+    .grid-pasado-fotos > *:nth-child(1) img, .grid-pasado-fotos > img:nth-child(1) { transform: rotate(-2.2deg); }
+    .grid-pasado-fotos > *:nth-child(2) img { transform: rotate(1.4deg) translateY(10px); }
+    .grid-pasado-fotos > img:nth-child(3) { transform: rotate(-1deg); }
+    .grid-pasado-fotos > *:nth-child(4) img { transform: rotate(2.4deg) translateY(8px); }
+    .grid-pasado-fotos a:hover img, .grid-pasado-fotos > img:hover { transform: rotate(0) scale(1.04); }
+    .pasado-stats { font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; }
+
+    /* Detrás de escena: notas de revista */
+    #blog .grid { gap: 40px 34px; }
+    #blog .card { background: transparent; box-shadow: none; border-radius: 0; overflow: visible; border-top: 3px solid var(--ink); padding-top: 14px; }
+    #blog .card:hover { transform: none; }
+    #blog .card img { aspect-ratio: 4/3; border: 1px solid var(--wood); box-shadow: 6px 6px 0 var(--wood); transition: transform .2s, box-shadow .2s; }
+    #blog .card:hover img { transform: translate(-3px,-3px); box-shadow: 10px 10px 0 var(--gold); }
+    #blog .card-content { padding: 26px 0 0; }
+    #blog .card-tag { font-family: 'JetBrains Mono', monospace; font-weight: 500; letter-spacing: 2px; }
+    #blog .card-title { font-size: 28px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; margin: 10px 0; }
+    #blog .card:hover .card-title { text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 3px; text-underline-offset: 5px; }
+    #blog .card-date { font-size: 15px; color: var(--wood-mid); }
+
+    /* Preguntas: lista con filetes, como un índice */
+    #faq details { background: transparent; border: none; border-bottom: 1px solid var(--rule); border-radius: 0; box-shadow: none; }
+    #faq details[open] { box-shadow: none; border-color: var(--ink); }
+    #faq div[style*="flex-direction: column"] { gap: 0 !important; border-top: 3px solid var(--ink); margin-top: 0 !important; }
+    #faq summary { font-family: 'Bricolage Grotesque', sans-serif; font-size: 20px; font-weight: 600; letter-spacing: -0.015em; padding: 22px 56px 22px 0; }
+    #faq summary::after { right: 0; background: transparent; border: 1px solid var(--ink); }
+    #faq details[open] summary::after { background: var(--gold); border-color: var(--gold); }
+    #faq details p { padding: 0 56px 24px 0; font-size: 15.5px; color: var(--wood); }
+    #faq h3[style] { border-bottom: none !important; font-family: 'JetBrains Mono', monospace; font-size: 12px !important; text-transform: uppercase; letter-spacing: 2.5px; color: var(--wine); margin-bottom: 12px !important; padding-bottom: 0 !important; }
+
+    /* Novedades: como una entrada/ticket */
+    .newsletter-box { border-radius: 2px; background: var(--ink); position: relative; padding: 70px 55px; box-shadow: 8px 8px 0 var(--wood); max-width: 820px; }
+    .newsletter-box::before { content: ""; position: absolute; inset: 12px; border: 1px dashed rgba(252,250,245,0.4); pointer-events: none; }
+    .newsletter-box h2 { font-size: clamp(30px, 4vw, 48px); font-weight: 800; letter-spacing: -0.035em; line-height: 1; margin-bottom: 16px; }
+    .newsletter-box > * { position: relative; }
+
+    /* Pie: verde profundo, con el lema en grande */
+    footer { background: var(--ink); border-top: 6px solid var(--gold); padding: 80px 20px 50px; }
+    footer img { filter: brightness(0) invert(1); height: 54px !important; opacity: .95; }
+    footer p { color: rgba(252,250,245,0.72); }
+    footer .footer-links { color: rgba(252,250,245,0.4); margin-top: 22px; }
+    footer .footer-links a { color: var(--cream); font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; font-weight: 500; }
+    footer .footer-links a:hover { color: var(--gold); }
+    .pie-lema { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(34px, 6.4vw, 92px); letter-spacing: -0.045em; line-height: 0.95; color: var(--cream); margin: 0 auto 46px; max-width: 1100px; text-wrap: balance; }
+    .pie-lema em { font-style: normal; color: var(--gold); }
+
+    /* Las secciones aparecen suavemente al bajar */
+    .rv { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
+    .rv.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; } }
     </style>
 </head>
 
@@ -853,6 +1073,7 @@
 
     <footer>
         <div class="seccion-centrada">
+            <p class="pie-lema">Por acá pasan los que <em>hacen</em>.</p>
             <img src="logo.png" alt="Arcos V Logo" style="height: 40px; margin-bottom: 10px;">
             <p>Arcos 2952, Núñez · Ciudad de Buenos Aires (CP 1429)</p>
             <div class="footer-links">
@@ -909,5 +1130,23 @@
     </script>
 
 <script src="temporada.js" defer></script>
+
+    <!-- Botón flotante de WhatsApp (aparece al bajar un poco) -->
+    <a class="wa-flotante" id="waFlotante" href="https://wa.me/5491162834000?text=Hola!%20Quiero%20consultar%20por%20el%20alquiler%20de%20Arcos%20V.%20%F0%9F%8C%B4" target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+        <span>Consultar disponibilidad</span>
+    </a>
+    <script>
+    (function(){ var b=document.getElementById('waFlotante'); function f(){ b.classList.toggle('visible', window.scrollY > window.innerHeight*0.6); } window.addEventListener('scroll', f, {passive:true}); f(); })();
+    </script>
+    <script>
+    /* Aparición suave de las secciones al bajar */
+    (function(){
+        if (!('IntersectionObserver' in window)) return;
+        var els = document.querySelectorAll('section .section-title, section .section-tagline, .tres-columnas, .b2b-layout, .testi-card, .grid-pasado-fotos, #blog .card, #faq details, .newsletter-box, .plantas-box, .pie-lema');
+        var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
+        els.forEach(function(el){ el.classList.add('rv'); io.observe(el); });
+    })();
+    </script>
 </body>
 </html>
