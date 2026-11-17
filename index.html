@@ -572,7 +572,7 @@
     .pasado-banner .filter-btn { border: 1px solid var(--ink); padding: 12px 18px; color: var(--ink); text-decoration: none; }
     .pasado-banner .filter-btn:hover { background: var(--ink); color: var(--cream); }
 
-    /* AGENDA: cada encuentro es una foto impresa, pegada con cinta */
+    /* AGENDA: cada encuentro es una foto impresa, sostenida con una chinche */
     .editorial-grid { gap: 44px 30px; padding-top: 14px; }
     .editorial-grid .evento-grid-card { overflow: visible; border-radius: 2px; background: var(--paper); padding: 10px 10px 0; border: 1px solid rgba(61,42,29,0.22); box-shadow: var(--hard); transition: transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s; }
     .editorial-grid .evento-grid-card:nth-child(3n+1) { transform: rotate(-0.9deg); }
@@ -580,8 +580,8 @@
     .editorial-grid .evento-grid-card:nth-child(3n) { transform: rotate(-0.3deg); }
     .editorial-grid a.evento-grid-card:hover { transform: rotate(0) translate(-3px,-5px); box-shadow: 10px 12px 0 rgba(61,42,29,0.85); }
     .editorial-grid a.evento-grid-card:active { transform: rotate(0) translate(2px,2px); box-shadow: 2px 2px 0 rgba(61,42,29,0.85); }
-    .editorial-grid .evento-grid-card::before { content: ""; position: absolute; top: -13px; left: 50%; width: 92px; height: 26px; margin-left: -46px; background: rgba(255,193,7,0.78); transform: rotate(-2.5deg); box-shadow: 0 1px 2px rgba(61,42,29,0.25); z-index: 3; }
-    .editorial-grid .evento-grid-card:nth-child(even)::before { transform: rotate(2deg); background: rgba(44,90,67,0.55); }
+    .editorial-grid .evento-grid-card::before { content: "📌"; position: absolute; top: -18px; left: 50%; font-size: 30px; line-height: 1; transform: translateX(-50%) rotate(-12deg); filter: drop-shadow(1px 3px 2px rgba(61,42,29,0.35)); z-index: 3; pointer-events: none; }
+    .editorial-grid .evento-grid-card:nth-child(even)::before { transform: translateX(-50%) rotate(14deg); }
     .editorial-grid .evento-grid-card img, .editorial-grid .evento-grid-card video, .editorial-grid .evento-proximo { border: 1px solid rgba(61,42,29,0.15); }
     .editorial-grid .evento-grid-card:hover img { transform: none; }
     .editorial-grid .evento-grid-card .evento-grid-content { background: transparent !important; border-top: none; padding: 16px 8px 16px; }
@@ -603,7 +603,7 @@
         .editorial-grid .evento-grid-card { padding: 6px 6px 0; box-shadow: 3px 3px 0 rgba(61,42,29,0.85); }
         .editorial-grid .evento-grid-card:nth-child(odd) { transform: rotate(-0.7deg); }
         .editorial-grid .evento-grid-card:nth-child(even) { transform: rotate(0.6deg); }
-        .editorial-grid .evento-grid-card::before { width: 60px; height: 18px; margin-left: -30px; top: -9px; }
+        .editorial-grid .evento-grid-card::before { font-size: 22px; top: -13px; }
         .editorial-grid .evento-grid-card .evento-grid-content { padding: 10px 5px 10px; }
         .editorial-grid .evento-grid-cta { border-top: none; padding-top: 6px; }
     }

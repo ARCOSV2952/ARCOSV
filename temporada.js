@@ -72,9 +72,9 @@
     '.tp-chispa{position:absolute;color:#FFC107;font-size:12px;line-height:1;opacity:0;animation:tpChispa 4s ease-in-out infinite}',
     '.tp-chispa::before{content:"✦"}',
     '@keyframes tpChispa{0%,100%{opacity:0;transform:scale(.4) rotate(0)}50%{opacity:.7;transform:scale(1) rotate(45deg)}}',
-    /* Cartel de vacaciones — papel pegado con cinta */
+    /* Cartel de vacaciones — papel sostenido con una chinche */
     '.tp-vac{position:fixed;right:28px;bottom:28px;z-index:2000;width:300px;background:#F5F4F0;border:1px solid rgba(61,42,29,.35);border-radius:2px;box-shadow:6px 6px 0 rgba(61,42,29,.85);padding:6px 20px 20px;text-align:center;font-family:"Work Sans",sans-serif;color:#173A2A;transform:rotate(-1.2deg);animation:tpEntra .6s ease-out}',
-    '.tp-vac::before{content:"";position:absolute;top:-13px;left:50%;width:96px;height:26px;margin-left:-48px;background:rgba(255,193,7,.78);transform:rotate(-3deg);box-shadow:0 1px 2px rgba(61,42,29,.25)}',
+    '.tp-vac::before{content:"📌";position:absolute;top:-20px;left:50%;font-size:32px;line-height:1;transform:translateX(-50%) rotate(-12deg);filter:drop-shadow(1px 3px 2px rgba(61,42,29,.35));pointer-events:none}',
     '@keyframes tpEntra{from{opacity:0;transform:translateY(24px) rotate(-1.2deg)}to{opacity:1;transform:rotate(-1.2deg)}}',
     '.tp-cerrar{position:absolute;top:8px;right:8px;width:30px;height:30px;background:none;border:1px solid rgba(23,58,42,.35);border-radius:50%;font-size:18px;line-height:1;color:#173A2A;cursor:pointer;padding:0}',
     '.tp-cerrar:hover{background:#173A2A;color:#FAF6EC}',
@@ -91,7 +91,7 @@
     '.tp-btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 #FFC107}',
     '@media (max-width:900px){.tp-sello{display:none}}',
     'body.tp-vac-abierto .wa-flotante{display:none!important}',
-    '@media (max-width:700px){.tp-vac{left:14px;right:14px;bottom:14px;width:auto;transform:none;animation:none;padding:4px 14px 14px;display:grid;grid-template-columns:118px 1fr;gap:0 12px;align-items:center;text-align:left}.tp-vac::before{width:70px;margin-left:-35px;height:20px;top:-10px}.tp-playa{grid-row:1/4;width:118px;margin:10px 0 0;border-bottom:none;padding:0}.tp-vuelta{font-size:16px;margin:12px 34px 2px 0;line-height:1.2}.tp-faltan{font-size:11px;margin:0 0 10px}.tp-btn{padding:10px;font-size:12px;box-shadow:3px 3px 0 #FFC107;text-align:center}.tp-anio{padding:64px 20px 58px}.tp-anio h2{margin-bottom:36px}.tp-stats{margin-bottom:36px}.tp-stat{padding:16px 8px 0 0}.tp-stat+.tp-stat{padding-left:10px}.tp-num{font-size:40px}.tp-txt{font-size:12.5px;line-height:1.35}.tp-pie{flex-direction:column;align-items:flex-start;gap:16px}}',
+    '@media (max-width:700px){.tp-vac{left:14px;right:14px;bottom:14px;width:auto;transform:none;animation:none;padding:4px 14px 14px;display:grid;grid-template-columns:118px 1fr;gap:0 12px;align-items:center;text-align:left}.tp-vac::before{font-size:24px;top:-14px}.tp-playa{grid-row:1/4;width:118px;margin:10px 0 0;border-bottom:none;padding:0}.tp-vuelta{font-size:16px;margin:12px 34px 2px 0;line-height:1.2}.tp-faltan{font-size:11px;margin:0 0 10px}.tp-btn{padding:10px;font-size:12px;box-shadow:3px 3px 0 #FFC107;text-align:center}.tp-anio{padding:64px 20px 58px}.tp-anio h2{margin-bottom:36px}.tp-stats{margin-bottom:36px}.tp-stat{padding:16px 8px 0 0}.tp-stat+.tp-stat{padding-left:10px}.tp-num{font-size:40px}.tp-txt{font-size:12.5px;line-height:1.35}.tp-pie{flex-direction:column;align-items:flex-start;gap:16px}}',
     '@media (prefers-reduced-motion:reduce){.tp-foco,.tp-sombrilla,.tp-sol,.tp-cartelito,.tp-chispa,.tp-vac{animation:none}.tp-chispa{opacity:.5}}'
   ].join('');
   document.head.appendChild(css);
