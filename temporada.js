@@ -1,13 +1,15 @@
 /* ==========================================================
    TEMPORADA — decoraciones que se prenden y apagan solas por fecha
    ----------------------------------------------------------
+   · Noviembre: enredadera que crece con el scroll, a la derecha,
+                solo en la página de inicio
    · Diciembre: guirnalda de lucecitas en todas las páginas
                 + "Nuestro primer año" en la página de inicio
    · Enero:     cartel "Cerrado por vacaciones" en todas las páginas,
                 con botón para consultar fechas de febrero y marzo
 
    Para verlo antes de tiempo, agregá al final de la dirección:
-     ?temporada=diciembre    o    ?temporada=enero
+     ?temporada=noviembre  ·  ?temporada=diciembre  ·  ?temporada=enero
    ========================================================== */
 
 (function () {
@@ -15,6 +17,8 @@
   var CONFIG = {
     diciembreDesde: '12-01',   // mes-día en que aparece lo navideño
     diciembreHasta: '12-31',
+    noviembreDesde: '11-01',   // enredadera (solo inicio)
+    noviembreHasta: '11-30',
     eneroDesde: '01-01',       // cartel de vacaciones
     eneroHasta: '01-31',
     vuelta: '2027-02-01',      // fecha en que vuelven a abrir
@@ -31,9 +35,12 @@
 
   var hoy = new Date();
   var md = ('0' + (hoy.getMonth() + 1)).slice(-2) + '-' + ('0' + hoy.getDate()).slice(-2);
-  var forzado = (location.search.match(/[?&]temporada=(diciembre|enero)/) || [])[1];
+  var forzado = (location.search.match(/[?&]temporada=(noviembre|diciembre|enero)/) || [])[1];
   var esDiciembre = forzado ? forzado === 'diciembre' : (md >= CONFIG.diciembreDesde && md <= CONFIG.diciembreHasta);
   var esEnero = forzado ? forzado === 'enero' : (md >= CONFIG.eneroDesde && md <= CONFIG.eneroHasta);
+  var esNoviembre = forzado ? forzado === 'noviembre' : (md >= CONFIG.noviembreDesde && md <= CONFIG.noviembreHasta);
+  var esInicio = /(^|\/)(index\.html)?$/.test(location.pathname);
+  if (esNoviembre && esInicio) enredadera();
   if (!esDiciembre && !esEnero) return;
 
   var calmo = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -240,5 +247,85 @@
       });
       document.body.appendChild(vac);
     }
+  }
+
+  /* ---------- NOVIEMBRE: enredadera ---------- */
+  function enredadera() {
+    var arrancar = function () {
+      var NS = 'http://www.w3.org/2000/svg';
+      var st = document.createElement('style');
+      st.textContent = [
+        '.tp-enr{position:absolute;top:0;right:0;width:110px;pointer-events:none;z-index:40;transform:scaleX(-1)}',
+        '.tp-enr svg{display:block;width:100%;height:100%;overflow:visible}',
+        '.tp-enr .tl{fill:none;stroke:#173A2A;stroke-width:1.6;stroke-linecap:round;opacity:.55}',
+        '.tp-enr .zc{fill:none;stroke:#173A2A;stroke-width:1.1;opacity:.4;transition:stroke-dashoffset 1.4s}',
+        '.tp-enr .hj{transform-box:fill-box;transform-origin:0% 50%;transform:scale(0);transition:transform 1.1s cubic-bezier(.2,1.4,.4,1)}',
+        '.tp-enr .hj.ab{transform:scale(1)}',
+        '.tp-enr .hj path{fill:#173A2A;fill-opacity:.1;stroke:#173A2A;stroke-width:1.2;opacity:.7}',
+        '.tp-enr .hj .nv{fill:none;stroke-width:.8;opacity:.45}',
+        '.tp-enr .hj.am path{fill:#FFC107;fill-opacity:.35}',
+        '@media (max-width:700px){.tp-enr{width:56px;opacity:.8}}'
+      ].join('');
+      document.head.appendChild(st);
+      if (getComputedStyle(document.body).position === 'static') document.body.style.position = 'relative';
+      var cont = document.createElement('div');
+      cont.className = 'tp-enr'; cont.setAttribute('aria-hidden', 'true');
+      var svg = document.createElementNS(NS, 'svg');
+      cont.appendChild(svg); document.body.appendChild(cont);
+      var el = function (n, a) { var e = document.createElementNS(NS, n); for (var k in a) e.setAttribute(k, a[k]); return e; };
+      var HOJA = 'M0,0 C6,-9 20,-12 30,-4 C34,0 34,0 30,4 C20,12 6,9 0,0 Z';
+      var tallo, largo = 0, hojas = [], actual = 0, altoArmado = 0;
+      var armar = function () {
+        svg.innerHTML = ''; hojas = [];
+        cont.style.height = '0px';
+        var H = document.documentElement.scrollHeight, W = cont.offsetWidth || 110;
+        altoArmado = H; cont.style.height = H + 'px';
+        var Hs = H * 120 / W;
+        svg.setAttribute('viewBox', '0 0 120 ' + Hs);
+        var d = 'M -10 -10', y = -10, x = -10, i = 0;
+        while (y < Hs) {
+          var ny = y + 140, nx = 22 + (i % 2 ? 26 : 6) + Math.random() * 8;
+          d += ' C ' + (x + 30) + ' ' + (y + 50) + ', ' + (nx + (i % 2 ? -20 : 20)) + ' ' + (ny - 60) + ', ' + nx + ' ' + ny;
+          x = nx; y = ny; i++;
+        }
+        tallo = el('path', { d: d, 'class': 'tl' }); svg.appendChild(tallo);
+        largo = tallo.getTotalLength(); tallo.style.strokeDasharray = largo;
+        var lado = 1;
+        for (var L = 60; L < largo; L += 38 + Math.random() * 30) {
+          var p = tallo.getPointAtLength(L), q = tallo.getPointAtLength(L + 2);
+          var ang = Math.atan2(q.y - p.y, q.x - p.x) * 180 / Math.PI; lado *= -1;
+          if (Math.random() < .18) {
+            var z = el('path', { 'class': 'zc', d: 'M' + p.x + ',' + p.y + ' c' + (lado * 14) + ',4 ' + (lado * 18) + ',18 ' + (lado * 8) + ',20 c' + (lado * -6) + ',1 ' + (lado * -7) + ',-7 ' + (lado * -2) + ',-8' });
+            z.style.strokeDasharray = 60; z.style.strokeDashoffset = 60;
+            svg.appendChild(z); hojas.push({ L: L, e: z, zc: true }); continue;
+          }
+          var s = .7 + Math.random() * .6;
+          var g = el('g', { transform: 'translate(' + p.x + ',' + p.y + ') rotate(' + (ang + lado * (55 + Math.random() * 25)) + ') scale(' + s + ')' });
+          var inn = el('g', { 'class': 'hj' + (Math.random() < .06 ? ' am' : '') });
+          inn.appendChild(el('path', { d: HOJA })); inn.appendChild(el('path', { 'class': 'nv', d: 'M2,0 L28,0' }));
+          g.appendChild(inn); svg.appendChild(g); hojas.push({ L: L, e: inn });
+        }
+      };
+      var objetivo = function () { return Math.min(1, (window.scrollY + window.innerHeight * .85) / document.documentElement.scrollHeight); };
+      var pintar = function (f) {
+        var dib = largo * f; tallo.style.strokeDashoffset = largo - dib;
+        hojas.forEach(function (h) {
+          var on = h.L < dib - 10;
+          if (h.zc) h.e.style.strokeDashoffset = on ? 0 : 60; else h.e.classList.toggle('ab', on);
+        });
+      };
+      armar();
+      var espera;
+      window.addEventListener('resize', function () { clearTimeout(espera); espera = setTimeout(armar, 250); });
+      window.addEventListener('load', function () { if (Math.abs(document.documentElement.scrollHeight - altoArmado) > 50) armar(); });
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { pintar(1); return; }
+      var paso = function () {
+        actual += (objetivo() - actual) * .05;
+        pintar(actual);
+        requestAnimationFrame(paso);
+      };
+      requestAnimationFrame(paso);
+    };
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', arrancar); else arrancar();
   }
 })();
