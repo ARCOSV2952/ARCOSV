@@ -590,6 +590,10 @@
     .editorial-grid .evento-grid-cta { border-top: 1px dashed var(--rule); padding-top: 12px; color: var(--ink); }
     .editorial-grid .evento-grid-card.pasado .evento-grid-tag { color: var(--wood-mid); opacity: .7; }
     .editorial-grid .evento-grid-card.pasado { box-shadow: 3px 3px 0 rgba(61,42,29,0.35); }
+    /* "Ya pasó" con fotos (la tarjeta es un link a la galería): colores normales */
+    a.evento-grid-card.pasado img, a.evento-grid-card.pasado video { filter: none; opacity: 1; }
+    .editorial-grid a.evento-grid-card.pasado { box-shadow: var(--hard); }
+    .editorial-grid a.evento-grid-card.pasado .evento-grid-tag { opacity: 1; }
     @media (min-width: 1000px) { .editorial-grid .evento-grid-title { font-size: 23px; } }
     @media (max-width: 999px) and (min-width: 701px) {
         .editorial-grid { grid-template-columns: repeat(2, 1fr); }
