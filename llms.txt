@@ -27,10 +27,6 @@ Datos de contacto: WhatsApp +54 9 11 6283-4000, mail arcosv.cursosyeventos@gmail
 - [Laboratorio de acuarela](https://arcosv.com.ar/laboratorio-acuarela.html): taller de acuarela.
 - [Agencias de viaje](https://arcosv.com.ar/agencias-de-viaje.html): encuentros pre y post viaje para grupos de agencias de turismo.
 
-## Tienda
-
-- [La Tienda de Arcos V](https://arcosv.com.ar/tienda.html): macetas que quedaron del vivero Arcos Verde, en cerámica esmaltada y en polietileno rotomoldeado, con precio, medidas y material de cada modelo. Cada producto tiene su propio link (por ejemplo tienda.html#samba). Se retiran en Arcos 2952, Núñez; las consultas van por WhatsApp.
-
 ## Sobre Arcos V
 
 - [Cómo elegimos quién da un taller o cata en Arcos V](https://arcosv.com.ar/como-elegimos-quien-da-un-taller-en-arcos-v.html): el proceso de curación de propuestas.
