@@ -70,6 +70,25 @@
         .tapa-quien { font-size: 14px; color: var(--wood-mid); margin-top: 2px; }
         .tapa-ver { display: inline-block; margin-top: 10px; font-size: 13px; font-weight: 600; color: var(--ink); border-bottom: 2px solid var(--gold); }
 
+        /* Filtros por tipo de actividad */
+        .filtros { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 34px; }
+        .filtro { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; padding: 9px 14px; border: 1px solid rgba(61,42,29,0.35); background: transparent; color: var(--wood); cursor: pointer; }
+        .filtro:hover { border-color: var(--ink); color: var(--ink); }
+        .filtro.activo { background: var(--ink); border-color: var(--ink); color: var(--cream); }
+        .tapa-tipo { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; background: var(--gold); color: var(--wood); padding: 2px 7px; margin-bottom: 6px; }
+
+        /* Invitación final */
+        .invitacion { margin-top: 80px; background: var(--ink); color: var(--cream); padding: 48px 40px; position: relative; }
+        .invitacion::before { content: ""; position: absolute; inset: 12px; border: 1px dashed rgba(250,246,236,0.35); pointer-events: none; }
+        .invitacion h2 { color: var(--cream); }
+        .invitacion h2 em { color: var(--gold); font-style: normal; }
+        .invitacion p { margin: 14px 0 26px; max-width: 620px; color: rgba(250,246,236,0.85); }
+        .invitacion .botones { display: flex; gap: 12px; flex-wrap: wrap; position: relative; }
+        .invitacion a { display: inline-block; padding: 13px 20px; text-decoration: none; font-weight: 600; font-size: 15px; }
+        .invitacion .b1 { background: var(--gold); color: var(--wood); }
+        .invitacion .b2 { border: 1px solid var(--cream); color: var(--cream); }
+        .invitacion a:hover { opacity: .88; }
+
         /* Álbum */
         .album { padding-top: 40px; border-top: 1px dashed rgba(61,42,29,0.35); scroll-margin-top: 110px; }
         .album-cabecera { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: 26px; }
@@ -82,7 +101,7 @@
         .fotos img, .fotos video { width: 100%; height: auto; }
         .pie-album { font-size: 14px; color: var(--wood-mid); margin-top: 6px; }
 
-        .aviso { margin-top: 70px; padding: 22px 26px; background: var(--cream-deep); border-left: 4px solid var(--gold); font-size: 15px; }
+        .aviso { margin-top: 40px; padding: 22px 26px; background: var(--cream-deep); border-left: 4px solid var(--gold); font-size: 15px; }
         .aviso a { color: var(--ink); font-weight: 600; }
 
         /* Visor de fotos */
@@ -113,6 +132,7 @@
             .tapa-quien { font-size: 13px; }
             .fotos { columns: 2; column-gap: 10px; }
             .fotos > * { margin-bottom: 10px; padding: 4px; }
+            .invitacion { padding: 36px 24px; }
         }
     </style>
 </head>
@@ -130,11 +150,22 @@
         <h1>Lo que pasó<br>en Arcos V</h1>
         <p class="bajada">Las fotos y videos de los talleres, catas y encuentros que se hicieron en el espacio. Buscá el tuyo y mirá cómo fue.</p>
 
-        <!-- TAPAS: una por álbum, la más nueva primero -->
+        <!-- FILTROS: se muestran solos los tipos que tienen álbumes -->
+        <div class="filtros" aria-label="Filtrar por tipo de actividad">
+            <button class="filtro activo" data-filtro="todos">Todo</button>
+            <button class="filtro" data-filtro="talleres">Talleres y cursos</button>
+            <button class="filtro" data-filtro="catas">Catas</button>
+            <button class="filtro" data-filtro="bienestar">Encuentros y bienestar</button>
+            <button class="filtro" data-filtro="empresas">Empresas</button>
+        </div>
+
+        <!-- TAPAS: una por álbum, la más nueva primero.
+             data-tipo: talleres · catas · bienestar · empresas -->
         <div class="tapas">
-            <a href="#mujeres-collage-nov26" class="tapa">
+            <a href="#mujeres-collage-nov26" class="tapa" data-tipo="talleres">
                 <img src="collage-nov26-grupo.webp" alt="Las participantes del taller Mujeres & collage mostrando sus obras en el jardín" loading="lazy">
                 <div class="tapa-texto">
+                    <span class="tapa-tipo">Taller</span><br>
                     <span class="tapa-fecha">13 de noviembre 2026</span>
                     <div class="tapa-titulo">Mujeres &amp; collage</div>
                     <div class="tapa-quien">Con Bea Taverna</div>
@@ -144,7 +175,7 @@
         </div>
 
         <!-- ÁLBUM: Mujeres & collage, 13/11/2026 -->
-        <section class="album" id="mujeres-collage-nov26">
+        <section class="album" id="mujeres-collage-nov26" data-tipo="talleres">
             <div class="album-cabecera">
                 <div>
                     <span class="eyebrow">Viernes 13 de noviembre de 2026</span>
@@ -167,6 +198,15 @@
             </div>
             <p class="pie-album">Fotos: Arcos V. Conocé la obra de Bea en <a href="https://www.instagram.com/bea_taverna/" target="_blank" rel="noopener" style="color: inherit;">@bea_taverna</a>.</p>
         </section>
+
+        <div class="invitacion">
+            <h2>Y el próximo encuentro<br>puede ser <em>el tuyo</em></h2>
+            <p>Arcos V es un espacio boutique en Núñez para talleres, catas, cursos y encuentros de empresas, con jardín privado y bar propio. Si tenés una propuesta, una marca o un equipo, escribinos.</p>
+            <div class="botones">
+                <a href="tarifas-generales.html" class="b1">Para talleres y comunidades</a>
+                <a href="empresas.html" class="b2">Para empresas</a>
+            </div>
+        </div>
 
         <p class="aviso">Si aparecés en alguna foto y preferís que la saquemos, <a href="https://wa.me/5491162834000?text=Hola!%20Aparezco%20en%20una%20foto%20de%20la%20galer%C3%ADa%20y%20prefiero%20que%20la%20saquen." target="_blank" rel="noopener">escribinos por WhatsApp</a> y la retiramos.</p>
     </main>
@@ -211,6 +251,19 @@
     var x0 = null;
     visor.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
     visor.addEventListener('touchend', function (e) { if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 50) mover(dx < 0 ? 1 : -1); x0 = null; });
+
+    var tapas = document.querySelectorAll('.tapa'), albumes = document.querySelectorAll('.album');
+    document.querySelectorAll('.filtro').forEach(function (f) {
+        var tipo = f.getAttribute('data-filtro');
+        if (tipo !== 'todos' && !document.querySelector('.tapa[data-tipo="' + tipo + '"]')) { f.style.display = 'none'; return; }
+        f.addEventListener('click', function () {
+            document.querySelectorAll('.filtro').forEach(function (o) { o.classList.toggle('activo', o === f); });
+            [].forEach.call(tapas, function (t) { t.style.display = (tipo === 'todos' || t.getAttribute('data-tipo') === tipo) ? '' : 'none'; });
+            [].forEach.call(albumes, function (a) { a.style.display = (tipo === 'todos' || a.getAttribute('data-tipo') === tipo) ? '' : 'none'; });
+        });
+    });
+    var visibles = [].filter.call(document.querySelectorAll('.filtro'), function (f) { return f.style.display !== 'none'; });
+    if (visibles.length < 3) document.querySelector('.filtros').style.display = 'none';
 
     var aviso = document.querySelector('.copiado');
     document.querySelectorAll('[data-copiar]').forEach(function (b) {

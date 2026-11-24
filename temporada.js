@@ -24,6 +24,13 @@
     vuelta: '2027-02-01',      // fecha en que vuelven a abrir
     vueltaTexto: 'el lunes 1° de febrero',
     // Números del primer año (cambiá solo el número o el texto)
+    // Fotos del año que aparecen en "Nuestro primer año" (llevan a la galería)
+    fotosAnio: [
+      { img: 'collage-nov26-grupo.webp', texto: 'Mujeres & collage' },
+      { img: 'cata-ciegas-ago26-01.webp', texto: 'Cata a ciegas' },
+      { img: 'resina-02.webp', texto: 'Taller de resina' },
+      { img: 'foto-fija-materia-prima-camila.jpg', texto: 'Materia Prima' }
+    ],
     resumen: [
       { numero: 40, prefijo: '+', texto: 'encuentros realizados' },
       { numero: 15, prefijo: '+', texto: 'realizadores y empresas' },
@@ -71,6 +78,17 @@
     '.tp-stat::before{content:"0" counter(tps);display:block;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:2px;color:rgba(250,246,236,.55);margin-bottom:14px}',
     '.tp-num{font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(56px,7.5vw,104px);font-weight:800;letter-spacing:-.05em;line-height:.9;color:#FFC107}',
     '.tp-txt{font-family:"Work Sans",sans-serif;font-size:16px;color:rgba(250,246,236,.85);margin-top:12px}',
+    '.tp-fotos{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin:0 0 22px}',
+    '.tp-fotos a{position:relative;display:block;background:#FFFDF8;padding:8px 8px 0;text-decoration:none;color:#3D2A1D;transition:transform .25s}',
+    '.tp-fotos a:nth-child(odd){transform:rotate(-1.6deg)}',
+    '.tp-fotos a:nth-child(even){transform:rotate(1.2deg)}',
+    '.tp-fotos a:hover{transform:rotate(0) translateY(-4px)}',
+    '.tp-fotos a::before{content:"";position:absolute;top:-9px;left:50%;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:radial-gradient(circle at 35% 32%,#FFE9A3 0 16%,#FFC107 22% 62%,#E6AC00 100%);border:1px solid #B88600;box-shadow:1px 3px 3px rgba(0,0,0,.35)}',
+    '.tp-fotos img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}',
+    '.tp-fotos span{display:block;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:10px 2px 12px}',
+    '.tp-ver{margin:0 0 48px}',
+    '.tp-ver a{color:#FFC107;font-weight:600;text-decoration:none;border-bottom:2px solid #FFC107}',
+    '@media (max-width:700px){.tp-fotos{grid-template-columns:1fr 1fr;gap:20px 14px}}',
     '.tp-pie{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;border-top:1px solid rgba(250,246,236,.2);padding-top:28px}',
     '.tp-brindis{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:clamp(22px,2.4vw,30px);letter-spacing:-.02em;line-height:1.15;margin:0;max-width:560px}',
     '.tp-aviso{font-family:"Work Sans",sans-serif;font-size:15px;line-height:1.6;color:rgba(250,246,236,.78);margin:0;max-width:420px}',
@@ -166,6 +184,10 @@
         '<div class="tp-sello" aria-hidden="true">Arcos V<b>1er</b>año</div>' +
         '<h2>Gracias por hacer de Arcos V<br>un lugar de <em>encuentro</em></h2>' +
         '<div class="tp-stats">' + stats + '</div>' +
+        '<div class="tp-fotos">' + CONFIG.fotosAnio.map(function (f) {
+          return '<a href="galeria.html"><img src="' + f.img + '" alt="' + f.texto + ' en Arcos V" loading="lazy"><span>' + f.texto + '</span></a>';
+        }).join('') + '</div>' +
+        '<p class="tp-ver"><a href="galeria.html">Mirá las fotos del año →</a></p>' +
         '<div class="tp-pie"><p class="tp-brindis">Brindemos por un 2027 lleno de proyectos que se hacen realidad ✨</p>' +
         '<p class="tp-aviso">En enero nos tomamos vacaciones. Volvemos ' + CONFIG.vueltaTexto + '.<br>' +
         '<a href="' + waLink('Hola! Quiero consultar una fecha en Arcos V para 2027.') + '" target="_blank" rel="noopener">Consultar fechas para 2027 →</a></p></div>' +
