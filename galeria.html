@@ -91,6 +91,7 @@
 
         /* Álbum */
         .album { padding-top: 40px; border-top: 1px dashed rgba(61,42,29,0.35); scroll-margin-top: 110px; }
+        .album + .album { margin-top: 70px; }
         .album-cabecera { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: 26px; }
         .album-cabecera p { color: var(--wood-mid); max-width: 600px; margin-top: 8px; }
         .album-acciones { display: flex; gap: 10px; flex-wrap: wrap; }
@@ -162,24 +163,62 @@
         <!-- TAPAS: una por álbum, la más nueva primero.
              data-tipo: talleres · catas · bienestar · empresas -->
         <div class="tapas">
+            <a href="#mujeres-collage-18nov26" class="tapa" data-tipo="talleres">
+                <img src="collage-18nov-tapa-grupo.webp" alt="Las participantes de la segunda edición de Mujeres & collage con sus obras en el jardín" loading="lazy">
+                <div class="tapa-texto">
+                    <span class="tapa-tipo">Taller</span><br>
+                    <span class="tapa-fecha">18 de noviembre 2026</span>
+                    <div class="tapa-titulo">Mujeres &amp; collage · 2da edición</div>
+                    <div class="tapa-quien">Con Bea Taverna</div>
+                    <span class="tapa-ver">Ver fotos →</span>
+                </div>
+            </a>
             <a href="#mujeres-collage-nov26" class="tapa" data-tipo="talleres">
                 <img src="collage-13nov-01-grupo-jardin.webp" alt="Las participantes del taller Mujeres & collage mostrando sus obras en el jardín" loading="lazy">
                 <div class="tapa-texto">
                     <span class="tapa-tipo">Taller</span><br>
                     <span class="tapa-fecha">13 de noviembre 2026</span>
-                    <div class="tapa-titulo">Mujeres &amp; collage</div>
+                    <div class="tapa-titulo">Mujeres &amp; collage · 1ra edición</div>
                     <div class="tapa-quien">Con Bea Taverna</div>
                     <span class="tapa-ver">Ver fotos →</span>
                 </div>
             </a>
         </div>
 
+        <!-- ÁLBUM: Mujeres & collage 2da edición, 18/11/2026 -->
+        <section class="album" id="mujeres-collage-18nov26" data-tipo="talleres">
+            <div class="album-cabecera">
+                <div>
+                    <span class="eyebrow">Miércoles 18 de noviembre de 2026</span>
+                    <h2>Mujeres &amp; collage · 2da edición</h2>
+                    <p>La segunda fecha del taller de técnica mixta y collage de Bea Taverna. Otra tarde de puntillas, papeles y figuras que terminaron en el jardín.</p>
+                </div>
+                <div class="album-acciones">
+                    <button class="boton" data-copiar="mujeres-collage-18nov26">Copiar link del álbum</button>
+                    <a href="talleres-de-collage.html" class="boton">Ver el taller</a>
+                </div>
+            </div>
+            <div class="fotos">
+                <video src="collage-18nov-grupo-jardin.mp4" poster="collage-18nov-grupo-jardin-poster.webp" autoplay loop muted playsinline preload="metadata" aria-label="Foto grupal en el jardín con las obras terminadas"></video>
+                <video src="collage-18nov-entrada-salon.mp4" poster="collage-18nov-entrada-salon-poster.webp" autoplay loop muted playsinline preload="metadata" aria-label="Entrando al salón de Arcos V durante el taller"></video>
+                <video src="collage-18nov-el-proceso.mp4" poster="collage-18nov-el-proceso-poster.webp" autoplay loop muted playsinline preload="metadata" aria-label="El proceso: de los bocetos a la obra terminada"></video>
+                <video src="collage-18nov-mesa-trabajando.mp4" poster="collage-18nov-mesa-trabajando-poster.webp" autoplay loop muted playsinline preload="metadata" aria-label="Manos trabajando en la mesa entre papeles y puntillas"></video>
+                <img src="collage-18nov-01-dos-con-obra-verde.webp" alt="Dos participantes con una obra de tapado verde, en el jardín" loading="lazy">
+                <img src="collage-18nov-02-dos-figuras-verdes.webp" alt="Obra con dos figuras de vestidos verdes, en el jardín" loading="lazy">
+                <img src="collage-18nov-03-dos-obras-guirnalda.webp" alt="Dos participantes con sus obras bajo las luces del jardín" loading="lazy">
+                <img src="collage-18nov-04-tres-con-obras.webp" alt="Tres participantes sonrientes con sus obras" loading="lazy">
+                <img src="collage-18nov-05-obra-saco-coral.webp" alt="Participante con su obra de saco coral y sombrero verde" loading="lazy">
+                <img src="collage-18nov-06-obra-tapado-marron.webp" alt="Participante con su obra de tapado marrón y sombrilla de puntilla" loading="lazy">
+            </div>
+            <p class="pie-album">Fotos: Arcos V. Conocé la obra de Bea en <a href="https://www.instagram.com/bea_taverna/" target="_blank" rel="noopener" style="color: inherit;">@bea_taverna</a>.</p>
+        </section>
+
         <!-- ÁLBUM: Mujeres & collage, 13/11/2026 -->
         <section class="album" id="mujeres-collage-nov26" data-tipo="talleres">
             <div class="album-cabecera">
                 <div>
                     <span class="eyebrow">Viernes 13 de noviembre de 2026</span>
-                    <h2>Mujeres &amp; collage</h2>
+                    <h2>Mujeres &amp; collage · 1ra edición</h2>
                     <p>El primer taller de técnica mixta y collage de Bea Taverna en Arcos V, con cupo completo. Cada una se llevó su obra a casa.</p>
                 </div>
                 <div class="album-acciones">
