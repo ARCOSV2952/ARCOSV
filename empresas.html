@@ -28,6 +28,112 @@
     <meta property="og:site_name" content="Arcos V">
     <meta property="og:locale" content="es_AR">
 
+    <!-- DATOS ESTRUCTURADOS: preguntas frecuentes (para Google y asistentes de IA) -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuántas personas entran en Arcos V?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Con mesas de trabajo, 24 personas cómodas y hasta 36 como máximo. En formato auditorio (sillas frente al orador, sin mesas), 30 personas cómodas y hasta 42. El mobiliario se reacomoda según la actividad, y podés ver la distribución en la maqueta 3D del espacio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué equipamiento está incluido en el alquiler?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Monitor de 65\" con cable HDMI en pedestal con ruedas, parlante tipo torre, Wi-Fi de alta velocidad en todo el espacio y aire acondicionado frío/calor en la zona cubierta. Todo está incluido en la tarifa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta alquilar el espacio para una empresa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los valores de referencia arrancan en $40.000 por hora (mínimo 2 horas), $140.000 la media jornada y $280.000 la jornada completa. El presupuesto final depende de la cantidad de personas, el día, el horario, la duración y los servicios. Las bebidas del bar se presupuestan aparte."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Podemos traer nuestra propia comida o catering?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Podés traer un catering externo avisando con al menos 48 horas de anticipación. El montaje y la presentación de la comida los hace siempre el equipo de Arcos V, y las bebidas e infusiones se gestionan con el bar propio del espacio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El espacio es exclusivo para nuestro grupo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Se alquila el espacio completo, sin eventos simultáneos ni público ajeno durante tu reserva."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se puede reservar varios días seguidos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Recibimos offsites y reuniones con clientes de varios días consecutivos, con el espacio reservado en exclusiva."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En qué horarios se puede alquilar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De lunes a sábado de 8 a 23 hs y los domingos de 10 a 22 hs. El armado y el desarme se cuentan dentro de las horas reservadas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hay estacionamiento?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El organizador puede dejar un auto en el garage del espacio, con aviso previo; en reservas de media jornada o más tiene un costo de $20.000 por jornada. Para el resto de los asistentes hay cocheras cerca: Garage Arcos de Núñez (Arcos 3134) y Garage Núñez (Núñez 2769)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se llega en transporte público?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La estación Núñez del tren Mitre (ramal Retiro–Tigre) está a unos 10 minutos a pie. Por Av. Cabildo y transversales pasan las líneas de colectivo 29, 59, 60, 107, 133, 152 y 168."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Podemos conocer el espacio antes de reservar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, coordinamos visitas técnicas a pedido. Escribinos por WhatsApp y armamos un horario."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Emiten factura?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, emitimos factura C (monotributo). También podemos coordinar órdenes de compra o el alta como proveedor de tu empresa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se reserva la fecha?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Con una seña del 50% del valor total; el saldo se abona el día del encuentro o el día anterior. La seña se reintegra al 100% si cancelás dentro de las 72 horas de abonarla; después queda como crédito por 3 meses para reprogramar."
+      }
+    }
+  ]
+}
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Work+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -243,6 +349,16 @@
     .nota-tarifas strong { color: var(--ink); }
 
     /* --- CONDICIONES --- */
+    /* --- PREGUNTAS FRECUENTES --- */
+    .faq-lista { border-top: 3px solid var(--ink); margin-top: 26px; }
+    .faq-lista details { border-bottom: 1px solid rgba(23,58,42,0.18); cursor: pointer; }
+    .faq-lista summary { font-family: 'Bricolage Grotesque', sans-serif; font-size: 19px; font-weight: 600; color: var(--ink); padding: 20px 40px 20px 0; list-style: none; position: relative; letter-spacing: -0.015em; }
+    .faq-lista summary::-webkit-details-marker { display: none; }
+    .faq-lista summary::after { content: "+"; position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 28px; height: 28px; border: 1px solid var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 400; }
+    .faq-lista details[open] summary::after { content: "−"; background: var(--gold); border-color: var(--gold); }
+    .faq-lista details p { padding: 0 40px 22px 0; font-size: 15.5px; line-height: 1.65; color: var(--wood); }
+    @media (max-width: 700px) { .faq-lista summary { font-size: 17px; } }
+
     .condiciones-box { background: var(--wood); color: #fff; border-radius: var(--radius); padding: 46px; }
     .condiciones-box h2 { font-size: 30px; color: #fff; font-weight: 600; letter-spacing: -0.7px; margin-bottom: 22px; }
     .condiciones-box ul { list-style: none; }
@@ -348,6 +464,7 @@
             <a class="sumario-item" href="#equipamiento"><span class="sumario-num">04</span><span class="label">Equipamiento</span></a>
             <a class="sumario-item" href="#llegar"><span class="sumario-num">05</span><span class="label">Cómo llegar</span></a>
             <a class="sumario-item sumario-tarifas" href="#tarifas"><span class="sumario-num">06</span><span class="label">Tarifas</span></a>
+            <a class="sumario-item" href="#preguntas"><span class="sumario-num">07</span><span class="label">Preguntas</span></a>
         </div>
     </div>
 
@@ -585,6 +702,27 @@
                     <li><strong>Cancelaciones.</strong> La seña es 100% reintegrable si cancelás dentro de las 72 horas posteriores a abonarla. Pasado ese plazo, queda como crédito a favor, válido por 3 meses, para reprogramar tu evento en otra fecha según disponibilidad. El crédito te permite reprogramar una vez; si la fecha se vuelve a cambiar, la seña se pierde, ya que mientras el espacio queda reservado para vos no podemos ofrecerlo a otros clientes.</li>
                     <li><strong>Facturación.</strong> Emitimos factura C (monotributo).</li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PREGUNTAS FRECUENTES ===== -->
+    <section id="preguntas">
+        <div class="seccion-centrada" style="max-width: 820px;">
+            <h2 class="section-title">Preguntas frecuentes</h2>
+            <div class="faq-lista">
+                <details><summary>¿Cuántas personas entran en Arcos V?</summary><p>Con mesas de trabajo, 24 personas cómodas y hasta 36 como máximo. En formato auditorio (sillas frente al orador, sin mesas), 30 personas cómodas y hasta 42. El mobiliario se reacomoda según la actividad, y podés ver la distribución en la maqueta 3D del espacio.</p></details>
+                <details><summary>¿Qué equipamiento está incluido en el alquiler?</summary><p>Monitor de 65" con cable HDMI en pedestal con ruedas, parlante tipo torre, Wi-Fi de alta velocidad en todo el espacio y aire acondicionado frío/calor en la zona cubierta. Todo está incluido en la tarifa.</p></details>
+                <details><summary>¿Cuánto cuesta alquilar el espacio para una empresa?</summary><p>Los valores de referencia arrancan en $40.000 por hora (mínimo 2 horas), $140.000 la media jornada y $280.000 la jornada completa. El presupuesto final depende de la cantidad de personas, el día, el horario, la duración y los servicios. Las bebidas del bar se presupuestan aparte.</p></details>
+                <details><summary>¿Podemos traer nuestra propia comida o catering?</summary><p>Sí. Podés traer un catering externo avisando con al menos 48 horas de anticipación. El montaje y la presentación de la comida los hace siempre el equipo de Arcos V, y las bebidas e infusiones se gestionan con el bar propio del espacio.</p></details>
+                <details><summary>¿El espacio es exclusivo para nuestro grupo?</summary><p>Sí. Se alquila el espacio completo, sin eventos simultáneos ni público ajeno durante tu reserva.</p></details>
+                <details><summary>¿Se puede reservar varios días seguidos?</summary><p>Sí. Recibimos offsites y reuniones con clientes de varios días consecutivos, con el espacio reservado en exclusiva.</p></details>
+                <details><summary>¿En qué horarios se puede alquilar?</summary><p>De lunes a sábado de 8 a 23 hs y los domingos de 10 a 22 hs. El armado y el desarme se cuentan dentro de las horas reservadas.</p></details>
+                <details><summary>¿Hay estacionamiento?</summary><p>El organizador puede dejar un auto en el garage del espacio, con aviso previo; en reservas de media jornada o más tiene un costo de $20.000 por jornada. Para el resto de los asistentes hay cocheras cerca: Garage Arcos de Núñez (Arcos 3134) y Garage Núñez (Núñez 2769).</p></details>
+                <details><summary>¿Cómo se llega en transporte público?</summary><p>La estación Núñez del tren Mitre (ramal Retiro–Tigre) está a unos 10 minutos a pie. Por Av. Cabildo y transversales pasan las líneas de colectivo 29, 59, 60, 107, 133, 152 y 168.</p></details>
+                <details><summary>¿Podemos conocer el espacio antes de reservar?</summary><p>Sí, coordinamos visitas técnicas a pedido. Escribinos por WhatsApp y armamos un horario.</p></details>
+                <details><summary>¿Emiten factura?</summary><p>Sí, emitimos factura C (monotributo). También podemos coordinar órdenes de compra o el alta como proveedor de tu empresa.</p></details>
+                <details><summary>¿Cómo se reserva la fecha?</summary><p>Con una seña del 50% del valor total; el saldo se abona el día del encuentro o el día anterior. La seña se reintegra al 100% si cancelás dentro de las 72 horas de abonarla; después queda como crédito por 3 meses para reprogramar.</p></details>
             </div>
         </div>
     </section>
